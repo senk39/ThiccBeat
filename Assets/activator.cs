@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class activator : MonoBehaviour {
 
     public KeyCode key;
-    bool active = false;
+    public bool active = false;
     GameObject note;
 
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class activator : MonoBehaviour {
         if(Input.GetKeyDown(key) && active)
         {
             Destroy(note);
-            score.scoreValue += 1;
+            //score.scoreValue += 1;
             active = false;
 
         }
