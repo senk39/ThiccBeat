@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class note : MonoBehaviour {
 
     Rigidbody rb;
     public float notesVelocity = 20;
+    
 
     void Awake()
     {

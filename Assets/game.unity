@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.z
@@ -162,7 +162,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23062372132891654, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
@@ -184,6 +184,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
+      propertyPath: m_TagString
+      value: TooLateIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
+      propertyPath: m_Name
+      value: too late note indicator 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -256,6 +264,11 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -377,6 +390,11 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0
@@ -489,7 +507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4946227937377988, guid: ef57177d6b1efb943abf06235cc99d24, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 4946227937377988, guid: ef57177d6b1efb943abf06235cc99d24, type: 2}
       propertyPath: m_LocalRotation.x
@@ -599,7 +617,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4114348957578896, guid: 3566f2a2ecd7956468d9b5bfac8f4c99, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 4114348957578896, guid: 3566f2a2ecd7956468d9b5bfac8f4c99, type: 2}
       propertyPath: m_LocalRotation.x
@@ -699,7 +717,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4211427596423854, guid: 9439c9389e30e6f4a87c9daebc9530e1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 4211427596423854, guid: 9439c9389e30e6f4a87c9daebc9530e1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -791,7 +809,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4614104088909688, guid: aa06def5841cdc343895c6b1283e02b6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 4614104088909688, guid: aa06def5841cdc343895c6b1283e02b6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -874,7 +892,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4638050704081794, guid: c6888c3b2fe029745b36e93e26bbf3a4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 4638050704081794, guid: c6888c3b2fe029745b36e93e26bbf3a4, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1042,6 +1060,11 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -1338,7 +1361,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 716675882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.503}
+  m_LocalPosition: {x: 0, y: 0, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1461898686}
@@ -1458,7 +1481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.z
@@ -1507,6 +1530,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
+      propertyPath: m_TagString
+      value: TooEarlyIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
+      propertyPath: m_Name
+      value: too early note indicator 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -1736,7 +1767,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.z
@@ -1744,7 +1775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23970182133117922, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
@@ -1766,6 +1797,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
+      propertyPath: m_TagString
+      value: TooLateIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
+      propertyPath: m_Name
+      value: too late note indicator 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -1823,6 +1862,11 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -1958,7 +2002,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.z
@@ -1966,7 +2010,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23078754063973728, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
@@ -1988,6 +2032,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
+      propertyPath: m_TagString
+      value: TooLateIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
+      propertyPath: m_Name
+      value: too late note indicator 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -2032,7 +2084,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.z
@@ -2081,6 +2133,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
+      propertyPath: m_TagString
+      value: TooEarlyIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
+      propertyPath: m_Name
+      value: too early note indicator 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -2130,7 +2190,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.z
@@ -2174,6 +2234,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
+      propertyPath: m_TagString
+      value: TooEarlyIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
+      propertyPath: m_Name
+      value: too early note indicator 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -2224,7 +2292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1147495902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4.95}
+  m_LocalPosition: {x: 0, y: 0, z: -4.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1962107140}
@@ -2283,6 +2351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3370672ff18f10644a3f6417f7c7c977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stringScoreContainer: Score
 --- !u!114 &1147570616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,7 +2384,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2137
+  m_Text: 1
 --- !u!222 &1147570617
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2468,6 +2537,11 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -2597,6 +2671,11 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -3159,7 +3238,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.z
@@ -3167,7 +3246,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23639996822787576, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
@@ -3184,6 +3263,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
+      propertyPath: m_TagString
+      value: TooLateIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
+      propertyPath: m_Name
+      value: too late note indicator 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0
@@ -3377,7 +3464,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.z
@@ -3426,6 +3513,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
+      propertyPath: m_TagString
+      value: TooEarlyIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
+      propertyPath: m_Name
+      value: too early note indicator 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -3475,7 +3570,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.z
@@ -3483,7 +3578,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23244426400641072, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
@@ -3500,6 +3595,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
+      propertyPath: m_TagString
+      value: TooLateIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
+      propertyPath: m_Name
+      value: too late note indicator 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -3545,7 +3648,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4094204828284462, guid: f9e57347b1367ad41a16f37da0934106, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.19
+      value: -14.2
       objectReference: {fileID: 0}
     - target: {fileID: 4094204828284462, guid: f9e57347b1367ad41a16f37da0934106, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3627,7 +3730,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.z
@@ -3635,7 +3738,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23053527999894434, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
@@ -3652,6 +3755,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
+      propertyPath: m_TagString
+      value: TooLateIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
+      propertyPath: m_Name
+      value: too late note indicator 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -3755,7 +3866,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.z
@@ -3799,6 +3910,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
+      propertyPath: m_TagString
+      value: TooEarlyIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
+      propertyPath: m_Name
+      value: too early note indicator 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -3929,7 +4048,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.0000029
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.z
@@ -3973,6 +4092,14 @@ Prefab:
       propertyPath: ScoreString
       value: 
       objectReference: {fileID: 1147570616}
+    - target: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
+      propertyPath: m_TagString
+      value: TooEarlyIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
+      propertyPath: m_Name
+      value: too early note indicator 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class activator : MonoBehaviour {
+
 
     public KeyCode key;
     public bool active = false;
@@ -16,28 +18,31 @@ public class activator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetKeyDown(key) && active)
+        if (Input.GetKeyDown(key) && active)
         {
             Destroy(note);
-            //score.scoreValue += 1;
-            active = false;
-
+            AddScore();
+           active = false;
         }
 
     }
+
     void OnTriggerEnter(Collider col)
     {
         active = true;
         if(col.gameObject.tag=="Note")
         {
             note = col.gameObject;
-
         }
     }
 
     void OnTriggerExit(Collider col)
     {
         active = false;
+    }
 
+    void AddScore()
+    {
+        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
     }
 }

@@ -8,6 +8,8 @@ TagManager:
   - Indicator
   - Track
   - Pink Bar
+  - TooEarlyIndicator
+  - TooLateIndicator
   layers:
   - Default
   - TransparentFX
