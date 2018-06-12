@@ -43,6 +43,5 @@ public class activator : MonoBehaviour {
 
     void AddScore()
     {
-        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
     }
 }

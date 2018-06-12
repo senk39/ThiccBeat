@@ -178,12 +178,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_TagString
       value: TooLateIndicator
@@ -258,12 +258,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: m_Enabled
@@ -379,7 +379,7 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: scoreText
@@ -389,7 +389,7 @@ Prefab:
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: m_Enabled
@@ -850,6 +850,95 @@ Transform:
   m_PrefabParentObject: {fileID: 4614104088909688, guid: aa06def5841cdc343895c6b1283e02b6,
     type: 2}
   m_PrefabInternal: {fileID: 419947562}
+--- !u!1 &427617157
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 427617158}
+  - component: {fileID: 427617160}
+  - component: {fileID: 427617159}
+  - component: {fileID: 427617161}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &427617158
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427617157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658537952}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 561, y: 331}
+  m_SizeDelta: {x: 660.9, y: 143}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &427617159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427617157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.834}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
+    m_FontSize: 140
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 140
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0000000
+--- !u!222 &427617160
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427617157}
+--- !u!114 &427617161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427617157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88380994e987a24a9b6b2707a87e052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: 0
+  keyA: 97
+  playerScoreAsText: {fileID: 427617159}
 --- !u!1 &444945519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
@@ -1054,12 +1143,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: m_Enabled
@@ -1093,80 +1182,6 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: d62f083dd1affe746b2772279542e5d6, type: 2}
   - {fileID: 2100000, guid: 5c3a4f8a509b4464295575385f204f08, type: 2}
---- !u!1 &654184133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 654184134}
-  - component: {fileID: 654184136}
-  - component: {fileID: 654184135}
-  m_Layer: 5
-  m_Name: 'Text - Score:'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &654184134
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 654184133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 658537952}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 543, y: 279}
-  m_SizeDelta: {x: 712.7, y: 245.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &654184135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 654184133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9117647, g: 0.9117647, b: 0.9117647, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 300
-    m_Alignment: 2
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Score:'
---- !u!222 &654184136
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 654184133}
 --- !u!1 &658537948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,8 +1267,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 654184134}
-  - {fileID: 1147570614}
+  - {fileID: 427617158}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1524,12 +1538,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_TagString
       value: TooEarlyIndicator
@@ -1791,12 +1805,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_TagString
       value: TooLateIndicator
@@ -1856,12 +1870,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: m_Enabled
@@ -2026,12 +2040,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_TagString
       value: TooLateIndicator
@@ -2127,12 +2141,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_TagString
       value: TooEarlyIndicator
@@ -2228,12 +2242,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_TagString
       value: TooEarlyIndicator
@@ -2304,93 +2318,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1147570613
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1147570614}
-  - component: {fileID: 1147570617}
-  - component: {fileID: 1147570616}
-  - component: {fileID: 1147570615}
-  m_Layer: 5
-  m_Name: Text - Score Number
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1147570614
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147570613}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
-  m_Children: []
-  m_Father: {fileID: 658537952}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 543, y: 279}
-  m_SizeDelta: {x: 712.7, y: 245.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1147570615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147570613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3370672ff18f10644a3f6417f7c7c977, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stringScoreContainer: Score
---- !u!114 &1147570616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147570613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9117647, g: 0.9117647, b: 0.9117647, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 300
-    m_Alignment: 8
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 1
---- !u!222 &1147570617
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1147570613}
 --- !u!1 &1177442093 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed,
@@ -2531,12 +2458,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: m_Enabled
@@ -2665,12 +2592,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: m_Enabled
@@ -3257,12 +3184,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_TagString
       value: TooLateIndicator
@@ -3507,12 +3434,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_TagString
       value: TooEarlyIndicator
@@ -3589,12 +3516,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_TagString
       value: TooLateIndicator
@@ -3749,12 +3676,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_TagString
       value: TooLateIndicator
@@ -3904,12 +3831,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_TagString
       value: TooEarlyIndicator
@@ -4086,12 +4013,12 @@ Prefab:
         type: 2}
       propertyPath: ScoreText
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: ScoreString
       value: 
-      objectReference: {fileID: 1147570616}
+      objectReference: {fileID: 0}
     - target: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_TagString
       value: TooEarlyIndicator
