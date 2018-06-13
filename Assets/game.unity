@@ -940,8 +940,6 @@ MonoBehaviour:
   playerCurrentScore: 0
   keyA: 97
   playerScoreAsText: {fileID: 427617159}
-=======
->>>>>>> parent of d33658b... Pseudo-working score
 --- !u!1 &444945519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
