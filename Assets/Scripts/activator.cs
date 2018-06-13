@@ -4,25 +4,34 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class activator : MonoBehaviour {
+public class activator : playerScore {
 
 
     public KeyCode key;
     public bool active = false;
+    public int currentNoteValue = 0;
     GameObject note;
+   // int myCube = GameObject.FindObjectOfType<playerScore>.GetComponent<playerCurrentScreen>;
 
-	// Use this for initialization
-	void Start () {
+
+
+
+    // Use this for initialization
+    void Start () {
     }
 	
 	// Update is called once per frame
 	void Update () {
 
+        playerScoreAsText.text = playerCurrentScore.ToString();
+
+
         if (Input.GetKeyDown(key) && active)
         {
             Destroy(note);
             AddScore();
-           active = false;
+            playerCurrentScore += 50;
+            active = false;
         }
 
     }
@@ -32,6 +41,7 @@ public class activator : MonoBehaviour {
         active = true;
         if(col.gameObject.tag=="Note")
         {
+            currentNoteValue = 50;
             note = col.gameObject;
         }
     }
@@ -39,9 +49,11 @@ public class activator : MonoBehaviour {
     void OnTriggerExit(Collider col)
     {
         active = false;
+        currentNoteValue = 0;
     }
 
-    void AddScore()
+   public void AddScore()
     {
+        // += 50;
     }
 }

@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88380994e987a24a9b6b2707a87e052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScore: 0
+  playerCurrentScore: 0
   keyA: 97
   playerScoreAsText: {fileID: 427617159}
 --- !u!1 &444945519 stripped
