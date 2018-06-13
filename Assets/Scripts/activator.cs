@@ -5,40 +5,28 @@ using UnityEngine.UI;
 
 
 public class activator : MonoBehaviour {
-    public GameObject playerScoreObject;
 
-    playerScore skor;
+    public int pointsPerNote = 50;
 
-    // Use this for initialization
-    
-    //
     public KeyCode key;
     public bool active = false;
     public int currentNoteValue = 0;
-    GameObject note;
-    // int myCube = GameObject.FindObjectOfType<playerScore>.GetComponent<playerCurrentScreen>;
+    GameObject note; 
 
-
-  
+    public GameObject playerScoreContainer;
 
     // Use this for initialization
     void Start () {
-        skor = GetComponent<playerScore>();
-
     }
 
     // Update is called once per frame
     void Update () {
 
-        //playerScoreAsText.text = playerCurrentScore.ToString();
-
-
         if (Input.GetKeyDown(key) && active)
         {
             Destroy(note);
-            AddScore();
+            addScore();
             active = false;
-            skor.playerCurrentScore += 69;
         }
 
     }
@@ -48,7 +36,7 @@ public class activator : MonoBehaviour {
         active = true;
         if(col.gameObject.tag=="Note")
         {
-            currentNoteValue = 50;
+            currentNoteValue = pointsPerNote;
             note = col.gameObject;
         }
     }
@@ -59,11 +47,8 @@ public class activator : MonoBehaviour {
         currentNoteValue = 0;
     }
 
-   public void AddScore()
+   public void addScore()
     {
-
-        // += 50;
-
-        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
+        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += currentNoteValue;
     }
 }

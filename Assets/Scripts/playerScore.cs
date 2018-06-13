@@ -20,7 +20,11 @@ public class playerScore : MonoBehaviour
         playerScoreAsText.text = playerCurrentScore.ToString();
 
 
-
+      
+        }
+    /*
+    void klikanie()
+    {
         if (Input.GetKeyDown(KeyCode.A))
         {
             playerCurrentScore += 2;
@@ -50,5 +54,7 @@ public class playerScore : MonoBehaviour
             playerCurrentScore += 64;
 
         }
+        */
+
     }
-}
+

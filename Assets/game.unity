@@ -192,6 +192,11 @@ Prefab:
       propertyPath: m_Name
       value: too late note indicator 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -1552,6 +1557,11 @@ Prefab:
       propertyPath: m_Name
       value: too early note indicator 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -1819,6 +1829,11 @@ Prefab:
       propertyPath: m_Name
       value: too late note indicator 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -2054,6 +2069,11 @@ Prefab:
       propertyPath: m_Name
       value: too late note indicator 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -2155,6 +2175,11 @@ Prefab:
       propertyPath: m_Name
       value: too early note indicator 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -2256,6 +2281,11 @@ Prefab:
       propertyPath: m_Name
       value: too early note indicator 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -3198,6 +3228,11 @@ Prefab:
       propertyPath: m_Name
       value: too late note indicator 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0
@@ -3448,6 +3483,11 @@ Prefab:
       propertyPath: m_Name
       value: too early note indicator 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -3530,6 +3570,11 @@ Prefab:
       propertyPath: m_Name
       value: too late note indicator 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -3690,6 +3735,11 @@ Prefab:
       propertyPath: m_Name
       value: too late note indicator 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -3845,6 +3895,11 @@ Prefab:
       propertyPath: m_Name
       value: too early note indicator 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -4027,6 +4082,11 @@ Prefab:
       propertyPath: m_Name
       value: too early note indicator 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: playerScoreContainer
+      value: 
+      objectReference: {fileID: 427617157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0
