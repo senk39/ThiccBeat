@@ -883,7 +883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 561, y: 349}
+  m_AnchoredPosition: {x: 561, y: 311}
   m_SizeDelta: {x: 660.9, y: 143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427617159
@@ -933,10 +933,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 427617157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ecab66abba21734cb914c2205ea149a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3370672ff18f10644a3f6417f7c7c977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stringScoreContainer: 
+  playerCurrentScore: 0
+  keyA: 97
+  playerScoreAsText: {fileID: 427617159}
 --- !u!1 &444945519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,

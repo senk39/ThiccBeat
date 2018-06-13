@@ -6,12 +6,14 @@ using UnityEngine;
 public class note : MonoBehaviour {
 
     Rigidbody rb;
+    //activator akti;
     public float notesVelocity = 20;
     
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        //akti = GetComponent<activator>();
     }
 
 	// Use this for initialization

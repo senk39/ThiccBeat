@@ -4,24 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class activator : playerScore {
+public class activator : MonoBehaviour {
+    public GameObject playerScoreObject;
 
+    playerScore skor;
 
+    // Use this for initialization
+    
+    //
     public KeyCode key;
     public bool active = false;
     public int currentNoteValue = 0;
     GameObject note;
-   // int myCube = GameObject.FindObjectOfType<playerScore>.GetComponent<playerCurrentScreen>;
+    // int myCube = GameObject.FindObjectOfType<playerScore>.GetComponent<playerCurrentScreen>;
 
 
-
+  
 
     // Use this for initialization
     void Start () {
+        skor = GetComponent<playerScore>();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 
         //playerScoreAsText.text = playerCurrentScore.ToString();
 
@@ -30,8 +37,8 @@ public class activator : playerScore {
         {
             Destroy(note);
             AddScore();
-            playerCurrentScore += 50;
             active = false;
+            skor.playerCurrentScore += 69;
         }
 
     }
