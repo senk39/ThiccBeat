@@ -54,6 +54,10 @@ public class activator : playerScore {
 
    public void AddScore()
     {
+<<<<<<< HEAD
         // += 50;
+=======
+        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 1);
+>>>>>>> parent of d33658b... Pseudo-working score
     }
 }
