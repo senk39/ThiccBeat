@@ -23,7 +23,7 @@ public class activator : playerScore {
 	// Update is called once per frame
 	void Update () {
 
-        playerScoreAsText.text = playerCurrentScore.ToString();
+        //playerScoreAsText.text = playerCurrentScore.ToString();
 
 
         if (Input.GetKeyDown(key) && active)

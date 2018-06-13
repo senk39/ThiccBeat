@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class playerScore : MonoBehaviour
 {
 
-    public int playerCurrentScore;
+    public int playerCurrentScore =0;
     public KeyCode keyA = KeyCode.A;
     public Text playerScoreAsText;
 
@@ -21,7 +21,7 @@ public class playerScore : MonoBehaviour
     public void Update()
     {
 
-        //playerScoreAsText.text = playerCurrentScore.ToString();
+        playerScoreAsText.text = playerCurrentScore.ToString();
 
 
 
