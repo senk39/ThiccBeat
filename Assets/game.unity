@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.z
@@ -202,6 +202,16 @@ Prefab:
       propertyPath: activatorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -230,6 +240,11 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 08c545cfd3f3e804eaef3f2c2e21cbdd, type: 2}
   - {fileID: 2100000, guid: 7e271c8f3b7e0e041a6750b0beebe576, type: 2}
+--- !u!1 &40214602 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 1817674919}
 --- !u!1001 &45781414
 Prefab:
   m_ObjectHideFlags: 0
@@ -324,11 +339,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 1
-  perfectHitPoints: 1000
+  greatHitPoints: 50
+  perfectHitPoints: 200
   key: 105
   active: 0
   currentNoteValue: 0
+  earlyTrigger: {fileID: 1037323828}
+  lateTrigger: {fileID: 652903401}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
 --- !u!1 &52295584
@@ -469,11 +486,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 1
-  perfectHitPoints: 1000
+  greatHitPoints: 50
+  perfectHitPoints: 200
   key: 97
   active: 0
   currentNoteValue: 0
+  earlyTrigger: {fileID: 490022044}
+  lateTrigger: {fileID: 584184902}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
 --- !u!1001 &134318664
@@ -653,6 +672,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4366725019416146, guid: 880b2ef5d2b55cd47afa60b62e948470,
     type: 2}
   m_PrefabInternal: {fileID: 304954501}
+--- !u!1 &312269789 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b,
+    type: 2}
+  m_PrefabInternal: {fileID: 908025378}
 --- !u!1001 &377583930
 Prefab:
   m_ObjectHideFlags: 0
@@ -936,8 +960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: 181}
-  m_SizeDelta: {x: 660.9, y: 143}
+  m_AnchoredPosition: {x: 582.6, y: 257.9}
+  m_SizeDelta: {x: 615.8, y: 121}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427617159
 MonoBehaviour:
@@ -960,10 +984,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
-    m_FontSize: 140
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 140
     m_Alignment: 5
     m_AlignByGeometry: 0
@@ -1002,6 +1026,11 @@ GameObject:
   m_PrefabParentObject: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54,
     type: 2}
   m_PrefabInternal: {fileID: 2017706341}
+--- !u!1 &548293113 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1753653627811648, guid: 748b5dd792e63d544ac8a6848f4df38b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1051100047}
 --- !u!1001 &557230043
 Prefab:
   m_ObjectHideFlags: 0
@@ -1217,13 +1246,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 1
-  perfectHitPoints: 1000
+  greatHitPoints: 50
+  perfectHitPoints: 200
   key: 119
   active: 0
   currentNoteValue: 0
+  earlyTrigger: {fileID: 34565895}
+  lateTrigger: {fileID: 1356251262}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+--- !u!1 &652903401 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e,
+    type: 2}
+  m_PrefabInternal: {fileID: 956814704}
 --- !u!1 &658537948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1439,7 +1475,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4177297488280050, guid: d3b50fd499790244fafed6b8055bb5f2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.0999994
+      value: 5.1
       objectReference: {fileID: 0}
     - target: {fileID: 4177297488280050, guid: d3b50fd499790244fafed6b8055bb5f2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1518,7 +1554,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.z
@@ -1526,7 +1562,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23078754063973728, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
@@ -1584,6 +1620,16 @@ Prefab:
         type: 2}
       propertyPath: activatorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
@@ -1692,9 +1738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 20
-  TooEarlyIndicator: {fileID: 0}
-  TooLateIndicator: {fileID: 0}
-  PerfectIndicator: {fileID: 0}
 --- !u!1 &954831824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,7 +1860,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.z
@@ -1864,6 +1907,16 @@ Prefab:
         type: 2}
       propertyPath: activatorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
@@ -1967,11 +2020,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 1
-  perfectHitPoints: 1000
+  greatHitPoints: 50
+  perfectHitPoints: 200
   key: 100
   active: 0
   currentNoteValue: 0
+  earlyTrigger: {fileID: 1991835710}
+  lateTrigger: {fileID: 40214602}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
 --- !u!1001 &1027084890
@@ -2040,6 +2095,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8401967d2941c5e42838fcc59b92eceb, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1037323828 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1715308282}
 --- !u!1001 &1051100047
 Prefab:
   m_ObjectHideFlags: 0
@@ -2081,7 +2141,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.z
@@ -2129,6 +2189,16 @@ Prefab:
       propertyPath: activatorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -2173,7 +2243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.z
@@ -2181,7 +2251,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23062372132891654, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
@@ -2240,6 +2310,16 @@ Prefab:
       propertyPath: activatorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -2289,7 +2369,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.z
@@ -2297,7 +2377,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23053527999894434, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
@@ -2351,6 +2431,16 @@ Prefab:
       propertyPath: activatorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -2386,8 +2476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: 328}
-  m_SizeDelta: {x: 660.9, y: 143}
+  m_AnchoredPosition: {x: 774.2, y: 346.5}
+  m_SizeDelta: {x: 232.5, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126839065
 MonoBehaviour:
@@ -2412,7 +2502,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 8
@@ -2618,11 +2708,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 1
-  perfectHitPoints: 1000
+  greatHitPoints: 50
+  perfectHitPoints: 200
   key: 108
   active: 0
   currentNoteValue: 0
+  earlyTrigger: {fileID: 312269789}
+  lateTrigger: {fileID: 548293113}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
 --- !u!1001 &1260090501
@@ -2771,11 +2863,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 1
-  perfectHitPoints: 1000
+  greatHitPoints: 50
+  perfectHitPoints: 200
   key: 106
   active: 0
   currentNoteValue: 0
+  earlyTrigger: {fileID: 1541909696}
+  lateTrigger: {fileID: 1594752519}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
 --- !u!1 &1356251262 stripped
@@ -2892,9 +2986,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 20
-  TooEarlyIndicator: {fileID: 34565895}
-  TooLateIndicator: {fileID: 1356251262}
-  PerfectIndicator: {fileID: 639709409}
 --- !u!1001 &1482803966
 Prefab:
   m_ObjectHideFlags: 0
@@ -3080,9 +3171,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 20
-  TooEarlyIndicator: {fileID: 490022044}
-  TooLateIndicator: {fileID: 584184902}
-  PerfectIndicator: {fileID: 72484507}
+--- !u!1 &1541909696 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1052815220}
 --- !u!1001 &1546176188
 Prefab:
   m_ObjectHideFlags: 0
@@ -3187,9 +3280,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 20
-  TooEarlyIndicator: {fileID: 0}
-  TooLateIndicator: {fileID: 0}
-  PerfectIndicator: {fileID: 0}
+--- !u!1 &1594752519 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
+    type: 2}
+  m_PrefabInternal: {fileID: 14351312}
 --- !u!1001 &1610412045
 Prefab:
   m_ObjectHideFlags: 0
@@ -3306,7 +3401,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.z
@@ -3348,6 +3443,16 @@ Prefab:
         type: 2}
       propertyPath: activatorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
@@ -3461,9 +3566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 20
-  TooEarlyIndicator: {fileID: 0}
-  TooLateIndicator: {fileID: 0}
-  PerfectIndicator: {fileID: 0}
 --- !u!1 &1694768307 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1945959789779338, guid: 5ed1a8d17b75ced4b8daf376d47367e3,
@@ -3525,7 +3627,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.z
@@ -3533,7 +3635,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23970182133117922, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
@@ -3592,6 +3694,16 @@ Prefab:
       propertyPath: activatorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -3641,7 +3753,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.z
@@ -3683,6 +3795,16 @@ Prefab:
         type: 2}
       propertyPath: activatorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
@@ -3791,7 +3913,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.z
@@ -3833,6 +3955,16 @@ Prefab:
         type: 2}
       propertyPath: activatorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
@@ -3937,7 +4069,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.z
@@ -3945,7 +4077,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23244426400641072, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
@@ -3999,6 +4131,16 @@ Prefab:
       propertyPath: activatorType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -4043,6 +4185,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54,
     type: 2}
   m_PrefabInternal: {fileID: 1632386464}
+--- !u!1 &1991835710 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed,
+    type: 2}
+  m_PrefabInternal: {fileID: 1054946353}
 --- !u!1001 &2017706341
 Prefab:
   m_ObjectHideFlags: 0
@@ -4089,7 +4236,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 65d673ac1dba0fa42a243ddf7f678a32, type: 2}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5000007
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.z
@@ -4097,7 +4244,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.09999998
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 23639996822787576, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
@@ -4150,6 +4297,16 @@ Prefab:
         type: 2}
       propertyPath: activatorType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: greatHitPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: perfectHitPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}

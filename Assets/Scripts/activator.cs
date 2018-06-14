@@ -6,15 +6,17 @@ using UnityEngine.UI;
 
 public class activator : MonoBehaviour {
 
-    public int greatHitPoints = 1;
-    public int perfectHitPoints = 1000;
+    public int greatHitPoints = 50;
+    public int perfectHitPoints = 200;
 
     public KeyCode key;
     public bool active = false;
     public int currentNoteValue = 0;
     GameObject note;
 
-    //ActivatorType currentActivatorType = ActivatorType.Awaiting;
+    public GameObject earlyTrigger;
+    public GameObject lateTrigger;
+
     public enum ActivatorType { Perfect, Great, Miss, Awaiting };
     public ActivatorType activatorType;
 
@@ -33,25 +35,17 @@ public class activator : MonoBehaviour {
             addScore();
             active = false;
         }
-
     }
 
     void OnTriggerEnter(Collider col)
     {
-        active = true;
-        if(col.gameObject.tag=="Note")
+
+
+        if (col.gameObject.tag=="Note")
         {
-            if (activatorType == ActivatorType.Perfect)
-            {
-                currentNoteValue = perfectHitPoints;
-            }
-
-            else
-            {
-                currentNoteValue = greatHitPoints;
-            }
-
+            active = true;
             note = col.gameObject;
+            checkPressedActivatorType();
         }
     }
 
@@ -66,5 +60,25 @@ public class activator : MonoBehaviour {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += currentNoteValue;
     }
 
-    
+    void checkPressedActivatorType()
+    {
+        if (activatorType == ActivatorType.Perfect)
+        {
+            blockNonPerfectHits();
+        }
+
+       if (activatorType == ActivatorType.Great)
+        {
+            currentNoteValue = greatHitPoints;
+        }
+    }
+
+    void blockNonPerfectHits()
+    {
+        earlyTrigger.SetActive(false);
+        lateTrigger.SetActive(false);
+        active = true;
+        currentNoteValue = perfectHitPoints;
+    }
+
 }
