@@ -22,39 +22,8 @@ public class playerScore : MonoBehaviour
 
       
         }
-    /*
-    void klikanie()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            playerCurrentScore += 2;
-        }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            playerCurrentScore += 4;
 
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            playerCurrentScore += 8;
+   
 
-        }
-        else if (Input.GetKeyDown(KeyCode.J))
-        {
-            playerCurrentScore += 16;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.I))
-        {
-            playerCurrentScore += 32;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.L))
-        {
-            playerCurrentScore += 64;
-
-        }
-        */
-
-    }
+}
 

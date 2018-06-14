@@ -6,12 +6,17 @@ using UnityEngine.UI;
 
 public class activator : MonoBehaviour {
 
-    public int pointsPerNote = 50;
+    public int greatHitPoints = 1;
+    public int perfectHitPoints = 1000;
 
     public KeyCode key;
     public bool active = false;
     public int currentNoteValue = 0;
-    GameObject note; 
+    GameObject note;
+
+    //ActivatorType currentActivatorType = ActivatorType.Awaiting;
+    public enum ActivatorType { Perfect, Great, Miss, Awaiting };
+    public ActivatorType activatorType;
 
     public GameObject playerScoreContainer;
 
@@ -36,7 +41,16 @@ public class activator : MonoBehaviour {
         active = true;
         if(col.gameObject.tag=="Note")
         {
-            currentNoteValue = pointsPerNote;
+            if (activatorType == ActivatorType.Perfect)
+            {
+                currentNoteValue = perfectHitPoints;
+            }
+
+            else
+            {
+                currentNoteValue = greatHitPoints;
+            }
+
             note = col.gameObject;
         }
     }
@@ -51,4 +65,6 @@ public class activator : MonoBehaviour {
     {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += currentNoteValue;
     }
+
+    
 }
