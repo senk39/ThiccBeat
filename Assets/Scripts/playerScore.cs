@@ -8,7 +8,6 @@ public class playerScore : MonoBehaviour
 {
 
     public int playerCurrentScore = 0;
-    public KeyCode keyA = KeyCode.A;
     public Text playerScoreAsText;
 
     // Update is called once per frame

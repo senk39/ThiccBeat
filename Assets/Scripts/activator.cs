@@ -17,10 +17,13 @@ public class activator : MonoBehaviour {
     public GameObject earlyTrigger;
     public GameObject lateTrigger;
 
+
     public enum ActivatorType { Perfect, Great, Miss, Awaiting };
     public ActivatorType activatorType;
 
     public GameObject playerScoreContainer;
+    public GameObject playerComboContainer;
+
 
     // Use this for initialization
     void Start () {
@@ -33,6 +36,7 @@ public class activator : MonoBehaviour {
         {
             Destroy(note);
             addScore();
+            playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;
         }
     }
@@ -70,6 +74,12 @@ public class activator : MonoBehaviour {
        if (activatorType == ActivatorType.Great)
         {
             currentNoteValue = greatHitPoints;
+        }
+
+       if (activatorType == ActivatorType.Miss)
+        {
+            Destroy(note);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
         }
     }
 
