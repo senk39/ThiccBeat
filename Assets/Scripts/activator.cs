@@ -24,7 +24,6 @@ public class activator : MonoBehaviour {
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
-
     // Use this for initialization
     void Start () {
     }
@@ -50,6 +49,7 @@ public class activator : MonoBehaviour {
             active = true;
             note = col.gameObject;
             checkPressedActivatorType();
+            
         }
     }
 
