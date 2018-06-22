@@ -55,8 +55,11 @@ public class activator : MonoBehaviour {
 
     void OnTriggerExit(Collider col)
     {
-        active = false;
-        currentNoteValue = 0;
+        if (col.gameObject.tag == "Note")
+        {
+            active = false;
+            currentNoteValue = 0;
+        }
     }
 
    public void addScore()
