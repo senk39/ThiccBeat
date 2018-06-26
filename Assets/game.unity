@@ -1235,9 +1235,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1 &584184902 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54,
@@ -1706,9 +1709,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1001 &873130387
 Prefab:
   m_ObjectHideFlags: 0
@@ -2009,9 +2015,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1 &954831824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,9 +2249,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1001 &969818819
 Prefab:
   m_ObjectHideFlags: 0
@@ -3477,6 +3489,10 @@ Prefab:
       propertyPath: lateActivator
       value: 
       objectReference: {fileID: 1356251262}
+    - target: {fileID: 1731374682761808, guid: ac099f13797cdc64799ef241dd26228e, type: 2}
+      propertyPath: m_TagString
+      value: Note
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac099f13797cdc64799ef241dd26228e, type: 2}
   m_IsPrefabParent: 0
@@ -3662,9 +3678,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1 &1524094286 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5,
@@ -3700,9 +3719,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1 &1541909696 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
@@ -3830,9 +3852,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1 &1594752519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
@@ -4258,9 +4283,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualNoteValue: 0
   isNoteActive: 0
+  isTheLowest: 0
   earlyActivator: {fileID: 0}
   perfectActivator: {fileID: 0}
   lateActivator: {fileID: 0}
+  notePrefab: {fileID: 0}
+  allNotes: []
 --- !u!1 &1694768307 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1945959789779338, guid: 5ed1a8d17b75ced4b8daf376d47367e3,

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class activator : MonoBehaviour {
 
-    public int greatHitPoints = 50;
-    public int perfectHitPoints = 200;
+    //public int greatHitPoints = 50;
+    //public int perfectHitPoints = 200;
 
     public KeyCode key;
     public bool active = false;
@@ -23,6 +23,7 @@ public class activator : MonoBehaviour {
 
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
+    public GameObject actNoteValue;
 
     // Use this for initialization
     void Start () {
@@ -64,7 +65,7 @@ public class activator : MonoBehaviour {
 
    public void addScore()
     {
-        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += currentNoteValue;
+        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue.GetComponent<NoteBehaviour>().actualNoteValue;
     }
 
     void checkPressedActivatorType()

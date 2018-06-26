@@ -6,12 +6,18 @@ public class NoteBehaviour : MonoBehaviour
 {
     Transform tf;
 
+
     private uint missOrNotActivated = 0;
     private uint great = 50;
     private uint perfect = 200;
     public uint actualNoteValue;
 
     public bool isNoteActive = false;
+
+    static List<GameObject> ListOfNotes = new List<GameObject>();
+    int ListOfNotesSize;
+    public bool isTheLowest = false;
+    float notex;
 
     public GameObject earlyActivator;
     public GameObject perfectActivator;
@@ -26,21 +32,33 @@ public class NoteBehaviour : MonoBehaviour
     private float row6 = 5.1f;
 
 
+    public GameObject notePrefab;
+    public GameObject[] allNotes;
+
     void Awake()
     {
         tf = GetComponent<Transform>();
+
+       
     }
+
 
     // Use this for initialization
     void Start()
     {
         actualNoteValue = missOrNotActivated;
         autoIndicatorSetter();
+        checkIfItsTheLowestNoteInARow();
+
+        addNotesToList();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        addNotesToList();
         if (actualNoteValue > 0)
         {
             isNoteActive = true;
@@ -56,6 +74,7 @@ public class NoteBehaviour : MonoBehaviour
         if (col.gameObject.tag == "TooEarlyIndicator" || col.gameObject.tag == "TooLateIndicator")
         {
             actualNoteValue = great;
+
         }
     }
 
@@ -117,4 +136,60 @@ public class NoteBehaviour : MonoBehaviour
     }
 
 
+    void checkIfItsTheLowestNoteInARow()
+    {
+        notex = GetComponent<Transform>().position.x;
+        //Debug.Log(notex);
+
+    }
+
+    void addNotesToList2()
+    {
+        if (GameObject.FindGameObjectWithTag("Note"))
+        {
+           // ListOfNotes.Add;
+            //Debug.Log(ListOfNotes);
+
+        }
+    }
+
+    void addNotesToList()
+    {
+        if (allNotes == null)
+            allNotes = GameObject.FindGameObjectsWithTag("Note");
+
+        foreach (GameObject note in allNotes)
+        {
+
+        }
+    }
+
+    /*
+ 
+    void Start()
+    {
+        if (allNotes == null)
+            allNotes = GameObject.FindGameObjectsWithTag("Note");
+
+        foreach (GameObject note in allNotes)
+        {
+            
+        }
+    } 
+    
+    --
+    
+    public GameObject respawnPrefab;
+    public GameObject[] respawns;
+    void Start()
+    {
+        if (respawns == null)
+            respawns = GameObject.FindGameObjectsWithTag("Respawn");
+
+        foreach (GameObject respawn in respawns)
+        {
+            Instantiate(respawnPrefab, respawn.transform.position, respawn.transform.rotation);
+        }
+    } 
+     */
 }
