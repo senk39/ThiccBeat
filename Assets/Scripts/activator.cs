@@ -11,7 +11,7 @@ public class activator : MonoBehaviour {
 
     public KeyCode key;
     public bool active = false;
-    public int currentNoteValue = 0;
+    public uint currentNoteValue = 0;
     GameObject note;
 
     public GameObject earlyTrigger;
@@ -23,7 +23,8 @@ public class activator : MonoBehaviour {
 
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
-    public GameObject actNoteValue;
+    public GameObject NoteWithValue;
+    public uint actNoteValue;
 
     // Use this for initialization
     void Start () {
@@ -34,10 +35,11 @@ public class activator : MonoBehaviour {
 
         if (Input.GetKeyDown(key) && active)
         {
-            Destroy(note);
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;
+            Destroy(note);
+
         }
     }
 
@@ -65,19 +67,20 @@ public class activator : MonoBehaviour {
 
    public void addScore()
     {
-        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue.GetComponent<NoteBehaviour>().actualNoteValue;
+        actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue;
+        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 
     void checkPressedActivatorType()
     {
         if (activatorType == ActivatorType.Perfect)
         {
-            blockNonPerfectHits();
+            //blockNonPerfectHits();
         }
 
        if (activatorType == ActivatorType.Great)
         {
-            currentNoteValue = greatHitPoints;
+            //unblockNonPerfectHits();    
         }
 
        if (activatorType == ActivatorType.Miss)
@@ -91,8 +94,14 @@ public class activator : MonoBehaviour {
     {
         earlyTrigger.SetActive(false);
         lateTrigger.SetActive(false);
+    }
+
+    void unblockNonPerfectHits()
+    {
         active = true;
-        currentNoteValue = perfectHitPoints;
+
+        //earlyTrigger.SetActive(true);
+        //lateTrigger.SetActive(true);
     }
 
 }
