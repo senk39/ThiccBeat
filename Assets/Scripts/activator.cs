@@ -26,12 +26,20 @@ public class activator : MonoBehaviour {
     public GameObject NoteWithValue;
     public uint actNoteValue;
 
+    
+    List<GameObject> currentlyTriggeredNotes;
+    GameObject[] zValuesOfCurrentlyTriggeredNotes;
+
     // Use this for initialization
     void Start () {
+        currentlyTriggeredNotes = new List<GameObject>();
+
     }
 
     // Update is called once per frame
     void Update () {
+
+        //Debug.Log(currentlyTriggeredNotes.Count);
 
         if (Input.GetKeyDown(key) && active)
         {
@@ -51,7 +59,8 @@ public class activator : MonoBehaviour {
         {
             active = true;
             note = col.gameObject;
-            checkPressedActivatorType();
+            currentlyTriggeredNotes.Add(col.gameObject);
+            destroyIfTooLate();
             
         }
     }
@@ -62,6 +71,7 @@ public class activator : MonoBehaviour {
         {
             active = false;
             currentNoteValue = 0;
+            currentlyTriggeredNotes.Remove(col.gameObject);
         }
     }
 
@@ -71,18 +81,9 @@ public class activator : MonoBehaviour {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 
-    void checkPressedActivatorType()
+    void destroyIfTooLate()
     {
-        if (activatorType == ActivatorType.Perfect)
-        {
-            //blockNonPerfectHits();
-        }
-
-       if (activatorType == ActivatorType.Great)
-        {
-            //unblockNonPerfectHits();    
-        }
-
+        
        if (activatorType == ActivatorType.Miss)
         {
             Destroy(note);
@@ -90,18 +91,6 @@ public class activator : MonoBehaviour {
         }
     }
 
-    void blockNonPerfectHits()
-    {
-        earlyTrigger.SetActive(false);
-        lateTrigger.SetActive(false);
-    }
-
-    void unblockNonPerfectHits()
-    {
-        active = true;
-
-        //earlyTrigger.SetActive(true);
-        //lateTrigger.SetActive(true);
-    }
+   
 
 }

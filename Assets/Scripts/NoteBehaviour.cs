@@ -26,15 +26,19 @@ public class NoteBehaviour : MonoBehaviour
     private float row5 = 3.1f;
     private float row6 = 5.1f;
 
+    public bool TooEarlyActivatorCollision = false;
+    public bool PerfectActivatorCollision = false;
+    public bool TooLateActivatorCollision = false;
 
-    public GameObject notePrefab;
-    public GameObject[] allNotes;
+
+
+
 
     void Awake()
     {
         tf = GetComponent<Transform>();
 
-       
+
     }
 
 
@@ -48,35 +52,46 @@ public class NoteBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        noteScoring();
     }
 
     void OnTriggerEnter(Collider col)
     {
+        if (col.gameObject.tag == "TooEarlyIndicator")
+        {
+            TooEarlyActivatorCollision = true;
+        }
+
         if (col.gameObject.tag == "Indicator")
         {
-            actualNoteValue = perfect;
+            PerfectActivatorCollision = true;
         }
-        if (col.gameObject.tag == "TooEarlyIndicator" || col.gameObject.tag == "TooLateIndicator")
-        {
-            actualNoteValue = great;
 
+        if (col.gameObject.tag == "TooLateIndicator")
+        {
+            TooLateActivatorCollision = true;
         }
     }
 
     void OnTriggerExit(Collider col)
     {
+        if (col.gameObject.tag == "TooEarlyIndicator")
+        {
+            TooEarlyActivatorCollision = false;
+        }
+
         if (col.gameObject.tag == "Indicator")
         {
-            actualNoteValue = great;
+            PerfectActivatorCollision = false;
         }
+
         if (col.gameObject.tag == "TooLateIndicator")
         {
-            actualNoteValue = missOrNotActivated;
+            TooLateActivatorCollision = false;
         }
     }
 
-   void autoIndicatorSetter()
+    void autoIndicatorSetter()
     {
         if (tf.position.x == row1)
         {
@@ -123,7 +138,30 @@ public class NoteBehaviour : MonoBehaviour
 
 
 
+    void noteScoring()
+    {
+        if (TooEarlyActivatorCollision == true && PerfectActivatorCollision == true)
+        {
+            actualNoteValue = perfect;
+        }
+        else if (PerfectActivatorCollision == true && TooLateActivatorCollision == true)
+        {
+            actualNoteValue = perfect;
+        }
+        else if (PerfectActivatorCollision == true)
+        {
+            actualNoteValue = perfect;
+        }
+        else if (TooEarlyActivatorCollision == true)
+        {
+            actualNoteValue = great;
+        }
+        else if (TooLateActivatorCollision == true)
+        {
+            actualNoteValue = great;
+        }
+    }
 
+   
 
- 
-}
+    }
