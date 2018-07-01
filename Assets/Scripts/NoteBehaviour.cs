@@ -30,6 +30,8 @@ public class NoteBehaviour : MonoBehaviour
     public bool PerfectActivatorCollision = false;
     public bool TooLateActivatorCollision = false;
 
+    public bool isNoteTheLowest = false;
+
 
 
 

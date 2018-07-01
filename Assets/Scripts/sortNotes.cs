@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class sortNotes : MonoBehaviour {
 
-    public List<GameObject> noteList = new List<GameObject>();
+    public List<GameObject> noteList1 = new List<GameObject>();
+    public List<GameObject> noteList2 = new List<GameObject>();
 
-    GameObject tooLateBlock = GameObject.Find("late miss indicator");
 
     public enum SelectedRow { row1, row2, row3, row4, row5, row6 };
     public SelectedRow selectedRow;
@@ -19,18 +19,26 @@ public class sortNotes : MonoBehaviour {
     private float r5 = 3.1f;
     private float r6 = 5.1f;
 
+    GameObject tooLateBlock;
+
+    float min = 5000f;
+
 
     // Use this for initialization
-   
+
+    void Awake ()
+    {
+        tooLateBlock = GameObject.Find("late miss indicator");
+    }
 
     void Start () {
         rowSelector();
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update () {
+    }
 
 
     void rowSelector()
@@ -41,24 +49,80 @@ public class sortNotes : MonoBehaviour {
             {
                 if (singleNote.GetComponent<Transform>().position.x == r1)
                 {
-                    noteList.Add(singleNote);
+                    noteList1.Add(singleNote);
+                    
+                    if (singleNote.GetComponent<Transform>().position.x == r2)
+                    {
+                        noteList2.Add(singleNote);
+                    }
                 }
             }
-        }
-    }
 
-    void removeNotesFromList()
+            
+                /*
+                if (singleNote.GetComponent<Transform>().position.z == min) ;
+                {
+                    singleNote.gameObject.GetComponent<NoteBehaviour>().isNoteTheLowest = true;
+                }*/
+
+            }
+
+        foreach (GameObject singleNote in noteList1)
+        {
+            Debug.Log(singleNote.GetComponent<Transform>().position.z);
+
+            if (singleNote.GetComponent<Transform>().position.z < min)
+            {
+                
+                min = singleNote.GetComponent<Transform>().position.z;
+                Debug.Log("min" + min);
+            }
+            /*
+            if (singleNote.GetComponent<Transform>().position.z == min)
+            {
+                singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = true;
+
+            }
+            else
+            {
+                singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = false;
+
+            }*/
+        }
+        foreach (GameObject singleNote in noteList1)
+        {
+            if (singleNote.GetComponent<Transform>().position.z == min)
+            {
+                singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = true;
+
+            }
+            else
+            {
+                singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = false;
+
+            }
+            
+        }
+
+
+
+
+        }
+
+    public void removeNotesFromList()
     {
         if (selectedRow == SelectedRow.row1)
         {
-            foreach (GameObject singleNote in GameObject.FindGameObjectsWithTag("Note"))
+            foreach (GameObject singleNote in GameObject.FindGameObjectsWithTag("Note")) //NIE DLA KAŻDEGO A TYLKO DLA JEDNEJ NUTY
             {
                 if (singleNote.GetComponent<Transform>().position.x == r1)
                 {
-                    noteList.Add(singleNote);
+                    noteList1.Remove(singleNote);
                 }
             }
         }
+
+
     }
 
 
