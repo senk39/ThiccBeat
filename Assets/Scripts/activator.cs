@@ -12,7 +12,7 @@ public class activator : MonoBehaviour {
     public KeyCode key;
     public bool active = false;
     public uint currentNoteValue = 0;
-    GameObject note;
+    public GameObject note;
 
     public GameObject earlyTrigger;
     public GameObject lateTrigger;
@@ -41,11 +41,11 @@ public class activator : MonoBehaviour {
 
         //Debug.Log(currentlyTriggeredNotes.Count);
 
-        if (Input.GetKeyDown(key) && active)
+        if (Input.GetKeyDown(key) && active && GetComponent<NoteBehaviour>().isNoteTheLowest)
         {
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
-            active = false;
+            active = false;        
             Destroy(note);
 
         }
@@ -60,8 +60,7 @@ public class activator : MonoBehaviour {
             active = true;
             note = col.gameObject;
             currentlyTriggeredNotes.Add(col.gameObject);
-            destroyIfTooLate();
-            
+            destroyIfTooLate();       
         }
     }
 
@@ -81,7 +80,7 @@ public class activator : MonoBehaviour {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 
-    void destroyIfTooLate()
+    public void destroyIfTooLate()
     {
         
        if (activatorType == ActivatorType.Miss)

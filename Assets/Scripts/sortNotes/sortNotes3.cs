@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sortNotes : MonoBehaviour {
+public class sortNotes3 : MonoBehaviour
+{
 
-    public List<GameObject> noteList1 = new List<GameObject>();
-    public List<GameObject> noteList2 = new List<GameObject>();
+    public List<GameObject> noteList3 = new List<GameObject>();
 
 
     public enum SelectedRow { row1, row2, row3, row4, row5, row6 };
@@ -26,70 +26,58 @@ public class sortNotes : MonoBehaviour {
 
     // Use this for initialization
 
-    void Awake ()
+    void Awake()
     {
         tooLateBlock = GameObject.Find("late miss indicator");
     }
 
-    void Start () {
+    void Start()
+    {
         rowSelector();
 
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
     }
 
 
     void rowSelector()
     {
-        if (selectedRow == SelectedRow.row1)
+        if (selectedRow == SelectedRow.row3)
         {
             foreach (GameObject singleNote in GameObject.FindGameObjectsWithTag("Note"))
             {
-                if (singleNote.GetComponent<Transform>().position.x == r1)
+
+                if (singleNote.GetComponent<Transform>().position.x == r3)
                 {
-                    noteList1.Add(singleNote);
-                    
-                    if (singleNote.GetComponent<Transform>().position.x == r2)
-                    {
-                        noteList2.Add(singleNote);
-                    }
+                    noteList3.Add(singleNote);
                 }
-            }
 
-            
-                /*
-                if (singleNote.GetComponent<Transform>().position.z == min) ;
+                if (singleNote.GetComponent<Transform>().position.x == r3)
                 {
-                    singleNote.gameObject.GetComponent<NoteBehaviour>().isNoteTheLowest = true;
-                }*/
+                    noteList3.Add(singleNote);
+                }
+
 
             }
 
-        foreach (GameObject singleNote in noteList1)
+        }
+
+        foreach (GameObject singleNote in noteList3) //THIS IS CHECKING THE LOWEST Z POSITION
         {
             Debug.Log(singleNote.GetComponent<Transform>().position.z);
 
             if (singleNote.GetComponent<Transform>().position.z < min)
             {
-                
+
                 min = singleNote.GetComponent<Transform>().position.z;
                 Debug.Log("min" + min);
             }
-            /*
-            if (singleNote.GetComponent<Transform>().position.z == min)
-            {
-                singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = true;
 
-            }
-            else
-            {
-                singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = false;
-
-            }*/
         }
-        foreach (GameObject singleNote in noteList1)
+        foreach (GameObject singleNote in noteList3) // THIS ONE IS ASSIGNING THE LOWEST SCORE TO ONE NOTE
         {
             if (singleNote.GetComponent<Transform>().position.z == min)
             {
@@ -101,23 +89,23 @@ public class sortNotes : MonoBehaviour {
                 singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = false;
 
             }
-            
-        }
-
-
-
 
         }
+
+
+
+
+    }
 
     public void removeNotesFromList()
     {
-        if (selectedRow == SelectedRow.row1)
+        if (selectedRow == SelectedRow.row3)
         {
             foreach (GameObject singleNote in GameObject.FindGameObjectsWithTag("Note")) //NIE DLA KAŻDEGO A TYLKO DLA JEDNEJ NUTY
             {
-                if (singleNote.GetComponent<Transform>().position.x == r1)
+                if (singleNote.GetComponent<Transform>().position.x == r3)
                 {
-                    noteList1.Remove(singleNote);
+                    noteList3.Remove(singleNote);
                 }
             }
         }
