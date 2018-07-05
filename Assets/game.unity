@@ -212,6 +212,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: playerComboContainer
@@ -222,6 +223,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -370,9 +373,12 @@ MonoBehaviour:
   lateTrigger: {fileID: 652903401}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+<<<<<<< HEAD
   playerComboContainer: {fileID: 1160227621}
   NoteWithValue: {fileID: 0}
   actNoteValue: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1 &52295584
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +541,7 @@ MonoBehaviour:
   lateTrigger: {fileID: 584184902}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+<<<<<<< HEAD
   playerComboContainer: {fileID: 1160227621}
   NoteWithValue: {fileID: 0}
   actNoteValue: 0
@@ -602,6 +609,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1001 &134318664
 Prefab:
   m_ObjectHideFlags: 0
@@ -649,11 +658,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4560024057876816, guid: c639887552afd2d4fb5a755f6b1967f1,
     type: 2}
   m_PrefabInternal: {fileID: 134318664}
---- !u!4 &176368567 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54,
-    type: 2}
-  m_PrefabInternal: {fileID: 1648099233}
 --- !u!1 &189309015 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1059617047069558, guid: db3846254646a6c4793ada727eb32509,
@@ -1139,6 +1143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCurrentScore: 0
+  keyA: 97
   playerScoreAsText: {fileID: 427617159}
 --- !u!4 &444945520 stripped
 Transform:
@@ -1228,6 +1233,7 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 727bf6a555579364d8847cabda77384b, type: 2}
   - {fileID: 2100000, guid: e7a5eb25fc01c8f498649a87cb7a2eec, type: 2}
+<<<<<<< HEAD
 --- !u!114 &564399290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1289,8 @@ MonoBehaviour:
   PerfectActivatorCollision: 0
   TooLateActivatorCollision: 0
   isNoteTheLowest: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1 &584184902 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54,
@@ -1323,10 +1331,6 @@ Transform:
   - {fileID: 1668263062}
   - {fileID: 1546176189}
   - {fileID: 936493449}
-  - {fileID: 967129984}
-  - {fileID: 573068117}
-  - {fileID: 809749311}
-  - {fileID: 1524094287}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1437,9 +1441,12 @@ MonoBehaviour:
   lateTrigger: {fileID: 1356251262}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+<<<<<<< HEAD
   playerComboContainer: {fileID: 1160227621}
   NoteWithValue: {fileID: 0}
   actNoteValue: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1 &652903401 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1078722452908596, guid: 8149643d9f907c54b9e79d99569fd89e,
@@ -1532,10 +1539,8 @@ RectTransform:
   m_Children:
   - {fileID: 1126839063}
   - {fileID: 427617158}
-  - {fileID: 2007992698}
-  - {fileID: 1160227622}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1653,6 +1658,7 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 727bf6a555579364d8847cabda77384b, type: 2}
   - {fileID: 2100000, guid: e7a5eb25fc01c8f498649a87cb7a2eec, type: 2}
+<<<<<<< HEAD
 --- !u!114 &733213667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +1778,8 @@ MonoBehaviour:
   PerfectActivatorCollision: 0
   TooLateActivatorCollision: 0
   isNoteTheLowest: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1001 &873130387
 Prefab:
   m_ObjectHideFlags: 0
@@ -1937,6 +1945,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: playerComboContainer
@@ -1947,6 +1956,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -2259,6 +2270,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: playerComboContainer
@@ -2378,6 +2390,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   m_IsPrefabParent: 0
+=======
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1001 &1006956680
 Prefab:
   m_ObjectHideFlags: 0
@@ -2485,9 +2502,12 @@ MonoBehaviour:
   lateTrigger: {fileID: 40214602}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+<<<<<<< HEAD
   playerComboContainer: {fileID: 1160227621}
   NoteWithValue: {fileID: 0}
   actNoteValue: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1001 &1027084890
 Prefab:
   m_ObjectHideFlags: 0
@@ -2658,6 +2678,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: playerComboContainer
@@ -2668,6 +2689,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
   m_IsPrefabParent: 0
@@ -2789,6 +2812,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: playerComboContainer
@@ -2799,6 +2823,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
   m_IsPrefabParent: 0
@@ -2920,6 +2946,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: playerComboContainer
@@ -2930,6 +2957,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -3046,95 +3075,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1160227621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1160227622}
-  - component: {fileID: 1160227625}
-  - component: {fileID: 1160227624}
-  - component: {fileID: 1160227623}
-  m_Layer: 5
-  m_Name: Combo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1160227622
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1160227621}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000081, y: 1.0000081, z: 1.0000081}
-  m_Children: []
-  m_Father: {fileID: 658537952}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -575.6002, y: 257.90005}
-  m_SizeDelta: {x: 615.8, y: 121}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1160227623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1160227621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e70cdfdde64bf2c4982f86b5076ef2c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCombo: 0
-  currentCombo: 0
-  currentComboAsText: {fileID: 1160227624}
---- !u!114 &1160227624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1160227621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.834}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
-    m_FontSize: 40
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 1
-    m_MaxSize: 140
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 0000
---- !u!222 &1160227625
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1160227621}
 --- !u!4 &1177442094 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed,
@@ -3192,35 +3132,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4396707520184712, guid: 1fe70f51fa361c4499b617c31dcc4c91,
     type: 2}
   m_PrefabInternal: {fileID: 1207941852}
---- !u!1 &1224806636
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1224806637}
-  m_Layer: 0
-  m_Name: MISS INDICATORS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1224806637
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1224806636}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 176368567}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1253703855
 Prefab:
   m_ObjectHideFlags: 0
@@ -3323,9 +3234,12 @@ MonoBehaviour:
   lateTrigger: {fileID: 548293113}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+<<<<<<< HEAD
   playerComboContainer: {fileID: 1160227621}
   NoteWithValue: {fileID: 0}
   actNoteValue: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1001 &1260090501
 Prefab:
   m_ObjectHideFlags: 0
@@ -3480,9 +3394,12 @@ MonoBehaviour:
   lateTrigger: {fileID: 1594752519}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
+<<<<<<< HEAD
   playerComboContainer: {fileID: 1160227621}
   NoteWithValue: {fileID: 0}
   actNoteValue: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1 &1356251262 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1769960433287966, guid: b668de7d2dcd2f24993b2606568ca0a0,
@@ -3749,6 +3666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   actualNoteValue: 0
   isNoteActive: 0
   earlyActivator: {fileID: 0}
@@ -3800,6 +3718,9 @@ MonoBehaviour:
   PerfectActivatorCollision: 0
   TooLateActivatorCollision: 0
   isNoteTheLowest: 0
+=======
+  notesVelocity: 20
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1 &1541909696 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
@@ -4108,6 +4029,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: playerComboContainer
@@ -4118,6 +4040,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0
@@ -4126,6 +4050,7 @@ Transform:
   m_PrefabParentObject: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0,
     type: 2}
   m_PrefabInternal: {fileID: 1917027201}
+<<<<<<< HEAD
 --- !u!1001 &1648099233
 Prefab:
   m_ObjectHideFlags: 0
@@ -4242,6 +4167,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!1001 &1668263061
 Prefab:
   m_ObjectHideFlags: 0
@@ -4522,6 +4449,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: playerComboContainer
@@ -4532,6 +4460,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
   m_IsPrefabParent: 0
@@ -4634,6 +4564,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: playerComboContainer
@@ -4644,6 +4575,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -4804,6 +4737,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114667885614259936, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: playerComboContainer
@@ -4814,6 +4748,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
   m_IsPrefabParent: 0
@@ -4849,7 +4785,7 @@ Transform:
   - {fileID: 557230044}
   - {fileID: 1790965648}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1865429574 stripped
 GameObject:
@@ -5002,6 +4938,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114491894067887552, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: playerComboContainer
@@ -5012,6 +4949,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 5cf7e86... combo score  quickfix
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
   m_IsPrefabParent: 0
@@ -5049,7 +4988,7 @@ Transform:
   - {fileID: 385529667}
   - {fileID: 1482803967}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1962107140 stripped
 Transform:
@@ -5061,80 +5000,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1239472311067100, guid: 6de51c86ffccc12449833ae2912623ed,
     type: 2}
   m_PrefabInternal: {fileID: 1054946353}
---- !u!1 &2007992697
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2007992698}
-  - component: {fileID: 2007992700}
-  - component: {fileID: 2007992699}
-  m_Layer: 5
-  m_Name: '[Label]Combo'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2007992698
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2007992697}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000081, y: 1.0000081, z: 1.0000081}
-  m_Children: []
-  m_Father: {fileID: 658537952}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -762, y: 346.5}
-  m_SizeDelta: {x: 232.5, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2007992699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2007992697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.834}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
-    m_FontSize: 80
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 6
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Combo:'
---- !u!222 &2007992700
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2007992697}
 --- !u!1001 &2017706341
 Prefab:
   m_ObjectHideFlags: 0
@@ -5253,6 +5118,7 @@ Prefab:
       propertyPath: perfectHitPoints
       value: 200
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: playerComboContainer
@@ -5335,6 +5201,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   m_IsPrefabParent: 0
+=======
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> parent of 5cf7e86... combo score  quickfix
 --- !u!4 &2083251892 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed,
@@ -5400,5 +5271,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
