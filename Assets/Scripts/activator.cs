@@ -46,7 +46,7 @@ public class activator : MonoBehaviour {
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;        
-            Destroy(note);
+            note.SetActive(false);
 
         }
     }
@@ -85,7 +85,10 @@ public class activator : MonoBehaviour {
         
        if (activatorType == ActivatorType.Miss)
         {
-            Destroy(note);
+            //Destroy(note);
+            note.SetActive(false);
+            note.GetComponent<MeshRenderer>().enabled = false;
+
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
         }
     }

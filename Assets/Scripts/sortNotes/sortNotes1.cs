@@ -17,6 +17,8 @@ public class sortNotes1 : MonoBehaviour {
     private float r5 = 3.1f;
     private float r6 = 5.1f;
 
+    private const float ZPositionToDeleteNote = -18f;
+
     GameObject tooLateBlock;
 
     float min = 5000f;
@@ -81,9 +83,18 @@ public class sortNotes1 : MonoBehaviour {
     {
         foreach (GameObject singleNote in noteList1)
         {
-            if (singleNote.GetComponent<Transform>().position.z < min && singleNote.GetComponent<Transform>().position.z != null)
+            if (singleNote.GetComponent<Transform>().position.z < min && singleNote.GetComponent<Transform>().position.z > ZPositionToDeleteNote)
             {
-                min = singleNote.GetComponent<Transform>().position.z;
+                try
+                {
+                    min = singleNote.GetComponent<Transform>().position.z;
+
+                }
+                catch (MissingReferenceException)
+                {
+                    min = 5000f;
+                    throw;
+                }
             }
 
         }
@@ -93,7 +104,7 @@ public class sortNotes1 : MonoBehaviour {
     {
         foreach (GameObject singleNote in noteList1)
         {
-            if (singleNote.GetComponent<Transform>().position.z == min && singleNote.GetComponent<Transform>().position.z != null)
+            if (singleNote.GetComponent<Transform>().position.z == min && singleNote.GetComponent<Transform>().position.z > ZPositionToDeleteNote)
             {
                 singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = true;
             }
@@ -103,6 +114,11 @@ public class sortNotes1 : MonoBehaviour {
                 singleNote.GetComponent<NoteBehaviour>().isNoteTheLowest = false;
             }
         }
+    }
+
+    void clearList() // NEVER USED FOR NOW
+    {
+        noteList1.Clear();
     }
 
 }
