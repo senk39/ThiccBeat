@@ -365,6 +365,7 @@ MonoBehaviour:
   key: 105
   active: 0
   currentNoteValue: 0
+  note: {fileID: 0}
   earlyTrigger: {fileID: 1037323828}
   lateTrigger: {fileID: 652903401}
   activatorType: 0
@@ -529,6 +530,7 @@ MonoBehaviour:
   key: 97
   active: 0
   currentNoteValue: 0
+  note: {fileID: 0}
   earlyTrigger: {fileID: 490022044}
   lateTrigger: {fileID: 584184902}
   activatorType: 0
@@ -1430,6 +1432,7 @@ MonoBehaviour:
   key: 119
   active: 0
   currentNoteValue: 0
+  note: {fileID: 0}
   earlyTrigger: {fileID: 34565895}
   lateTrigger: {fileID: 1356251262}
   activatorType: 0
@@ -2477,6 +2480,7 @@ MonoBehaviour:
   key: 100
   active: 0
   currentNoteValue: 0
+  note: {fileID: 0}
   earlyTrigger: {fileID: 1991835710}
   lateTrigger: {fileID: 40214602}
   activatorType: 0
@@ -3314,6 +3318,7 @@ MonoBehaviour:
   key: 108
   active: 0
   currentNoteValue: 0
+  note: {fileID: 0}
   earlyTrigger: {fileID: 312269789}
   lateTrigger: {fileID: 548293113}
   activatorType: 0
@@ -3470,6 +3475,7 @@ MonoBehaviour:
   key: 106
   active: 0
   currentNoteValue: 0
+  note: {fileID: 0}
   earlyTrigger: {fileID: 1541909696}
   lateTrigger: {fileID: 1594752519}
   activatorType: 0
