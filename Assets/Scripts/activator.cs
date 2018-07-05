@@ -6,118 +6,89 @@ using UnityEngine.UI;
 
 public class activator : MonoBehaviour {
 
-<<<<<<< HEAD
-    //public int greatHitPoints = 50;
-    //public int perfectHitPoints = 200;
-=======
-    public int greatHitPoints = 1;
-    public int perfectHitPoints = 1000;
->>>>>>> parent of 50d9172... SCORE COUNTER DONE
+    public int greatHitPoints = 50;
+    public int perfectHitPoints = 200;
 
     public KeyCode key;
     public bool active = false;
-    public uint currentNoteValue = 0;
-    public GameObject note;
+    public int currentNoteValue = 0;
+    GameObject note;
 
-<<<<<<< HEAD
     public GameObject earlyTrigger;
     public GameObject lateTrigger;
 
 
-=======
-    //ActivatorType currentActivatorType = ActivatorType.Awaiting;
->>>>>>> parent of 50d9172... SCORE COUNTER DONE
     public enum ActivatorType { Perfect, Great, Miss, Awaiting };
     public ActivatorType activatorType;
 
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
-    public GameObject NoteWithValue;
-    public uint actNoteValue;
 
-    
-    List<GameObject> currentlyTriggeredNotes;
-    GameObject[] zValuesOfCurrentlyTriggeredNotes;
 
     // Use this for initialization
     void Start () {
-        currentlyTriggeredNotes = new List<GameObject>();
-
     }
 
     // Update is called once per frame
     void Update () {
 
-        //Debug.Log(currentlyTriggeredNotes.Count);
-
-        if (Input.GetKeyDown(key) && active && GetComponent<NoteBehaviour>().isNoteTheLowest)
+        if (Input.GetKeyDown(key) && active)
         {
+            Destroy(note);
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
-            active = false;        
-            note.SetActive(false);
-
+            active = false;
         }
-
     }
 
     void OnTriggerEnter(Collider col)
     {
-        active = true;
-        if(col.gameObject.tag=="Note")
+
+
+        if (col.gameObject.tag=="Note")
         {
-            if (activatorType == ActivatorType.Perfect)
-            {
-                currentNoteValue = perfectHitPoints;
-            }
-
-            else
-            {
-                currentNoteValue = greatHitPoints;
-            }
-
+            active = true;
             note = col.gameObject;
-<<<<<<< HEAD
-            currentlyTriggeredNotes.Add(col.gameObject);
-            destroyIfTooLate();       
-=======
->>>>>>> parent of 50d9172... SCORE COUNTER DONE
+            checkPressedActivatorType();
         }
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Note")
-        {
-            active = false;
-            currentNoteValue = 0;
-            currentlyTriggeredNotes.Remove(col.gameObject);
-        }
+        active = false;
+        currentNoteValue = 0;
     }
 
    public void addScore()
     {
-        actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue;
-        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
+        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += currentNoteValue;
     }
 
-<<<<<<< HEAD
-    public void destroyIfTooLate()
+    void checkPressedActivatorType()
     {
-        
+        if (activatorType == ActivatorType.Perfect)
+        {
+            blockNonPerfectHits();
+        }
+
+       if (activatorType == ActivatorType.Great)
+        {
+            currentNoteValue = greatHitPoints;
+        }
+
        if (activatorType == ActivatorType.Miss)
         {
-            //Destroy(note);
-            note.SetActive(false);
-            note.GetComponent<MeshRenderer>().enabled = false;
-
+            Destroy(note);
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
         }
     }
 
-   
+    void blockNonPerfectHits()
+    {
+        earlyTrigger.SetActive(false);
+        lateTrigger.SetActive(false);
+        active = true;
+        currentNoteValue = perfectHitPoints;
+    }
 
-=======
-    
->>>>>>> parent of 50d9172... SCORE COUNTER DONE
 }
