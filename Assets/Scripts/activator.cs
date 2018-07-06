@@ -107,6 +107,7 @@ public class activator : MonoBehaviour {
         {
             currentCollisions.Add(note);
             Debug.Log("array: " + currentCollisions);
+           
         }
     }
 
