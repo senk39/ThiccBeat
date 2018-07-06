@@ -6,10 +6,9 @@ public class NoteBehaviour : MonoBehaviour
 {
     Transform tf;
 
-
     private uint missOrNotActivated = 0;
-    private uint great = 50;
-    private uint perfect = 200;
+    public uint great = 50;
+    public uint perfect = 200;
     public uint actualNoteValue;
 
     public bool isNoteActive = false;
@@ -17,6 +16,8 @@ public class NoteBehaviour : MonoBehaviour
     public GameObject earlyActivator;
     public GameObject perfectActivator;
     public GameObject lateActivator;
+
+    public GameObject tooLateNoteDestroyer;
 
     private float row1 = -5.1f;
     private float row2 = -3.1f;
@@ -26,23 +27,12 @@ public class NoteBehaviour : MonoBehaviour
     private float row5 = 3.1f;
     private float row6 = 5.1f;
 
-    public bool TooEarlyActivatorCollision = false;
-    public bool PerfectActivatorCollision = false;
-    public bool TooLateActivatorCollision = false;
-
-    public bool isNoteTheLowest = false;
-
-
-
-
 
     void Awake()
     {
         tf = GetComponent<Transform>();
-
-
+        tooLateNoteDestroyer = GameObject.Find("late miss indicator");
     }
-
 
     // Use this for initialization
     void Start()
@@ -54,43 +44,42 @@ public class NoteBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        noteScoring();
+        if (actualNoteValue > 0)
+        {
+            isNoteActive = true;
+        }
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "TooEarlyIndicator")
-        {
-            TooEarlyActivatorCollision = true;
-        }
-
         if (col.gameObject.tag == "Indicator")
         {
-            PerfectActivatorCollision = true;
+            actualNoteValue = perfect;
         }
-
-        if (col.gameObject.tag == "TooLateIndicator")
+        if (col.gameObject.tag == "TooEarlyIndicator" || col.gameObject.tag == "TooLateIndicator")
         {
-            TooLateActivatorCollision = true;
+            actualNoteValue = great;
         }
+        /*
+        if (col.gameObject == tooLateNoteDestroyer)
+        {
+            Debug.Log("39");
+            Destroy(gameObject);
+        }
+        */
     }
 
     void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "TooEarlyIndicator")
-        {
-            TooEarlyActivatorCollision = false;
-        }
-
         if (col.gameObject.tag == "Indicator")
         {
-            PerfectActivatorCollision = false;
+            actualNoteValue = great;
         }
-
         if (col.gameObject.tag == "TooLateIndicator")
         {
-            TooLateActivatorCollision = false;
+            actualNoteValue = missOrNotActivated;
         }
+        //if(col.gameObject.)
     }
 
     void autoIndicatorSetter()
@@ -139,31 +128,4 @@ public class NoteBehaviour : MonoBehaviour
     }
 
 
-
-    void noteScoring()
-    {
-        if (TooEarlyActivatorCollision == true && PerfectActivatorCollision == true)
-        {
-            actualNoteValue = perfect;
-        }
-        else if (PerfectActivatorCollision == true && TooLateActivatorCollision == true)
-        {
-            actualNoteValue = perfect;
-        }
-        else if (PerfectActivatorCollision == true)
-        {
-            actualNoteValue = perfect;
-        }
-        else if (TooEarlyActivatorCollision == true)
-        {
-            actualNoteValue = great;
-        }
-        else if (TooLateActivatorCollision == true)
-        {
-            actualNoteValue = great;
-        }
-    }
-
-   
-
-    }
+}

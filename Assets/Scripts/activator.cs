@@ -6,25 +6,29 @@ using UnityEngine.UI;
 
 public class activator : MonoBehaviour {
 
-    public int greatHitPoints = 50;
-    public int perfectHitPoints = 200;
+    //public int greatHitPoints = 50;
+    //public int perfectHitPoints = 200;
 
     public KeyCode key;
     public bool active = false;
-    public int currentNoteValue = 0;
     GameObject note;
 
     public GameObject earlyTrigger;
     public GameObject lateTrigger;
 
 
-    public enum ActivatorType { Perfect, Great, Miss, Awaiting };
+    public enum ActivatorType { Perfect, EarlyGreat, LateGreat, Miss, Awaiting };
     public ActivatorType activatorType;
 
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
+    public GameObject NoteWithValue;
+    public uint actNoteValue;
+
     public int incrementator = 0;
+
+    List<GameObject> currentCollisions = new List<GameObject>();
 
 
     // Use this for initialization
@@ -34,30 +38,38 @@ public class activator : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+       // Debug.Log(incrementator);
+
         if (Input.GetKeyDown(key) && active)
         {
-            Destroy(note);
             incrementator--;
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;
+            destroyNote();
+            incrementator--;
         }
     }
 
     void OnTriggerEnter(Collider col)
     {
-
         if (col.gameObject.tag=="Note")
         {
             incrementator++;
+            addToReadyNotesList();
 
+
+            active = true;
+            note = col.gameObject;
+            missNote();
+            /*
             if (incrementator == 0 || incrementator == 1)
             {
 
                 active = true;
                 note = col.gameObject;
-                checkPressedActivatorType();
-            }
+                missNote();
+            }*/
             
         }
     }
@@ -68,41 +80,40 @@ public class activator : MonoBehaviour {
         {
             incrementator--;
             active = false;
-            currentNoteValue = 0;
+            actNoteValue = 0;
         }
         
     }
 
    public void addScore()
     {
-        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += currentNoteValue;
+        actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue;
+        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 
-    void checkPressedActivatorType()
+    void missNote()
     {
-        if (activatorType == ActivatorType.Perfect)
+        if (activatorType == ActivatorType.Miss)
         {
-            blockNonPerfectHits();
-        }
-
-       if (activatorType == ActivatorType.Great)
-        {
-            currentNoteValue = greatHitPoints;
-        }
-
-       if (activatorType == ActivatorType.Miss)
-        {
-            Destroy(note);
+            destroyNote();
+            incrementator--;
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
         }
     }
 
-    void blockNonPerfectHits()
+    void addToReadyNotesList()
     {
-        earlyTrigger.SetActive(false);
-        lateTrigger.SetActive(false);
-        active = true;
-        currentNoteValue = perfectHitPoints;
+        if (activatorType == ActivatorType.EarlyGreat)
+        {
+            currentCollisions.Add(note);
+            Debug.Log("array: " + currentCollisions);
+        }
     }
 
+
+    void destroyNote()
+    {
+        Destroy(note);
+        currentCollisions.Remove(note);
+    }
 }
