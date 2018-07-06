@@ -344,16 +344,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 50
-  perfectHitPoints: 200
   key: 105
   active: 0
-  currentNoteValue: 0
   earlyTrigger: {fileID: 1037323828}
   lateTrigger: {fileID: 652903401}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  NoteWithValue: {fileID: 0}
+  actNoteValue: 0
   incrementator: 0
 --- !u!1 &52295584
 GameObject:
@@ -493,16 +492,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 50
-  perfectHitPoints: 200
   key: 97
   active: 0
-  currentNoteValue: 0
   earlyTrigger: {fileID: 490022044}
   lateTrigger: {fileID: 584184902}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  NoteWithValue: {fileID: 0}
+  actNoteValue: 0
   incrementator: 0
 --- !u!1001 &91082860
 Prefab:
@@ -1198,6 +1196,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &573068123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573068116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1 &584184902 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54,
@@ -1344,16 +1361,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 50
-  perfectHitPoints: 200
   key: 119
   active: 0
-  currentNoteValue: 0
   earlyTrigger: {fileID: 34565895}
   lateTrigger: {fileID: 1356251262}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  NoteWithValue: {fileID: 0}
+  actNoteValue: 0
   incrementator: 0
 --- !u!1 &652903401 stripped
 GameObject:
@@ -1649,6 +1665,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &809749317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 809749310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1001 &873130387
 Prefab:
   m_ObjectHideFlags: 0
@@ -1886,6 +1921,10 @@ Prefab:
       propertyPath: m_TagString
       value: Note
       objectReference: {fileID: 0}
+    - target: {fileID: 1293028328268020, guid: 5cf60e6065692464e93f36baf36872e7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5cf60e6065692464e93f36baf36872e7, type: 2}
   m_IsPrefabParent: 0
@@ -1926,6 +1965,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &936493456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936493450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1 &954831824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2194,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &967129990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967129983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1001 &969818819
 Prefab:
   m_ObjectHideFlags: 0
@@ -2294,16 +2371,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 50
-  perfectHitPoints: 200
   key: 100
   active: 0
-  currentNoteValue: 0
   earlyTrigger: {fileID: 1991835710}
   lateTrigger: {fileID: 40214602}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  NoteWithValue: {fileID: 0}
+  actNoteValue: 0
   incrementator: 0
 --- !u!1001 &1027084890
 Prefab:
@@ -3117,16 +3193,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 50
-  perfectHitPoints: 200
   key: 108
   active: 0
-  currentNoteValue: 0
   earlyTrigger: {fileID: 312269789}
   lateTrigger: {fileID: 548293113}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  NoteWithValue: {fileID: 0}
+  actNoteValue: 0
   incrementator: 0
 --- !u!1001 &1260090501
 Prefab:
@@ -3274,16 +3349,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f329cdc73aca7c94a8deafad038c8f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greatHitPoints: 50
-  perfectHitPoints: 200
   key: 106
   active: 0
-  currentNoteValue: 0
   earlyTrigger: {fileID: 1541909696}
   lateTrigger: {fileID: 1594752519}
   activatorType: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  NoteWithValue: {fileID: 0}
+  actNoteValue: 0
   incrementator: 0
 --- !u!1 &1356251262 stripped
 GameObject:
@@ -3399,6 +3473,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &1463186687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1463186681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1001 &1482803966
 Prefab:
   m_ObjectHideFlags: 0
@@ -3583,7 +3676,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 2
+  notesVelocity: 3
+--- !u!114 &1519119609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1519119603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1 &1524094286 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5,
@@ -3606,6 +3718,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &1524094293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1524094286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1 &1541909696 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
@@ -3715,6 +3846,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &1546176196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1546176190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1 &1594752519 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1045315835547344, guid: 6170aaba75ad548429b9f078e484bcb9,
@@ -4117,6 +4267,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notesVelocity: 3
+--- !u!114 &1668263069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1668263063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4825a8c02fa3ed64fba0b5b9ecd6146b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  great: 50
+  perfect: 200
+  actualNoteValue: 0
+  isNoteActive: 0
+  earlyActivator: {fileID: 0}
+  perfectActivator: {fileID: 0}
+  lateActivator: {fileID: 0}
+  tooLateNoteDestroyer: {fileID: 0}
 --- !u!1 &1694768307 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1945959789779338, guid: 5ed1a8d17b75ced4b8daf376d47367e3,
