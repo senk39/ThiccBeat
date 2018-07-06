@@ -24,6 +24,8 @@ public class activator : MonoBehaviour {
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
+    public int incrementator = 0;
+
 
     // Use this for initialization
     void Start () {
@@ -35,6 +37,7 @@ public class activator : MonoBehaviour {
         if (Input.GetKeyDown(key) && active)
         {
             Destroy(note);
+            incrementator--;
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;
@@ -44,19 +47,30 @@ public class activator : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
 
-
         if (col.gameObject.tag=="Note")
         {
-            active = true;
-            note = col.gameObject;
-            checkPressedActivatorType();
+            incrementator++;
+
+            if (incrementator == 0 || incrementator == 1)
+            {
+
+                active = true;
+                note = col.gameObject;
+                checkPressedActivatorType();
+            }
+            
         }
     }
 
     void OnTriggerExit(Collider col)
     {
-        active = false;
-        currentNoteValue = 0;
+        if (col.gameObject.tag == "Note")
+        {
+            incrementator--;
+            active = false;
+            currentNoteValue = 0;
+        }
+        
     }
 
    public void addScore()
