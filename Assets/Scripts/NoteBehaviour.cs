@@ -19,6 +19,13 @@ public class NoteBehaviour : MonoBehaviour
 
     public GameObject tooLateNoteDestroyer;
 
+    public List<GameObject> activeNotesRow1 = new List<GameObject>();
+    public List<GameObject> activeNotesRow2 = new List<GameObject>();
+    public List<GameObject> activeNotesRow3 = new List<GameObject>();
+    public List<GameObject> activeNotesRow4 = new List<GameObject>();
+    public List<GameObject> activeNotesRow5 = new List<GameObject>();
+    public List<GameObject> activeNotesRow6 = new List<GameObject>();
+
     private float row1 = -5.1f;
     private float row2 = -3.1f;
     private float row3 = -1.1f;
@@ -47,6 +54,7 @@ public class NoteBehaviour : MonoBehaviour
         if (actualNoteValue > 0)
         {
             isNoteActive = true;
+
         }
     }
 
@@ -60,6 +68,8 @@ public class NoteBehaviour : MonoBehaviour
         {
             actualNoteValue = great;
         }
+        addNoteToProperList();
+
         /*
         if (col.gameObject == tooLateNoteDestroyer)
         {
@@ -127,5 +137,36 @@ public class NoteBehaviour : MonoBehaviour
         }
     }
 
+    void addNoteToProperList()
+    {
+        if (tf.position.x == row1)
+        {
+            activeNotesRow1.Add(this.gameObject);
+        }
 
+        if (tf.position.x == row2)
+        {
+           
+        }
+
+        if (tf.position.x == row3)
+        {
+            
+        }
+
+        if (tf.position.x == row4)
+        {
+           
+        }
+
+        if (tf.position.x == row5)
+        {
+            
+        }
+
+        if (tf.position.x == row6)
+        {
+           
+        }
+    }
 }
