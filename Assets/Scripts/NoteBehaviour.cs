@@ -19,20 +19,8 @@ public class NoteBehaviour : MonoBehaviour
 
     public GameObject tooLateNoteDestroyer;
 
-    public List<GameObject> activeNotesRow1 = new List<GameObject>();
-    public List<GameObject> activeNotesRow2 = new List<GameObject>();
-    public List<GameObject> activeNotesRow3 = new List<GameObject>();
-    public List<GameObject> activeNotesRow4 = new List<GameObject>();
-    public List<GameObject> activeNotesRow5 = new List<GameObject>();
-    public List<GameObject> activeNotesRow6 = new List<GameObject>();
 
-    private float row1 = -5.1f;
-    private float row2 = -3.1f;
-    private float row3 = -1.1f;
-    //====================
-    private float row4 = 1.1f;
-    private float row5 = 3.1f;
-    private float row6 = 5.1f;
+  
 
 
     void Awake()
@@ -45,7 +33,6 @@ public class NoteBehaviour : MonoBehaviour
     void Start()
     {
         actualNoteValue = missOrNotActivated;
-        autoIndicatorSetter();
     }
 
     // Update is called once per frame
@@ -68,7 +55,6 @@ public class NoteBehaviour : MonoBehaviour
         {
             actualNoteValue = great;
         }
-        addNoteToProperList();
 
         /*
         if (col.gameObject == tooLateNoteDestroyer)
@@ -92,81 +78,5 @@ public class NoteBehaviour : MonoBehaviour
         //if(col.gameObject.)
     }
 
-    void autoIndicatorSetter()
-    {
-        if (tf.position.x == row1)
-        {
-            earlyActivator = GameObject.Find("too early note indicator 1");
-            perfectActivator = GameObject.Find("note indicator 1");
-            lateActivator = GameObject.Find("too late note indicator 1");
-        }
-
-        if (tf.position.x == row2)
-        {
-            earlyActivator = GameObject.Find("too early note indicator 2");
-            perfectActivator = GameObject.Find("note indicator 2");
-            lateActivator = GameObject.Find("too late note indicator 2");
-        }
-
-        if (tf.position.x == row3)
-        {
-            earlyActivator = GameObject.Find("too early note indicator 3");
-            perfectActivator = GameObject.Find("note indicator 3");
-            lateActivator = GameObject.Find("too late note indicator 3");
-        }
-
-        if (tf.position.x == row4)
-        {
-            earlyActivator = GameObject.Find("too early note indicator 4");
-            perfectActivator = GameObject.Find("note indicator 4");
-            lateActivator = GameObject.Find("too late note indicator 4");
-        }
-
-        if (tf.position.x == row5)
-        {
-            earlyActivator = GameObject.Find("too early note indicator 5");
-            perfectActivator = GameObject.Find("note indicator 5");
-            lateActivator = GameObject.Find("too late note indicator 5");
-        }
-
-        if (tf.position.x == row6)
-        {
-            earlyActivator = GameObject.Find("too early note indicator 6");
-            perfectActivator = GameObject.Find("note indicator 6");
-            lateActivator = GameObject.Find("too late note indicator 6");
-        }
-    }
-
-    void addNoteToProperList()
-    {
-        if (tf.position.x == row1)
-        {
-            activeNotesRow1.Add(this.gameObject);
-        }
-
-        if (tf.position.x == row2)
-        {
-           
-        }
-
-        if (tf.position.x == row3)
-        {
-            
-        }
-
-        if (tf.position.x == row4)
-        {
-           
-        }
-
-        if (tf.position.x == row5)
-        {
-            
-        }
-
-        if (tf.position.x == row6)
-        {
-           
-        }
-    }
+    
 }
