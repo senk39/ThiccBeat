@@ -8,11 +8,29 @@ public class onlyTheLowestNoteIsActive : MonoBehaviour
     // Declare and initialize a new List of GameObjects called currentCollisions.
     List<GameObject> currentCollisions = new List<GameObject>();
 
-    void OnCollisionEnter(Collision col)
+    void Start()
     {
 
-        // Add the GameObject collided with to the list.
-        currentCollisions.Add(col.gameObject);
+    }
+
+    void Update()
+    {
+
+    }
+
+    void OnTriggerEnter(Collision col)
+    {
+
+        if (col.gameObject.tag == "Note")
+        {
+            addToReadyNotesList();
+
+
+            active = true;
+            note = col.gameObject;
+            missNote();
+
+        }
 
         // Print the entire list to the console.
         foreach (GameObject gObject in currentCollisions)

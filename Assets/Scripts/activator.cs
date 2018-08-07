@@ -17,7 +17,7 @@ public class activator : MonoBehaviour {
     public GameObject lateTrigger;
 
 
-    public enum ActivatorType { Perfect, EarlyGreat, LateGreat, Miss, Awaiting };
+    public enum ActivatorType { Perfect, EarlyGreat, LateGreat, Miss, Awaiting, AnyPositiveActivator };
     public ActivatorType activatorType;
 
     public GameObject playerScoreContainer;
@@ -27,6 +27,7 @@ public class activator : MonoBehaviour {
     public uint actNoteValue;
 
     public int incrementator = 0;
+    public bool isTheLowest = false;
 
     List<GameObject> currentCollisions = new List<GameObject>();
 
@@ -42,12 +43,10 @@ public class activator : MonoBehaviour {
 
         if (Input.GetKeyDown(key) && active)
         {
-            incrementator--;
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;
             destroyNote();
-            incrementator--;
         }
     }
 
@@ -55,21 +54,12 @@ public class activator : MonoBehaviour {
     {
         if (col.gameObject.tag=="Note")
         {
-            incrementator++;
             addToReadyNotesList();
 
 
             active = true;
             note = col.gameObject;
             missNote();
-            /*
-            if (incrementator == 0 || incrementator == 1)
-            {
-
-                active = true;
-                note = col.gameObject;
-                missNote();
-            }*/
             
         }
     }
@@ -78,7 +68,6 @@ public class activator : MonoBehaviour {
     {
         if (col.gameObject.tag == "Note")
         {
-            incrementator--;
             active = false;
             actNoteValue = 0;
         }
@@ -96,7 +85,6 @@ public class activator : MonoBehaviour {
         if (activatorType == ActivatorType.Miss)
         {
             destroyNote();
-            incrementator--;
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
         }
     }

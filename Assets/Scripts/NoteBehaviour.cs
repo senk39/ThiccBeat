@@ -40,6 +40,8 @@ public class NoteBehaviour : MonoBehaviour
     {
         if (actualNoteValue > 0)
         {
+
+            //hycnij te nutki
             isNoteActive = true;
 
         }
@@ -56,13 +58,6 @@ public class NoteBehaviour : MonoBehaviour
             actualNoteValue = great;
         }
 
-        /*
-        if (col.gameObject == tooLateNoteDestroyer)
-        {
-            Debug.Log("39");
-            Destroy(gameObject);
-        }
-        */
     }
 
     void OnTriggerExit(Collider col)
