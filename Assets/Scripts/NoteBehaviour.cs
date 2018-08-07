@@ -13,52 +13,56 @@ public class NoteBehaviour : MonoBehaviour
 
     public bool isNoteActive = false;
 
-    public GameObject earlyActivator;
+
     public GameObject perfectActivator;
-    public GameObject lateActivator;
+    public GameObject pinkBar;
+    private float positionZero;
 
-    public GameObject tooLateNoteDestroyer;
 
-
-  
 
 
     void Awake()
     {
         tf = GetComponent<Transform>();
-        tooLateNoteDestroyer = GameObject.Find("late miss indicator");
     }
 
     // Use this for initialization
     void Start()
     {
-        actualNoteValue = missOrNotActivated;
+        actualNoteValue = missOrNotActivated; // gdy nuta jest tworzona dostaje wartosc 0 punktów.
+        pinkBar = GameObject.Find("pink stripe 1");
+        positionZero = pinkBar.transform.position.z; // punkt perfect jest tam gdzie różowa pozioma belka
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (actualNoteValue > 0)
+        
+        if (actualNoteValue > 0) //ten warunek jest do zmiany z pewnością :V 
         {
 
             //hycnij te nutki
             isNoteActive = true;
 
         }
+        noteValueChanger();
     }
 
-    void OnTriggerEnter(Collider col)
+    void noteValueChanger()
     {
-        if (col.gameObject.tag == "Indicator")
+        float noteZPos = tf.position.z;
+        if (Mathf.Abs(noteZPos - positionZero) <= 3)
         {
-            actualNoteValue = perfect;
-        }
-        if (col.gameObject.tag == "TooEarlyIndicator" || col.gameObject.tag == "TooLateIndicator")
-        {
-            actualNoteValue = great;
+            actualNoteValue = great; // DORÓB LOGIKĘ DO PERFECT!!!!!!!!!!!!!!!!!!!!!!!1
+
         }
 
     }
+        
+       
+    
+       
 
     void OnTriggerExit(Collider col)
     {
@@ -72,6 +76,6 @@ public class NoteBehaviour : MonoBehaviour
         }
         //if(col.gameObject.)
     }
-
-    
 }
+    
+
