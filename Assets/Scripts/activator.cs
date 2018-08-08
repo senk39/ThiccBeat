@@ -76,7 +76,7 @@ public class activator : MonoBehaviour {
 
    public void addScore()
     {
-        actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue;
+        actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue; ///// DODAJ TU JAKIEGOŚ IF IF NOT DESTROYED BO MI ODWOŁUJE SIĘ DO ROZWALONEJ NUTKI
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 

@@ -18,6 +18,10 @@ public class NoteBehaviour : MonoBehaviour
     public GameObject pinkBar;
     private float positionZero;
 
+    private const float perfectDistance = 2.5f;
+    private const float greatDistance = 6f;
+
+
 
 
 
@@ -39,7 +43,7 @@ public class NoteBehaviour : MonoBehaviour
     void Update()
     {
         
-        if (actualNoteValue > 0) //ten warunek jest do zmiany z pewnością :V 
+        if (actualNoteValue > 0) //ten warunek jest do zmiany z pewnością jeśli chcesz aby nutki się klikały w dobrej kolejności :V 
         {
 
             //hycnij te nutki
@@ -52,12 +56,16 @@ public class NoteBehaviour : MonoBehaviour
     void noteValueChanger()
     {
         float noteZPos = tf.position.z;
-        if (Mathf.Abs(noteZPos - positionZero) <= 3)
+       
+        if (Mathf.Abs(noteZPos - positionZero) <= perfectDistance)
+        {
+            actualNoteValue = perfect;
+        }
+        else if (Mathf.Abs(noteZPos - positionZero) <= greatDistance)
         {
             actualNoteValue = great; // DORÓB LOGIKĘ DO PERFECT!!!!!!!!!!!!!!!!!!!!!!!1
 
         }
-
     }
         
        
