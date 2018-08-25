@@ -63,7 +63,7 @@ public class NoteBehaviour : MonoBehaviour
         }
         else if (Mathf.Abs(noteZPos - positionZero) <= greatDistance)
         {
-            actualNoteValue = great; // DORÓB LOGIKĘ DO PERFECT!!!!!!!!!!!!!!!!!!!!!!!1
+            actualNoteValue = great;
 
         }
     }

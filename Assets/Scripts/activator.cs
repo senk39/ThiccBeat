@@ -58,7 +58,7 @@ public class activator : MonoBehaviour {
 
 
             active = true;
-            note = col.gameObject;
+            note = col.gameObject;  // TU JEST BŁĄD. PRZY KAŻDEJ NOWEJ KOLIZJI OBIEKT NUTA JEST ZAMIENIANY PRZEZ NOWĄ SPADAJĄCĄ NUTKĘ
             missNote();
             
         }
@@ -91,12 +91,11 @@ public class activator : MonoBehaviour {
 
     void addToReadyNotesList()
     {
-        if (activatorType == ActivatorType.EarlyGreat)
-        {
+      
             currentCollisions.Add(note);
             Debug.Log("array: " + currentCollisions);
            
-        }
+        
     }
 
 

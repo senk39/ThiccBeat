@@ -10,6 +10,7 @@ TagManager:
   - Pink Bar
   - TooEarlyIndicator
   - TooLateIndicator
+  - InterfaceStripe
   layers:
   - Default
   - TransparentFX
