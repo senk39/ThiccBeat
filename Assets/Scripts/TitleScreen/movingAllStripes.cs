@@ -9,24 +9,17 @@ public class movingAllStripes : MonoBehaviour {
     public float speed;
     
 
-// Use this for initialization
 void Start () {
         pos = tf.position;
-        speed = 5f;
-        Debug.Log(pos);
-
+        speed = 1f;
 	}
 
-    // Update is called once per frame
-    void Update()
+void Update()
     {
-        //pos.y = 180f;
-        if (pos.x >= 755f)           //755 było prawie ok wartocią
+        if (pos.x >= (580f))        
 
         {
-            pos.x = -455f;
-           
-
+            pos.x = 0f;
         }
         else
         {
