@@ -235,8 +235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trans: {fileID: 482655682}
-  newScale: 0
-  freezeTime: 2
 --- !u!1 &519253194
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +246,7 @@ GameObject:
   - component: {fileID: 519253197}
   - component: {fileID: 519253196}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Pink Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -476,6 +474,8 @@ GameObject:
   - component: {fileID: 1028036627}
   - component: {fileID: 1028036629}
   - component: {fileID: 1028036628}
+  - component: {fileID: 1028036630}
+  - component: {fileID: 1028036631}
   m_Layer: 5
   m_Name: Press Any Key
   m_TagString: Untagged
@@ -535,6 +535,30 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1028036626}
   m_CullTransparentMesh: 0
+--- !u!114 &1028036630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028036626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fc0470719254e40bff46c4e9812739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trans: {fileID: 1028036627}
+  obb: {fileID: 1028036626}
+--- !u!225 &1028036631
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028036626}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1205514668
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +647,7 @@ GameObject:
   - component: {fileID: 1338190000}
   - component: {fileID: 1338189999}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Version text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -644,8 +668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 211.6, y: 162.5}
-  m_SizeDelta: {x: 224.9, y: 30}
+  m_AnchoredPosition: {x: 211.6, y: 157.24998}
+  m_SizeDelta: {x: 224.9, y: 40.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338189999
 MonoBehaviour:
@@ -679,7 +703,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: version 2018/08/25 pre-alpha
+  m_Text: 'version 2018/08/29 pre-alpha
+
+    NOT PLAYABLE'
 --- !u!222 &1338190000
 CanvasRenderer:
   m_ObjectHideFlags: 0
