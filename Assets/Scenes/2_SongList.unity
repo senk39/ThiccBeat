@@ -918,6 +918,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1088651286}
   m_CullTransparentMesh: 0
+--- !u!1001 &1180754744
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4866688960523682, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 85cb08befe3c4844f94324caa772102b, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &1180754745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1547844127454248, guid: 85cb08befe3c4844f94324caa772102b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1180754744}
+--- !u!114 &1180754746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1180754745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacd0c2a6eb5a1d468b6556e79818022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1205514668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,8 +1216,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -135, y: -33}
-  m_SizeDelta: {x: 225, y: 40}
+  m_AnchoredPosition: {x: -135, y: -79.2}
+  m_SizeDelta: {x: 225, y: 132.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338189999
 MonoBehaviour:
@@ -1187,13 +1245,16 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'version 2018/08/29 pre-alpha
+  m_Text: 'SONG LIST SCENE
+
+
+    version 2018/08/29 pre-alpha
 
     NOT PLAYABLE'
 --- !u!222 &1338190000
