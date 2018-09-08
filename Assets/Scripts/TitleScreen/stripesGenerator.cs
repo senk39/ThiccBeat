@@ -6,8 +6,20 @@ public class stripesGenerator : MonoBehaviour {
 
     public GameObject stripe;
     public Transform stripeTr;
+
     public GameObject father;
     public Transform fatherTr;
+
+    public GameObject stripeClone;
+    public Transform stripeCloneTr;
+
+    float singleStripeXPos;
+    float singleStripeYPos;
+
+    public float distanceBetweenStripes = 400.0F;
+
+    float posXOfAllStripes;
+
 
 
     // Use this for initialization
@@ -17,19 +29,39 @@ public class stripesGenerator : MonoBehaviour {
         father = GameObject.Find("Stripes");
         fatherTr = GameObject.Find("Stripes").transform;
 
+        singleStripeXPos = stripeTr.position.x;
+        singleStripeYPos = stripeTr.position.y;
 
-        for (int i = 0; i < 10; i++)
+        posXOfAllStripes = fatherTr.position.x;
+
+
+        for (int i = 0; i < 20; i++)    // GENERUJE PASKI
         {
-            Instantiate(stripeTr, new Vector3(i * 20.0F, 0, 0), Quaternion.identity);
-            stripeTr.parent = fatherTr;
+            Instantiate(stripeTr, new Vector3(((i * distanceBetweenStripes) + singleStripeXPos), singleStripeYPos, 0), Quaternion.identity);
+            stripeTr.name = "Stripe"+ i ;
+         
+        }
+        
+        for (int i = 0; i < 19; i++) //  PĘTLA NADAJĄCA PRAWA RODZICIELSKIE OBIEKTOWI STRIPES
+        {
             
-
+            string searchedString = "Stripe" + i + "(Clone)";
+            stripeClone = GameObject.Find("Stripe" + i + "(Clone)");
+            stripeClone.transform.SetParent(fatherTr);
         }
 
+        //OSTATNI Z PASKÓW NIE MA DOPISKU CLONE WIĘC NIM SIĘ ZAJĄŁEM POZA PĘTLĄ
+        stripeClone = GameObject.Find("Stripe19");
+        stripeClone.transform.SetParent(fatherTr);
+
+        //TEN PASEK JEST PASKIEM POCZĄTKOWO WIDOCZNYM W HIERARCHII. USUWAM GO ABY NIE WYŚWIETLIĆ DWÓCH TAKICH SAMYCH PASKÓW W MIEJSCU NAJBARDZIEJ PO LEWEJ STRONIE NA STARCIE GRY.
+        stripeClone = GameObject.Find("SingleStripe(Clone)");
+        Destroy(stripeClone);
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    void Update () {
+        posXOfAllStripes += 5;
+    }
 }
