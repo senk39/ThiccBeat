@@ -13,6 +13,9 @@ EditorBuildSettings:
     guid: 31253afa8bdd6b64d88065b4445dc7f1
   - enabled: 1
     path: Assets/Scenes/2_SongList.unity
+    guid: 0718a20287b4c43499b23e46637b2f4e
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/8f832a7afa61b634f939627f2770598c
     guid: 8f832a7afa61b634f939627f2770598c
   - enabled: 1
     path: Assets/Scenes/3_Options.unity
