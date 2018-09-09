@@ -18,7 +18,6 @@ public class stripesGenerator : MonoBehaviour {
 
     public float distanceBetweenStripes = 400.0F;
 
-
     Vector3[] stripePos;
 
     // Use this for initialization
@@ -37,11 +36,6 @@ public class stripesGenerator : MonoBehaviour {
         {
             Instantiate(stripeTr, new Vector3(((i * distanceBetweenStripes) + singleStripeXPos), singleStripeYPos, 0), Quaternion.identity);
             stripeTr.name = "Stripe"+ i ;
-
-            //stripePos[i] = new Vector3(((i * distanceBetweenStripes) + singleStripeXPos), singleStripeYPos, 0);
-            //Debug.Log(stripeTr.position.x);
-            //Debug.Log(stripePos[i]);
-
         }
         
         for (int i = 0; i < 19; i++) //  PĘTLA NADAJĄCA PRAWA RODZICIELSKIE OBIEKTOWI STRIPES
@@ -53,24 +47,13 @@ public class stripesGenerator : MonoBehaviour {
             stripeClone.GetComponent<returningStripe>().tf = stripeClone.transform;
         }
 
-        Debug.Log(stripeTr.position.x);
-
-
-
         //OSTATNI Z PASKÓW NIE MA DOPISKU CLONE WIĘC NIM SIĘ ZAJĄŁEM POZA PĘTLĄ
         stripeClone = GameObject.Find("Stripe19");
         stripeClone.transform.SetParent(fatherTr);
         stripeClone.GetComponent<returningStripe>().tf = stripeClone.transform;
 
-
         //TEN PASEK JEST PASKIEM POCZĄTKOWO WIDOCZNYM W HIERARCHII. USUWAM GO ABY NIE WYŚWIETLIĆ DWÓCH TAKICH SAMYCH PASKÓW W MIEJSCU NAJBARDZIEJ PO LEWEJ STRONIE NA STARCIE GRY.
         stripeClone = GameObject.Find("SingleStripe(Clone)");
         Destroy(stripeClone);
-
-
-    }
-
-    // Update is called once per frame
-    void Update () {
     }
 }
