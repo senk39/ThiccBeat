@@ -9,7 +9,6 @@ public class returningStripe : MonoBehaviour {
     public Vector3 pos;
     public Transform tf;
     public float speed;
-    int freezeTime = 2;
 
     // Use this for initialization
     void Start () {
