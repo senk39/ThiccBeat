@@ -1,0 +1,34 @@
+fileFormatVersion: 2
+guid: d02887711c244df4796d041ad65f9880
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Soleto
+  fontNames:
+  - Soleto
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 72da11e2f3ff17942883c06ef822c9f5, type: 3}
+  - {fileID: 12800000, guid: 1cfecb46060048240ad5da21e92da0ce, type: 3}
+  - {fileID: 12800000, guid: 04481dc60c77a5d4981ea592c8335556, type: 3}
+  - {fileID: 12800000, guid: 2d82da0819d014440a0c4eb4e64b2966, type: 3}
+  - {fileID: 12800000, guid: 433c33697993d3646b1ba917b083c1c6, type: 3}
+  - {fileID: 12800000, guid: 890bd74adae82f049ba3d38c1bf4585a, type: 3}
+  - {fileID: 12800000, guid: 975e1c4bf3df1bc4c83a4ea420ed3af8, type: 3}
+  - {fileID: 12800000, guid: 261a0a7baeac3fd4aa75d06926a40301, type: 3}
+  - {fileID: 12800000, guid: 2994d20ca6758364abc4d9b9e3f545b9, type: 3}
+  - {fileID: 12800000, guid: 14dadc9d55c46c64b905d04e87164836, type: 3}
+  - {fileID: 12800000, guid: 4a8f8fae0c4c48046814c6e4c4fbb748, type: 3}
+  - {fileID: 12800000, guid: a231bbcf9c01a874f804928425d6cf08, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

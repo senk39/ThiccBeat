@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 1cfecb46060048240ad5da21e92da0ce
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Soleto
+  fontNames:
+  - Soleto
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 04481dc60c77a5d4981ea592c8335556, type: 3}
+  - {fileID: 12800000, guid: 14dadc9d55c46c64b905d04e87164836, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
