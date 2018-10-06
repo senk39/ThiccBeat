@@ -5,6 +5,11 @@ using UnityEngine;
 public class SongList : MonoBehaviour {
 
     List<Song> allSongs = new List<Song>();
+    Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
+    public GameObject songEntry;
+    public GameObject parentObj;
+
+
 
     class Song
     {
@@ -93,13 +98,17 @@ public class SongList : MonoBehaviour {
     Song despacito = new Song(
         2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "reggaeton", "latin pop", 120, "4:42", 666, 5, 10);
 
+    Song actionGirl = new Song(
+        3, "ACTION GIRL", "Senketsu", null, "yuyechka", "synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
+
     void Start() {
 
         addingSongsToList();
+        /*
         Debug.Log(allSongs[0].title);
         Debug.Log(allSongs[1].title);
         Debug.Log(allSongs[2].title);
-
+        */
         creatingSongEntryInUI();
     }
 
@@ -108,10 +117,22 @@ public class SongList : MonoBehaviour {
         allSongs.Add(piosenkaOPociagach);
         allSongs.Add(stardust);
         allSongs.Add(despacito);
+        allSongs.Add(actionGirl);
+
     }
 
     void creatingSongEntryInUI()
     {
-        Instantiate<GameObject>(GameObject.Find("Song Prefab"));
+        for (int i = 0; i < allSongs.Count; i++)
+        {
+            Instantiate(songEntry, new Vector3(459.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+
+            foreach (Transform child in songEntry.GetComponentsInChildren<Transform>())
+            {
+                //TU COŚ WYKMIŃ XD
+            }
+                
+        }
+
     }
 }
