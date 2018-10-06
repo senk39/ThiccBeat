@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class SongIndex : MonoBehaviour {
 
-    SongList listWithSongs;
+    
 
-	// Use this for initialization
-	void Start () {
-        listWithSongs = GameObject.Find("Song List Itself").GetComponent<SongList>();
-
-
+    // Use this for initialization
+    void Start () {
+        
     }
 
     // Update is called once per frame

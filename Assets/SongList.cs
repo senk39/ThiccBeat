@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SongList : MonoBehaviour {
 
+    List<Song> allSongs = new List<Song>();
+
     class Song
     {
         public static uint totalAmount = 0;
@@ -83,7 +85,7 @@ public class SongList : MonoBehaviour {
 
     // START TWORZENIA PIOSENKÓW
     Song piosenkaOPociagach = new Song(
-            0, "Piosenka o Pociagach", "Marvyanaka", "Marvyanaka", "Marvyanaka", "electropop", "Vocaloid", 150, "3:27", 429, 3, 7);
+        0, "Piosenka o Pociagach", "Marvyanaka", "Marvyanaka", "Marvyanaka", "electropop", "Vocaloid", 150, "3:27", 429, 3, 7);
 
     Song stardust = new Song(
         1, "Stardust", "Senketsu", "NixieBlue", "yuyechka", "pop-rock", "Vocaloid", 150, "5:28", 594, 2, 6);
@@ -93,9 +95,23 @@ public class SongList : MonoBehaviour {
 
     void Start() {
 
-        //MOŻE TWORZENIE PIOSENKÓW POWINNO PRZEBIEGAĆ W TYM MIEJSCU? MOŻE TRZEBA BĘDZIE PRZENIEŚĆ
+        addingSongsToList();
+        Debug.Log(allSongs[0].title);
+        Debug.Log(allSongs[1].title);
+        Debug.Log(allSongs[2].title);
 
-        despacito.showInfo();
-   }
+        creatingSongEntryInUI();
+    }
 
+    void addingSongsToList()
+    {
+        allSongs.Add(piosenkaOPociagach);
+        allSongs.Add(stardust);
+        allSongs.Add(despacito);
+    }
+
+    void creatingSongEntryInUI()
+    {
+        Instantiate<GameObject>(GameObject.Find("Song Prefab"));
+    }
 }
