@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class SongList : MonoBehaviour {
 
-    List<Song> allSongs = new List<Song>();
-    Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
-    public GameObject songEntry;
+    public List<Song> allSongs =  new List<Song>();
+    public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
+    public GameObject songEntryBox;
     public GameObject parentObj;
+    public GameObject artist;
+    public GameObject title;
+
+    public TMPro.TextMeshProUGUI titleTextBox; //może zrób z tego tablicę idk
 
 
-
-    class Song
+    public class Song
     {
         public static uint totalAmount = 0;
 
@@ -125,9 +128,12 @@ public class SongList : MonoBehaviour {
     {
         for (int i = 0; i < allSongs.Count; i++)
         {
-            Instantiate(songEntry, new Vector3(459.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(songEntryBox, new Vector3(459.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(artist, new Vector3(271.2f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(title, new Vector3(656.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            titleTextBox.text = "despatitlo";//no i tutaj tablicuj uwu
 
-            foreach (Transform child in songEntry.GetComponentsInChildren<Transform>())
+            foreach (Transform child in songEntryBox.GetComponentsInChildren<Transform>())
             {
                 //TU COŚ WYKMIŃ XD
             }

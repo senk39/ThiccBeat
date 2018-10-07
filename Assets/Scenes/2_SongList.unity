@@ -1327,8 +1327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f95a3ca726ae68419debedc390ee08a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songEntry: {fileID: 1082481794731590, guid: 1883d24188ce7a74eb35386c338fed4a, type: 2}
+  songEntryBox: {fileID: 1072373941282662, guid: 56bfe87c32d76ca44b5cae1f068b3b69,
+    type: 2}
   parentObj: {fileID: 699472513}
+  artist: {fileID: 1893509657439388, guid: 626a1b067c014a94e8236ddf832030fe, type: 2}
+  title: {fileID: 1762322567461620, guid: 5a2ce0c2ad7407b438002025d99f0485, type: 2}
 --- !u!4 &907848153
 Transform:
   m_ObjectHideFlags: 0
