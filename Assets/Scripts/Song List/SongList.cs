@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SongList : MonoBehaviour {
 
@@ -8,11 +9,18 @@ public class SongList : MonoBehaviour {
     public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
     public GameObject songEntryBox;
     public GameObject parentObj;
-    public GameObject artist;
-    public GameObject title;
 
-    public TMPro.TextMeshProUGUI titleTextBox; //może zrób z tego tablicę idk
+    public GameObject artistObj;
+    public TextMeshProUGUI artistLabel;
 
+    public GameObject titleObj;
+    public TextMeshProUGUI titleLabel;
+
+    public GameObject easyDiff;
+    public TextMeshProUGUI easyDiffLabel;
+
+    public GameObject hardDiff;
+    public TextMeshProUGUI hardDiffLabel;
 
     public class Song
     {
@@ -21,7 +29,7 @@ public class SongList : MonoBehaviour {
         public uint index;
 
         public string title;
-        public string producer;
+        public string artist;
         public string illustrator;
         public string lyricist;
         public string genre1;
@@ -44,7 +52,7 @@ public class SongList : MonoBehaviour {
             index = 0;
 
             title = "Unknown title";
-            producer = "Unknown producer";
+            artist = "Unknown artist";
             illustrator = "Unknown illustrator";
             lyricist = "Unknown lyricist";
             genre1 = "Unknown Genre";
@@ -54,14 +62,14 @@ public class SongList : MonoBehaviour {
             totalAmount++;
         }
 
-        public Song(uint _index, string _title, string _producer, string _illustrator, 
+        public Song(uint _index, string _title, string _artist, string _illustrator, 
                     string _lyricist, string _genre1, string _genre2, ushort _BPM, 
                     string _audioLength, uint _notes, byte _difficultyEasy, byte _difficultyHard)  // KONSTRUKTOR
 
         {
             index = _index;
             title = _title;
-            producer = _producer;
+            artist = _artist;
             illustrator = _illustrator;
             lyricist = _lyricist;
             genre1 = _genre1;
@@ -82,7 +90,7 @@ public class SongList : MonoBehaviour {
             Debug.Log(title);
             Debug.Log("index: " + index);
             Debug.Log("title: " + title);
-            Debug.Log("producer: " + producer);
+            Debug.Log("artist: " + artist);
             Debug.Log("illustrator: " + illustrator);
             Debug.Log("lyricist: " + lyricist);
             Debug.Log("genre1: " + genre1);
@@ -106,12 +114,22 @@ public class SongList : MonoBehaviour {
 
     void Start() {
 
+        artistLabel = artistObj.GetComponent<TMPro.TextMeshProUGUI>();
+        titleLabel = titleObj.GetComponent<TMPro.TextMeshProUGUI>();
+        easyDiffLabel = easyDiff.GetComponent<TMPro.TextMeshProUGUI>();
+        hardDiffLabel = hardDiff.GetComponent<TMPro.TextMeshProUGUI>();
+
+
+
+
+
         addingSongsToList();
-        /*
-        Debug.Log(allSongs[0].title);
-        Debug.Log(allSongs[1].title);
-        Debug.Log(allSongs[2].title);
-        */
+        
+        //Debug.Log(allSongs[0].title);
+        //Debug.Log(allSongs[1].title);
+        //Debug.Log(allSongs[2].title);
+        //Debug.Log(allSongs[3].title);
+
         creatingSongEntryInUI();
     }
 
@@ -128,17 +146,27 @@ public class SongList : MonoBehaviour {
     {
         for (int i = 0; i < allSongs.Count; i++)
         {
+           
+
+            //ARTIST FIELD
+            artistLabel.text = allSongs[i].artist;
+
+            //TITLE FIELD
+            titleLabel.text = allSongs[i].title;
+
+            //EASY DIFF FIELD
+            easyDiffLabel.text = allSongs[i].difficultyEasy.ToString();
+
+            //HARD DIFF FIELD
+            hardDiffLabel.text = allSongs[i].difficultyHard.ToString();
+
             Instantiate(songEntryBox, new Vector3(459.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            Instantiate(artist, new Vector3(271.2f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            Instantiate(title, new Vector3(656.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            titleTextBox.text = "despatitlo";//no i tutaj tablicuj uwu
+            Instantiate(artistObj, new Vector3(271.2f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(titleObj, new Vector3(656.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(easyDiff, new Vector3(500f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(hardDiff, new Vector3(570f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
 
-            foreach (Transform child in songEntryBox.GetComponentsInChildren<Transform>())
-            {
-                //TU COŚ WYKMIŃ XD
-            }
-                
         }
-
     }
+
 }
