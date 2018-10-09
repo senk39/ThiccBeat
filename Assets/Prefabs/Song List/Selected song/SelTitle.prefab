@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222687473324916800}
   - component: {fileID: 114196148327984090}
   m_Layer: 0
-  m_Name: Title
+  m_Name: SelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Selected Song Title
+  m_text: Piosenka o Pociagach
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7c1370aa06e84549a4790ec265d2f34, type: 2}
   m_sharedMaterial: {fileID: 21383674094616208, guid: c7c1370aa06e84549a4790ec265d2f34,
@@ -124,12 +124,12 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
-  m_inputSource: 0
+  m_isInputParsingRequired: 1
+  m_inputSource: 3
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SongList : MonoBehaviour {
 
@@ -30,11 +31,11 @@ public class SongList : MonoBehaviour {
     public GameObject selTitleObj;
     public TextMeshProUGUI selTitleLabel;
 
-    public GameObject selEasyDiffObj;
-    public TextMeshProUGUI selEasyDiffLabel;
+    public GameObject starEmpty;
+    //public TextMeshProUGUI selEasyDiffLabel;
 
-    public GameObject selHardDiffObj;
-    public TextMeshProUGUI selHardDiffLabel;
+    public GameObject starFilled;
+    //public TextMeshProUGUI selHardDiffLabel;
 
     public GameObject selGenreObj;
     public TextMeshProUGUI selGenreLabel;
@@ -229,15 +230,34 @@ public class SongList : MonoBehaviour {
         Instantiate(selArtistObj, new Vector3(576.5f, 645f, -365f), Quaternion.identity, parentObjForSelected.transform);
         Instantiate(selGenreObj, new Vector3(621.5f, 539f, -365f), Quaternion.identity, parentObjForSelected.transform);
 
+        starsGeneratorForSelectedSong();
+
         //Instantiate(selEasyDiffObj, new Vector3(500f, 291f, 0), Quaternion.identity, parentObj.transform);
         //Instantiate(selHardDiffObj, new Vector3(570f, 291f, 0), Quaternion.identity, parentObj.transform);
 
     }
 
+
+    void starsGeneratorForSelectedSong()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Instantiate(starEmpty, new Vector3(576.5f + (35*i), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
+            starEmpty.GetComponent<Image>().color = Color.green;
+
+            for (int j = 0; j < allSongs[0].difficultyEasy; j++)
+            {
+                Instantiate(starFilled, new Vector3(576.5f + (35 * j), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
+                starFilled.GetComponent<Image>().color = Color.green;
+            }
+        }
+    }
     static void selectedSongIndex()
     {
 
     }
+
+
 
 
 }

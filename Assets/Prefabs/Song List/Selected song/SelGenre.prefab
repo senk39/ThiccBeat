@@ -47,7 +47,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: electropop /XD Vocaloid
+  m_text: electropop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2bc241be7c3363e4f8b7c8afe45e54e9, type: 2}
   m_sharedMaterial: {fileID: 21589754529968978, guid: 2bc241be7c3363e4f8b7c8afe45e54e9,
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 16
-  m_fontSizeMax: 26
+  m_fontSizeMax: 22
   m_fontStyle: 32
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
@@ -156,7 +156,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548524347399196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 432.2568}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1842653, y: 1.1842653, z: 1.1842653}
   m_Children: []
   m_Father: {fileID: 0}
