@@ -42,6 +42,12 @@ public class SongList : MonoBehaviour {
 
     public GameObject selCoverObj;
 
+    //HIERARCHA PROJEKTU
+
+    public GameObject nonSelectedEntry;
+
+
+
 
 
     public class Song
@@ -180,6 +186,14 @@ public class SongList : MonoBehaviour {
     {
         for (int i = 0; i < allSongs.Count; i++)
         {
+           
+
+        }
+        for (int i = 0; i < allSongs.Count; i++)
+        {
+            Instantiate(nonSelectedEntry, new Vector3(0f, 0f, 0f), Quaternion.identity, parentObj.transform);
+            nonSelectedEntry.name = "Entry " + i;
+
             //ARTIST FIELD
             artistLabel.text = allSongs[i].artist;
 
@@ -192,11 +206,12 @@ public class SongList : MonoBehaviour {
             //HARD DIFF FIELD
             hardDiffLabel.text = allSongs[i].difficultyHard.ToString();
 
-            Instantiate(songEntryBox, new Vector3(459.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            Instantiate(titleObj, new Vector3(656.5f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            Instantiate(artistObj, new Vector3(271.2f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            Instantiate(easyDiffObj, new Vector3(500f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
-            Instantiate(hardDiffObj, new Vector3(570f, (291f - (i * 87)), 0), Quaternion.identity, parentObj.transform);
+            Instantiate(songEntryBox, new Vector3(459.5f, (291f - (i * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
+            Instantiate(titleObj, new Vector3(656.5f, (291f - (i * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
+            Instantiate(artistObj, new Vector3(271.2f, (291f - (i * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
+            Instantiate(easyDiffObj, new Vector3(500f, (291f - (i * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
+            Instantiate(hardDiffObj, new Vector3(570f, (291f - (i * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
+            //parentObj.transform
         }
     }
 
@@ -240,6 +255,7 @@ public class SongList : MonoBehaviour {
 
     void starsGeneratorForSelectedSong()
     {
+
         for (int i = 0; i < 10; i++)
         {
             Instantiate(starEmpty, new Vector3(576.5f + (35*i), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
