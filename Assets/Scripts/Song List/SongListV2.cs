@@ -8,21 +8,7 @@ public class SongListV2 : MonoBehaviour {
 
     public List<Song> allSongs = new List<Song>();
     public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
-    public GameObject songEntryBox;
-    public GameObject parentObj;
     public GameObject parentObjForSelected;
-
-    public GameObject artistObj;
-    public TextMeshProUGUI artistLabel;
-
-    public GameObject titleObj;
-    public TextMeshProUGUI titleLabel;
-
-    public GameObject easyDiffObj;
-    public TextMeshProUGUI easyDiffLabel;
-
-    public GameObject hardDiffObj;
-    public TextMeshProUGUI hardDiffLabel;
 
     // ZMIENNE DLA ZAZNACZONEGO UTWORU
     public GameObject selArtistObj;
@@ -40,10 +26,7 @@ public class SongListV2 : MonoBehaviour {
 
     public GameObject selCoverObj;
 
-    //HIERARCHA PROJEKTU
-
-    public GameObject nonSelectedEntry;
-
+    int selectedSongByUser;
 
     public class Song
     {
@@ -138,24 +121,11 @@ public class SongListV2 : MonoBehaviour {
         3, "ACTION GIRL", "Senketsu", null, "yuyechka", "synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
 
 
-
-
     void Start() {
 
-        artistLabel     = artistObj.GetComponent<TMPro.TextMeshProUGUI>();
-        titleLabel      = titleObj.GetComponent<TMPro.TextMeshProUGUI>();
-        easyDiffLabel   = easyDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
-        hardDiffLabel   = hardDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
-
-        selArtistLabel  = selArtistObj.GetComponent<TMPro.TextMeshProUGUI>();
-        selTitleLabel   = selTitleObj.GetComponent<TMPro.TextMeshProUGUI>();
-        selGenreLabel   = selGenreObj.GetComponent<TMPro.TextMeshProUGUI>();
-        //selEasyDiffLabel = selEasyDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
-        //selHardDiffLabel = selHardDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
-
-
-
-
+        selArtistLabel = selArtistObj.GetComponent<TMPro.TextMeshProUGUI>();
+        selTitleLabel = selTitleObj.GetComponent<TMPro.TextMeshProUGUI>();
+        selGenreLabel = selGenreObj.GetComponent<TMPro.TextMeshProUGUI>();
 
         addingSongsToList();
 
@@ -164,8 +134,12 @@ public class SongListV2 : MonoBehaviour {
         //Debug.Log(allSongs[2].title);
         //Debug.Log(allSongs[3].title);
 
-        creatingSelectedSongEntryInUI();
-        creatingSongEntryInUI();
+        creatingSelectedSongEntryInUI(selectedSongByUser = 0);
+    }
+
+    void Update()
+    {
+        changeSong();
     }
 
     void addingSongsToList()
@@ -176,68 +150,16 @@ public class SongListV2 : MonoBehaviour {
         allSongs.Add(actionGirl);
     }
 
-    void creatingSongEntryInUI()
+    void creatingSelectedSongEntryInUI(int selectedSongByUser)
     {
-
-        for (int i = 1; i < allSongs.Count; i++)
-        {
-
-            //ARTIST FIELD
-            artistLabel.text = allSongs[i].artist;
-
-            //TITLE FIELD
-            titleLabel.text = allSongs[i].title;
-
-            //EASY DIFF FIELD
-            easyDiffLabel.text = allSongs[i].difficultyEasy.ToString();
-
-            //HARD DIFF FIELD
-            hardDiffLabel.text = allSongs[i].difficultyHard.ToString();
-
-            Instantiate(nonSelectedEntry, new Vector3(0f, 0f, 0f), Quaternion.identity, parentObj.transform);
-            nonSelectedEntry.name = "Entry " + i;
-
-            Instantiate(songEntryBox,   new Vector3(459.5f, (291f - ((i - 1) * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
-            Instantiate(titleObj,       new Vector3(656.5f, (291f - ((i - 1) * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
-            Instantiate(artistObj,      new Vector3(271.2f, (291f - ((i - 1) * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
-            Instantiate(easyDiffObj,    new Vector3(500f, (291f - ((i - 1) * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
-            Instantiate(hardDiffObj,    new Vector3(570f, (291f - ((i - 1) * 87)), 0), Quaternion.identity, nonSelectedEntry.transform);
-            //                                                                                              parentObj.transform
-
-            artistLabel.text = null;
-            titleLabel.text = null;
-            easyDiffLabel.text = null;
-            hardDiffLabel.text = null;
-        }
-    }
-
-    void creatingSelectedSongEntryInUI()
-    {
-        //ARTIST FIELD
-        selArtistLabel.text = allSongs[0].artist;
-
-        //TITLE FIELD
-        selTitleLabel.text = allSongs[0].title;
-
-        //GENRE FIELD
-        if(allSongs[0].genre2 == null)
-        {
-            selGenreLabel.text = allSongs[0].genre1;
-        }
-        else
-        {
-            selGenreLabel.text = allSongs[0].genre1 + " / " + allSongs[0].genre2;
-        }
+        fillingDataInSelectedSong();
+        
 
         //EASY DIFF FIELD
         //easyDiffLabel.text = allSongs[0].difficultyEasy.ToString();
 
         //HARD DIFF FIELD
         //hardDiffLabel.text = allSongs[0].difficultyHard.ToString();
-
-        Instantiate(selTitleObj, new Vector3(576.5f, 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
-        Instantiate(selArtistObj, new Vector3(576.5f, 645f, -365f), Quaternion.identity, parentObjForSelected.transform);
-        Instantiate(selGenreObj, new Vector3(621.5f, 539f, -365f), Quaternion.identity, parentObjForSelected.transform);
 
         starsGeneratorForSelectedSong();
 
@@ -258,6 +180,45 @@ public class SongListV2 : MonoBehaviour {
                 Instantiate(starFilled, new Vector3(576.5f + (35 * j), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
                 starFilled.GetComponent<Image>().color = Color.green;
             }
+        }
+    }
+
+    void changeSong()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+            {
+            if (selectedSongByUser < allSongs.Capacity-1)
+                { 
+                    selectedSongByUser++;
+                    fillingDataInSelectedSong();
+                }
+            }
+        else if(Input.GetKeyDown(KeyCode.W))
+            {
+            if (selectedSongByUser > 0)
+            {
+                selectedSongByUser--;
+                fillingDataInSelectedSong();
+            }
+        }
+    }
+
+    void fillingDataInSelectedSong()
+    {
+        //ARTIST FIELD
+        selArtistLabel.text = allSongs[selectedSongByUser].artist;
+
+        //TITLE FIELD
+        selTitleLabel.text = allSongs[selectedSongByUser].title;
+
+        //GENRE FIELD
+        if (allSongs[selectedSongByUser].genre2 == null)
+        {
+            selGenreLabel.text = allSongs[selectedSongByUser].genre1;
+        }
+        else
+        {
+            selGenreLabel.text = allSongs[selectedSongByUser].genre1 + " / " + allSongs[selectedSongByUser].genre2;
         }
     }
 }

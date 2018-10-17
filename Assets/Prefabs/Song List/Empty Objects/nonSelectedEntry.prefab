@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4922073746318592}
   m_Layer: 0
-  m_Name: Entry 3
+  m_Name: nonSelectedEntry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

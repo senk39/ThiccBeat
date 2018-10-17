@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 222995316271737850}
   - component: {fileID: 114396053046276906}
   m_Layer: 0
-  m_Name: SelGenre(Clone)
+  m_Name: SelGenre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 222593005961777732}
   - component: {fileID: 114345398720377916}
   m_Layer: 0
-  m_Name: SelArtist(Clone)
+  m_Name: SelArtist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 222750948506710206}
   - component: {fileID: 114599818334685006}
   m_Layer: 0
-  m_Name: SelTitle(Clone)
+  m_Name: SelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
