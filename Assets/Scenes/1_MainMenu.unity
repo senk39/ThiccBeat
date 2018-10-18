@@ -726,6 +726,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114619136598986998, guid: 31923a6dd5643934381bafc2fd3aff78,
+        type: 2}
+      propertyPath: m_Text
+      value: 'version 2018/10/17 pre-alpha
+
+        NOT PLAYABLE'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31923a6dd5643934381bafc2fd3aff78, type: 2}
   m_IsPrefabAsset: 0

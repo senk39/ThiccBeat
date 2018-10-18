@@ -28,6 +28,10 @@ public class SongListV2 : MonoBehaviour {
 
     int selectedSongByUser;
 
+     List<GameObject> allStars = new List<GameObject>();
+
+
+
     public class Song
     {
         public static uint totalAmount = 0;
@@ -52,6 +56,7 @@ public class SongListV2 : MonoBehaviour {
         public AudioClip audioFile;
 
         public bool isSelectedInMenu;
+
 
 
         public Song()  // KONSTRUKTOR
@@ -109,16 +114,16 @@ public class SongListV2 : MonoBehaviour {
 
     // START TWORZENIA PIOSENKÓW
     Song piosenkaOPociagach = new Song(
-        0, "Piosenka o Pociagach", "Marvyanaka", "Marvyanaka", "Marvyanaka", "electropop", "Vocaloid", 150, "3:27", 429, 3, 7);
+        0, "Piosenka o Pociagach", "Marvyanaka", "Marvyanaka", "Marvyanaka", "Electropop", "Vocaloid", 150, "3:27", 429, 3, 7);
 
     Song stardust = new Song(
-        1, "Stardust", "Senketsu", "NixieBlue", "yuyechka", "pop-rock", "Vocaloid", 150, "5:28", 594, 2, 6);
+        1, "Stardust", "Senketsu", "NixieBlue", "yuyechka", "Pop-rock", "Vocaloid", 150, "5:28", 594, 2, 6);
 
     Song despacito = new Song(
-        2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "reggaeton", "latin pop", 120, "4:42", 666, 5, 9);
+        2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "Reggaeton", "Latin pop", 120, "4:42", 666, 5, 9);
 
     Song actionGirl = new Song(
-        3, "ACTION GIRL", "Senketsu", null, "yuyechka", "synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
+        3, "ACTION GIRL", "Senketsu", null, "yuyechka", "Synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
 
 
     void Start() {
@@ -128,6 +133,15 @@ public class SongListV2 : MonoBehaviour {
         selGenreLabel = selGenreObj.GetComponent<TMPro.TextMeshProUGUI>();
 
         addingSongsToList();
+
+        
+
+
+        for (int i = 0; i < 10; i++)
+        {
+            Instantiate(starEmpty, new Vector3(576.5f + (35 * i), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
+            starEmpty.GetComponent<Image>().color = Color.green;
+        }
 
         //Debug.Log(allSongs[0].title);
         //Debug.Log(allSongs[1].title);
@@ -161,26 +175,23 @@ public class SongListV2 : MonoBehaviour {
         //HARD DIFF FIELD
         //hardDiffLabel.text = allSongs[0].difficultyHard.ToString();
 
-        starsGeneratorForSelectedSong();
+        starsGeneratorForSelectedSong(selectedSongByUser);
 
         //Instantiate(selEasyDiffObj, new Vector3(500f, 291f, 0), Quaternion.identity, parentObj.transform);
         //Instantiate(selHardDiffObj, new Vector3(570f, 291f, 0), Quaternion.identity, parentObj.transform);
     }
 
-    void starsGeneratorForSelectedSong()
+    void starsGeneratorForSelectedSong(int selectedSongByUser)
     {
 
-        for (int i = 0; i < 10; i++)
-        {
-            Instantiate(starEmpty, new Vector3(576.5f + (35*i), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
-            starEmpty.GetComponent<Image>().color = Color.green;
-
-            for (int j = 0; j < allSongs[0].difficultyEasy; j++)
+        
+            for (int j = 0; j < allSongs[selectedSongByUser].difficultyEasy; j++)
             {
                 Instantiate(starFilled, new Vector3(576.5f + (35 * j), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
                 starFilled.GetComponent<Image>().color = Color.green;
+                allStars.Add(starFilled);               
             }
-        }
+        
     }
 
     void changeSong()
@@ -190,7 +201,9 @@ public class SongListV2 : MonoBehaviour {
             if (selectedSongByUser < allSongs.Capacity-1)
                 { 
                     selectedSongByUser++;
+                    emptyingStarsOfSelectedSong();
                     fillingDataInSelectedSong();
+
                 }
             }
         else if(Input.GetKeyDown(KeyCode.W))
@@ -198,6 +211,7 @@ public class SongListV2 : MonoBehaviour {
             if (selectedSongByUser > 0)
             {
                 selectedSongByUser--;
+                emptyingStarsOfSelectedSong();
                 fillingDataInSelectedSong();
             }
         }
@@ -220,5 +234,16 @@ public class SongListV2 : MonoBehaviour {
         {
             selGenreLabel.text = allSongs[selectedSongByUser].genre1 + " / " + allSongs[selectedSongByUser].genre2;
         }
+        starsGeneratorForSelectedSong(selectedSongByUser);
+    }
+
+    void emptyingStarsOfSelectedSong()
+    {
+        foreach(GameObject starfilled in allStars) {
+            starFilled.GetComponent<Image>().color = Color.red;
+        }
+
+
+        //Destroy(GameObject.Find("SelStarFilled(Clone"));
     }
 }
