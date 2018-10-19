@@ -4,7 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class SongListV2 : MonoBehaviour {
+public class SongListV2 : MonoBehaviour
+{
 
     public List<Song> allSongs = new List<Song>();
     public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
@@ -28,7 +29,7 @@ public class SongListV2 : MonoBehaviour {
 
     int selectedSongByUser;
 
-     List<GameObject> allStars = new List<GameObject>();
+    List<GameObject> allStars = new List<GameObject>();
 
 
 
@@ -63,14 +64,14 @@ public class SongListV2 : MonoBehaviour {
         {
             index = 0;
 
-            title               = "Unknown title";
-            artist              = "Unknown artist";
-            illustrator         = "Unknown illustrator";
-            lyricist            = "Unknown lyricist";
-            genre1              = "Unknown Genre";
-            genre2              = null;
-            BPM                 = 0;
-            isSelectedInMenu    = false;
+            title = "Unknown title";
+            artist = "Unknown artist";
+            illustrator = "Unknown illustrator";
+            lyricist = "Unknown lyricist";
+            genre1 = "Unknown Genre";
+            genre2 = null;
+            BPM = 0;
+            isSelectedInMenu = false;
 
             totalAmount++;
         }
@@ -120,13 +121,25 @@ public class SongListV2 : MonoBehaviour {
         1, "Stardust", "Senketsu", "NixieBlue", "yuyechka", "Pop-rock", "Vocaloid", 150, "5:28", 594, 2, 6);
 
     Song despacito = new Song(
-        2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "Reggaeton", "Latin pop", 120, "4:42", 666, 5, 9);
+        2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "Reggaeton", "Latin pop", 120, "4:42", 631, 5, 9);
 
     Song actionGirl = new Song(
         3, "ACTION GIRL", "Senketsu", null, "yuyechka", "Synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
 
+    Song badApple = new Song(
+        4, "Bad Apple!!", "Alstroemeria Records", "Alstroemeria Records", "Nomico", "Electropop", "Touhou", 138, "3:39", 720, 1, 5);
 
-    void Start() {
+    Song sixTrillion = new Song(
+        5, "A Tale of Six Trillion Years and a Night", "kemu", null, "kemu", "Synth-rock", "Vocaloid", 186, "3:36", 695, 3, 7);
+
+    Song wakuseiRabbit = new Song(
+        6, "Wakusei Rabbit", "Yunomi", null, "TORIENA", "kawaii future bass", null, 174, "3:24", 783, 5, 8);
+
+
+
+
+    void Start()
+    {
 
         selArtistLabel = selArtistObj.GetComponent<TMPro.TextMeshProUGUI>();
         selTitleLabel = selTitleObj.GetComponent<TMPro.TextMeshProUGUI>();
@@ -134,14 +147,17 @@ public class SongListV2 : MonoBehaviour {
 
         addingSongsToList();
 
-        
+        allSongs[0].isSelectedInMenu = true;
 
-
+        /*  TWORZENIE ZIELONYCH GWIAZDEK
         for (int i = 0; i < 10; i++)
         {
             Instantiate(starEmpty, new Vector3(576.5f + (35 * i), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
             starEmpty.GetComponent<Image>().color = Color.green;
         }
+        */
+
+
 
         //Debug.Log(allSongs[0].title);
         //Debug.Log(allSongs[1].title);
@@ -162,12 +178,17 @@ public class SongListV2 : MonoBehaviour {
         allSongs.Add(stardust);
         allSongs.Add(despacito);
         allSongs.Add(actionGirl);
+        allSongs.Add(badApple);
+        allSongs.Add(sixTrillion);
+        allSongs.Add(wakuseiRabbit);
+        Debug.Log(allSongs.Capacity);
+
     }
 
     void creatingSelectedSongEntryInUI(int selectedSongByUser)
     {
         fillingDataInSelectedSong();
-        
+
 
         //EASY DIFF FIELD
         //easyDiffLabel.text = allSongs[0].difficultyEasy.ToString();
@@ -184,35 +205,37 @@ public class SongListV2 : MonoBehaviour {
     void starsGeneratorForSelectedSong(int selectedSongByUser)
     {
 
-        
-            for (int j = 0; j < allSongs[selectedSongByUser].difficultyEasy; j++)
-            {
-                Instantiate(starFilled, new Vector3(576.5f + (35 * j), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
-                starFilled.GetComponent<Image>().color = Color.green;
-                allStars.Add(starFilled);               
-            }
-        
+
+        for (int j = 0; j < allSongs[selectedSongByUser].difficultyEasy; j++)
+        {
+            //Instantiate(starFilled, new Vector3(576.5f + (35 * j), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
+            starFilled.GetComponent<Image>().color = Color.green;
+            allStars.Add(starFilled);
+        }
+
     }
 
     void changeSong()
     {
         if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (selectedSongByUser < allSongs.Capacity - 2)
             {
-            if (selectedSongByUser < allSongs.Capacity-1)
-                { 
-                    selectedSongByUser++;
-                    emptyingStarsOfSelectedSong();
-                    fillingDataInSelectedSong();
+                selectedSongByUser++;
+                emptyingStarsOfSelectedSong();
+                fillingDataInSelectedSong();
+                movingOtherSongsUp();
 
-                }
             }
-        else if(Input.GetKeyDown(KeyCode.W))
-            {
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
             if (selectedSongByUser > 0)
             {
                 selectedSongByUser--;
                 emptyingStarsOfSelectedSong();
                 fillingDataInSelectedSong();
+                movingOtherSongsDown();
             }
         }
     }
@@ -239,11 +262,73 @@ public class SongListV2 : MonoBehaviour {
 
     void emptyingStarsOfSelectedSong()
     {
-        foreach(GameObject starfilled in allStars) {
+        foreach (GameObject starfilled in allStars)
+        {
             starFilled.GetComponent<Image>().color = Color.red;
         }
 
 
         //Destroy(GameObject.Find("SelStarFilled(Clone"));
+    }
+
+    void movingOtherSongsUp()
+    {
+        Vector3 posy;
+        //NonSelectedSongBox
+        foreach (GameObject foo in GameObject.FindGameObjectsWithTag("NonSelectedSongBox"))
+        {
+            float tilt = 570f;
+            posy = foo.GetComponent<Transform>().position;
+            Debug.Log(posy.y);
+
+            if (posy.y == tilt-482)
+            {
+                Debug.Log("tilt+482");
+                posy.y += 302f;
+
+            }
+            else if(posy.y == tilt - 180)
+                {
+                    posy.y += 114f;
+                }
+            else if (posy.y == tilt - 572)
+            {
+                posy.y += 392f;
+            }
+            else
+            {
+                posy.y += 90f;
+            }
+
+            foo.GetComponent<Transform>().position = posy;
+        }
+    }
+
+    void movingOtherSongsDown()
+    {
+        Vector3 posy;
+        //NonSelectedSongBox
+        foreach (GameObject foo in GameObject.FindGameObjectsWithTag("NonSelectedSongBox"))
+        {
+            float tilt = 570f;
+            posy = foo.GetComponent<Transform>().position;
+
+            if (posy.y == tilt-66)
+            {
+                posy.y -= 114f;
+
+            }
+            else if (posy.y == tilt - 180)
+            {
+                posy.y -= 392f;
+            }
+            else
+            {
+                posy.y -= 90f;
+            }
+
+            foo.GetComponent<Transform>().position = posy;
+        }
+
     }
 }

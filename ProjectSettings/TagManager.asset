@@ -11,6 +11,7 @@ TagManager:
   - TooEarlyIndicator
   - TooLateIndicator
   - InterfaceStripe
+  - NonSelectedSongBox
   layers:
   - Default
   - TransparentFX
