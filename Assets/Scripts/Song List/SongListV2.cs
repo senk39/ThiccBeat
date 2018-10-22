@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+
 public class SongListV2 : MonoBehaviour
 {
-
     public List<Song> allSongs = new List<Song>();
     public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
     public GameObject parentObjForSelected;
@@ -17,6 +17,9 @@ public class SongListV2 : MonoBehaviour
 
     public GameObject selTitleObj;
     public TextMeshProUGUI selTitleLabel;
+
+    public GameObject selDiffObj;
+    public TextMeshProUGUI selDiffLabel;
 
     public GameObject starEmpty;
 
@@ -31,6 +34,7 @@ public class SongListV2 : MonoBehaviour
 
     List<GameObject> allStars = new List<GameObject>();
 
+    public bool isCurrentDifficultyIsEasy = false;
 
 
     public class Song
@@ -59,11 +63,9 @@ public class SongListV2 : MonoBehaviour
         public bool isSelectedInMenu;
 
 
-
         public Song()  // KONSTRUKTOR
         {
             index = 0;
-
             title = "Unknown title";
             artist = "Unknown artist";
             illustrator = "Unknown illustrator";
@@ -79,7 +81,6 @@ public class SongListV2 : MonoBehaviour
         public Song(uint _index, string _title, string _artist, string _illustrator,
                     string _lyricist, string _genre1, string _genre2, ushort _BPM,
                     string _audioLength, uint _notes, byte _difficultyEasy, byte _difficultyHard)  // KONSTRUKTOR
-
         {
             index = _index;
             title = _title;
@@ -136,33 +137,16 @@ public class SongListV2 : MonoBehaviour
         6, "Wakusei Rabbit", "Yunomi", null, "TORIENA", "kawaii future bass", null, 174, "3:24", 783, 5, 8);
 
 
-
-
     void Start()
     {
-
         selArtistLabel = selArtistObj.GetComponent<TMPro.TextMeshProUGUI>();
         selTitleLabel = selTitleObj.GetComponent<TMPro.TextMeshProUGUI>();
         selGenreLabel = selGenreObj.GetComponent<TMPro.TextMeshProUGUI>();
+        selDiffLabel = selDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
 
         addingSongsToList();
 
         allSongs[0].isSelectedInMenu = true;
-
-        /*  TWORZENIE ZIELONYCH GWIAZDEK
-        for (int i = 0; i < 10; i++)
-        {
-            Instantiate(starEmpty, new Vector3(576.5f + (35 * i), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
-            starEmpty.GetComponent<Image>().color = Color.green;
-        }
-        */
-
-
-
-        //Debug.Log(allSongs[0].title);
-        //Debug.Log(allSongs[1].title);
-        //Debug.Log(allSongs[2].title);
-        //Debug.Log(allSongs[3].title);
 
         creatingSelectedSongEntryInUI(selectedSongByUser = 0);
     }
@@ -170,6 +154,7 @@ public class SongListV2 : MonoBehaviour
     void Update()
     {
         changeSong();
+        changeDifficulty();
     }
 
     void addingSongsToList()
@@ -181,38 +166,11 @@ public class SongListV2 : MonoBehaviour
         allSongs.Add(badApple);
         allSongs.Add(sixTrillion);
         allSongs.Add(wakuseiRabbit);
-        Debug.Log(allSongs.Capacity);
-
     }
 
     void creatingSelectedSongEntryInUI(int selectedSongByUser)
     {
         fillingDataInSelectedSong();
-
-
-        //EASY DIFF FIELD
-        //easyDiffLabel.text = allSongs[0].difficultyEasy.ToString();
-
-        //HARD DIFF FIELD
-        //hardDiffLabel.text = allSongs[0].difficultyHard.ToString();
-
-        starsGeneratorForSelectedSong(selectedSongByUser);
-
-        //Instantiate(selEasyDiffObj, new Vector3(500f, 291f, 0), Quaternion.identity, parentObj.transform);
-        //Instantiate(selHardDiffObj, new Vector3(570f, 291f, 0), Quaternion.identity, parentObj.transform);
-    }
-
-    void starsGeneratorForSelectedSong(int selectedSongByUser)
-    {
-
-
-        for (int j = 0; j < allSongs[selectedSongByUser].difficultyEasy; j++)
-        {
-            //Instantiate(starFilled, new Vector3(576.5f + (35 * j), 695f, -365f), Quaternion.identity, parentObjForSelected.transform);
-            starFilled.GetComponent<Image>().color = Color.green;
-            allStars.Add(starFilled);
-        }
-
     }
 
     void changeSong()
@@ -222,22 +180,19 @@ public class SongListV2 : MonoBehaviour
             if (selectedSongByUser < allSongs.Capacity - 2)
             {
                 selectedSongByUser++;
-                emptyingStarsOfSelectedSong();
                 fillingDataInSelectedSong();
                 movingOtherSongsUp();
-
             }
         }
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            if (selectedSongByUser > 0)
+            else if (Input.GetKeyDown(KeyCode.W))
             {
-                selectedSongByUser--;
-                emptyingStarsOfSelectedSong();
-                fillingDataInSelectedSong();
-                movingOtherSongsDown();
+                if (selectedSongByUser > 0)
+                {
+                    selectedSongByUser--;
+                    fillingDataInSelectedSong();
+                    movingOtherSongsDown();
+                }
             }
-        }
     }
 
     void fillingDataInSelectedSong()
@@ -250,55 +205,42 @@ public class SongListV2 : MonoBehaviour
 
         //GENRE FIELD
         if (allSongs[selectedSongByUser].genre2 == null)
-        {
-            selGenreLabel.text = allSongs[selectedSongByUser].genre1;
-        }
+            {
+                selGenreLabel.text = allSongs[selectedSongByUser].genre1;
+            }
         else
-        {
-            selGenreLabel.text = allSongs[selectedSongByUser].genre1 + " / " + allSongs[selectedSongByUser].genre2;
-        }
-        starsGeneratorForSelectedSong(selectedSongByUser);
-    }
+            {
+                selGenreLabel.text = allSongs[selectedSongByUser].genre1 + " / " + allSongs[selectedSongByUser].genre2;
+            }
 
-    void emptyingStarsOfSelectedSong()
-    {
-        foreach (GameObject starfilled in allStars)
-        {
-            starFilled.GetComponent<Image>().color = Color.red;
-        }
-
-
-        //Destroy(GameObject.Find("SelStarFilled(Clone"));
+        //DIFF FIELD
+        starGenerator();
     }
 
     void movingOtherSongsUp()
     {
         Vector3 posy;
-        //NonSelectedSongBox
         foreach (GameObject foo in GameObject.FindGameObjectsWithTag("NonSelectedSongBox"))
         {
             float tilt = 570f;
             posy = foo.GetComponent<Transform>().position;
-            Debug.Log(posy.y);
 
             if (posy.y == tilt-482)
-            {
-                Debug.Log("tilt+482");
-                posy.y += 302f;
-
-            }
+                {
+                    posy.y += 302f;
+                }
             else if(posy.y == tilt - 180)
                 {
                     posy.y += 114f;
                 }
             else if (posy.y == tilt - 572)
-            {
-                posy.y += 392f;
-            }
+                {
+                    posy.y += 392f;
+                }
             else
-            {
-                posy.y += 90f;
-            }
+                {
+                    posy.y += 90f;
+                }
 
             foo.GetComponent<Transform>().position = posy;
         }
@@ -314,21 +256,58 @@ public class SongListV2 : MonoBehaviour
             posy = foo.GetComponent<Transform>().position;
 
             if (posy.y == tilt-66)
-            {
-                posy.y -= 114f;
-
-            }
+                {
+                    posy.y -= 114f;
+                }
             else if (posy.y == tilt - 180)
-            {
-                posy.y -= 392f;
-            }
+                {
+                    posy.y -= 392f;
+                }
             else
-            {
-                posy.y -= 90f;
-            }
+                {
+                    posy.y -= 90f;
+                }
 
             foo.GetComponent<Transform>().position = posy;
         }
 
+    }
+
+    void starGenerator()
+    {
+        string starSymbol = @"<sprite name=""star full""> ";
+        int multiplierEasy = allSongs[selectedSongByUser].difficultyEasy;
+
+        int multiplierHard = allSongs[selectedSongByUser].difficultyHard;
+
+        if (isCurrentDifficultyIsEasy)
+            {
+                selDiffLabel.text = string.Join(starSymbol, new string[multiplierEasy + 1]);
+            }
+
+        else
+            {
+                selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
+            }
+    }
+
+    void changeDifficulty()
+    {
+        
+            if(Input.GetKeyDown(KeyCode.F))
+                {
+                    if(isCurrentDifficultyIsEasy == false)
+                    {
+                        isCurrentDifficultyIsEasy = true;
+                         starGenerator();
+                    }
+
+                    else
+                    {
+                        isCurrentDifficultyIsEasy = false;
+                        starGenerator();
+                    }
+                }
+             
     }
 }
