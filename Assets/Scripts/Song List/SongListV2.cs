@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 
 public class SongListV2 : MonoBehaviour
@@ -33,18 +35,22 @@ public class SongListV2 : MonoBehaviour
 
     public GameObject selCoverObj;
 
-    int selectedSongByUser;
+    public static int selectedSongByUser;
 
     List<GameObject> allStars = new List<GameObject>();
 
     public bool isCurrentDifficultyIsEasy = false;
+
+    //static public int songEntered;
+
+
 
 
     public class Song
     {
         public static uint totalAmount = 0;
 
-        public uint index;
+        public int index;
 
         public string title;
         public string artist;
@@ -81,7 +87,7 @@ public class SongListV2 : MonoBehaviour
             totalAmount++;
         }
 
-        public Song(uint _index, string _title, string _artist, string _illustrator,
+        public Song(int _index, string _title, string _artist, string _illustrator,
                     string _lyricist, string _genre1, string _genre2, ushort _BPM,
                     string _audioLength, uint _notes, byte _difficultyEasy, byte _difficultyHard)  // KONSTRUKTOR
         {
@@ -118,25 +124,25 @@ public class SongListV2 : MonoBehaviour
     }
 
     // START TWORZENIA PIOSENKÓW
-    Song piosenkaOPociagach = new Song(
+    static Song piosenkaOPociagach = new Song(
         0, "Piosenka o Pociagach", "Marvyanaka", "Marvyanaka", "Marvyanaka", "Electropop", "Vocaloid", 150, "3:27", 429, 3, 7);
 
-    Song stardust = new Song(
+    static Song stardust = new Song(
         1, "Stardust", "Senketsu", "NixieBlue", "yuyechka", "Pop-rock", "Vocaloid", 150, "5:28", 594, 2, 6);
 
-    Song despacito = new Song(
+    static Song despacito = new Song(
         2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "Reggaeton", "Latin pop", 120, "4:42", 631, 5, 9);
 
-    Song actionGirl = new Song(
+    static Song actionGirl = new Song(
         3, "ACTION GIRL", "Senketsu", null, "yuyechka", "Synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
 
-    Song badApple = new Song(
+    static Song badApple = new Song(
         4, "Bad Apple!!", "Alstroemeria Records", "Alstroemeria Records", "Nomico", "Electropop", "Touhou", 138, "3:39", 720, 1, 5);
 
-    Song sixTrillion = new Song(
+    static Song sixTrillion = new Song(
         5, "A Tale of Six Trillion Years and a Night", "kemu", null, "kemu", "Synth-rock", "Vocaloid", 186, "3:36", 695, 3, 7);
 
-    Song wakuseiRabbit = new Song(
+    static Song wakuseiRabbit = new Song(
         6, "Wakusei Rabbit", "Yunomi", null, "TORIENA", "kawaii future bass", null, 174, "3:24", 783, 5, 8);
 
 
@@ -159,6 +165,7 @@ public class SongListV2 : MonoBehaviour
     {
         changeSong();
         changeDifficulty();
+        chooseSongAndMoveToGame();
     }
 
     void addingSongsToList()
@@ -188,15 +195,15 @@ public class SongListV2 : MonoBehaviour
                 movingOtherSongsUp();
             }
         }
-            else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            if (selectedSongByUser > 0)
             {
-                if (selectedSongByUser > 0)
-                {
-                    selectedSongByUser--;
-                    fillingDataInSelectedSong();
-                    movingOtherSongsDown();
-                }
+                selectedSongByUser--;
+                fillingDataInSelectedSong();
+                movingOtherSongsDown();
             }
+        }
     }
 
     void fillingDataInSelectedSong()
@@ -209,13 +216,13 @@ public class SongListV2 : MonoBehaviour
 
         //GENRE FIELD
         if (allSongs[selectedSongByUser].genre2 == null)
-            {
-                selGenreLabel.text = allSongs[selectedSongByUser].genre1;
-            }
+        {
+            selGenreLabel.text = allSongs[selectedSongByUser].genre1;
+        }
         else
-            {
-                selGenreLabel.text = allSongs[selectedSongByUser].genre1 + " / " + allSongs[selectedSongByUser].genre2;
-            }
+        {
+            selGenreLabel.text = allSongs[selectedSongByUser].genre1 + " / " + allSongs[selectedSongByUser].genre2;
+        }
 
         //DIFF FIELD
         starGenerator();
@@ -229,22 +236,22 @@ public class SongListV2 : MonoBehaviour
             float tilt = 570f;
             posy = foo.GetComponent<Transform>().position;
 
-            if (posy.y == tilt-482)
-                {
-                    posy.y += 302f;
-                }
-            else if(posy.y == tilt - 180)
-                {
-                    posy.y += 114f;
-                }
+            if (posy.y == tilt - 482)
+            {
+                posy.y += 302f;
+            }
+            else if (posy.y == tilt - 180)
+            {
+                posy.y += 114f;
+            }
             else if (posy.y == tilt - 572)
-                {
-                    posy.y += 392f;
-                }
+            {
+                posy.y += 392f;
+            }
             else
-                {
-                    posy.y += 90f;
-                }
+            {
+                posy.y += 90f;
+            }
 
             foo.GetComponent<Transform>().position = posy;
         }
@@ -259,18 +266,18 @@ public class SongListV2 : MonoBehaviour
             float tilt = 570f;
             posy = foo.GetComponent<Transform>().position;
 
-            if (posy.y == tilt-66)
-                {
-                    posy.y -= 114f;
-                }
+            if (posy.y == tilt - 66)
+            {
+                posy.y -= 114f;
+            }
             else if (posy.y == tilt - 180)
-                {
-                    posy.y -= 392f;
-                }
+            {
+                posy.y -= 392f;
+            }
             else
-                {
-                    posy.y -= 90f;
-                }
+            {
+                posy.y -= 90f;
+            }
 
             foo.GetComponent<Transform>().position = posy;
         }
@@ -285,14 +292,14 @@ public class SongListV2 : MonoBehaviour
         int multiplierHard = allSongs[selectedSongByUser].difficultyHard;
 
         if (isCurrentDifficultyIsEasy)
-            {
-                selDiffLabel.text = string.Join(starSymbol, new string[multiplierEasy + 1]);
-            }
+        {
+            selDiffLabel.text = string.Join(starSymbol, new string[multiplierEasy + 1]);
+        }
 
         else
-            {
-                selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
-            }
+        {
+            selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
+        }
         alternativeDifficultyTextGenerator();
 
 
@@ -314,21 +321,29 @@ public class SongListV2 : MonoBehaviour
 
     void changeDifficulty()
     {
-        
-            if(Input.GetKeyDown(KeyCode.F))
-                {
-                    if(isCurrentDifficultyIsEasy == false)
-                    {
-                        isCurrentDifficultyIsEasy = true;
-                         starGenerator();
-                    }
 
-                    else
-                    {
-                        isCurrentDifficultyIsEasy = false;
-                        starGenerator();
-                    }
-                }
-             
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (isCurrentDifficultyIsEasy == false)
+            {
+                isCurrentDifficultyIsEasy = true;
+                starGenerator();
+            }
+
+            else
+            {
+                isCurrentDifficultyIsEasy = false;
+                starGenerator();
+            }
+        }
+
+    }
+
+    public void chooseSongAndMoveToGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 }
