@@ -1464,6 +1464,8 @@ MonoBehaviour:
   selTitleLabel: {fileID: 0}
   selDiffObj: {fileID: 511531894}
   selDiffLabel: {fileID: 0}
+  selDiffAltObj: {fileID: 1757615743}
+  selDiffAltLabel: {fileID: 0}
   starEmpty: {fileID: 1490174027171844, guid: 211a801245a085641bb2d048f3a13a71, type: 2}
   starFilled: {fileID: 1711003408537654, guid: 4f7a6bcf592316a41ba25aeceb45b030, type: 2}
   selGenreObj: {fileID: 8197092}
@@ -2574,6 +2576,11 @@ RectTransform:
   m_AnchoredPosition: {x: 159.54999, y: 91.001}
   m_SizeDelta: {x: 30.399994, y: 75.52}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1757615743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1382468270446542, guid: c487fa59491ed24478647c03ea12e6c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 1662875296}
 --- !u!1 &1791938089
 GameObject:
   m_ObjectHideFlags: 0

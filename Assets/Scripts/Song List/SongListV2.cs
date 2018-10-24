@@ -21,6 +21,9 @@ public class SongListV2 : MonoBehaviour
     public GameObject selDiffObj;
     public TextMeshProUGUI selDiffLabel;
 
+    public GameObject selDiffAltObj;
+    public TextMeshProUGUI selDiffAltLabel;
+
     public GameObject starEmpty;
 
     public GameObject starFilled;
@@ -143,6 +146,7 @@ public class SongListV2 : MonoBehaviour
         selTitleLabel = selTitleObj.GetComponent<TMPro.TextMeshProUGUI>();
         selGenreLabel = selGenreObj.GetComponent<TMPro.TextMeshProUGUI>();
         selDiffLabel = selDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
+        selDiffAltLabel = selDiffAltObj.GetComponent<TMPro.TextMeshProUGUI>();
 
         addingSongsToList();
 
@@ -289,6 +293,23 @@ public class SongListV2 : MonoBehaviour
             {
                 selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
             }
+        alternativeDifficultyTextGenerator();
+
+
+    }
+
+    void alternativeDifficultyTextGenerator()
+    {
+        if (isCurrentDifficultyIsEasy)
+        {
+            selDiffAltLabel.text = allSongs[selectedSongByUser].difficultyHard.ToString();
+        }
+
+        else
+        {
+            selDiffAltLabel.text = allSongs[selectedSongByUser].difficultyEasy.ToString();
+        }
+
     }
 
     void changeDifficulty()
