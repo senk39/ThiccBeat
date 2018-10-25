@@ -13,13 +13,6 @@ public class activator : MonoBehaviour {
     public bool active = false;
     GameObject note;
 
-    public GameObject earlyTrigger;
-    public GameObject lateTrigger;
-
-
-    public enum ActivatorType { Perfect, EarlyGreat, LateGreat, Miss, Awaiting, AnyPositiveActivator };
-    public ActivatorType activatorType;
-
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
@@ -28,6 +21,9 @@ public class activator : MonoBehaviour {
 
     public int incrementator = 0;
     public bool isTheLowest = false;
+
+    //public int howManyNotesAreInActiveField = 0;
+
 
     List<GameObject> currentCollisions = new List<GameObject>();
 
@@ -54,13 +50,14 @@ public class activator : MonoBehaviour {
     {
         if (col.gameObject.tag=="Note")
         {
+            
             addToReadyNotesList();
 
 
             active = true;
             note = col.gameObject;  // TU JEST BŁĄD. PRZY KAŻDEJ NOWEJ KOLIZJI OBIEKT NUTA JEST ZAMIENIANY PRZEZ NOWĄ SPADAJĄCĄ NUTKĘ
-            missNote();
             
+ 
         }
     }
 
@@ -70,6 +67,7 @@ public class activator : MonoBehaviour {
         {
             active = false;
             actNoteValue = 0;
+            destroyNote();
         }
         
     }
@@ -80,20 +78,12 @@ public class activator : MonoBehaviour {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 
-    void missNote()
-    {
-        if (activatorType == ActivatorType.Miss)
-        {
-            destroyNote();
-            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-        }
-    }
 
     void addToReadyNotesList()
     {
       
             currentCollisions.Add(note);
-            Debug.Log("array: " + currentCollisions);
+        Debug.Log("array: " + currentCollisions);
            
         
     }
@@ -101,7 +91,7 @@ public class activator : MonoBehaviour {
 
     void destroyNote()
     {
-        Destroy(note);
         currentCollisions.Remove(note);
+        Destroy(note);
     }
 }

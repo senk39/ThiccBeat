@@ -13,14 +13,11 @@ public class NoteBehaviour : MonoBehaviour
 
     public bool isNoteActive = false;
 
-
-    public GameObject perfectActivator;
     public GameObject pinkBar;
     private float positionZero;
 
     private const float perfectDistance = 2.5f;
     private const float greatDistance = 6f;
-
 
 
 
@@ -36,6 +33,7 @@ public class NoteBehaviour : MonoBehaviour
         actualNoteValue = missOrNotActivated; // gdy nuta jest tworzona dostaje wartosc 0 punktów.
         pinkBar = GameObject.Find("pink stripe 1");
         positionZero = pinkBar.transform.position.z; // punkt perfect jest tam gdzie różowa pozioma belka
+
 
     }
 
