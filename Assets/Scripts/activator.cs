@@ -19,13 +19,16 @@ public class activator : MonoBehaviour {
     public GameObject NoteWithValue;
     public uint actNoteValue;
 
-    public int incrementator = 0;
-    public bool isTheLowest = false;
-
     //public int howManyNotesAreInActiveField = 0;
+
+    public List<float> zParamOfNote = new List<float>();
 
 
     List<GameObject> currentCollisions = new List<GameObject>();
+
+    List<GameObject> currentCollisions2 = new List<GameObject>();
+
+
 
 
     // Use this for initialization
@@ -35,10 +38,10 @@ public class activator : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-       // Debug.Log(incrementator);
 
         if (Input.GetKeyDown(key) && active)
         {
+
             addScore();
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             active = false;
@@ -48,17 +51,50 @@ public class activator : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag=="Note")
+
+        //zParamOfNote.Add(col.gameObject.GetComponent<Transform>().position.z);
+
+        float nearestDistanceFromActivator = 9999f;
+        /*
+        foreach (GameObject note in currentCollisions2)
         {
-            
+            if (nearestDistanceFromActivator > GetComponent<Transform>().position.z)
+                {
+                    nearestDistanceFromActivator = GetComponent<Transform>().position.z;
+                }
+        }
+        */
+
+        
+
+
+            if (col.gameObject.tag == "Note")
+            {
+            currentCollisions2.Add(col.gameObject);
+
+            for (int i = 0; i < currentCollisions2.Count; i++)
+            {
+                if (nearestDistanceFromActivator > GetComponent<Transform>().position.z)
+                {
+                    nearestDistanceFromActivator = GetComponent<Transform>().position.z;
+                    note = col.gameObject;  // TU JEST BŁĄD. PRZY KAŻDEJ NOWEJ KOLIZJI OBIEKT NUTA JEST ZAMIENIANY PRZEZ NOWĄ SPADAJĄCĄ NUTKĘ
+
+                }
+            }
+
             addToReadyNotesList();
 
 
-            active = true;
-            note = col.gameObject;  // TU JEST BŁĄD. PRZY KAŻDEJ NOWEJ KOLIZJI OBIEKT NUTA JEST ZAMIENIANY PRZEZ NOWĄ SPADAJĄCĄ NUTKĘ
-            
- 
-        }
+                active = true;
+
+
+            }
+        
+    }
+
+    void thisNewMethodToSortNotes()
+    {
+
     }
 
     void OnTriggerExit(Collider col)
@@ -81,11 +117,11 @@ public class activator : MonoBehaviour {
 
     void addToReadyNotesList()
     {
-      
-            currentCollisions.Add(note);
-        Debug.Log("array: " + currentCollisions);
-           
-        
+        currentCollisions.Add(note);
+   
+        //Debug.Log("array: " + currentCollisions);
+
+
     }
 
 
