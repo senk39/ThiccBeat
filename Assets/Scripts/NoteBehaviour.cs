@@ -33,14 +33,7 @@ public class NoteBehaviour : MonoBehaviour
     public bool row5 = false;
     public bool row6 = false;
 
-
-    public List<GameObject> notesInRow1 = new List<GameObject>();
-    List<GameObject> notesInRow2 = new List<GameObject>();
-    List<GameObject> notesInRow3 = new List<GameObject>();
-    List<GameObject> notesInRow4 = new List<GameObject>();
-    List<GameObject> notesInRow5 = new List<GameObject>();
-    List<GameObject> notesInRow6 = new List<GameObject>();
-
+    public bool isTheLowest = false;
 
 
     void Awake()
@@ -59,8 +52,8 @@ public class NoteBehaviour : MonoBehaviour
 
     void Update()
     {
-        
-        if (actualNoteValue > 0) //ten warunek jest do zmiany z pewnością jeśli chcesz aby nutki się klikały w dobrej kolejności 
+
+        if (actualNoteValue > 0 && isTheLowest == true) //ten warunek jest do zmiany z pewnością jeśli chcesz aby nutki się klikały w dobrej kolejności 
         {
 
             //hycnij te nutki
@@ -83,10 +76,17 @@ public class NoteBehaviour : MonoBehaviour
             actualNoteValue = great;
         }
     }
-        
-       
-    
-       
+
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "TooLateIndicator")
+        {
+            Destroy(tf.gameObject);
+        }
+    }
+
+
 
     void OnTriggerExit(Collider col)
     {

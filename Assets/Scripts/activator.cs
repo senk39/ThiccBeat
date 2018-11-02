@@ -16,19 +16,11 @@ public class activator : MonoBehaviour {
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
-    public GameObject NoteWithValue;
     public uint actNoteValue;
 
+    public int collisionsCounter = 0;
+
     //public int howManyNotesAreInActiveField = 0;
-
-    public List<float> zParamOfNote = new List<float>();
-
-
-    List<GameObject> currentCollisions = new List<GameObject>();
-
-    List<GameObject> currentCollisions2 = new List<GameObject>();
-
-
 
 
     // Use this for initialization
@@ -39,95 +31,71 @@ public class activator : MonoBehaviour {
     void Update () {
 
 
-        if (Input.GetKeyDown(key) && active)
-        {
 
-            addScore();
-            playerComboContainer.GetComponent<playerCombo>().currentCombo++;
-            active = false;
-            destroyNote();
-        }
     }
 
     void OnTriggerEnter(Collider col)
     {
-
-        //zParamOfNote.Add(col.gameObject.GetComponent<Transform>().position.z);
-
-        float nearestDistanceFromActivator = 9999f;
-        /*
-        foreach (GameObject note in currentCollisions2)
-        {
-            if (nearestDistanceFromActivator > GetComponent<Transform>().position.z)
-                {
-                    nearestDistanceFromActivator = GetComponent<Transform>().position.z;
-                }
-        }
-        */
-
-        
-
-
             if (col.gameObject.tag == "Note")
+        {
+            collisionsCounter++;
+            active = true;
+
+            if (col.gameObject.GetComponent<NoteBehaviour>().isTheLowest)
             {
-            currentCollisions2.Add(col.gameObject);
-
-            for (int i = 0; i < currentCollisions2.Count; i++)
-            {
-                if (nearestDistanceFromActivator > GetComponent<Transform>().position.z)
-                {
-                    nearestDistanceFromActivator = GetComponent<Transform>().position.z;
-                    note = col.gameObject;  // TU JEST BŁĄD. PRZY KAŻDEJ NOWEJ KOLIZJI OBIEKT NUTA JEST ZAMIENIANY PRZEZ NOWĄ SPADAJĄCĄ NUTKĘ
-
-                }
+                note = col.gameObject;
             }
-
-            addToReadyNotesList();
-
-
-                active = true;
-
-
-            }
-        
+        }
+         
+              
+            
     }
 
-    void thisNewMethodToSortNotes()
+    void OnTriggerStay(Collider col)
     {
-
+        keyClick();
     }
+
 
     void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Note")
         {
+            collisionsCounter--;
             active = false;
             actNoteValue = 0;
-            destroyNote();
+           // destroyNote();
         }
         
     }
 
    public void addScore()
     {
-        actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue; ///// DODAJ TU JAKIEGOŚ IF IF NOT DESTROYED BO MI ODWOŁUJE SIĘ DO ROZWALONEJ NUTKI
+        //actNoteValue = note.GetComponent<NoteBehaviour>().actualNoteValue; ///// DODAJ TU JAKIEGOŚ IF IF NOT DESTROYED BO MI ODWOŁUJE SIĘ DO ROZWALONEJ NUTKI
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += actNoteValue;
     }
 
 
-    void addToReadyNotesList()
-    {
-        currentCollisions.Add(note);
-   
-        //Debug.Log("array: " + currentCollisions);
 
-
-    }
 
 
     void destroyNote()
     {
-        currentCollisions.Remove(note);
         Destroy(note);
+        collisionsCounter--;
+    }
+
+    void keyClick()
+    {
+        if (Input.GetKeyDown(key) && active)
+        {
+            if (note.GetComponent<NoteBehaviour>().isTheLowest)
+            {
+                addScore();
+                playerComboContainer.GetComponent<playerCombo>().currentCombo++;
+                active = false;
+                destroyNote();
+            }
+        }
     }
 }
