@@ -83,6 +83,7 @@ public class NoteBehaviour : MonoBehaviour
         if (col.gameObject.tag == "TooLateIndicator")
         {
             Destroy(tf.gameObject);
+            GetComponent<activator>().notesQueue.Dequeue();
         }
     }
 

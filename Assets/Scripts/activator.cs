@@ -20,6 +20,8 @@ public class activator : MonoBehaviour {
 
     public int collisionsCounter = 0;
 
+    public Queue<GameObject> notesQueue = new Queue<GameObject>();
+
     //public int howManyNotesAreInActiveField = 0;
 
 
@@ -39,7 +41,8 @@ public class activator : MonoBehaviour {
             if (col.gameObject.tag == "Note")
         {
             collisionsCounter++;
-            active = true;
+            notesQueue.Enqueue(col.gameObject);  
+            Debug.Log(notesQueue.Count);
 
             if (col.gameObject.GetComponent<NoteBehaviour>().isTheLowest)
             {
@@ -54,6 +57,11 @@ public class activator : MonoBehaviour {
     void OnTriggerStay(Collider col)
     {
         keyClick();
+        if (col.gameObject.tag == "Note")
+        {
+            active = true;
+
+        }
     }
 
 
@@ -83,6 +91,9 @@ public class activator : MonoBehaviour {
     {
         Destroy(note);
         collisionsCounter--;
+        notesQueue.Dequeue();
+
+
     }
 
     void keyClick()
