@@ -4,17 +4,60 @@ using UnityEngine;
 
 public class pressingNotes : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public KeyCode key;
+
+    public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
+
+    public bool isActive = false;
+
+    
+
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-}
+       
 
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Note")
+        {
+            notesList.AddLast(col.gameObject);
+        }
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.tag == "Note")
+        {
+            isActive = true;
+
+            if (Input.GetKeyDown(key) && isActive && col.gameObject.GetComponent<note>().isTheLowest)
+            {               
+                Destroy(notesList.First.Value.gameObject);
+                notesList.RemoveFirst();
+                isActive = false;
+            }
+        }
+
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.tag == "Note")
+        {
+            isActive = false;
+            notesList.Remove(col.gameObject);
+        }
+    }
+}
 
 /*
 

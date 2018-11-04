@@ -7,6 +7,7 @@ public class note : MonoBehaviour {
 
     Rigidbody rb;
     public float notesVelocity = 20;
+    public bool isTheLowest = false;
 
     GameObject activator;
 
