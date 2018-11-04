@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pressingNotes : MonoBehaviour {
+public class pressingNotesBar : MonoBehaviour {
 
     public KeyCode key;
 
@@ -10,8 +10,8 @@ public class pressingNotes : MonoBehaviour {
 
     public bool isActive = false;
 
+    
 
-    public GameObject go;
 
 
     // Use this for initialization
@@ -22,22 +22,12 @@ public class pressingNotes : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
        
-        if(go!=null)
-        {
-            if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
-            {
-                //Destroy(notesList.First.Value.gameObject);
-                notesList.RemoveFirst();
-                Destroy(go);
-                isActive = false;
-            }
-        }
 
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Note")
+        if (col.tag == "NoteBar")
         {
             notesList.AddLast(col.gameObject);
         }
@@ -45,24 +35,29 @@ public class pressingNotes : MonoBehaviour {
 
     private void OnTriggerStay(Collider col)
     {
-        if (col.tag == "Note")
+        if (col.tag == "NoteBar")
         {
             isActive = true;
 
-            go = notesList.First.Value.gameObject;
-
-           
+            if (Input.GetKeyDown(key) && isActive && col.gameObject.GetComponent<note>().isTheLowest)
+            {
+                //Destroy(notesList.First.Value.gameObject);
+                Destroy(col.gameObject);
+                notesList.RemoveFirst();
+                isActive = false;
+            }
         }
 
     }
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.tag == "Note")
+        if (col.tag == "NoteBar")
         {
+            Destroy(col.gameObject);
+
             isActive = false;
             notesList.Remove(col.gameObject);
-            Destroy(col.gameObject);
         }
     }
 }

@@ -12,6 +12,9 @@ public class sortNotes : MonoBehaviour
     private float row4x = 1.1f;
     private float row5x = 3.1f;
     private float row6x = 5.1f;
+    private float rowbarx = 1.43f;
+
+
 
     List<GameObject> row1 = new List<GameObject>();
     List<GameObject> row2 = new List<GameObject>();
@@ -19,6 +22,8 @@ public class sortNotes : MonoBehaviour
     List<GameObject> row4 = new List<GameObject>();
     List<GameObject> row5 = new List<GameObject>();
     List<GameObject> row6 = new List<GameObject>();
+    List<GameObject> rowbar = new List<GameObject>();
+
 
 
     // Use this for initialization
@@ -68,6 +73,8 @@ public class sortNotes : MonoBehaviour
         checkIfTheLowestRow4();
         checkIfTheLowestRow5();
         checkIfTheLowestRow6();
+        checkIfTheLowestRowbar();
+
 
         deleteNotesFromLists();
     }
@@ -270,6 +277,37 @@ public class sortNotes : MonoBehaviour
         }
     }
 
+    void checkIfTheLowestRowbar()
+    {
+
+        if (rowbar.Count > 1)
+        {
+            float minimum = float.MaxValue;
+            int correctIndex = rowbar.Count - 1;
+
+            for (int i = 0; i < rowbar.Count - 1; i++)
+            {
+                if (rowbar[i].transform.position.z < rowbar[i + 1].transform.position.z)
+                {
+                    minimum = rowbar[i].transform.position.z;
+                    correctIndex = i;
+                }
+                else
+                {
+                    rowbar[correctIndex].GetComponent<NoteBehaviour>().isTheLowest = false;
+                }
+            }
+            //Debug.Log("minimum: " + minimum);
+            //Debug.Log("correct Index: " + correctIndex);
+
+            rowbar[correctIndex].GetComponent<NoteBehaviour>().isTheLowest = true;
+        }
+        else if (rowbar.Count == 1)
+        {
+            rowbar[0].GetComponent<NoteBehaviour>().isTheLowest = true;
+        }
+    }
+
     void addNotesToLists()
     {
         foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("Note"))
@@ -299,6 +337,10 @@ public class sortNotes : MonoBehaviour
             {
                 row6.Add(songNote);
             }
+            else if (songNote.transform.position.x == rowbarx)
+            {
+                rowbar.Add(songNote);
+            }
         }
     }
 
@@ -310,6 +352,7 @@ public class sortNotes : MonoBehaviour
         row4.Clear();
         row5.Clear();
         row6.Clear();
+        rowbar.Clear();
     }
 }
 

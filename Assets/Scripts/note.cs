@@ -6,10 +6,9 @@ using UnityEngine;
 public class note : MonoBehaviour {
 
     Rigidbody rb;
-    public float notesVelocity = 20;
+    public float notesVelocity = 6;
     public bool isTheLowest = false;
 
-    GameObject activator;
 
     void Awake()
     {

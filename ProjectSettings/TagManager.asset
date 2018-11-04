@@ -12,6 +12,7 @@ TagManager:
   - TooLateIndicator
   - InterfaceStripe
   - NonSelectedSongBox
+  - NoteBar
   layers:
   - Default
   - TransparentFX
