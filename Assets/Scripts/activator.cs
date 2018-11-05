@@ -16,7 +16,7 @@ public class activator : MonoBehaviour {
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
-    public uint actNoteValue;
+    public int actNoteValue;
 
     public int collisionsCounter = 0;
 

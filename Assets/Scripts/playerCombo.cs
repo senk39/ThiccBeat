@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class playerCombo : MonoBehaviour {
 
-    public ushort maxCombo = 0;
-    public ushort currentCombo = 0;
+    public int maxCombo = 0;
+    public int currentCombo = 0;
     public Text currentComboAsText;
 
 

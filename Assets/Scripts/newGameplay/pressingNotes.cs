@@ -10,8 +10,10 @@ public class pressingNotes : MonoBehaviour {
 
     public bool isActive = false;
 
-
     public GameObject go;
+
+    public GameObject playerScoreContainer;
+    public GameObject playerComboContainer;
 
 
     // Use this for initialization
@@ -28,6 +30,9 @@ public class pressingNotes : MonoBehaviour {
             {
                 //Destroy(notesList.First.Value.gameObject);
                 notesList.RemoveFirst();
+                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+                playerComboContainer.GetComponent<playerCombo>().currentCombo++;
+
                 Destroy(go);
                 isActive = false;
             }
@@ -62,6 +67,7 @@ public class pressingNotes : MonoBehaviour {
         {
             isActive = false;
             notesList.Remove(col.gameObject);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
             Destroy(col.gameObject);
         }
     }
