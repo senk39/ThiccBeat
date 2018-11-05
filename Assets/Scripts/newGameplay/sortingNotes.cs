@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class sortingNotes : MonoBehaviour
 {
-
     private float row1x = -5.1f;
     private float row2x = -3.1f;
     private float row3x = -1.1f;
     private float row4x = 1.1f;
     private float row5x = 3.1f;
     private float row6x = 5.1f;
-    private float rowbarx = 1.43f;
-
+    private float rowbarx = 2.83f;
 
     List<GameObject> row1 = new List<GameObject>();
     List<GameObject> row2 = new List<GameObject>();
@@ -22,42 +20,8 @@ public class sortingNotes : MonoBehaviour
     List<GameObject> row6 = new List<GameObject>();
     List<GameObject> rowbar = new List<GameObject>();
 
-
-    // Use this for initialization
     void Start()
     {
-        /*
-        foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("Note"))
-        {
-            if (songNote.transform.position.x == row1x)
-            {
-                row1.Add(songNote);
-                
-            }
-            else if (songNote.transform.position.x == row2x)
-            {
-                row2.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row3x)
-            {
-                row3.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row4x)
-            {
-                row4.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row5x)
-            {
-                row5.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row6x)
-            {
-                row6.Add(songNote);
-            }
-        }
-        */
-
-
     }
 
     void Update()
@@ -72,10 +36,8 @@ public class sortingNotes : MonoBehaviour
         checkIfTheLowestRow6();
         checkIfTheLowestRowbar();
 
-
         deleteNotesFromLists();
     }
-
 
     void checkIfTheLowestRow1()
     {
@@ -245,7 +207,6 @@ public class sortingNotes : MonoBehaviour
 
     void checkIfTheLowestRow6()
     {
-
         if (row6.Count > 1)
         {
             float minimum = float.MaxValue;
@@ -263,9 +224,6 @@ public class sortingNotes : MonoBehaviour
                     row6[correctIndex].GetComponent<note>().isTheLowest = false;
                 }
             }
-            //Debug.Log("minimum: " + minimum);
-            //Debug.Log("correct Index: " + correctIndex);
-
             row6[correctIndex].GetComponent<note>().isTheLowest = true;
         }
         else if (row6.Count == 1)
@@ -276,46 +234,31 @@ public class sortingNotes : MonoBehaviour
 
     void checkIfTheLowestRowbar()
     {
-
         if (rowbar.Count > 1)
         {
+            float minimum = float.MaxValue;
+            int correctIndex = rowbar.Count - 1;
 
-            float min = float.MaxValue;
-            float max = float.MinValue;
-
-            int minIndex = 0;
-
-            //float minimum = float.MaxValue;
-            //int correctIndex = rowbar.Count - 1;
-
-            for (int i = 0; i < rowbar.Count; i++)
+            for (int i = 0; i < rowbar.Count - 1; i++)
             {
-
-
-                if (rowbar[i].transform.position.z < min)
+                if (rowbar[i].transform.position.z < rowbar[i + 1].transform.position.z)
                 {
-                    min = rowbar[i].transform.position.z;
-                    //rowbar[i].GetComponent<note>().isTheLowest = true;
-                    minIndex = i;
+                    minimum = rowbar[i].transform.position.z;
+                    correctIndex = i;
                 }
-                if (row1[i].transform.position.z > max)
+                else
                 {
-                    max = rowbar[i].transform.position.z;
-                    rowbar[i].GetComponent<note>().isTheLowest = false;
+                    rowbar[correctIndex].GetComponent<note>().isTheLowest = false;
                 }
             }
 
-            //Debug.Log("minimum: " + minimum);
-            //Debug.Log("correct Index: " + correctIndex);
-
-            rowbar[minIndex].GetComponent<note>().isTheLowest = true;
+            rowbar[correctIndex].GetComponent<note>().isTheLowest = true;
         }
         else if (rowbar.Count == 1)
         {
             rowbar[0].GetComponent<note>().isTheLowest = true;
         }
     }
-
 
     void addNotesToLists()
     {
@@ -324,7 +267,6 @@ public class sortingNotes : MonoBehaviour
             if (songNote.transform.position.x == row1x)
             {
                 row1.Add(songNote);
-
             }
             else if (songNote.transform.position.x == row2x)
             {
@@ -368,6 +310,3 @@ public class sortingNotes : MonoBehaviour
             rowbar.Clear();
         }
     }
-
-
-

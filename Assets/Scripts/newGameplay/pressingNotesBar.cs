@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pressingNotesBar : MonoBehaviour {
+public class pressingNotesBar : MonoBehaviour
+{
 
     public KeyCode key;
 
@@ -10,18 +11,35 @@ public class pressingNotesBar : MonoBehaviour {
 
     public bool isActive = false;
 
-    
+    public GameObject go;
 
+    public GameObject playerScoreContainer;
+    public GameObject playerComboContainer;
 
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-       
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        if (go != null)
+        {
+            if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
+            {
+                //Destroy(notesList.First.Value.gameObject);
+                notesList.RemoveFirst();
+                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+                playerComboContainer.GetComponent<playerCombo>().currentCombo++;
+
+                Destroy(go);
+                isActive = false;
+            }
+        }
 
     }
 
@@ -39,13 +57,9 @@ public class pressingNotesBar : MonoBehaviour {
         {
             isActive = true;
 
-            if (Input.GetKeyDown(key) && isActive && col.gameObject.GetComponent<note>().isTheLowest)
-            {
-                //Destroy(notesList.First.Value.gameObject);
-                Destroy(col.gameObject);
-                notesList.RemoveFirst();
-                isActive = false;
-            }
+            go = notesList.First.Value.gameObject;
+
+
         }
 
     }
@@ -54,10 +68,10 @@ public class pressingNotesBar : MonoBehaviour {
     {
         if (col.tag == "NoteBar")
         {
-            Destroy(col.gameObject);
-
             isActive = false;
             notesList.Remove(col.gameObject);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
+            Destroy(col.gameObject);
         }
     }
 }
