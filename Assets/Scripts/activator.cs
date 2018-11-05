@@ -22,6 +22,8 @@ public class activator : MonoBehaviour {
 
     public Queue<GameObject> notesQueue = new Queue<GameObject>();
 
+    public bool notesGenerator = true;
+
     //public int howManyNotesAreInActiveField = 0;
 
 
@@ -31,8 +33,6 @@ public class activator : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
-
 
     }
 

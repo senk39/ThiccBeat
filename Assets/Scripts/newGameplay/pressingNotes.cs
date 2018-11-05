@@ -15,16 +15,34 @@ public class pressingNotes : MonoBehaviour {
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
+    // GENERATOR
+    public bool notesGenerator = true;
+    public GameObject gnote;
+    Vector3 gnotevector = new Vector3(0f, 0.35f, -14.19f);
+    Quaternion gnoteq = new Quaternion(0f, 0f, 0f, 0f);
 
     // Use this for initialization
     void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-       
-        if(go!=null)
+
+
+        if (notesGenerator)
+        {
+            if (Input.GetKeyDown(key))
+            {
+                Debug.Log("You created a note!");
+                Instantiate(gnote, gnotevector,gnoteq);
+            }
+        }
+        else
+        { }
+
+
+
+        if (go!=null)
         {
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
             {
@@ -60,10 +78,10 @@ public class pressingNotes : MonoBehaviour {
         }
 
     }
-
+    
     private void OnTriggerExit(Collider col)
     {
-        if (col.tag == "Note")
+        if (col.tag == "Note" && notesGenerator == false)
         {
             isActive = false;
             notesList.Remove(col.gameObject);
