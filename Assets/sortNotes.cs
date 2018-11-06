@@ -251,14 +251,14 @@ public class sortNotes : MonoBehaviour
 
         if (row6.Count > 1)
         {
-            float minimum = float.MaxValue;
+            //float minimum = float.MaxValue;
             int correctIndex = row6.Count - 1;
 
             for (int i = 0; i < row6.Count - 1; i++)
             {
                 if (row6[i].transform.position.z < row6[i + 1].transform.position.z)
                 {
-                    minimum = row6[i].transform.position.z;
+                    //minimum = row6[i].transform.position.z;
                     correctIndex = i;
                 }
                 else
@@ -266,8 +266,6 @@ public class sortNotes : MonoBehaviour
                     row6[correctIndex].GetComponent<NoteBehaviour>().isTheLowest = false;
                 }
             }
-            //Debug.Log("minimum: " + minimum);
-            //Debug.Log("correct Index: " + correctIndex);
 
             row6[correctIndex].GetComponent<NoteBehaviour>().isTheLowest = true;
         }
@@ -282,14 +280,14 @@ public class sortNotes : MonoBehaviour
 
         if (rowbar.Count > 1)
         {
-            float minimum = float.MaxValue;
+           // float minimum = float.MaxValue;
             int correctIndex = rowbar.Count - 1;
 
             for (int i = 0; i < rowbar.Count - 1; i++)
             {
                 if (rowbar[i].transform.position.z < rowbar[i + 1].transform.position.z)
                 {
-                    minimum = rowbar[i].transform.position.z;
+                  //  minimum = rowbar[i].transform.position.z;
                     correctIndex = i;
                 }
                 else
@@ -297,8 +295,6 @@ public class sortNotes : MonoBehaviour
                     rowbar[correctIndex].GetComponent<NoteBehaviour>().isTheLowest = false;
                 }
             }
-            //Debug.Log("minimum: " + minimum);
-            //Debug.Log("correct Index: " + correctIndex);
 
             rowbar[correctIndex].GetComponent<NoteBehaviour>().isTheLowest = true;
         }
