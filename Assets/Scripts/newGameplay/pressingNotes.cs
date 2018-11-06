@@ -9,6 +9,7 @@ public class pressingNotes : MonoBehaviour {
     public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
 
     public bool isActive = false;
+    public bool isHolding = false;
 
     public GameObject go;
 
@@ -64,6 +65,11 @@ public class pressingNotes : MonoBehaviour {
         {
             notesList.AddLast(col.gameObject);
         }
+
+        else if(col.tag == "h_note_start")
+        {
+            notesList.AddLast(col.gameObject);
+        }
     }
 
     private void OnTriggerStay(Collider col)
@@ -72,9 +78,12 @@ public class pressingNotes : MonoBehaviour {
         {
             isActive = true;
 
-            go = notesList.First.Value.gameObject;
+            go = notesList.First.Value.gameObject;        
+        }
 
-           
+        else if (col.tag == "h_note_start")
+        {
+            isActive = true;
         }
 
     }
@@ -88,6 +97,22 @@ public class pressingNotes : MonoBehaviour {
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
             Destroy(col.gameObject);
         }
+        if ((col.tag == "h_note_start" || col.tag == "h_note_end") && notesGenerator == false)
+        {
+            isActive = false;
+            notesList.Remove(col.gameObject);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
+            Destroy(col.gameObject);
+        }
+        if (col.tag == "h_note_mid" && notesGenerator == false)
+        {
+            isActive = false;
+            notesList.Remove(col.gameObject);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
+            Destroy(col.gameObject);
+        }
+
+
     }
 }
 

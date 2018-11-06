@@ -13,6 +13,11 @@ TagManager:
   - InterfaceStripe
   - NonSelectedSongBox
   - NoteBar
+  - hNote_mid
+  - h_note_start
+  - h_note_mid
+  - h_note_end
+  - h_note
   layers:
   - Default
   - TransparentFX
