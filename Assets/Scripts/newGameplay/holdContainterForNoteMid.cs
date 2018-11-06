@@ -7,14 +7,11 @@ public class holdContainterForNoteMid : MonoBehaviour {
     public GameObject holdStart;
     public GameObject holdEnd;
 
-    // Use this for initialization
     void Start () {
         foreach (Transform child in transform.parent)
         {
             if (child.name != this.name)
             {
-                Debug.Log("Found sibling " + child.name);
-                // work with child here
                 if(child.name == "noteStart")
                 {
                     holdStart = child.gameObject;
@@ -26,9 +23,4 @@ public class holdContainterForNoteMid : MonoBehaviour {
             }
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
