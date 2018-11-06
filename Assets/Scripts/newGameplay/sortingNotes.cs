@@ -297,6 +297,34 @@ public class sortingNotes : MonoBehaviour
                 rowbar.Add(songNote);
             }
         }
+
+        foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("h_note_start"))
+        {
+            if (songNote.transform.position.x == row1x)
+            {
+                row1.Add(songNote);
+            }
+            else if (songNote.transform.position.x == row2x)
+            {
+                row2.Add(songNote);
+            }
+            else if (songNote.transform.position.x == row3x)
+            {
+                row3.Add(songNote);
+            }
+            else if (songNote.transform.position.x == row4x)
+            {
+                row4.Add(songNote);
+            }
+            else if (songNote.transform.position.x == row5x)
+            {
+                row5.Add(songNote);
+            }
+            else if (songNote.transform.position.x == row6x)
+            {
+                row6.Add(songNote);
+            }
+        }
     }
 
         void deleteNotesFromLists()

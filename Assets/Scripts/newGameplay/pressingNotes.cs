@@ -77,13 +77,13 @@ public class pressingNotes : MonoBehaviour {
         if (col.tag == "Note")
         {
             isActive = true;
-
             go = notesList.First.Value.gameObject;        
         }
 
         else if (col.tag == "h_note_start")
         {
             isActive = true;
+            go = notesList.First.Value.gameObject;
         }
 
     }
