@@ -16,6 +16,8 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     public float shrinkSpeed;
 
+    public float pivotZPos;
+
     void Start () {
         //tf = transform;
 
@@ -23,6 +25,7 @@ public class holdContainterForNoteMid : MonoBehaviour {
         if(transform.parent.name == "pivot")
         {
             pivot = transform.parent.gameObject;
+            pivotZPos = pivot.transform.position.z;
         }
 
         foreach (Transform child in transform.parent)
@@ -62,10 +65,11 @@ public class holdContainterForNoteMid : MonoBehaviour {
                 posv3.z = -14.2f;
                 pivot.GetComponent<note>().notesVelocity = 0;
                 GetComponent<note>().notesVelocity = 0;
-                tfv3.z -= 1.1f;
+                tfv3.z -= 0.22f;
                 //posv3.z -= 11f;
                 //transform.position = posv3;
                 pivot.transform.localScale = tfv3;
+                pivot.transform.position = posv3;
             }
             else
             {
