@@ -18,6 +18,8 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     public float pivotZPos;
 
+    public bool noteStartIsClicked = false;
+
     void Start () {
         //tf = transform;
 
@@ -28,7 +30,7 @@ public class holdContainterForNoteMid : MonoBehaviour {
             pivotZPos = pivot.transform.position.z;
         }
 
-        foreach (Transform child in transform.parent)
+        foreach (Transform child in transform.parent.parent)
         {
             if (child.name != this.name)
             {
@@ -58,7 +60,7 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     void OnTriggerStay(Collider collisionInfo)
     {
-        if(collisionInfo.gameObject.tag == "Pink Bar" && isActivated)
+        if(collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked)
         {
             if (tfv3.z > 0)
             {
@@ -73,7 +75,11 @@ public class holdContainterForNoteMid : MonoBehaviour {
             }
             else
             {
+                tfv3.z = 0f;
+                pivot.transform.localScale = tfv3; 
                 Destroy(transform.gameObject);
+
+                Destroy(holdEnd);
             }
             
         }

@@ -47,7 +47,10 @@ public class pressingNotes : MonoBehaviour {
         {
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
             {
-                //Destroy(notesList.First.Value.gameObject);
+                if(go.tag =="h_note_start")
+                {
+                    go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().noteStartIsClicked = true;
+                }
                 notesList.RemoveFirst();
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
                 playerComboContainer.GetComponent<playerCombo>().currentCombo++;
