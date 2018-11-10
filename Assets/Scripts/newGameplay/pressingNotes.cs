@@ -49,7 +49,10 @@ public class pressingNotes : MonoBehaviour {
             {
                 if(go.tag =="h_note_start")
                 {
+                    //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
                     go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().noteStartIsClicked = true;
+                   // Debug.Log("to sie zdarzylo");
+
                 }
                 notesList.RemoveFirst();
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
@@ -58,7 +61,14 @@ public class pressingNotes : MonoBehaviour {
                 Destroy(go);
                 isActive = false;
             }
-        }
+            if (Input.GetKeyUp(key) && isActive && go.GetComponent<note>().isTheLowest)
+            {
+                if (go.tag == "h_note_start")
+                {
+                    //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
+                }
+            }
+       }
 
     }
 

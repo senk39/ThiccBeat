@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class holdContainterForNoteMid : MonoBehaviour {
 
-    public GameObject holdStart;
-    public GameObject holdEnd;
+    private GameObject holdStart;
+    private GameObject holdEnd;
 
-    public GameObject pivot;
+    private GameObject pivot;
 
-    public KeyCode keyMid;
+    private GameObject playerScoreContainer;
+    public GameObject playerComboContainer;
+
+    private KeyCode keyMid;
 
     public bool isActivated = false;
-    Vector3 tfv3;
-    Vector3 posv3;
+    private Vector3 tfv3;
+    private Vector3 posv3;
 
-    public float shrinkSpeed;
-
-    public float pivotZPos;
+    private float pivotZPos;
 
     public bool noteStartIsClicked = false;
 
+    public float toleranceForTooEarlyUnclick = 3.5f;
+
+    public int counterForBlockMultipleClicks;
+
     void Start () {
+
+        playerScoreContainer = GameObject.Find("Score");
 
         checkKey();
 
@@ -60,31 +67,42 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
         void OnTriggerStay(Collider collisionInfo)
     {
-       
-        if(collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked)
+
+        if (collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked && counterForBlockMultipleClicks<1)
         {
-            if (tfv3.z > 0)
+            if (Input.GetKeyUp(keyMid))
             {
+                //counterForBlockMultipleClicks++;
+            }
+            if (Input.GetKey(keyMid))
+            {
+                Debug.Log(counterForBlockMultipleClicks);
                 posv3.z = -14.2f;
                 pivot.GetComponent<note>().notesVelocity = 0;
                 GetComponent<note>().notesVelocity = 0;
                 tfv3.z -= 0.22f;
                 pivot.transform.localScale = tfv3;
                 pivot.transform.position = posv3;
-            }
+                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore++;
+
+
+                if (tfv3.z > 0) { }       
+        }
             else
             {
-                tfv3.z = 0f;
-                pivot.transform.localScale = tfv3; 
-                Destroy(transform.gameObject);
-                Destroy(holdEnd);
+                if (tfv3.z < toleranceForTooEarlyUnclick)
+                {
+                    tfv3.z = 0f;
+                    pivot.transform.localScale = tfv3;
+                    Destroy(transform.gameObject);
+                    Destroy(holdEnd);
+                }
             }
         }
     }
 
     void checkKey()
     {
-
         if (gameObject.transform.parent.transform.position.x == -5.1f)
         {
             keyMid = KeyCode.A;
