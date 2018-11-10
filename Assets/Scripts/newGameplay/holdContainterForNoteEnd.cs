@@ -12,9 +12,10 @@ public class holdContainterForNoteEnd : MonoBehaviour {
         {
             if (child.name != this.name)
             {
-                if(child.name == "noteMid")
+                if(child.name == "pivot")
                 {
-                    holdMid = child.gameObject;
+                    //holdMid = child.gameObject;
+                    holdMid = child.Find("noteMid").gameObject;
                 }
                 else if (child.name == "noteStart")
                 {

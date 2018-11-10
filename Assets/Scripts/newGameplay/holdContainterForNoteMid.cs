@@ -9,8 +9,9 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     public GameObject pivot;
 
+    public KeyCode keyMid;
+
     public bool isActivated = false;
-   // Transform tf;
     Vector3 tfv3;
     Vector3 posv3;
 
@@ -21,10 +22,10 @@ public class holdContainterForNoteMid : MonoBehaviour {
     public bool noteStartIsClicked = false;
 
     void Start () {
-        //tf = transform;
 
-        
-        if(transform.parent.name == "pivot")
+        checkKey();
+
+        if (transform.parent.name == "pivot")
         {
             pivot = transform.parent.gameObject;
             pivotZPos = pivot.transform.position.z;
@@ -44,12 +45,11 @@ public class holdContainterForNoteMid : MonoBehaviour {
                 }
             }
         }
-
-
     }
 
     void Update()
     {
+
         posv3 = pivot.transform.position;
         tfv3 = pivot.transform.localScale;
         if (holdStart == null)
@@ -58,8 +58,9 @@ public class holdContainterForNoteMid : MonoBehaviour {
         }
     }
 
-    void OnTriggerStay(Collider collisionInfo)
+        void OnTriggerStay(Collider collisionInfo)
     {
+       
         if(collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked)
         {
             if (tfv3.z > 0)
@@ -68,8 +69,6 @@ public class holdContainterForNoteMid : MonoBehaviour {
                 pivot.GetComponent<note>().notesVelocity = 0;
                 GetComponent<note>().notesVelocity = 0;
                 tfv3.z -= 0.22f;
-                //posv3.z -= 11f;
-                //transform.position = posv3;
                 pivot.transform.localScale = tfv3;
                 pivot.transform.position = posv3;
             }
@@ -78,10 +77,37 @@ public class holdContainterForNoteMid : MonoBehaviour {
                 tfv3.z = 0f;
                 pivot.transform.localScale = tfv3; 
                 Destroy(transform.gameObject);
-
                 Destroy(holdEnd);
             }
-            
+        }
+    }
+
+    void checkKey()
+    {
+
+        if (gameObject.transform.parent.transform.position.x == -5.1f)
+        {
+            keyMid = KeyCode.A;
+        }
+        else if (gameObject.transform.parent.transform.position.x == -3.1f)
+        {
+            keyMid = KeyCode.W;
+        }
+        else if (gameObject.transform.parent.transform.position.x == -1.1f)
+        {
+            keyMid = KeyCode.D;
+        }
+        else if (gameObject.transform.parent.transform.position.x == 1.1f)
+        {
+            keyMid = KeyCode.J;
+        }
+        else if (gameObject.transform.parent.transform.position.x == 3.1f)
+        {
+            keyMid = KeyCode.I;
+        }
+        else if (gameObject.transform.parent.transform.position.x == 5.1f)
+        {
+            keyMid = KeyCode.L;
         }
     }
 }
