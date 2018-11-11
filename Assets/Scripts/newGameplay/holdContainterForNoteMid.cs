@@ -28,38 +28,9 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     private float pinkBarZPos;
 
-    //public float initialNoteLength;
-
     void Start () {
 
-        //initialNoteLength = GetComponent<Transform>().parent.localScale.z;
-        pinkBarZPos = GameObject.Find("pink stripe 3").transform.position.z;
-        Debug.Log("pinkZPos: " + pinkBarZPos);
-
-        playerScoreContainer = GameObject.Find("Score");
-
-        checkKey();
-
-        if (transform.parent.name == "pivot")
-        {
-            pivot = transform.parent.gameObject;
-            pivotZPos = pivot.transform.position.z;
-        }
-
-        foreach (Transform child in transform.parent.parent)
-        {
-            if (child.name != this.name)
-            {
-                if(child.name == "noteStart")
-                {
-                    holdStart = child.gameObject;
-                }
-                else if (child.name == "noteEnd")
-                {
-                    holdEnd = child.gameObject;
-                }
-            }
-        }
+        dataInit();
     }
 
     void Update()
@@ -75,7 +46,6 @@ public class holdContainterForNoteMid : MonoBehaviour {
         {
             if (Input.GetKeyDown(keyMid))
             {
-                Debug.Log("isNull");
                 counterForBlockMultipleClicks++;
             }
         }
@@ -90,38 +60,83 @@ public class holdContainterForNoteMid : MonoBehaviour {
             if (Input.GetKeyUp(keyMid))
             {
                 counterForBlockMultipleClicks++;
-                Debug.Log(counterForBlockMultipleClicks);
             }
-            if (Input.GetKey(keyMid))
+            
+            if (Input.GetKey(keyMid))          
             {
-                if (tfv3.z > Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos))
-                {
-                    tfv3.z -= Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos));
-                    Debug.Log("dluzsze niz byc powinno!");
-                }
-                posv3.z = -14.2f;
-                pivot.GetComponent<note>().notesVelocity = 0;
-                GetComponent<note>().notesVelocity = 0;
-                tfv3.z -= 0.22f;
-                pivot.transform.localScale = tfv3;
-                pivot.transform.position = posv3;
+                LimitingMidKeyToEndNotePosition();
+
+                shrinkingDownOfPressedHoldNote();
+
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore +=2;
 
-               
-
-
                 if (tfv3.z > 0) { }       
-        }
+            }
+            
 
             else
             {
                 if (tfv3.z < toleranceForTooEarlyUnclick)
                 {
-                    tfv3.z = 0f;
-                    pivot.transform.localScale = tfv3;
-                    Destroy(transform.gameObject);
-                    Destroy(holdEnd);
-                    playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+                    onDestroyNote();
+                }
+            }
+        }
+    }
+
+    void shrinkingDownOfPressedHoldNote()
+    {
+        posv3.z = -14.2f;
+        pivot.GetComponent<note>().notesVelocity = 0;
+        GetComponent<note>().notesVelocity = 0;
+        tfv3.z -= 0.22f;
+        pivot.transform.localScale = tfv3;
+        pivot.transform.position = posv3;
+    }
+
+    void onDestroyNote()
+    {
+        tfv3.z = 0f;
+        pivot.transform.localScale = tfv3;
+        Destroy(transform.gameObject);
+        Destroy(holdEnd);
+        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+    }
+
+    void LimitingMidKeyToEndNotePosition()
+    {
+        if (tfv3.z > Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos))
+        {
+            tfv3.z -= Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos));
+            Debug.Log("dluzsze niz byc powinno!");
+        }
+    }
+
+    void dataInit()
+    {
+        pinkBarZPos = GameObject.Find("pink stripe 3").transform.position.z;
+
+        playerScoreContainer = GameObject.Find("Score");
+
+        checkKey();
+
+        if (transform.parent.name == "pivot")
+        {
+            pivot = transform.parent.gameObject;
+            pivotZPos = pivot.transform.position.z;
+        }
+
+        foreach (Transform child in transform.parent.parent)
+        {
+            if (child.name != this.name)
+            {
+                if (child.name == "noteStart")
+                {
+                    holdStart = child.gameObject;
+                }
+                else if (child.name == "noteEnd")
+                {
+                    holdEnd = child.gameObject;
                 }
             }
         }
