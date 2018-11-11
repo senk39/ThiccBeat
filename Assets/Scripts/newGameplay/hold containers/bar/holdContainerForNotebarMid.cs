@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class holdContainterForNoteMid : MonoBehaviour {
+public class holdContainerForNotebarMid : MonoBehaviour {
 
     private GameObject holdStart;
     private GameObject holdEnd;
@@ -18,18 +18,17 @@ public class holdContainterForNoteMid : MonoBehaviour {
     private Vector3 tfv3;
     private Vector3 posv3;
 
-    private float pivotZPos;
-
     public bool noteStartIsClicked = false;
 
     public float toleranceForTooEarlyUnclick = 3.5f;
 
     public int counterForBlockMultipleClicks;
 
-    private float pinkBarZPos;
+    private float barButtonOnDownZPos;
 
-    void Start () {
-
+    void Start()
+    {
+        
         dataInit();
     }
 
@@ -42,7 +41,7 @@ public class holdContainterForNoteMid : MonoBehaviour {
         {
             isActivated = true;
         }
-        if(holdStart==null)
+        if (holdStart == null)
         {
             if (Input.GetKeyDown(keyMid))
             {
@@ -51,28 +50,28 @@ public class holdContainterForNoteMid : MonoBehaviour {
         }
     }
 
-        void OnTriggerStay(Collider collisionInfo)
+    void OnTriggerStay(Collider collisionInfo)
     {
 
-        if (collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked && counterForBlockMultipleClicks<1)
+        if (collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked && counterForBlockMultipleClicks < 1)
         {
 
             if (Input.GetKeyUp(keyMid))
             {
                 counterForBlockMultipleClicks++;
             }
-            
-            if (Input.GetKey(keyMid))          
+
+            if (Input.GetKey(keyMid))
             {
                 LimitingMidKeyToEndNotePosition();
 
                 shrinkingDownOfPressedHoldNote();
 
-                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore +=2;
+                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 2;
 
-                if (tfv3.z > 0) { }       
+                if (tfv3.z > 0) { }
             }
-            
+
 
             else
             {
@@ -105,68 +104,38 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     void LimitingMidKeyToEndNotePosition()
     {
-        if (tfv3.z > Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos))
+        if (tfv3.z > Mathf.Abs(holdEnd.transform.position.z - barButtonOnDownZPos))
         {
-            tfv3.z -= Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos));
-            Debug.Log("dluzsze niz byc powinno!");
+            tfv3.z -= Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - barButtonOnDownZPos));
         }
     }
 
     void dataInit()
     {
-        pinkBarZPos = GameObject.Find("pink stripe 3").transform.position.z;
+        barButtonOnDownZPos = GameObject.Find("barButton").transform.position.z;
 
         playerScoreContainer = GameObject.Find("Score");
 
-        checkKey();
+        keyMid = KeyCode.Space;
 
         if (transform.parent.name == "pivot")
         {
             pivot = transform.parent.gameObject;
-            pivotZPos = pivot.transform.position.z;
         }
 
         foreach (Transform child in transform.parent.parent)
         {
             if (child.name != this.name)
             {
-                if (child.name == "noteStart")
+                if (child.name == "notebarStart")
                 {
                     holdStart = child.gameObject;
                 }
-                else if (child.name == "noteEnd")
+                else if (child.name == "notebarEnd")
                 {
                     holdEnd = child.gameObject;
                 }
             }
-        }
-    }
-
-    void checkKey()
-    {
-        if (gameObject.transform.parent.transform.position.x == -5.1f)
-        {
-            keyMid = KeyCode.A;
-        }
-        else if (gameObject.transform.parent.transform.position.x == -3.1f)
-        {
-            keyMid = KeyCode.W;
-        }
-        else if (gameObject.transform.parent.transform.position.x == -1.1f)
-        {
-            keyMid = KeyCode.D;
-        }
-        else if (gameObject.transform.parent.transform.position.x == 1.1f)
-        {
-            keyMid = KeyCode.J;
-        }
-        else if (gameObject.transform.parent.transform.position.x == 3.1f)
-        {
-            keyMid = KeyCode.I;
-        }
-        else if (gameObject.transform.parent.transform.position.x == 5.1f)
-        {
-            keyMid = KeyCode.L;
         }
     }
 }

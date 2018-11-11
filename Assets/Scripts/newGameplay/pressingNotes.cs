@@ -54,6 +54,9 @@ public class pressingNotes : MonoBehaviour {
                    // Debug.Log("to sie zdarzylo");
 
                 }
+
+
+
                 notesList.RemoveFirst();
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
                 playerComboContainer.GetComponent<playerCombo>().currentCombo++;

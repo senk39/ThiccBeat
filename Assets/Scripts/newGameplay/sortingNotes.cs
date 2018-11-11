@@ -294,6 +294,16 @@ public class sortingNotes : MonoBehaviour
         {
             if (songNote.transform.position.x == rowbarx)
             {
+                Debug.Log("added" + songNote.name);
+                rowbar.Add(songNote);
+            }
+        }
+
+        foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("h_notebar_start"))
+        {
+            if (songNote.transform.position.x == rowbarx)
+            {
+                Debug.Log("added" + songNote.name);
                 rowbar.Add(songNote);
             }
         }

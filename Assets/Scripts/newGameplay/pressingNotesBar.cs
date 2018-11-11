@@ -31,6 +31,11 @@ public class pressingNotesBar : MonoBehaviour
         {
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
             {
+                if (go.tag == "h_notebar_start")
+                {
+                    go.transform.parent.Find("pivot").Find("notebarMid").GetComponent<holdContainerForNotebarMid>().noteStartIsClicked = true;
+                }
+
                 //Destroy(notesList.First.Value.gameObject);
                 notesList.RemoveFirst();
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
@@ -49,6 +54,10 @@ public class pressingNotesBar : MonoBehaviour
         {
             notesList.AddLast(col.gameObject);
         }
+        else if (col.tag == "h_notebar_start")
+        {
+            notesList.AddLast(col.gameObject);
+        }
     }
 
     private void OnTriggerStay(Collider col)
@@ -58,8 +67,12 @@ public class pressingNotesBar : MonoBehaviour
             isActive = true;
 
             go = notesList.First.Value.gameObject;
+        }
 
-
+        else if (col.tag == "h_notebar_start")
+        {
+            isActive = true;
+            go = notesList.First.Value.gameObject;
         }
 
     }
@@ -67,6 +80,20 @@ public class pressingNotesBar : MonoBehaviour
     private void OnTriggerExit(Collider col)
     {
         if (col.tag == "NoteBar")
+        {
+            isActive = false;
+            notesList.Remove(col.gameObject);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
+            Destroy(col.gameObject);
+        }
+        if (col.tag == "h_notebar_start" || col.tag == "h_notebar_end")
+        {
+            isActive = false;
+            notesList.Remove(col.gameObject);
+            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
+            Destroy(col.gameObject);
+        }
+        if (col.tag == "h_notebar_mid")
         {
             isActive = false;
             notesList.Remove(col.gameObject);
