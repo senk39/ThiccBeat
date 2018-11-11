@@ -26,11 +26,15 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     public int counterForBlockMultipleClicks;
 
+    private float pinkBarZPos;
+
     //public float initialNoteLength;
 
     void Start () {
 
         //initialNoteLength = GetComponent<Transform>().parent.localScale.z;
+        pinkBarZPos = GameObject.Find("pink stripe 3").transform.position.z;
+        Debug.Log("pinkZPos: " + pinkBarZPos);
 
         playerScoreContainer = GameObject.Find("Score");
 
@@ -90,6 +94,11 @@ public class holdContainterForNoteMid : MonoBehaviour {
             }
             if (Input.GetKey(keyMid))
             {
+                if (tfv3.z > Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos))
+                {
+                    tfv3.z -= Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - pinkBarZPos));
+                    Debug.Log("dluzsze niz byc powinno!");
+                }
                 posv3.z = -14.2f;
                 pivot.GetComponent<note>().notesVelocity = 0;
                 GetComponent<note>().notesVelocity = 0;
@@ -97,6 +106,8 @@ public class holdContainterForNoteMid : MonoBehaviour {
                 pivot.transform.localScale = tfv3;
                 pivot.transform.position = posv3;
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore +=2;
+
+               
 
 
                 if (tfv3.z > 0) { }       
