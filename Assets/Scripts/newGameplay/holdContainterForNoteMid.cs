@@ -26,7 +26,11 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
     public int counterForBlockMultipleClicks;
 
+    //public float initialNoteLength;
+
     void Start () {
+
+        //initialNoteLength = GetComponent<Transform>().parent.localScale.z;
 
         playerScoreContainer = GameObject.Find("Score");
 
@@ -63,6 +67,14 @@ public class holdContainterForNoteMid : MonoBehaviour {
         {
             isActivated = true;
         }
+        if(holdStart==null)
+        {
+            if (Input.GetKeyDown(keyMid))
+            {
+                Debug.Log("isNull");
+                counterForBlockMultipleClicks++;
+            }
+        }
     }
 
         void OnTriggerStay(Collider collisionInfo)
@@ -70,24 +82,26 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
         if (collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked && counterForBlockMultipleClicks<1)
         {
+
             if (Input.GetKeyUp(keyMid))
             {
-                //counterForBlockMultipleClicks++;
+                counterForBlockMultipleClicks++;
+                Debug.Log(counterForBlockMultipleClicks);
             }
             if (Input.GetKey(keyMid))
             {
-                Debug.Log(counterForBlockMultipleClicks);
                 posv3.z = -14.2f;
                 pivot.GetComponent<note>().notesVelocity = 0;
                 GetComponent<note>().notesVelocity = 0;
                 tfv3.z -= 0.22f;
                 pivot.transform.localScale = tfv3;
                 pivot.transform.position = posv3;
-                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore++;
+                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore +=2;
 
 
                 if (tfv3.z > 0) { }       
         }
+
             else
             {
                 if (tfv3.z < toleranceForTooEarlyUnclick)
@@ -96,6 +110,7 @@ public class holdContainterForNoteMid : MonoBehaviour {
                     pivot.transform.localScale = tfv3;
                     Destroy(transform.gameObject);
                     Destroy(holdEnd);
+                    playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
                 }
             }
         }

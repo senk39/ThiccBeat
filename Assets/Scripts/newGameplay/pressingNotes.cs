@@ -61,6 +61,7 @@ public class pressingNotes : MonoBehaviour {
                 Destroy(go);
                 isActive = false;
             }
+
             if (Input.GetKeyUp(key) && isActive && go.GetComponent<note>().isTheLowest)
             {
                 if (go.tag == "h_note_start")
@@ -68,6 +69,7 @@ public class pressingNotes : MonoBehaviour {
                     //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
                 }
             }
+            
        }
 
     }
