@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+
 
 public class sortingNotes : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public class sortingNotes : MonoBehaviour
         checkIfTheLowestRow5();
         checkIfTheLowestRow6();
         checkIfTheLowestRowbar();
+        //checkIfTheLowestRowbar2();
 
         deleteNotesFromLists();
     }
@@ -236,30 +239,44 @@ public class sortingNotes : MonoBehaviour
     {
         if (rowbar.Count > 1)
         {
+            
             float minimum = float.MaxValue;
             int correctIndex = rowbar.Count - 1;
-
-            for (int i = 0; i < rowbar.Count - 1; i++)
+            int iterator = rowbar.Count;
+            do
             {
-                if (rowbar[i].transform.position.z < rowbar[i + 1].transform.position.z)
+                for (int i = 0; i < rowbar.Count - 1; i++)
                 {
-                    minimum = rowbar[i].transform.position.z;
-                    correctIndex = i;
+                    if (rowbar[i].transform.position.z < rowbar[i + 1].transform.position.z)
+                    {
+                        minimum = rowbar[i].transform.position.z;
+                        correctIndex = i;
+                    }
+                    else
+                    {
+                        rowbar[correctIndex].GetComponent<note>().isTheLowest = false;
+                    }
                 }
-                else
-                {
-                    rowbar[correctIndex].GetComponent<note>().isTheLowest = false;
-                }
-            }
+                rowbar[correctIndex].GetComponent<note>().isTheLowest = true;
 
-            rowbar[correctIndex].GetComponent<note>().isTheLowest = true;
+                iterator--;
+            }
+            while (iterator > 1);
+
         }
         else if (rowbar.Count == 1)
         {
             rowbar[0].GetComponent<note>().isTheLowest = true;
         }
+       
+        
     }
 
+    void checkIfTheLowestRowbar2()
+    {
+        Debug.Log("Min: " + rowbar.Min());
+        
+    }
     void addNotesToLists()
     {
         foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("Note"))
@@ -294,7 +311,7 @@ public class sortingNotes : MonoBehaviour
         {
             if (songNote.transform.position.x == rowbarx)
             {
-                Debug.Log("added" + songNote.name);
+                //Debug.Log("added" + songNote.name);
                 rowbar.Add(songNote);
             }
         }
@@ -303,7 +320,7 @@ public class sortingNotes : MonoBehaviour
         {
             if (songNote.transform.position.x == rowbarx)
             {
-                Debug.Log("added" + songNote.name);
+                //Debug.Log("added" + songNote.name);
                 rowbar.Add(songNote);
             }
         }
