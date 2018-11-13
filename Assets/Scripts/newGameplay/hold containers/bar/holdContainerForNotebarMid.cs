@@ -53,7 +53,7 @@ public class holdContainerForNotebarMid : MonoBehaviour {
     void OnTriggerStay(Collider collisionInfo)
     {
 
-        if (collisionInfo.gameObject.tag == "Pink Bar" && isActivated && noteStartIsClicked && counterForBlockMultipleClicks < 1)
+        if (collisionInfo.gameObject.tag == "Indicator" && isActivated && noteStartIsClicked && counterForBlockMultipleClicks < 1)
         {
 
             if (Input.GetKeyUp(keyMid))
