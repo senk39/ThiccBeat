@@ -18,6 +18,8 @@ public class holdContainterForNoteMid : MonoBehaviour {
     private Vector3 tfv3;
     private Vector3 posv3;
 
+    const float ZPosWhenHoldsWillDie = -14.5f;
+
     public bool noteStartIsClicked = false;
 
     public float toleranceForTooEarlyUnclick = 3.5f;
@@ -68,7 +70,13 @@ public class holdContainterForNoteMid : MonoBehaviour {
 
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore +=2;
 
-                if (tfv3.z > 0) { }       
+                if(holdEnd.transform.position.z < ZPosWhenHoldsWillDie)
+                {
+                    Destroy(holdEnd.gameObject);
+                    Destroy(gameObject);
+                    playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+
+                }
             }
             
 

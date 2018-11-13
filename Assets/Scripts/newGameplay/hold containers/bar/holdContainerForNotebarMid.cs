@@ -18,6 +18,8 @@ public class holdContainerForNotebarMid : MonoBehaviour {
     private Vector3 tfv3;
     private Vector3 posv3;
 
+    const float ZPosWhenHoldsWillDie = -14.2f;
+
     public bool noteStartIsClicked = false;
 
     public float toleranceForTooEarlyUnclick = 3.5f;
@@ -69,7 +71,12 @@ public class holdContainerForNotebarMid : MonoBehaviour {
 
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 2;
 
-                if (tfv3.z > 0) { }
+                if (holdEnd.transform.position.z < ZPosWhenHoldsWillDie)
+                {
+                    Destroy(holdEnd.gameObject);
+                    Destroy(gameObject);
+                    playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+                }
             }
 
 
@@ -108,6 +115,11 @@ public class holdContainerForNotebarMid : MonoBehaviour {
         {
             tfv3.z -= Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - barButtonOnDownZPos));
         }
+        else if (tfv3.z < Mathf.Abs(holdEnd.transform.position.z - barButtonOnDownZPos))
+            {
+                tfv3.z += Mathf.Abs(tfv3.z - Mathf.Abs(holdEnd.transform.position.z - barButtonOnDownZPos));
+            }
+        
     }
 
     void dataInit()
