@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pressingNotes : MonoBehaviour {
+public class pressingNotes : MonoBehaviour
+{
 
     public KeyCode key;
 
@@ -22,36 +23,42 @@ public class pressingNotes : MonoBehaviour {
     Vector3 gnotevector = new Vector3(0f, 0.35f, -14.19f);
     Quaternion gnoteq = new Quaternion(0f, 0f, 0f, 0f);
 
+    //BPM
+    public int bpm = 195;
+
     // Use this for initialization
-    void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
 
         if (notesGenerator)
         {
-            if (Input.GetKeyDown(key))
-            {
-                Debug.Log("You created a note!");
-                Instantiate(gnote, gnotevector,gnoteq);
-            }
+            //if (Input.GetKeyDown(key))
+            //{
+            InvokeRepeating("noteInstantiateForGenerator", 3.0f, 3f);
+            //Debug.Log(Time.deltaTime);
+            //Instantiate(gnote, gnotevector,gnoteq);
+            //}
         }
         else
         { }
 
 
 
-        if (go!=null)
+        if (go != null)
         {
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
             {
-                if(go.tag =="h_note_start")
+                if (go.tag == "h_note_start")
                 {
                     //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
                     go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().noteStartIsClicked = true;
-                   // Debug.Log("to sie zdarzylo");
+                    // Debug.Log("to sie zdarzylo");
 
                 }
 
@@ -72,8 +79,8 @@ public class pressingNotes : MonoBehaviour {
                     //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
                 }
             }
-            
-       }
+
+        }
 
     }
 
@@ -84,7 +91,7 @@ public class pressingNotes : MonoBehaviour {
             notesList.AddLast(col.gameObject);
         }
 
-        else if(col.tag == "h_note_start")
+        else if (col.tag == "h_note_start")
         {
             notesList.AddLast(col.gameObject);
         }
@@ -95,7 +102,7 @@ public class pressingNotes : MonoBehaviour {
         if (col.tag == "Note")
         {
             isActive = true;
-            go = notesList.First.Value.gameObject;        
+            go = notesList.First.Value.gameObject;
         }
 
         else if (col.tag == "h_note_start")
@@ -105,7 +112,7 @@ public class pressingNotes : MonoBehaviour {
         }
 
     }
-    
+
     private void OnTriggerExit(Collider col)
     {
         if (col.tag == "Note" && notesGenerator == false)
@@ -131,6 +138,11 @@ public class pressingNotes : MonoBehaviour {
         }
 
 
+    }
+
+    void noteInstantiateForGenerator()
+    {
+        Instantiate(gnote, gnotevector, gnoteq);
     }
 }
 

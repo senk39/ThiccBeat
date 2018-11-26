@@ -6,7 +6,7 @@ using UnityEngine;
 public class note : MonoBehaviour {
 
     Rigidbody rb;
-    public float notesVelocity = 11;
+    public float notesVelocity = 39;
     public bool isTheLowest = false;
 
 

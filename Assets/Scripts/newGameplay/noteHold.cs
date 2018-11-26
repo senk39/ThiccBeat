@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class noteHold : MonoBehaviour
-{
+public class noteHold : MonoBehaviour {
 
     Rigidbody rb;
-    public float notesVelocity = 11;
+    public float notesVelocity = 39;
     public bool isTheLowest = false;
 
 
