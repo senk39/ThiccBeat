@@ -1,0 +1,25 @@
+STALEMATE DELTAS:
+
+-23.83397
+	delta: 11.7
+-35.53397
+	delta: 12.47998
+-48.01395
+
+delta: 12.48
+del: 11.70001
+
+są dwie różne wartości
+
+uśredniona odległość między nimi: 12.09
+
+
+FULL BEAT: 12.09
+
+1/2: 6.045
+
+1/4: 3.0225
+
+1/8: 1.51125
+
+1/16: 0.755625
