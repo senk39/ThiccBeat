@@ -1196,11 +1196,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 322840693}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58a5e6255419faf4e939100f1cd121e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  row1: {fileID: 4900000, guid: 54fce7b0d7d5a86459d02f6e38544ef3, type: 3}
+  row2: {fileID: 4900000, guid: 70d64b5dc62794845a5a07a7773206fa, type: 3}
+  row3: {fileID: 4900000, guid: 8f87bd2e7e9f8fb45a0bf9ce7bfc7ae6, type: 3}
+  row4: {fileID: 4900000, guid: 72bb1e6236d222f4ca4dff24424d19ee, type: 3}
+  row5: {fileID: 4900000, guid: 726b4f5cbae20994e84c30eea0c636f8, type: 3}
+  row6: {fileID: 4900000, guid: d5ebafc836f1bcf4497e31a3dae2a3cc, type: 3}
+  firstNote: 105.15
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
