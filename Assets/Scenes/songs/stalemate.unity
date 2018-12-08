@@ -1207,6 +1207,8 @@ MonoBehaviour:
   row4: {fileID: 4900000, guid: 72bb1e6236d222f4ca4dff24424d19ee, type: 3}
   row5: {fileID: 4900000, guid: 726b4f5cbae20994e84c30eea0c636f8, type: 3}
   row6: {fileID: 4900000, guid: d5ebafc836f1bcf4497e31a3dae2a3cc, type: 3}
+  textContent1: 
+  textContentSplit1: []
   firstNote: 105.15
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
