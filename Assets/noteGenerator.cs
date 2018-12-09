@@ -48,7 +48,7 @@ FULL BEAT: 12.09
 
 
     public float firstNote = 105.15f;
-    public bool notesGenerator = true;
+    public bool notesGenerator = false;
     public GameObject gnote;
     Vector3 gnotevector = new Vector3(0f, 0.35f, -14.19f);
     Quaternion gnoteq = new Quaternion(0f, 0f, 0f, 0f);
@@ -68,13 +68,15 @@ FULL BEAT: 12.09
 
     const float link = 15.8808933002f;
     //const float oneMidiLength = 0.1259375f;
-    const float oneMidiLength = 0.12565f;
+    const float oneMidiLength = 0.16f;
 
 
     //const float firstNotePos = 105.15f;
     // const float firstNotePos = 90f;
 
-    const float firstNotePos = 104.8f;
+    const float firstNotePos = 135.03113f;
+
+    //1.99011
 
 
 
@@ -84,7 +86,10 @@ FULL BEAT: 12.09
     {
         distBetweenNotes = (60 / bpm);
 
-       // InvokeRepeating("noteInstantiateForGenerator", 3f, distBetweenNotes);
+        if (notesGenerator)
+        {
+            InvokeRepeating("noteInstantiateForGenerator", 3f, distBetweenNotes);
+        }
 
         textContent1 = row1.text;
         textContent2 = row2.text;
@@ -118,7 +123,6 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow2);
                 //Debug.Log(tempValueRow2);
-                //Instantiate(gnote, new Vector3(-3.1f, 0.35f, (105.15f + (tempValueRow2 / link))), gnoteq);
                 Instantiate(gnote, new Vector3(-3.1f, 0.35f, (firstNotePos + (tempValueRow2 * oneMidiLength))), gnoteq);
             }
         }
@@ -179,7 +183,7 @@ FULL BEAT: 12.09
 
     void noteInstantiateForGenerator()
     {
-        //Instantiate(gnote, gnotevector, gnoteq);
+        Instantiate(gnote, gnotevector, gnoteq);
     }
 
 

@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 11
+  notesVelocity: 1
   isTheLowest: 0

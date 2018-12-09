@@ -213,14 +213,14 @@ public class sortingNotes : MonoBehaviour
     {
         if (row6.Count > 1)
         {
-            float minimum = float.MaxValue;
+            //float minimum = float.MaxValue;
             int correctIndex = row6.Count - 1;
 
             for (int i = 0; i < row6.Count - 1; i++)
             {
                 if (row6[i].transform.position.z < row6[i + 1].transform.position.z)
                 {
-                    minimum = row6[i].transform.position.z;
+                   // minimum = row6[i].transform.position.z;
                     correctIndex = i;
                 }
                 else
