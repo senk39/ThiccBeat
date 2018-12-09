@@ -67,8 +67,14 @@ FULL BEAT: 12.09
     int tempValueRow6 = 0;
 
     const float link = 15.8808933002f;
-    const float oneMidiLength = 0.06296875f;
+    //const float oneMidiLength = 0.1259375f;
+    const float oneMidiLength = 0.12565f;
 
+
+    //const float firstNotePos = 105.15f;
+    // const float firstNotePos = 90f;
+
+    const float firstNotePos = 104.8f;
 
 
 
@@ -101,8 +107,8 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow1);
-                Debug.Log(tempValueRow1);
-                Instantiate(gnote, new Vector3(-5.1f, 0.35f, (105.15f + (tempValueRow1 * oneMidiLength))), gnoteq);
+                //Debug.Log(tempValueRow1);
+                Instantiate(gnote, new Vector3(-5.1f, 0.35f, (firstNotePos + (tempValueRow1 * oneMidiLength))), gnoteq);
             }
         }
 
@@ -111,9 +117,9 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow2);
-                Debug.Log(tempValueRow2);
+                //Debug.Log(tempValueRow2);
                 //Instantiate(gnote, new Vector3(-3.1f, 0.35f, (105.15f + (tempValueRow2 / link))), gnoteq);
-                Instantiate(gnote, new Vector3(-3.1f, 0.35f, (105.15f + (tempValueRow2 * oneMidiLength))), gnoteq);
+                Instantiate(gnote, new Vector3(-3.1f, 0.35f, (firstNotePos + (tempValueRow2 * oneMidiLength))), gnoteq);
             }
         }
 
@@ -122,8 +128,8 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow3);
-                Debug.Log(tempValueRow3);
-                Instantiate(gnote, new Vector3(-1.1f, 0.35f, (105.15f + (tempValueRow3 * oneMidiLength))), gnoteq);
+                //Debug.Log(tempValueRow3);
+                Instantiate(gnote, new Vector3(-1.1f, 0.35f, (firstNotePos + (tempValueRow3 * oneMidiLength))), gnoteq);
             }
         }
         foreach (string s in textContentSplit4)
@@ -131,8 +137,8 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow4);
-                Debug.Log(tempValueRow4);
-                Instantiate(gnote, new Vector3(1.1f, 0.35f, (105.15f + (tempValueRow4 * oneMidiLength))), gnoteq);
+                //Debug.Log(tempValueRow4);
+                Instantiate(gnote, new Vector3(1.1f, 0.35f, (firstNotePos + (tempValueRow4 * oneMidiLength))), gnoteq);
             }
         }
         foreach (string s in textContentSplit5)
@@ -140,8 +146,8 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow5);
-                Debug.Log(tempValueRow5);
-                Instantiate(gnote, new Vector3(3.1f, 0.35f, (105.15f + (tempValueRow5 * oneMidiLength))), gnoteq);
+                //Debug.Log(tempValueRow5);
+                Instantiate(gnote, new Vector3(3.1f, 0.35f, (firstNotePos + (tempValueRow5 * oneMidiLength))), gnoteq);
             }
         }
         foreach (string s in textContentSplit6)
@@ -149,8 +155,8 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow6);
-                Debug.Log(tempValueRow6);
-                Instantiate(gnote, new Vector3(5.1f, 0.35f, (105.15f + (tempValueRow6 * oneMidiLength))), gnoteq);
+                //Debug.Log(tempValueRow6);
+                Instantiate(gnote, new Vector3(5.1f, 0.35f, (firstNotePos + (tempValueRow6 * oneMidiLength))), gnoteq);
             }
         }
     }

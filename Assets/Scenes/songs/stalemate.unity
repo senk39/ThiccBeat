@@ -1208,6 +1208,11 @@ MonoBehaviour:
   row5: {fileID: 4900000, guid: 726b4f5cbae20994e84c30eea0c636f8, type: 3}
   row6: {fileID: 4900000, guid: d5ebafc836f1bcf4497e31a3dae2a3cc, type: 3}
   textContent1: 
+  textContent2: 
+  textContent3: 
+  textContent4: 
+  textContent5: 
+  textContent6: 
   textContentSplit1: []
   firstNote: 105.15
   notesGenerator: 0
@@ -3577,12 +3582,12 @@ Prefab:
     - target: {fileID: 65123920979823648, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: m_Size.z
-      value: 72.03563
+      value: 7.1051955
       objectReference: {fileID: 0}
     - target: {fileID: 65123920979823648, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: m_Center.z
-      value: -32.376003
+      value: 0.089211784
       objectReference: {fileID: 0}
     - target: {fileID: 54339036249868122, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
@@ -4443,12 +4448,12 @@ Prefab:
     - target: {fileID: 65316861801519234, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: m_Size.z
-      value: 56.72117
+      value: 7.1051955
       objectReference: {fileID: 0}
     - target: {fileID: 65316861801519234, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: m_Center.z
-      value: -24.71877
+      value: 0.089211784
       objectReference: {fileID: 0}
     - target: {fileID: 54013270413565430, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}

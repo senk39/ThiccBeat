@@ -72,6 +72,7 @@ public class sortingNotes : MonoBehaviour
                     row1[i].GetComponent<note>().isTheLowest = false;
                 }
             }
+            //Debug.Log("row5" + row5.Count);
 
             //Debug.Log("minimum: " + minimum);
             //Debug.Log("correct Index: " + correctIndex);
@@ -281,29 +282,32 @@ public class sortingNotes : MonoBehaviour
     {
         foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("Note"))
         {
-            if (songNote.transform.position.x == row1x)
+            if (songNote.transform.position.z < -8.5f)
             {
-                row1.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row2x)
-            {
-                row2.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row3x)
-            {
-                row3.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row4x)
-            {
-                row4.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row5x)
-            {
-                row5.Add(songNote);
-            }
-            else if (songNote.transform.position.x == row6x)
-            {
-                row6.Add(songNote);
+                if (songNote.transform.position.x == row1x)
+                {
+                    row1.Add(songNote);
+                }
+                else if (songNote.transform.position.x == row2x)
+                {
+                    row2.Add(songNote);
+                }
+                else if (songNote.transform.position.x == row3x)
+                {
+                    row3.Add(songNote);
+                }
+                else if (songNote.transform.position.x == row4x)
+                {
+                    row4.Add(songNote);
+                }
+                else if (songNote.transform.position.x == row5x)
+                {
+                    row5.Add(songNote);
+                }
+                else if (songNote.transform.position.x == row6x)
+                {
+                    row6.Add(songNote);
+                }
             }
         }
 
