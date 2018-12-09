@@ -52,8 +52,10 @@ public class pressingNotes : MonoBehaviour
 
         if (go != null)
         {
+
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
             {
+                
                 if (go.tag == "h_note_start")
                 {
                     //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
@@ -82,6 +84,7 @@ public class pressingNotes : MonoBehaviour
 
         }
 
+        //antiMasher();
     }
 
     private void OnTriggerEnter(Collider col)
@@ -144,6 +147,27 @@ public class pressingNotes : MonoBehaviour
     {
         Instantiate(gnote, gnotevector, gnoteq);
     }
+
+    /*
+    void antiMasher()
+    {
+        bool isActive1 = GameObject.Find("note indicator 1").GetComponent<pressingNotes>().isActive;
+        bool isActive2 = GameObject.Find("note indicator 2").GetComponent<pressingNotes>().isActive;
+        bool isActive3 = GameObject.Find("note indicator 3").GetComponent<pressingNotes>().isActive;
+        bool isActive4 = GameObject.Find("note indicator 4").GetComponent<pressingNotes>().isActive;
+        bool isActive5 = GameObject.Find("note indicator 5").GetComponent<pressingNotes>().isActive;
+        bool isActive6 = GameObject.Find("note indicator 6").GetComponent<pressingNotes>().isActive;
+
+        if ((isActive1 || isActive2 || isActive3 || isActive4 || isActive5 || isActive6) == true)
+        {
+             if(Input.GetKeyDown(key) && isActive == false)
+            {
+               // Debug.Log("to dziala");
+                //playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
+            }
+        }
+    }
+    */
 }
 
 /*

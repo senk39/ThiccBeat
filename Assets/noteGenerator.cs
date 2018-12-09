@@ -68,13 +68,15 @@ FULL BEAT: 12.09
 
     const float link = 15.8808933002f;
     //const float oneMidiLength = 0.1259375f;
-    const float oneMidiLength = 0.16f;
+    const float oneMidiLength = 0.1607f;
 
 
     //const float firstNotePos = 105.15f;
     // const float firstNotePos = 90f;
+    //const float firstNotePos = 135.03113f;
 
-    const float firstNotePos = 135.03113f;
+    const float firstNotePos = 138.3f;
+
 
     //1.99011
 
@@ -169,14 +171,14 @@ FULL BEAT: 12.09
     void Update()
     {
 
-        
-     
+        //Debug.Log("dspTime: " + AudioSettings.dspTime);
+
             //if (Input.GetKeyDown(key))
             //{
             //Debug.Log(Time.deltaTime);
             //Instantiate(gnote, gnotevector,gnoteq);
             //}
-        
+
 
 
     }

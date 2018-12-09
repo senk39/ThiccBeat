@@ -1215,7 +1215,7 @@ MonoBehaviour:
   textContent6: 
   textContentSplit1: []
   firstNote: 105.15
-  notesGenerator: 1
+  notesGenerator: 0
   gnote: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
   bpm: 195
   distBetweenNotes: 0
@@ -3582,12 +3582,12 @@ Prefab:
     - target: {fileID: 65123920979823648, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: m_Size.z
-      value: 68.87386
+      value: 7.1051955
       objectReference: {fileID: 0}
     - target: {fileID: 65123920979823648, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: m_Center.z
-      value: -30.79512
+      value: 0.089211784
       objectReference: {fileID: 0}
     - target: {fileID: 54339036249868122, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
@@ -4448,12 +4448,12 @@ Prefab:
     - target: {fileID: 65316861801519234, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: m_Size.z
-      value: 67.13335
+      value: 7.1051955
       objectReference: {fileID: 0}
     - target: {fileID: 65316861801519234, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: m_Center.z
-      value: -29.924871
+      value: 0.089211784
       objectReference: {fileID: 0}
     - target: {fileID: 54013270413565430, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
@@ -5853,6 +5853,26 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65550139710516306, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65550139710516306, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 65550139710516306, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 5.3061857
+      objectReference: {fileID: 0}
+    - target: {fileID: 65550139710516306, guid: ab2248232938acb4f9d926cfb284fe54,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 2.1530929
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114487040755970268, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
