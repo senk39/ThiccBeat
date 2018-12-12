@@ -174,6 +174,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 60.581}
   m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
   m_Children:
+  - {fileID: 215331127}
   - {fileID: 978160597}
   - {fileID: 2028548496}
   - {fileID: 507873534}
@@ -751,7 +752,7 @@ GameObject:
   - component: {fileID: 150861913}
   - component: {fileID: 150861912}
   m_Layer: 5
-  m_Name: text_PLAY
+  m_Name: text_RESUME
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -809,7 +810,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLAY
+  m_Text: RESUME
 --- !u!222 &150861913
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -843,6 +844,52 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 08c545cfd3f3e804eaef3f2c2e21cbdd, type: 2}
   - {fileID: 2100000, guid: 7e271c8f3b7e0e041a6750b0beebe576, type: 2}
+--- !u!1 &215331126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215331127}
+  - component: {fileID: 215331128}
+  m_Layer: 0
+  m_Name: pause controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &215331127
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215331126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6215080}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &215331128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 215331126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b46e5c6eae432d742840e582ccb5f1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notes: []
 --- !u!1001 &219910701
 Prefab:
   m_ObjectHideFlags: 0
@@ -1008,7 +1055,7 @@ GameObject:
   - component: {fileID: 290980042}
   - component: {fileID: 290980041}
   m_Layer: 5
-  m_Name: text_OPTIONS
+  m_Name: text_RESTART
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,7 +1113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPTIONS
+  m_Text: RESTART
 --- !u!222 &290980042
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1932,7 +1979,7 @@ RectTransform:
   m_Children:
   - {fileID: 1215758967}
   m_Father: {fileID: 6215080}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.19063357}
   m_AnchorMax: {x: 0.55, y: 0.3165291}
@@ -1965,7 +2012,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 507873533}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1976,7 +2023,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.078431375}
     m_HighlightedColor: {r: 1, g: 0.8745099, b: 0.94117653, a: 1}
@@ -1998,7 +2045,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 215331128}
         m_MethodName: clickQuitBtn
         m_Mode: 1
         m_Arguments:
@@ -3262,7 +3309,7 @@ GameObject:
   - component: {fileID: 978160599}
   - component: {fileID: 978160598}
   m_Layer: 5
-  m_Name: btn_PLAY
+  m_Name: btn_RESUME
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3281,7 +3328,7 @@ RectTransform:
   m_Children:
   - {fileID: 150861911}
   m_Father: {fileID: 6215080}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.45}
   m_AnchorMax: {x: 0.55, y: 0.5987355}
@@ -3325,7 +3372,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.078431375}
     m_HighlightedColor: {r: 1, g: 0.8745099, b: 0.94117653, a: 1}
@@ -3347,8 +3394,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: clickPlayBtn
+      - m_Target: {fileID: 215331128}
+        m_MethodName: clickResumeBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5986,7 +6033,7 @@ GameObject:
   - component: {fileID: 2028548498}
   - component: {fileID: 2028548497}
   m_Layer: 5
-  m_Name: btn_OPTIONS
+  m_Name: btn_RESTART
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6005,7 +6052,7 @@ RectTransform:
   m_Children:
   - {fileID: 290980040}
   m_Father: {fileID: 6215080}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.3165291}
   m_AnchorMax: {x: 0.55, y: 0.45900002}
@@ -6049,7 +6096,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.078431375}
     m_HighlightedColor: {r: 1, g: 0.8745099, b: 0.94117653, a: 1}
@@ -6071,8 +6118,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: clickOptionsBtn
+      - m_Target: {fileID: 215331128}
+        m_MethodName: clickRestartBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6364,7 +6411,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 978160596}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &2103855490

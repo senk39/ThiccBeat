@@ -34,8 +34,6 @@ public class pause : MonoBehaviour {
          tempKey5 = noteIndicator5.GetComponent<pressingNotes>().key;
          tempKey6 = noteIndicator6.GetComponent<pressingNotes>().key;
          tempKeySpecial = noteIndicatorSpecial.GetComponent<pressingNotesBar>().key;
-
-        Debug.Log(noteIndicator1.name);
     }
 
     void Update () {
@@ -62,6 +60,7 @@ public class pause : MonoBehaviour {
         isGamePaused = true;
         GameObject.Find("SongPlayer").GetComponent<AudioSource>().Pause();
         disablingIndicators();
+        //GameObject.Find("btn_RESUME").GetComponent<buttonSelector>().
     }
 
     void exitPause()
