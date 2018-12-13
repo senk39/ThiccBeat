@@ -18,10 +18,12 @@ public class pauseControl : MonoBehaviour
         if (notes == null)
             notes = GameObject.FindGameObjectsWithTag("Note");
 
-        foreach (GameObject note in notes)
+        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Note");
+
+        for (var i = 0; i < gameObjects.Length; i++)
         {
-            Debug.Log("xD");
-            //TO PÓKI CO NIE DZIAŁA I TU STANĄŁEM
+            Debug.Log("delete");
+            Destroy(gameObjects[i]);
         }
 
         Scene scene = SceneManager.GetActiveScene();

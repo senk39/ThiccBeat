@@ -84,7 +84,7 @@ FULL BEAT: 12.09
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         distBetweenNotes = (60 / bpm);
 

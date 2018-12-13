@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class pauseController : MonoBehaviour {
 
+
+
     public void clickResumeBtn()
     {
         SceneManager.LoadScene(2);
@@ -13,6 +15,15 @@ public class pauseController : MonoBehaviour {
 
     public void clickRestartBtn()
     {
+       GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Note");
+
+        for (var i = 0; i < gameObjects.Length; i++)
+        {
+            Debug.Log("delete");
+            Destroy(gameObjects[i]);
+        }
+
+
         Scene scene = SceneManager.GetActiveScene();        
         SceneManager.LoadScene(scene.buildIndex);
     }
