@@ -36,9 +36,20 @@ public class pause : MonoBehaviour {
          tempKeySpecial = noteIndicatorSpecial.GetComponent<pressingNotesBar>().key;
     }
 
+    void Awake()
+    {
+        pause.isGamePaused = false;
+
+    }
     void Update () {
 
-	if(Input.GetKeyDown(KeyCode.Escape))
+        if(isGamePaused == false)
+        {
+            Time.timeScale = 1f;
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(isGamePaused == true)
             {
@@ -56,11 +67,10 @@ public class pause : MonoBehaviour {
     void enterPause()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0.001f;
         isGamePaused = true;
         GameObject.Find("SongPlayer").GetComponent<AudioSource>().Pause();
         disablingIndicators();
-        //GameObject.Find("btn_RESUME").GetComponent<buttonSelector>().
     }
 
     void exitPause()

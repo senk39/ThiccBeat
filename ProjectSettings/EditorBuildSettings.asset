@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/game.unity
     guid: c60b1894906ab634bbbb69adf9145d29
+  - enabled: 1
+    path: Assets/Scenes/blackScreen.unity
+    guid: 29efbffd0d6a7ea4582cb2c7cb4f8769
   m_configObjects: {}

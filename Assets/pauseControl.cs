@@ -15,6 +15,7 @@ public class pauseControl : MonoBehaviour
 
     public void clickRestartBtn()
     {
+        /*
         if (notes == null)
             notes = GameObject.FindGameObjectsWithTag("Note");
 
@@ -26,8 +27,14 @@ public class pauseControl : MonoBehaviour
             Destroy(gameObjects[i]);
         }
 
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.buildIndex);
+        // Scene scene = SceneManager.GetActiveScene();
+        // SceneManager.LoadScene(scene.buildIndex);
+        */
+        SceneManager.LoadScene(5);
+
+
+        pause.isGamePaused = false;
+
     }
 
     public void clickQuitBtn()
