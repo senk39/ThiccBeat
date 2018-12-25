@@ -35,36 +35,50 @@ FULL BEAT: 12.09
     public TextAsset row4;
     public TextAsset row5;
     public TextAsset row6;
+    public TextAsset row7;
 
-    public string textContent1;
-    public string textContent2;
-    public string textContent3;
-    public string textContent4;
-    public string textContent5;
-    public string textContent6;
-
+    private string textContent1;
+    private string textContent2;
+    private string textContent3;
+    private string textContent4;
+    private string textContent5;
+    private string textContent6;
+    private string textContent7;
 
     public string[] textContentSplit1;
 
-
     public float firstNote = 105.15f;
     public bool notesGenerator = false;
-    public GameObject gnote;
+    public GameObject note;
+    public GameObject bar;
     Vector3 gnotevector = new Vector3(0f, 0.35f, -14.19f);
-    Quaternion gnoteq = new Quaternion(0f, 0f, 0f, 0f);
+    Quaternion noteQuaternion = new Quaternion(0f, 0f, 0f, 0f);
+    Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
+
 
     //BPM
     public float bpm = 195f;
     public float distBetweenNotes;
 
+    public int tempValueRow1 = 0;
+    public int tempValueRow2 = 0;
+    public int tempValueRow3 = 0;
+    public int tempValueRow4 = 0;
+    public int tempValueRow5 = 0;
+    public int tempValueRow6 = 0;
+    public int tempValueRow7 = 0;
 
-    int[] numbers;
-    int tempValueRow1 = 0;
-    int tempValueRow2 = 0;
-    int tempValueRow3 = 0;
-    int tempValueRow4 = 0;
-    int tempValueRow5 = 0;
-    int tempValueRow6 = 0;
+    private const float row1X = -5.1f;
+    private const float row2X = -3.1f;
+    private const float row3X = -1.1f;
+    private const float row4X = 1.1f;
+    private const float row5X = 3.1f;
+    private const float row6X = 5.1f;
+    private const float row7X = 2.67f;
+
+
+    private const float rowY = 0.35f;
+
 
     const float link = 15.8808933002f;
     //const float oneMidiLength = 0.1259375f;
@@ -79,10 +93,6 @@ FULL BEAT: 12.09
 
 
     //1.99011
-
-
-
-
     // Use this for initialization
     void Awake()
     {
@@ -99,14 +109,15 @@ FULL BEAT: 12.09
         textContent4 = row4.text;
         textContent5 = row5.text;
         textContent6 = row6.text;
+        textContent7 = row7.text;
 
-
-        string[] textContentSplit1 = textContent1.Split(new char[] { ' ', ',', '.', '\n', '\t' });
-        string[] textContentSplit2 = textContent2.Split(new char[] { ' ', ',', '.', '\n', '\t' });
-        string[] textContentSplit3 = textContent3.Split(new char[] { ' ', ',', '.', '\n', '\t' });
-        string[] textContentSplit4 = textContent4.Split(new char[] { ' ', ',', '.', '\n', '\t' });
-        string[] textContentSplit5 = textContent5.Split(new char[] { ' ', ',', '.', '\n', '\t' });
-        string[] textContentSplit6 = textContent6.Split(new char[] { ' ', ',', '.', '\n', '\t' });
+        string[] textContentSplit1 = textContent1.Split(new char[] { ' ', ',', '.', '\n' });
+        string[] textContentSplit2 = textContent2.Split(new char[] { ' ', ',', '.', '\n' });
+        string[] textContentSplit3 = textContent3.Split(new char[] { ' ', ',', '.', '\n' });
+        string[] textContentSplit4 = textContent4.Split(new char[] { ' ', ',', '.', '\n' });
+        string[] textContentSplit5 = textContent5.Split(new char[] { ' ', ',', '.', '\n' });
+        string[] textContentSplit6 = textContent6.Split(new char[] { ' ', ',', '.', '\n' });
+        string[] textContentSplit7 = textContent7.Split(new char[] { ' ', ',', '.', '\n', '\t' });
 
 
         foreach (string s in textContentSplit1)
@@ -114,8 +125,7 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow1);
-                //Debug.Log(tempValueRow1);
-                Instantiate(gnote, new Vector3(-5.1f, 0.35f, (firstNotePos + (tempValueRow1 * oneMidiLength))), gnoteq);
+                Instantiate(note, new Vector3(row1X, rowY, (firstNotePos + (tempValueRow1 * oneMidiLength))), noteQuaternion);
             }
         }
 
@@ -124,8 +134,7 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow2);
-                //Debug.Log(tempValueRow2);
-                Instantiate(gnote, new Vector3(-3.1f, 0.35f, (firstNotePos + (tempValueRow2 * oneMidiLength))), gnoteq);
+                Instantiate(note, new Vector3(row2X, rowY, (firstNotePos + (tempValueRow2 * oneMidiLength))), noteQuaternion);
             }
         }
 
@@ -134,8 +143,7 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow3);
-                //Debug.Log(tempValueRow3);
-                Instantiate(gnote, new Vector3(-1.1f, 0.35f, (firstNotePos + (tempValueRow3 * oneMidiLength))), gnoteq);
+                Instantiate(note, new Vector3(row3X, rowY, (firstNotePos + (tempValueRow3 * oneMidiLength))), noteQuaternion);
             }
         }
         foreach (string s in textContentSplit4)
@@ -144,7 +152,7 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow4);
                 //Debug.Log(tempValueRow4);
-                Instantiate(gnote, new Vector3(1.1f, 0.35f, (firstNotePos + (tempValueRow4 * oneMidiLength))), gnoteq);
+                Instantiate(note, new Vector3(row4X, rowY, (firstNotePos + (tempValueRow4 * oneMidiLength))), noteQuaternion);
             }
         }
         foreach (string s in textContentSplit5)
@@ -153,7 +161,7 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow5);
                 //Debug.Log(tempValueRow5);
-                Instantiate(gnote, new Vector3(3.1f, 0.35f, (firstNotePos + (tempValueRow5 * oneMidiLength))), gnoteq);
+                Instantiate(note, new Vector3(row5X, rowY, (firstNotePos + (tempValueRow5 * oneMidiLength))), noteQuaternion);
             }
         }
         foreach (string s in textContentSplit6)
@@ -162,7 +170,16 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow6);
                 //Debug.Log(tempValueRow6);
-                Instantiate(gnote, new Vector3(5.1f, 0.35f, (firstNotePos + (tempValueRow6 * oneMidiLength))), gnoteq);
+                Instantiate(note, new Vector3(row6X, rowY, (firstNotePos + (tempValueRow6 * oneMidiLength))), noteQuaternion);
+            }
+        }
+        foreach (string s in textContentSplit7)
+        {
+            if (s.Trim() != "")
+            {
+                int.TryParse(s, out tempValueRow7);
+                Debug.Log(tempValueRow6);
+                Instantiate(bar, new Vector3(row7X, rowY, (firstNotePos + (tempValueRow7 * oneMidiLength))), barQuaternion);
             }
         }
     }
@@ -176,7 +193,7 @@ FULL BEAT: 12.09
             //if (Input.GetKeyDown(key))
             //{
             //Debug.Log(Time.deltaTime);
-            //Instantiate(gnote, gnotevector,gnoteq);
+            //Instantiate(note, gnotevector,noteQuaternion);
             //}
 
 
@@ -185,7 +202,7 @@ FULL BEAT: 12.09
 
     void noteInstantiateForGenerator()
     {
-        Instantiate(gnote, gnotevector, gnoteq);
+        Instantiate(note, gnotevector, noteQuaternion);
     }
 
 

@@ -13,6 +13,11 @@ public class note : MonoBehaviour {
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        if(rb.gameObject.tag=="NoteBar")
+        {
+            isTheLowest = true;
+        }
     }
 
 	// Use this for initialization

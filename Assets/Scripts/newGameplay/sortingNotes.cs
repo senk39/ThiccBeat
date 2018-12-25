@@ -36,8 +36,7 @@ public class sortingNotes : MonoBehaviour
         checkIfTheLowestRow4();
         checkIfTheLowestRow5();
         checkIfTheLowestRow6();
-        checkIfTheLowestRowbar();
-        //checkIfTheLowestRowbar2();
+        //checkIfTheLowestRowbar();
 
         deleteNotesFromLists();
     }
@@ -235,7 +234,7 @@ public class sortingNotes : MonoBehaviour
             row6[0].GetComponent<note>().isTheLowest = true;
         }
     }
-
+    /*
     void checkIfTheLowestRowbar()
     {
         if (rowbar.Count > 1)
@@ -268,16 +267,9 @@ public class sortingNotes : MonoBehaviour
         else if (rowbar.Count == 1)
         {
             rowbar[0].GetComponent<note>().isTheLowest = true;
-        }
-       
-        
+        }     
     }
-
-    void checkIfTheLowestRowbar2()
-    {
-        Debug.Log("Min: " + rowbar.Min());
-        
-    }
+    */
     void addNotesToLists()
     {
         foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("Note"))
@@ -310,13 +302,14 @@ public class sortingNotes : MonoBehaviour
                 }
             }
         }
-
+        /*
         foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("NoteBar"))
         {
             if (songNote.transform.position.x == rowbarx)
             {
                 //Debug.Log("added" + songNote.name);
                 rowbar.Add(songNote);
+
             }
         }
 
@@ -328,6 +321,7 @@ public class sortingNotes : MonoBehaviour
                 rowbar.Add(songNote);
             }
         }
+        */
 
         foreach (GameObject songNote in GameObject.FindGameObjectsWithTag("h_note_start"))
         {
@@ -366,6 +360,6 @@ public class sortingNotes : MonoBehaviour
             row4.Clear();
             row5.Clear();
             row6.Clear();
-            rowbar.Clear();
+            //rowbar.Clear();
         }
     }

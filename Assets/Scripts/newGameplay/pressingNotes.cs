@@ -42,7 +42,7 @@ public class pressingNotes : MonoBehaviour
             //{
             InvokeRepeating("noteInstantiateForGenerator", 3.0f, 3f);
             //Debug.Log(Time.deltaTime);
-            //Instantiate(gnote, gnotevector,gnoteq);
+            //Instantiate(note, gnotevector,noteQuaternion);
             //}
         }
         else
