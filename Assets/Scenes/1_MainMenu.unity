@@ -225,6 +225,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1193977031}
+    - target: {fileID: 114270319627564516, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114599474575958454, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114479302029662546, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114479302029662546, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_AnimationTriggers.m_NormalTrigger
+      value: Disabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 114599474575958454, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_AnimationTriggers.m_NormalTrigger
+      value: Disabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270319627564516, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_AnimationTriggers.m_NormalTrigger
+      value: Disabled
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c550cd8ceb33d204e9d4fae17c23a937, type: 2}
   m_IsPrefabAsset: 0
