@@ -5,16 +5,17 @@ using UnityEngine;
 public class pause : MonoBehaviour {
 
     // MUSISZ ZROBIĆ ZABEZPIECZENIE UNIEMOŻLIWIAJĄCE PAUZOWANIE GRY PRZED ODTWARZANIEM MUZYKI (3S)
+
     public static bool isGamePaused = false;
     public GameObject pauseMenuUI;
 
-    public GameObject noteIndicator1;
-    public GameObject noteIndicator2;
-    public GameObject noteIndicator3;
-    public GameObject noteIndicator4;
-    public GameObject noteIndicator5;
-    public GameObject noteIndicator6;
-    public GameObject noteIndicatorSpecial;
+    public GameObject button1;
+    public GameObject button2;
+    public GameObject button3;
+    public GameObject button4;
+    public GameObject button5;
+    public GameObject button6;
+    public GameObject buttonBar;
 
     private KeyCode tempKey1;
     private KeyCode tempKey2;
@@ -27,29 +28,28 @@ public class pause : MonoBehaviour {
     void Start () {
         pauseMenuUI.SetActive(false);
 
-         tempKey1 = noteIndicator1.GetComponent<pressingNotes>().key;
-         tempKey2 = noteIndicator2.GetComponent<pressingNotes>().key;
-         tempKey3 = noteIndicator3.GetComponent<pressingNotes>().key;
-         tempKey4 = noteIndicator4.GetComponent<pressingNotes>().key;
-         tempKey5 = noteIndicator5.GetComponent<pressingNotes>().key;
-         tempKey6 = noteIndicator6.GetComponent<pressingNotes>().key;
-         tempKeySpecial = noteIndicatorSpecial.GetComponent<pressingNotesBar>().key;
+         tempKey1 = button1.GetComponent<pressingNotes>().key;
+         tempKey2 = button2.GetComponent<pressingNotes>().key;
+         tempKey3 = button3.GetComponent<pressingNotes>().key;
+         tempKey4 = button4.GetComponent<pressingNotes>().key;
+         tempKey5 = button5.GetComponent<pressingNotes>().key;
+         tempKey6 = button6.GetComponent<pressingNotes>().key;
+         tempKeySpecial = buttonBar.GetComponent<pressingNotesBar>().key;
     }
 
     void Awake()
     {
         pause.isGamePaused = false;
-
     }
-    void Update () {
 
+    void Update () {
+        
         if(isGamePaused == false)
         {
             Time.timeScale = 1f;
-
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || pauseControl.isResumeClicked == true)
         {
             if(isGamePaused == true)
             {
@@ -80,46 +80,45 @@ public class pause : MonoBehaviour {
         isGamePaused = false;
         GameObject.Find("SongPlayer").GetComponent<AudioSource>().Play();
         enablingIndicators();
+        pauseControl.isResumeClicked = false;
     }
 
     void disablingIndicators()
     {
-        noteIndicator1.GetComponent<pressingNotes>().key = KeyCode.None;
-        noteIndicator2.GetComponent<pressingNotes>().key = KeyCode.None;
-        noteIndicator3.GetComponent<pressingNotes>().key = KeyCode.None;
-        noteIndicator4.GetComponent<pressingNotes>().key = KeyCode.None;
-        noteIndicator5.GetComponent<pressingNotes>().key = KeyCode.None;
-        noteIndicator6.GetComponent<pressingNotes>().key = KeyCode.None;
-        noteIndicatorSpecial.GetComponent<pressingNotesBar>().key = KeyCode.None;
+        button1.GetComponent<pressingNotes>().key = KeyCode.None;
+        button2.GetComponent<pressingNotes>().key = KeyCode.None;
+        button3.GetComponent<pressingNotes>().key = KeyCode.None;
+        button4.GetComponent<pressingNotes>().key = KeyCode.None;
+        button5.GetComponent<pressingNotes>().key = KeyCode.None;
+        button6.GetComponent<pressingNotes>().key = KeyCode.None;
+        buttonBar.GetComponent<pressingNotesBar>().key = KeyCode.None;
 
-        noteIndicator1.GetComponent<pressedKeyColor>().enabled = false;
-        noteIndicator2.GetComponent<pressedKeyColor>().enabled = false;
-        noteIndicator3.GetComponent<pressedKeyColor>().enabled = false;
-        noteIndicator4.GetComponent<pressedKeyColor>().enabled = false;
-        noteIndicator5.GetComponent<pressedKeyColor>().enabled = false;
-        noteIndicator6.GetComponent<pressedKeyColor>().enabled = false;
-        noteIndicatorSpecial.GetComponent<pressedKeyColor>().enabled = false;
-
-
+        button1.GetComponent<pressedKeyColor>().enabled = false;
+        button2.GetComponent<pressedKeyColor>().enabled = false;
+        button3.GetComponent<pressedKeyColor>().enabled = false;
+        button4.GetComponent<pressedKeyColor>().enabled = false;
+        button5.GetComponent<pressedKeyColor>().enabled = false;
+        button6.GetComponent<pressedKeyColor>().enabled = false;
+        buttonBar.GetComponent<pressedKeyColor>().enabled = false;
     }
 
     void enablingIndicators()
     {
-        noteIndicator1.GetComponent<pressingNotes>().key = tempKey1;
-        noteIndicator2.GetComponent<pressingNotes>().key = tempKey2;
-        noteIndicator3.GetComponent<pressingNotes>().key = tempKey3;
-        noteIndicator4.GetComponent<pressingNotes>().key = tempKey4;
-        noteIndicator5.GetComponent<pressingNotes>().key = tempKey5;
-        noteIndicator6.GetComponent<pressingNotes>().key = tempKey6;
-        noteIndicatorSpecial.GetComponent<pressingNotesBar>().key = tempKeySpecial;
+        button1.GetComponent<pressingNotes>().key = tempKey1;
+        button2.GetComponent<pressingNotes>().key = tempKey2;
+        button3.GetComponent<pressingNotes>().key = tempKey3;
+        button4.GetComponent<pressingNotes>().key = tempKey4;
+        button5.GetComponent<pressingNotes>().key = tempKey5;
+        button6.GetComponent<pressingNotes>().key = tempKey6;
+        buttonBar.GetComponent<pressingNotesBar>().key = tempKeySpecial;
 
-        noteIndicator1.GetComponent<pressedKeyColor>().enabled = true;
-        noteIndicator2.GetComponent<pressedKeyColor>().enabled = true;
-        noteIndicator3.GetComponent<pressedKeyColor>().enabled = true;
-        noteIndicator4.GetComponent<pressedKeyColor>().enabled = true;
-        noteIndicator5.GetComponent<pressedKeyColor>().enabled = true;
-        noteIndicator6.GetComponent<pressedKeyColor>().enabled = true;
-        noteIndicatorSpecial.GetComponent<pressedKeyColor>().enabled = true;
+        button1.GetComponent<pressedKeyColor>().enabled = true;
+        button2.GetComponent<pressedKeyColor>().enabled = true;
+        button3.GetComponent<pressedKeyColor>().enabled = true;
+        button4.GetComponent<pressedKeyColor>().enabled = true;
+        button5.GetComponent<pressedKeyColor>().enabled = true;
+        button6.GetComponent<pressedKeyColor>().enabled = true;
+        buttonBar.GetComponent<pressedKeyColor>().enabled = true;
     }
 
 

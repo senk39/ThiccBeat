@@ -24,9 +24,12 @@ public class note : MonoBehaviour {
 	void Start () {
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        rb.velocity = new Vector3(0, 0, (-notesVelocity / Time.deltaTime));
+
+    // Update is called once per frame
+    void Update() {
+        if (pause.isGamePaused == false)
+        {
+            rb.velocity = new Vector3(0, 0, (-notesVelocity / Time.deltaTime));
+        }
     }
 }

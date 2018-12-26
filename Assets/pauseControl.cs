@@ -6,39 +6,22 @@ using UnityEngine.SceneManagement;
 public class pauseControl : MonoBehaviour
 {
     public GameObject[] notes;
+    static public bool isResumeClicked = false;
 
     public void clickResumeBtn()
     {
-        SceneManager.LoadScene(2);
+        isResumeClicked = true;
     }
 
 
     public void clickRestartBtn()
     {
-        /*
-        if (notes == null)
-            notes = GameObject.FindGameObjectsWithTag("Note");
-
-        GameObject[] gameObjects = GameObject.FindGameObjectsWithTag("Note");
-
-        for (var i = 0; i < gameObjects.Length; i++)
-        {
-            Debug.Log("delete");
-            Destroy(gameObjects[i]);
-        }
-
-        // Scene scene = SceneManager.GetActiveScene();
-        // SceneManager.LoadScene(scene.buildIndex);
-        */
         SceneManager.LoadScene(5);
-
-
         pause.isGamePaused = false;
-
     }
 
     public void clickQuitBtn()
     {
-        Application.Quit();
+        SceneManager.LoadScene(2);
     }
 }

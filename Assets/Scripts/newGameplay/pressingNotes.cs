@@ -37,16 +37,9 @@ public class pressingNotes : MonoBehaviour
 
 
         if (notesGenerator)
-        {
-            //if (Input.GetKeyDown(key))
-            //{
+        {  
             InvokeRepeating("noteInstantiateForGenerator", 3.0f, 3f);
-            //Debug.Log(Time.deltaTime);
-            //Instantiate(note, gnotevector,noteQuaternion);
-            //}
         }
-        else
-        { }
 
 
 
@@ -148,40 +141,5 @@ public class pressingNotes : MonoBehaviour
         Instantiate(gnote, gnotevector, gnoteq);
     }
 
-    /*
-    void antiMasher()
-    {
-        bool isActive1 = GameObject.Find("note indicator 1").GetComponent<pressingNotes>().isActive;
-        bool isActive2 = GameObject.Find("note indicator 2").GetComponent<pressingNotes>().isActive;
-        bool isActive3 = GameObject.Find("note indicator 3").GetComponent<pressingNotes>().isActive;
-        bool isActive4 = GameObject.Find("note indicator 4").GetComponent<pressingNotes>().isActive;
-        bool isActive5 = GameObject.Find("note indicator 5").GetComponent<pressingNotes>().isActive;
-        bool isActive6 = GameObject.Find("note indicator 6").GetComponent<pressingNotes>().isActive;
-
-        if ((isActive1 || isActive2 || isActive3 || isActive4 || isActive5 || isActive6) == true)
-        {
-             if(Input.GetKeyDown(key) && isActive == false)
-            {
-               // Debug.Log("to dziala");
-                //playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            }
-        }
-    }
-    */
+  
 }
-
-/*
-
-CO POWINNO SIĘ TU ZNALEŹĆ:
-
-1. NUTKI SPADAJĄ W DÓŁ (TO JEST JUŻ GOTOWE POPRZEZ INNY SKRYPT) 
-2. NUTKA JEST AKTYWNA GDY MA ODPOWIEDNIĄ POZYCJĘ
-3. NUTKA SIĘ KASUJE GDY NASTĄPI KLIKNIĘCIE ODPOWIEDNIEGO KLAWISZA A ONA JEST AKTYWNA
-    - wtedy następna nutka powinna zostać tą aktywną
-    - licznik combo się inkrementuje o 1
-    - ilość punktów zwiększa się
-    - rozróżnij to, czy gracz wcisnął nutkę ok czy perfekcyjnie
-4. NUTKA SIĘ KASUJE GDY GRACZ NIE NACIŚNIE KLAWISZA
-    - licznik combo się resetuje
-
-*/

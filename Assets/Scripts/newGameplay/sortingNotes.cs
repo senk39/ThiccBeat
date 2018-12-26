@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
-
 
 public class sortingNotes : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class sortingNotes : MonoBehaviour
     private float row4x = 1.1f;
     private float row5x = 3.1f;
     private float row6x = 5.1f;
-    private float rowbarx = 2.83f;
+   // private float rowbarx = 2.83f;
 
     List<GameObject> row1 = new List<GameObject>();
     List<GameObject> row2 = new List<GameObject>();
@@ -20,7 +18,7 @@ public class sortingNotes : MonoBehaviour
     List<GameObject> row4 = new List<GameObject>();
     List<GameObject> row5 = new List<GameObject>();
     List<GameObject> row6 = new List<GameObject>();
-    List<GameObject> rowbar = new List<GameObject>();
+   // List<GameObject> rowbar = new List<GameObject>();
 
     void Start()
     {
