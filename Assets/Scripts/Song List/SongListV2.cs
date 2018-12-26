@@ -346,4 +346,13 @@ public class SongListV2 : MonoBehaviour
             SceneManager.LoadScene(4);
         }
     }
+
+
+    public void backToMainMenu()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
+    }
 }
