@@ -48,12 +48,11 @@ FULL BEAT: 12.09
     public string[] textContentSplit1;
 
     //public float firstNote = 105.15f;
-    const float offset = 172.5f;
+    const float offset = 172.2f;
 
-    const float link = 15.8808933002f;
     //const float oneMidiLength = 0.1259375f;
     //const float oneMidiLength = 0.1607f;      TO BYŁO OK PRZED SYNCHRONIZACJĄ NUT DO KLATEK
-    const float oneMidiLength = 0.195f;
+    const float oneMidiLength = 0.19375f;
 
     public bool notesGenerator = false;
     public GameObject note;
