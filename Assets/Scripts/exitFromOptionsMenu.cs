@@ -26,7 +26,7 @@ public class exitFromOptionsMenu : MonoBehaviour
     {
         //Debug.Log(buttons.transform.position.x);
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             animator1.Play("unhiddingButtonsInOptions");
             //isMenuReturnedCompletely = true;

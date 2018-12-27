@@ -37,7 +37,7 @@ public class SongListV2 : MonoBehaviour
 
     public static int selectedSongByUser;
 
-    List<GameObject> allStars = new List<GameObject>();
+    //List<GameObject> allStars = new List<GameObject>();
 
     public bool isCurrentDifficultyIsEasy = false;
 
@@ -165,6 +165,7 @@ public class SongListV2 : MonoBehaviour
     {
         changeSong();
         changeDifficulty();
+        backToMainMenu();
         chooseSongAndMoveToGame();
     }
 

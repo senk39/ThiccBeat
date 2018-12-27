@@ -41,7 +41,7 @@ public class stripesGenerator : MonoBehaviour {
         for (int i = 0; i < 19; i++) //  PĘTLA NADAJĄCA PRAWA RODZICIELSKIE OBIEKTOWI STRIPES
         {
             
-            string searchedString = "Stripe" + i + "(Clone)";
+            //string searchedString = "Stripe" + i + "(Clone)";
             stripeClone = GameObject.Find("Stripe" + i + "(Clone)");
             stripeClone.transform.SetParent(fatherTr);
             stripeClone.GetComponent<returningStripe>().tf = stripeClone.transform;

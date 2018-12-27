@@ -48,18 +48,16 @@ FULL BEAT: 12.09
     public string[] textContentSplit1;
 
     //public float firstNote = 105.15f;
-    const float offset = 170f;
+    const float offset = 172.5f;
 
     const float link = 15.8808933002f;
     //const float oneMidiLength = 0.1259375f;
     //const float oneMidiLength = 0.1607f;      TO BYŁO OK PRZED SYNCHRONIZACJĄ NUT DO KLATEK
-    const float oneMidiLength = 0.1929f;
+    const float oneMidiLength = 0.195f;
 
     public bool notesGenerator = false;
     public GameObject note;
     public GameObject bar;
-    Vector3 gnotevector = new Vector3(0f, 0.35f, -14.19f);
-
 
     Quaternion noteQuaternion = new Quaternion(0f, 0f, 0f, 0f);
     Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
