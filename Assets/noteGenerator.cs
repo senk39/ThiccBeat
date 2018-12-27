@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.IO;
+using System.Linq;
 
 public class noteGenerator : MonoBehaviour
 {
@@ -66,13 +67,15 @@ FULL BEAT: 12.09
     public float bpm = 195f;
     public float distBetweenNotes;
 
-    private int tempValueRow1 = 0;
-    private int tempValueRow2 = 0;
-    private int tempValueRow3 = 0;
-    private int tempValueRow4 = 0;
-    private int tempValueRow5 = 0;
-    private int tempValueRow6 = 0;
-    private int tempValueRow7 = 0;
+    public int tempValueRow1 = 0;
+    public int tempValueRow2 = 0;
+    public int tempValueRow3 = 0;
+    public int tempValueRow4 = 0;
+    public int tempValueRow5 = 0;
+    public int tempValueRow6 = 0;
+    public int tempValueRow7 = 0;
+
+    public int biggestRow;
 
     private const float row1X = -5.1f;
     private const float row2X = -3.1f;
@@ -171,10 +174,32 @@ FULL BEAT: 12.09
                     barQuaternion);
             }
         }
+
+        checkTheLastestNote();
+
     }
 
     void Update()
     {
+    }
+
+    void checkTheLastestNote()
+    {
+        //int[] lastestNotes = { tempValueRow1, tempValueRow2, tempValueRow3, tempValueRow4, tempValueRow5, tempValueRow6, tempValueRow7 };
+        List<int> lastestNotes = new List<int>();
+        lastestNotes.Add(tempValueRow1);
+        lastestNotes.Add(tempValueRow2);
+        lastestNotes.Add(tempValueRow3);
+        lastestNotes.Add(tempValueRow4);
+        lastestNotes.Add(tempValueRow5);
+        lastestNotes.Add(tempValueRow6);
+        lastestNotes.Add(tempValueRow7);
+
+        biggestRow = lastestNotes.Max();
+
+
+        //biggestRow
+
     }
 
 }

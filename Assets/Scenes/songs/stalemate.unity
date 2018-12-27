@@ -1107,6 +1107,14 @@ MonoBehaviour:
   bar: {fileID: 1380097115952382, guid: f4152c4597b1efc4eb5e2d5bf61022fd, type: 2}
   bpm: 195
   distBetweenNotes: 0
+  tempValueRow1: 0
+  tempValueRow2: 0
+  tempValueRow3: 0
+  tempValueRow4: 0
+  tempValueRow5: 0
+  tempValueRow6: 0
+  tempValueRow7: 0
+  biggestRow: 0
 --- !u!4 &322840695
 Transform:
   m_ObjectHideFlags: 0
