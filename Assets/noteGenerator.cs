@@ -66,13 +66,13 @@ FULL BEAT: 12.09
     public float bpm = 195f;
     public float distBetweenNotes;
 
-    public int tempValueRow1 = 0;
-    public int tempValueRow2 = 0;
-    public int tempValueRow3 = 0;
-    public int tempValueRow4 = 0;
-    public int tempValueRow5 = 0;
-    public int tempValueRow6 = 0;
-    public int tempValueRow7 = 0;
+    private int tempValueRow1 = 0;
+    private int tempValueRow2 = 0;
+    private int tempValueRow3 = 0;
+    private int tempValueRow4 = 0;
+    private int tempValueRow5 = 0;
+    private int tempValueRow6 = 0;
+    private int tempValueRow7 = 0;
 
     private const float row1X = -5.1f;
     private const float row2X = -3.1f;
