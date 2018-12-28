@@ -93,8 +93,8 @@ public class holdContainerForNotebarMid : MonoBehaviour {
     void shrinkingDownOfPressedHoldNote()
     {
         posv3.z = -14.2f;
-        pivot.GetComponent<note>().notesVelocity = 0;
-        GetComponent<note>().notesVelocity = 0;
+        pivot.GetComponent<note>().noteVelocity = 0;
+        GetComponent<note>().noteVelocity = 0;
         tfv3.z -= 0.22f;
         pivot.transform.localScale = tfv3;
         pivot.transform.position = posv3;
