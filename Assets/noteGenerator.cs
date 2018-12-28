@@ -59,6 +59,8 @@ FULL BEAT: 12.09
     public GameObject note;
     public GameObject bar;
 
+    public GameObject endTrack;
+
     Quaternion noteQuaternion = new Quaternion(0f, 0f, 0f, 0f);
     Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
 
@@ -176,7 +178,7 @@ FULL BEAT: 12.09
         }
 
         checkTheLastestNote();
-
+        generateTheLastestNote();
     }
 
     void Update()
@@ -196,10 +198,13 @@ FULL BEAT: 12.09
         lastestNotes.Add(tempValueRow7);
 
         biggestRow = lastestNotes.Max();
-
-
-        //biggestRow
-
     }
 
+    void generateTheLastestNote()
+    {
+        Instantiate(endTrack, new Vector3
+        (0, 0.38f, (offset + (biggestRow * oneMidiLength) + 100f)),
+        noteQuaternion);
+    }
 }
+

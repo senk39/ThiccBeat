@@ -842,6 +842,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4946227937377988, guid: ef57177d6b1efb943abf06235cc99d24,
     type: 2}
   m_PrefabInternal: {fileID: 219910701}
+--- !u!1 &242033267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242033268}
+  - component: {fileID: 242033270}
+  - component: {fileID: 242033269}
+  m_Layer: 5
+  m_Name: TRACK COMPLETED!
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &242033268
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242033267}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000117, y: 1.0000117, z: 1.0000117}
+  m_Children: []
+  m_Father: {fileID: 658537952}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.000030518}
+  m_SizeDelta: {x: 1252.7, y: 172.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &242033269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242033267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.834}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b1d5f1e020e8c94449f5e2e746acac52, type: 3}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: TRACK COMPLETED!
+--- !u!222 &242033270
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242033267}
+  m_CullTransparentMesh: 0
 --- !u!1 &290980039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,6 +1180,7 @@ MonoBehaviour:
   notesGenerator: 0
   note: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
   bar: {fileID: 1380097115952382, guid: f4152c4597b1efc4eb5e2d5bf61022fd, type: 2}
+  endTrack: {fileID: 1791448796625090, guid: 2bcd067bbf2f67a4dbd3dec6ec603406, type: 2}
   bpm: 195
   distBetweenNotes: 0
   tempValueRow1: 0
@@ -2178,6 +2254,7 @@ RectTransform:
   - {fileID: 427617158}
   - {fileID: 2007992698}
   - {fileID: 1160227622}
+  - {fileID: 242033268}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

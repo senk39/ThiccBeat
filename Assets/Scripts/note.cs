@@ -32,7 +32,6 @@ public class note : MonoBehaviour {
         if (pause.isGamePaused == false)
         {
             rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
-            Debug.Log(Time.deltaTime);
         }
     }
 }
