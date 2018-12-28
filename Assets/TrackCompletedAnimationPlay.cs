@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrackCompletedAnimationPlay : MonoBehaviour {
     public Animator anim;
@@ -15,6 +16,12 @@ public class TrackCompletedAnimationPlay : MonoBehaviour {
         if (lastNoteBehaviour.lastNoteDone == true)
         {
             anim.Play("TrackCompleted");
+            Invoke("goToHighScoreScreen", 5f);
         }
 	}
+
+    void goToHighScoreScreen()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
