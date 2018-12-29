@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class currentSong : SongListV2
 {
-
     Song playedSong;
     public GameObject titleElement;
     public TextMeshProUGUI titleLabel;
 
     public GameObject artistElement;
     public TextMeshProUGUI artistLabel;
+
+    public GameObject diffStarsElement;
+    public TextMeshProUGUI diffStarsLabel;
 
     public GameObject diffElement;
     public TextMeshProUGUI diffLabel;
@@ -56,14 +58,16 @@ public class currentSong : SongListV2
     int silverCombo;
     int bronzeCombo;
 
+    string currentDiff;
+
     void Awake ()
     {
-        
         playedSong = allSongs[selectedSongByUser];
 
         titleLabel = titleElement.GetComponent<TMPro.TextMeshProUGUI>();
         artistLabel = artistElement.GetComponent<TMPro.TextMeshProUGUI>();
         diffLabel = diffElement.GetComponent<TMPro.TextMeshProUGUI>();
+        diffStarsLabel = diffStarsElement.GetComponent<TMPro.TextMeshProUGUI>();
         scoreLabel = scoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         comboLabel = comboElement.GetComponent<TMPro.TextMeshProUGUI>();
 
@@ -77,9 +81,10 @@ public class currentSong : SongListV2
 
         combo = PlayerPrefs.GetInt("lastGameMaxCombo");
         score = PlayerPrefs.GetInt("lastGameScore");
+        displaySongInfo();
         highScore();
         displayTop3Info();
-        displaySongInfo();
+        
 
         displayScoreInfo();
     }
@@ -99,18 +104,29 @@ public class currentSong : SongListV2
         titleLabel.text = playedSong.title;
         artistLabel.text = playedSong.artist;
 
+        string starSymbol = @"<sprite name=""star full""> ";
+        int multiplierEasy = allSongs[selectedSongByUser].difficultyEasy;
+        int multiplierHard = allSongs[selectedSongByUser].difficultyHard;
+
         if (isCurrentDifficultyIsEasy == true)
-        {   diffLabel.text = "EASY";    }
+        {
+            diffLabel.text = "EASY";
+            currentDiff = "easy";
+            diffStarsLabel.text = string.Join(starSymbol, new string[multiplierEasy + 1]);
+        }
         else
-        {   diffLabel.text = "HARD";    }
+        {
+            diffLabel.text = "HARD";
+            currentDiff = "hard";
+            diffStarsLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
+        }
+
     }
 
     private void displayScoreInfo()
     {
         scoreLabel.text = score.ToString();
         comboLabel.text = combo.ToString();
-
-        //deletePlayerPrefsKeys();
     }
 
     private static void deletePlayerPrefsKeys()
@@ -123,38 +139,41 @@ public class currentSong : SongListV2
     {
         sIndex = playedSong.index;
 
-        goldScore = PlayerPrefs.GetInt(sIndex + "GoldScore");
-        silverScore = PlayerPrefs.GetInt(sIndex + "SilverScore");
-        bronzeScore = PlayerPrefs.GetInt(sIndex + "BronzeScore");
+        goldScore = PlayerPrefs.GetInt(sIndex + "GoldScore" + currentDiff);
+        silverScore = PlayerPrefs.GetInt(sIndex + "SilverScore" + currentDiff);
+        bronzeScore = PlayerPrefs.GetInt(sIndex + "BronzeScore" + currentDiff);
 
-        if(goldScore<score)
+        goldCombo = PlayerPrefs.GetInt(sIndex + "GoldCombo" + currentDiff);
+        silverCombo = PlayerPrefs.GetInt(sIndex + "SilverCombo" + currentDiff);
+        bronzeCombo = PlayerPrefs.GetInt(sIndex + "BronzeCombo" + currentDiff);
+
+        if (goldScore<score)
         {
-            PlayerPrefs.SetInt(sIndex + "GoldScore", score);
-            PlayerPrefs.SetInt(sIndex + "GoldCombo", combo);
+            PlayerPrefs.SetInt(sIndex + "GoldScore" + currentDiff, score);
+            PlayerPrefs.SetInt(sIndex + "GoldCombo" + currentDiff, combo);
             goldScore = score;
             goldCombo = combo;
             
         }
         else if (silverScore < score)
         {
-            PlayerPrefs.SetInt(sIndex + "SilverScore", score);
-            PlayerPrefs.SetInt(sIndex + "SilverCombo", combo);
+            PlayerPrefs.SetInt(sIndex + "SilverScore" + currentDiff, score);
+            PlayerPrefs.SetInt(sIndex + "SilverCombo" + currentDiff, combo);
             silverScore = score;
             silverCombo = combo;
 
         }
         else if (bronzeScore < score)
         {
-            PlayerPrefs.SetInt(sIndex + "BronzeScore", score);
-            PlayerPrefs.SetInt(sIndex + "BronzeCombo", combo);
+            PlayerPrefs.SetInt(sIndex + "BronzeScore" + currentDiff, score);
+            PlayerPrefs.SetInt(sIndex + "BronzeCombo" + currentDiff, combo);
             bronzeScore = score;
             bronzeCombo = combo;
         }
 
-        Debug.Log(PlayerPrefs.GetInt(sIndex + "BronzeScore"));  //0
+        Debug.Log(PlayerPrefs.GetInt(sIndex + "BronzeScore" + currentDiff));  //0
         Debug.Log(sIndex + "GoldScore"); //4Gold
     }
-
 
     void Update () {
         backtoSongSelectMenu();
@@ -168,5 +187,8 @@ public class currentSong : SongListV2
         }
     }
 
+
+
+    
 
 }
