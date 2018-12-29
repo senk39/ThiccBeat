@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class SongListV2 : MonoBehaviour
 {
-    public List<Song> allSongs = new List<Song>();
+    static public List<Song> allSongs = new List<Song>();
     public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
     public GameObject parentObjForSelected;
 
@@ -39,9 +39,10 @@ public class SongListV2 : MonoBehaviour
 
     //List<GameObject> allStars = new List<GameObject>();
 
-    public bool isCurrentDifficultyIsEasy = false;
+    static public bool isCurrentDifficultyIsEasy = false;
 
     //static public int songEntered;
+
 
 
 
@@ -52,7 +53,7 @@ public class SongListV2 : MonoBehaviour
 
         public int index;
 
-        public string title;
+        public string title { get; set; }
         public string artist;
         public string illustrator;
         public string lyricist;
@@ -146,7 +147,7 @@ public class SongListV2 : MonoBehaviour
         6, "Wakusei Rabbit", "Yunomi", null, "TORIENA", "kawaii future bass", null, 174, "3:24", 783, 5, 8);
 
 
-    void Start()
+    void Awake()
     {
         selArtistLabel = selArtistObj.GetComponent<TMPro.TextMeshProUGUI>();
         selTitleLabel = selTitleObj.GetComponent<TMPro.TextMeshProUGUI>();
@@ -342,6 +343,7 @@ public class SongListV2 : MonoBehaviour
 
     public void chooseSongAndMoveToGame()
     {
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene(4);

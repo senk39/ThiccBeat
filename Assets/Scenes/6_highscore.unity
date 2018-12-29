@@ -455,7 +455,7 @@ Prefab:
     - target: {fileID: 224309092349519696, guid: c550cd8ceb33d204e9d4fae17c23a937,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 793.15
+      value: 873.60004
       objectReference: {fileID: 0}
     - target: {fileID: 224309092349519696, guid: c550cd8ceb33d204e9d4fae17c23a937,
         type: 2}
@@ -465,7 +465,7 @@ Prefab:
     - target: {fileID: 224309092349519696, guid: c550cd8ceb33d204e9d4fae17c23a937,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 1297.6001
+      value: 1297.6
       objectReference: {fileID: 0}
     - target: {fileID: 224309092349519696, guid: c550cd8ceb33d204e9d4fae17c23a937,
         type: 2}
@@ -1345,6 +1345,83 @@ RectTransform:
   m_AnchoredPosition: {x: -591, y: 512}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &713449229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713449231}
+  - component: {fileID: 713449230}
+  m_Layer: 0
+  m_Name: playedSongController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &713449230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713449229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d01d3497d1cca4990055f4fb6a4a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstSongBoxPosition: {x: 459.5, y: 291, z: 0}
+  parentObjForSelected: {fileID: 0}
+  selArtistObj: {fileID: 0}
+  selArtistLabel: {fileID: 0}
+  selTitleObj: {fileID: 0}
+  selTitleLabel: {fileID: 0}
+  selDiffObj: {fileID: 0}
+  selDiffLabel: {fileID: 0}
+  selDiffAltObj: {fileID: 0}
+  selDiffAltLabel: {fileID: 0}
+  starEmpty: {fileID: 0}
+  starFilled: {fileID: 0}
+  selGenreObj: {fileID: 0}
+  selGenreLabel: {fileID: 0}
+  selCoverObj: {fileID: 0}
+  titleElement: {fileID: 351398874}
+  titleLabel: {fileID: 0}
+  artistElement: {fileID: 627976628}
+  artistLabel: {fileID: 0}
+  diffElement: {fileID: 450625439}
+  diffLabel: {fileID: 0}
+  scoreElement: {fileID: 1813224496}
+  scoreLabel: {fileID: 0}
+  comboElement: {fileID: 1551080123}
+  comboLabel: {fileID: 0}
+  goldScoreElement: {fileID: 361392806}
+  goldScoreLabel: {fileID: 0}
+  goldComboElement: {fileID: 2107322996}
+  goldComboLabel: {fileID: 0}
+  silverScoreElement: {fileID: 1611520896}
+  silverScoreLabel: {fileID: 0}
+  silverComboElement: {fileID: 1502979869}
+  silverComboLabel: {fileID: 0}
+  bronzeScoreElement: {fileID: 201672739}
+  bronzeScoreLabel: {fileID: 0}
+  bronzeComboElement: {fileID: 1227813411}
+  bronzeComboLabel: {fileID: 0}
+--- !u!4 &713449231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 713449229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 984.10236, y: 583.24365, z: 16.549969}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798160300
 GameObject:
   m_ObjectHideFlags: 0

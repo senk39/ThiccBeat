@@ -1201,13 +1201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a5e6255419faf4e939100f1cd121e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  row1: {fileID: 4900000, guid: 54fce7b0d7d5a86459d02f6e38544ef3, type: 3}
-  row2: {fileID: 4900000, guid: 70d64b5dc62794845a5a07a7773206fa, type: 3}
-  row3: {fileID: 4900000, guid: 8f87bd2e7e9f8fb45a0bf9ce7bfc7ae6, type: 3}
-  row4: {fileID: 4900000, guid: 72bb1e6236d222f4ca4dff24424d19ee, type: 3}
-  row5: {fileID: 4900000, guid: 726b4f5cbae20994e84c30eea0c636f8, type: 3}
-  row6: {fileID: 4900000, guid: d5ebafc836f1bcf4497e31a3dae2a3cc, type: 3}
-  row7: {fileID: 4900000, guid: 6dacbe54454e41b43bb4d6351a5e0ac5, type: 3}
+  row1: {fileID: 4900000, guid: 49381933017c07c41bb24c3e4a813cd4, type: 3}
+  row2: {fileID: 4900000, guid: 2f3d39b2a356ca54aa6b36d20239a1f9, type: 3}
+  row3: {fileID: 4900000, guid: 51dc40b1cff82f6428fbac2aff9b7a99, type: 3}
+  row4: {fileID: 4900000, guid: ed8f53427833795488dea433018d0843, type: 3}
+  row5: {fileID: 4900000, guid: bf457e9862c0167439a877b9c19aff7e, type: 3}
+  row6: {fileID: 4900000, guid: 8440cf7027342d24d87ad8cfea57a33c, type: 3}
+  row7: {fileID: 4900000, guid: 0e99e211ba519594281f16108de37ba5, type: 3}
   textContentSplit1: []
   notesGenerator: 0
   note: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
@@ -2465,6 +2465,46 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 727bf6a555579364d8847cabda77384b, type: 2}
   - {fileID: 2100000, guid: e7a5eb25fc01c8f498649a87cb7a2eec, type: 2}
+--- !u!1 &870981578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 870981580}
+  - component: {fileID: 870981579}
+  m_Layer: 0
+  m_Name: ScoreAndCombo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &870981579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870981578}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592761807b1f9f043bdec5bd1b034fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &870981580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870981578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &873130387
 Prefab:
   m_ObjectHideFlags: 0
@@ -4208,7 +4248,7 @@ GameObject:
   - component: {fileID: 1767029969}
   - component: {fileID: 1767029968}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
