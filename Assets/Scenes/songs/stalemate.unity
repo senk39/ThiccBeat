@@ -4822,7 +4822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 32
   material:
-  - {fileID: 2100000, guid: 5c3a4f8a509b4464295575385f204f08, type: 2}
+  - {fileID: 2100000, guid: bd1d0cabddfc7e443a1045cfe6293382, type: 2}
   - {fileID: 2100000, guid: 9f619dc142bb4bc478b1fdd91f513df5, type: 2}
 --- !u!65 &2043204791
 BoxCollider:

@@ -28,18 +28,18 @@ public class sortingNotes : MonoBehaviour
     {
         addNotesToLists();
 
-        checkIfTheLowestRow1();
-        checkIfTheLowestRow2();
-        checkIfTheLowestRow3();
-        checkIfTheLowestRow4();
-        checkIfTheLowestRow5();
-        checkIfTheLowestRow6();
+        findTheLowestNoteInRow1();
+        findTheLowestNoteInRow2();
+        findTheLowestNoteInRow3();
+        findTheLowestNoteInRow4();
+        findTheLowestNoteInRow5();
+        findTheLowestNoteInRow6();
         //checkIfTheLowestRowbar();
 
         deleteNotesFromLists();
     }
 
-    void checkIfTheLowestRow1()
+    void findTheLowestNoteInRow1()
     {
 
         if (row1.Count > 1)
@@ -82,7 +82,7 @@ public class sortingNotes : MonoBehaviour
         }
     }
 
-    void checkIfTheLowestRow2()
+    void findTheLowestNoteInRow2()
     {
 
         if (row2.Count > 1)
@@ -113,7 +113,7 @@ public class sortingNotes : MonoBehaviour
         }
     }
 
-    void checkIfTheLowestRow3()
+    void findTheLowestNoteInRow3()
     {
 
         if (row3.Count > 1)
@@ -144,7 +144,7 @@ public class sortingNotes : MonoBehaviour
         }
     }
 
-    void checkIfTheLowestRow4()
+    void findTheLowestNoteInRow4()
     {
 
         if (row4.Count > 1)
@@ -175,7 +175,7 @@ public class sortingNotes : MonoBehaviour
         }
     }
 
-    void checkIfTheLowestRow5()
+    void findTheLowestNoteInRow5()
     {
 
         if (row5.Count > 1)
@@ -206,7 +206,7 @@ public class sortingNotes : MonoBehaviour
         }
     }
 
-    void checkIfTheLowestRow6()
+    void findTheLowestNoteInRow6()
     {
         if (row6.Count > 1)
         {
