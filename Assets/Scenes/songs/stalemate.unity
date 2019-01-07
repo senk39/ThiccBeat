@@ -243,7 +243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
@@ -334,6 +334,7 @@ MonoBehaviour:
   go: {fileID: 0}
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  antiMasherConnector: 0
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
@@ -460,7 +461,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23639996822787576, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
@@ -571,6 +572,7 @@ MonoBehaviour:
   go: {fileID: 0}
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  antiMasherConnector: 0
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
@@ -823,7 +825,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7ab686f5324853540ab47c71e18988e4, type: 2}
+      objectReference: {fileID: 2100000, guid: f3d91dd974f6c834ea701c88eaf62f2b, type: 2}
     - target: {fileID: 4946227937377988, guid: ef57177d6b1efb943abf06235cc99d24, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.1
@@ -1201,13 +1203,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58a5e6255419faf4e939100f1cd121e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  row1: {fileID: 4900000, guid: 49381933017c07c41bb24c3e4a813cd4, type: 3}
-  row2: {fileID: 4900000, guid: 2f3d39b2a356ca54aa6b36d20239a1f9, type: 3}
-  row3: {fileID: 4900000, guid: 51dc40b1cff82f6428fbac2aff9b7a99, type: 3}
-  row4: {fileID: 4900000, guid: ed8f53427833795488dea433018d0843, type: 3}
-  row5: {fileID: 4900000, guid: bf457e9862c0167439a877b9c19aff7e, type: 3}
-  row6: {fileID: 4900000, guid: 8440cf7027342d24d87ad8cfea57a33c, type: 3}
-  row7: {fileID: 4900000, guid: 0e99e211ba519594281f16108de37ba5, type: 3}
+  row1: {fileID: 4900000, guid: 54fce7b0d7d5a86459d02f6e38544ef3, type: 3}
+  row2: {fileID: 4900000, guid: 70d64b5dc62794845a5a07a7773206fa, type: 3}
+  row3: {fileID: 4900000, guid: 8f87bd2e7e9f8fb45a0bf9ce7bfc7ae6, type: 3}
+  row4: {fileID: 4900000, guid: 72bb1e6236d222f4ca4dff24424d19ee, type: 3}
+  row5: {fileID: 4900000, guid: 726b4f5cbae20994e84c30eea0c636f8, type: 3}
+  row6: {fileID: 4900000, guid: d5ebafc836f1bcf4497e31a3dae2a3cc, type: 3}
+  row7: {fileID: 4900000, guid: 6dacbe54454e41b43bb4d6351a5e0ac5, type: 3}
   textContentSplit1: []
   notesGenerator: 0
   note: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
@@ -1562,6 +1564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415758748}
+  - component: {fileID: 415758749}
   m_Layer: 0
   m_Name: BUTTONS
   m_TagString: Untagged
@@ -1589,6 +1592,32 @@ Transform:
   m_Father: {fileID: 1950748611}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &415758749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415758747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0be22e1fc7860f469e466830a3f9398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockedNotes: 0
+  playerScoreContainer: {fileID: 0}
+  playerComboContainer: {fileID: 0}
+  button1: {fileID: 0}
+  b1pressed: 0
+  button2: {fileID: 0}
+  b2pressed: 0
+  button3: {fileID: 0}
+  b3pressed: 0
+  button4: {fileID: 0}
+  b4pressed: 0
+  button5: {fileID: 0}
+  b5pressed: 0
+  button6: {fileID: 0}
+  b6pressed: 0
 --- !u!1001 &419947562
 Prefab:
   m_ObjectHideFlags: 0
@@ -1786,23 +1815,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &462607968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1822958151641100, guid: ab2248232938acb4f9d926cfb284fe54,
-    type: 2}
-  m_PrefabInternal: {fileID: 1648099233}
---- !u!114 &462607969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 462607968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0be22e1fc7860f469e466830a3f9398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thereIsANoteOnRow1: 0
 --- !u!1 &507873533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2098,7 +2110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 23244426400641072, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
@@ -2194,6 +2206,7 @@ MonoBehaviour:
   go: {fileID: 0}
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  antiMasherConnector: 0
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
@@ -2854,7 +2867,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 23053527999894434, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
@@ -2950,6 +2963,7 @@ MonoBehaviour:
   go: {fileID: 0}
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  antiMasherConnector: 0
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
@@ -3285,7 +3299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
@@ -3376,6 +3390,7 @@ MonoBehaviour:
   go: {fileID: 0}
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  antiMasherConnector: 0
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
@@ -3472,7 +3487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
@@ -3563,6 +3578,7 @@ MonoBehaviour:
   go: {fileID: 0}
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
+  antiMasherConnector: 0
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195

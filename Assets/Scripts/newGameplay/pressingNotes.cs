@@ -17,6 +17,7 @@ public class pressingNotes : MonoBehaviour
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
+    public bool antiMasherConnector = false;
     // GENERATOR
     public bool notesGenerator = true;
     public GameObject gnote;
@@ -27,15 +28,14 @@ public class pressingNotes : MonoBehaviour
     public int bpm = 195;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
+        antiMasherConnector = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         if (notesGenerator)
         {  
             InvokeRepeating("noteInstantiateForGenerator", 3.0f, 3f);
@@ -46,7 +46,7 @@ public class pressingNotes : MonoBehaviour
         if (go != null)
         {
 
-            if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest)
+            if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest && antiMasherConnector == false)
             {
                 
                 if (go.tag == "h_note_start")
@@ -117,6 +117,7 @@ public class pressingNotes : MonoBehaviour
             notesList.Remove(col.gameObject);
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
             Destroy(col.gameObject);
+            antiMasherConnector = false;
         }
         if ((col.tag == "h_note_start" || col.tag == "h_note_end") && notesGenerator == false)
         {
@@ -124,6 +125,7 @@ public class pressingNotes : MonoBehaviour
             notesList.Remove(col.gameObject);
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
             Destroy(col.gameObject);
+            antiMasherConnector = false;
         }
         if (col.tag == "h_note_mid" && notesGenerator == false)
         {
