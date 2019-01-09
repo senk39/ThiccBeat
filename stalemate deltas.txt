@@ -18,8 +18,38 @@ FULL BEAT: 12.09
 
 1/2: 6.045
 
-1/4: 3.0225
+1/4: 3.0225 //ustawiona jako standardowa odległość między nutami - 48 jednostek
 
 1/8: 1.51125
 
 1/16: 0.755625
+
+
+1 nuta: 48 jednostek midi
+
+1 jednostka midi: 0.06296875 odległości Unity
+
+18.88895
+16.89884
+
+
+/////////////////////////////////////////
+
+Prędkość nut: 50
+52.30312
+36.30312
+Delta: 16
+
+FULL BEAT: 16
+
+1/2: 8
+
+1/4: 4 //ustawiona jako standardowa odległość między nutami - 48 jednostek
+
+1/8: 2
+
+1/16: 1
+
+48/4 = 12 
+
+44.41123-14.19=30.22123
