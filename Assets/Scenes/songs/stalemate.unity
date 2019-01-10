@@ -1066,6 +1066,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296334021}
+  - component: {fileID: 296334020}
+  - component: {fileID: 296334022}
   m_Layer: 0
   m_Name: Song Selector
   m_TagString: Untagged
@@ -1073,6 +1075,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &296334020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296334019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60f29339d242bb4d81e370e4c3780f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &296334021
 Transform:
   m_ObjectHideFlags: 0
@@ -1080,12 +1093,23 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 296334019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 837.441, y: 519.8643, z: 197.19856}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &296334022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296334019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb01e2c22e3519341b8d251e6ca38ac4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &304954501
 Prefab:
   m_ObjectHideFlags: 0
@@ -1603,7 +1627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0be22e1fc7860f469e466830a3f9398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockedNotes: 0
   playerScoreContainer: {fileID: 0}
   playerComboContainer: {fileID: 0}
   button1: {fileID: 0}

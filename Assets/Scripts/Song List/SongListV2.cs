@@ -34,7 +34,7 @@ public class SongListV2 : MonoBehaviour
     public TextMeshProUGUI selGenreLabel;
 
     public GameObject selCoverObj;
-
+    
     public static int selectedSongByUser;
 
     //List<GameObject> allStars = new List<GameObject>();
@@ -125,26 +125,12 @@ public class SongListV2 : MonoBehaviour
     }
 
     // START TWORZENIA PIOSENKÓW
-    static Song piosenkaOPociagach = new Song(
-        0, "Piosenka o Pociagach", "Marvyanaka", "Marvyanaka", "Marvyanaka", "Electropop", "Vocaloid", 150, "3:27", 429, 3, 7);
+    static Song stalemate = new Song(
+        0, "Stalemate", "P. Dawidziak", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 999, 3, 7);
 
-    static Song stardust = new Song(
-        1, "Stardust", "Senketsu", "NixieBlue", "yuyechka", "Pop-rock", "Vocaloid", 150, "5:28", 594, 2, 6);
+    static Song comfyplace = new Song(
+        1, "Comfy Place", "P. Dawidziak", null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 999, 4, 9);
 
-    static Song despacito = new Song(
-        2, "Despacito", "Louis Fonsi", "Louis Fonsi", null, "Reggaeton", "Latin pop", 120, "4:42", 631, 5, 9);
-
-    static Song actionGirl = new Song(
-        3, "ACTION GIRL", "Senketsu", null, "yuyechka", "Synth-rock", "Vocaloid", 220, "3:39", 2137, 6, 10);
-
-    static Song badApple = new Song(
-        4, "Bad Apple!!", "Alstroemeria Records", "Alstroemeria Records", "Nomico", "Electropop", "Touhou", 138, "3:39", 720, 1, 5);
-
-    static Song sixTrillion = new Song(
-        5, "A Tale of Six Trillion Years and a Night", "kemu", null, "kemu", "Synth-rock", "Vocaloid", 186, "3:36", 695, 3, 7);
-
-    static Song wakuseiRabbit = new Song(
-        6, "Wakusei Rabbit", "Yunomi", null, "TORIENA", "kawaii future bass", null, 174, "3:24", 783, 5, 8);
 
 
     void Awake()
@@ -172,13 +158,8 @@ public class SongListV2 : MonoBehaviour
 
     void addingSongsToList()
     {
-        allSongs.Add(piosenkaOPociagach);
-        allSongs.Add(stardust);
-        allSongs.Add(despacito);
-        allSongs.Add(actionGirl);
-        allSongs.Add(badApple);
-        allSongs.Add(sixTrillion);
-        allSongs.Add(wakuseiRabbit);
+        allSongs.Add(stalemate);
+        allSongs.Add(comfyplace);
     }
 
     void creatingSelectedSongEntryInUI(int selectedSongByUser)
@@ -190,7 +171,7 @@ public class SongListV2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if (selectedSongByUser < allSongs.Capacity - 2)
+            if (selectedSongByUser < Song.totalAmount - 1)
             {
                 selectedSongByUser++;
                 fillingDataInSelectedSong();
