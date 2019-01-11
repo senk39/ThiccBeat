@@ -63,6 +63,8 @@ FULL BEAT: 12.09
     public GameObject note;
     public GameObject bar;
 
+    GameObject noteContainer;
+
     public GameObject endTrack;
 
     Quaternion noteQuaternion = new Quaternion(0f, 0f, 0f, 0f);
@@ -94,6 +96,7 @@ FULL BEAT: 12.09
 
     void Awake()
     {
+        noteContainer = GameObject.Find("NOTES");
         selectedSong = SongListV2.selectedSongByUser;
 
         bpm = SongListV2.allSongs[selectedSong].BPM;
@@ -142,6 +145,7 @@ FULL BEAT: 12.09
                 Instantiate(note, new Vector3
                     (row1X, rowY, (offset + (tempValueRow1 * oneMidiLength))),
                     noteQuaternion);
+                //newNote.transform.parent = noteContainer.transform;
             }
         }
         foreach (string s in textContentSplit2)
@@ -150,6 +154,7 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow2);
                 Instantiate(note, new Vector3(row2X, rowY, (offset + (tempValueRow2 * oneMidiLength))), noteQuaternion);
+                //newNote.transform.parent = noteContainer.transform;
             }
         }
         foreach (string s in textContentSplit3)

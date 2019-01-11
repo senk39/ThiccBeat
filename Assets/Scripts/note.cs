@@ -8,6 +8,7 @@ public class note : MonoBehaviour {
     public float noteVelocity = 1;
     Rigidbody rb;
 
+    bool anyKeyPressedToStart = false;
 
     public bool isTheLowest = false;
 
@@ -15,23 +16,30 @@ public class note : MonoBehaviour {
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+        
         if(rb.gameObject.tag=="NoteBar")
         {
             isTheLowest = true;
         }
+        
     }
 
-	// Use this for initialization
 	void Start () {
 
     }
 
-    // Update is called once per frame
     void Update() {
-        if (pause.isGamePaused == false)
+
+        if (Input.anyKeyDown)
+        {
+            anyKeyPressedToStart = true;
+        }
+        
+        if (pause.isGamePaused == false && anyKeyPressedToStart == true)
         {
             rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
         }
+        
     }
+    
 }
