@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class pressingNotes : MonoBehaviour
 {
-
     public KeyCode key;
 
     public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
@@ -27,10 +26,12 @@ public class pressingNotes : MonoBehaviour
     //BPM
     public int bpm = 195;
 
-    // Use this for initialization
+    public AudioSource hitOrMiss;
+
     void Awake()
     {
         antiMasherConnector = false;
+        hitOrMiss = GameObject.Find("BUTTONS").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,7 +49,7 @@ public class pressingNotes : MonoBehaviour
 
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest && antiMasherConnector == false)
             {
-                
+                hitOrMiss.Play();
                 if (go.tag == "h_note_start")
                 {
                     //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;

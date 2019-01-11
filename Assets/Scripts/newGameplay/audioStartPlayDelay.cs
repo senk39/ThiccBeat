@@ -6,16 +6,29 @@ public class audioStartPlayDelay : MonoBehaviour {
 
     AudioSource songAudio;
 
-	// Use this for initialization
-	void Start () {
+    public bool anyKeyPressedToStart = false;
+
+    // Use this for initialization
+    void Start () {
 
         songAudio = GetComponent<AudioSource>();
-        songAudio.PlayDelayed(3f);
+
+
+        //songAudio.PlayDelayed(3f);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (anyKeyPressedToStart == false)
+        {
+            if (Input.anyKeyDown)
+            {
+                anyKeyPressedToStart = true;
+                songAudio.PlayDelayed(3);
+
+            }
+        }
+
+    }
 }

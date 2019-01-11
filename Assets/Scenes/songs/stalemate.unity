@@ -338,6 +338,7 @@ MonoBehaviour:
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
+  hitOrMiss: {fileID: 0}
 --- !u!1 &50718079
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +577,7 @@ MonoBehaviour:
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
+  hitOrMiss: {fileID: 0}
 --- !u!1001 &134318664
 Prefab:
   m_ObjectHideFlags: 0
@@ -1249,6 +1251,7 @@ MonoBehaviour:
   tempValueRow6: 0
   tempValueRow7: 0
   biggestRow: 0
+  oneMidiLengthPerBpm: 0
 --- !u!4 &322840695
 Transform:
   m_ObjectHideFlags: 0
@@ -1589,6 +1592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415758748}
   - component: {fileID: 415758749}
+  - component: {fileID: 415758750}
   m_Layer: 0
   m_Name: BUTTONS
   m_TagString: Untagged
@@ -1641,6 +1645,102 @@ MonoBehaviour:
   b5pressed: 0
   button6: {fileID: 0}
   b6pressed: 0
+--- !u!82 &415758750
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415758747}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 74b5ea55e6c38234aafcc47942fc0fb3,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 01d1cbb29301bc34ab55b7c467bb3448, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 4
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &419947562
 Prefab:
   m_ObjectHideFlags: 0
@@ -2233,6 +2333,7 @@ MonoBehaviour:
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
+  hitOrMiss: {fileID: 0}
 --- !u!1 &658537948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,6 +3091,7 @@ MonoBehaviour:
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
+  hitOrMiss: {fileID: 0}
 --- !u!1 &1126839062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3417,6 +3519,7 @@ MonoBehaviour:
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
+  hitOrMiss: {fileID: 0}
 --- !u!1001 &1260090501
 Prefab:
   m_ObjectHideFlags: 0
@@ -3605,6 +3708,7 @@ MonoBehaviour:
   notesGenerator: 0
   gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
   bpm: 195
+  hitOrMiss: {fileID: 0}
 --- !u!1 &1404243986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3931,6 +4035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5b8d3bb17be6a4fb124644b4492636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anyKeyPressedToStart: 0
 --- !u!4 &1515107241
 Transform:
   m_ObjectHideFlags: 0
