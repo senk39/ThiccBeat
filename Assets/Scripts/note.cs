@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class note : MonoBehaviour {
 
-    public float noteVelocity = 0.7f;
+    public float noteVelocity = 1f;
     Rigidbody rb;
 
     bool anyKeyPressedToStart = false;
