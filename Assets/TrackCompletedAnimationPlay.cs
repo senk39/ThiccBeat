@@ -7,7 +7,7 @@ public class TrackCompletedAnimationPlay : MonoBehaviour {
     public Animator anim;
 
 
-    void Start () {
+    void Awake () {
         anim = GetComponent<Animator>();
         anim.Play("Idle");
     }
