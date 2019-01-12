@@ -52,15 +52,7 @@ FULL BEAT: 12.09
 
     public string[] textContentSplit1;
 
-    //public float firstNote = 105.15f;
-    //const float offset = 172.2f;
     const float offset = 173.5f;
-
-    //const float oneMidiLength = 0.1259375f;
-    //const float oneMidiLength = 0.1607f;      TO BYŁO OK PRZED SYNCHRONIZACJĄ NUT DO KLATEK
-    //const float oneMidiLength = 0.19375f; //TO JEST OK ALE PRZED NORMALIZACJĄ DO BPM
-
-
 
     public bool notesGenerator = false;
     public GameObject note;
@@ -74,6 +66,7 @@ FULL BEAT: 12.09
     Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
 
     bool isHard;
+
     //BPM
     public float bpm;
 
@@ -98,7 +91,6 @@ FULL BEAT: 12.09
     private const float row7X = 2.67f;
     private const float rowY = 0.35f;
 
-   // const float oneMidiLength = 37.78125f;
     const float oneMidiLength = 37.60f;
     public float oneMidiLengthPerBpm;
 
