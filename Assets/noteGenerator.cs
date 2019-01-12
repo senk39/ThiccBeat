@@ -73,9 +73,10 @@ FULL BEAT: 12.09
     Quaternion noteQuaternion = new Quaternion(0f, 0f, 0f, 0f);
     Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
 
-
+    bool isHard;
     //BPM
     public float bpm;
+
     public float distBetweenNotes;
 
     public int tempValueRow1 = 0;
@@ -103,6 +104,7 @@ FULL BEAT: 12.09
 
     void Awake()
     {
+        isHard = !(SongListV2.isCurrentDifficultyIsEasy);
         noteContainer = GameObject.Find("NOTES");
         selectedSong = SongListV2.selectedSongByUser;
 
@@ -113,14 +115,27 @@ FULL BEAT: 12.09
         audioSong = Resources.Load<AudioClip>("Maps/" + selectedSong + "/audio");
         GameObject.Find("SongPlayer").GetComponent<AudioSource>().clip = audioSong;
 
+        if(isHard == true)
+        {
+            row1 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/1");
+            row2 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/2");
+            row3 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/3");
+            row4 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/4");
+            row5 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/5");
+            row6 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/6");
+            row7 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/7");
+        }
+        else
+        {
+            row1 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/1");
+            row2 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/2");
+            row3 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/3");
+            row4 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/4");
+            row5 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/5");
+            row6 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/6");
+            row7 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/easy/7");
+        }
 
-        row1 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/1");
-        row2 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/2");
-        row3 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/3");
-        row4 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/4");
-        row5 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/5");
-        row6 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/6");
-        row7 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/7");
 
         distBetweenNotes = (60 / bpm);
 
