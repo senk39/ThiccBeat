@@ -54,8 +54,8 @@ FULL BEAT: 12.09
 
     //SYNC
 
-    const float offset = 290f;
-    const float oneMidiLength = 61f;
+    const float offset = 315f;
+    const float oneMidiLength = 64.5f;
 
 
     public bool notesGenerator = false;
