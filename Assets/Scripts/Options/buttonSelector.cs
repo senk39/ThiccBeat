@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Audio;
+
 
 
 public class buttonSelector : MonoBehaviour
@@ -15,15 +17,19 @@ public class buttonSelector : MonoBehaviour
     public GameObject btn_resolution;
     public GameObject btn_fullscreen;
 
-    public GameObject overallVolumeSlider;
-    public GameObject musicVolumeSlider;
-    public GameObject SFXVolumeSlider;
+    public  GameObject overallVolumeSlider;
+    public  GameObject musicVolumeSlider;
+    public  GameObject SFXVolumeSlider;
 
-    public GameObject muteToggle;
+    public static GameObject muteToggle;
 
     public GameObject resolutionDropdown;
 
-    public GameObject fullscreenToggle;
+    public static GameObject fullscreenToggle;
+
+    public AudioMixer Master;
+    public AudioMixerGroup Music;
+    public AudioMixerGroup SFX;
 
 
     void Awake()
@@ -45,15 +51,27 @@ public class buttonSelector : MonoBehaviour
 
         fullscreenToggle = GameObject.Find("Fullscreen");
 
-    }
+
+
+}
 
     void Start()
     {
+        float tempMasterVolume;
+        float tempMusicVolume;
+        float tempSFXVolume;
+        
+        
+        Master.GetFloat("Volume", out tempMasterVolume);
+        Music.audioMixer.GetFloat("MusicVolume", out tempMusicVolume);
+        SFX.audioMixer.GetFloat("SFXVolume", out tempSFXVolume);
 
+        overallVolumeSlider.GetComponent<Slider>().value = tempMasterVolume;
+        musicVolumeSlider.GetComponent<Slider>().value = tempMusicVolume;
+        SFXVolumeSlider.GetComponent<Slider>().value = tempSFXVolume;
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 

@@ -3312,9 +3312,10 @@ MonoBehaviour:
   overallVolumeSlider: {fileID: 0}
   musicVolumeSlider: {fileID: 0}
   SFXVolumeSlider: {fileID: 0}
-  muteToggle: {fileID: 0}
   resolutionDropdown: {fileID: 0}
-  fullscreenToggle: {fileID: 0}
+  Master: {fileID: 24100000, guid: 01c309fe759143f4d8dd15bc461d1f83, type: 2}
+  Music: {fileID: 243688998279923248, guid: 01c309fe759143f4d8dd15bc461d1f83, type: 2}
+  SFX: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83, type: 2}
 --- !u!1 &1088651286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,8 +3515,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Master: {fileID: 24100000, guid: 01c309fe759143f4d8dd15bc461d1f83, type: 2}
-  Music: {fileID: 24100000, guid: 25f4ced3f5ac562428eaee6baee21c14, type: 2}
-  SFX: {fileID: 24100000, guid: 74b5ea55e6c38234aafcc47942fc0fb3, type: 2}
+  Music: {fileID: 243688998279923248, guid: 01c309fe759143f4d8dd15bc461d1f83, type: 2}
+  SFX: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83, type: 2}
 --- !u!1 &1153635649
 GameObject:
   m_ObjectHideFlags: 0

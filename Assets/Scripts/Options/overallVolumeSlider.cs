@@ -6,8 +6,8 @@ using UnityEngine.Audio;
 public class overallVolumeSlider : MonoBehaviour {
 
     public AudioMixer Master;
-    public AudioMixer Music;
-    public AudioMixer SFX;
+    public AudioMixerGroup Music;
+    public AudioMixerGroup SFX;
 
 
     public void setVolume(float volume)
@@ -17,11 +17,11 @@ public class overallVolumeSlider : MonoBehaviour {
 
     public void setMusicVolume(float musicVolume)
     {
-        Music.SetFloat("MusicVolume", musicVolume);
+        Music.audioMixer.SetFloat("MusicVolume", musicVolume);
     }
 
     public void setSFXVolume(float SFXVolume)
     {
-        SFX.SetFloat("SFXVolume", SFXVolume);
+        SFX.audioMixer.SetFloat("SFXVolume", SFXVolume);
     }
 }

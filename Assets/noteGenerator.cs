@@ -52,7 +52,11 @@ FULL BEAT: 12.09
 
     public string[] textContentSplit1;
 
-    const float offset = 239f;
+    //SYNC
+
+    const float offset = 160f;
+    const float oneMidiLength = 48f;
+
 
     public bool notesGenerator = false;
     public GameObject note;
@@ -91,7 +95,6 @@ FULL BEAT: 12.09
     private const float row7X = 2.67f;
     private const float rowY = 0.35f;
 
-    const float oneMidiLength = 50f;
     public float oneMidiLengthPerBpm;
 
     void Awake()
