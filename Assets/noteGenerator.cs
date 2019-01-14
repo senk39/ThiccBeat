@@ -52,7 +52,11 @@ FULL BEAT: 12.09
 
     public string[] textContentSplit1;
 
-    const float offset = 173.5f;
+    //SYNC
+
+    const float offset = 290f;
+    const float oneMidiLength = 61f;
+
 
     public bool notesGenerator = false;
     public GameObject note;
@@ -66,6 +70,7 @@ FULL BEAT: 12.09
     Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
 
     bool isHard;
+    GameObject noteHolder;
 
     //BPM
     public float bpm;
@@ -91,11 +96,11 @@ FULL BEAT: 12.09
     private const float row7X = 2.67f;
     private const float rowY = 0.35f;
 
-    const float oneMidiLength = 37.60f;
     public float oneMidiLengthPerBpm;
 
     void Awake()
     {
+        noteHolder = GameObject.Find("Note Holder");
         isHard = !(SongListV2.isCurrentDifficultyIsEasy);
         noteContainer = GameObject.Find("NOTES");
         selectedSong = SongListV2.selectedSongByUser;
@@ -157,9 +162,10 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow1);
-                Instantiate(note, new Vector3
+                GameObject newNote = Instantiate(note, new Vector3
                     (row1X, rowY, (offset + (tempValueRow1 * oneMidiLengthPerBpm))),
                     noteQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
                 //newNote.transform.parent = noteContainer.transform;
             }
         }
@@ -168,8 +174,9 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow2);
-                Instantiate(note, new Vector3(row2X, rowY, (offset + (tempValueRow2 * oneMidiLengthPerBpm))), noteQuaternion);
+                GameObject newNote = Instantiate(note, new Vector3(row2X, rowY, (offset + (tempValueRow2 * oneMidiLengthPerBpm))), noteQuaternion);
                 //newNote.transform.parent = noteContainer.transform;
+                newNote.transform.SetParent(noteHolder.transform);
             }
         }
         foreach (string s in textContentSplit3)
@@ -177,7 +184,8 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow3);
-                Instantiate(note, new Vector3(row3X, rowY, (offset + (tempValueRow3 * oneMidiLengthPerBpm))), noteQuaternion);
+                GameObject newNote = Instantiate(note, new Vector3(row3X, rowY, (offset + (tempValueRow3 * oneMidiLengthPerBpm))), noteQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
             }
         }
         foreach (string s in textContentSplit4)
@@ -186,7 +194,8 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow4);
                 //Debug.Log(tempValueRow4);
-                Instantiate(note, new Vector3(row4X, rowY, (offset + (tempValueRow4 * oneMidiLengthPerBpm))), noteQuaternion);
+                GameObject newNote = Instantiate(note, new Vector3(row4X, rowY, (offset + (tempValueRow4 * oneMidiLengthPerBpm))), noteQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
             }
         }
         foreach (string s in textContentSplit5)
@@ -195,7 +204,8 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow5);
                 //Debug.Log(tempValueRow5);
-                Instantiate(note, new Vector3(row5X, rowY, (offset + (tempValueRow5 * oneMidiLengthPerBpm))), noteQuaternion);
+                GameObject newNote = Instantiate(note, new Vector3(row5X, rowY, (offset + (tempValueRow5 * oneMidiLengthPerBpm))), noteQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
             }
         }
         foreach (string s in textContentSplit6)
@@ -204,7 +214,8 @@ FULL BEAT: 12.09
             {
                 int.TryParse(s, out tempValueRow6);
                 //Debug.Log(tempValueRow6);
-                Instantiate(note, new Vector3(row6X, rowY, (offset + (tempValueRow6 * oneMidiLengthPerBpm))), noteQuaternion);
+                GameObject newNote = Instantiate(note, new Vector3(row6X, rowY, (offset + (tempValueRow6 * oneMidiLengthPerBpm))), noteQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
             }
         }
         foreach (string s in textContentSplit7)
@@ -212,9 +223,10 @@ FULL BEAT: 12.09
             if (s.Trim() != "")
             {
                 int.TryParse(s, out tempValueRow7);
-                Instantiate(bar, new Vector3
+                GameObject newNote = Instantiate(bar, new Vector3
                     (row7X, rowY, (offset + (tempValueRow7 * oneMidiLengthPerBpm))),
                     barQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
             }
         }
 

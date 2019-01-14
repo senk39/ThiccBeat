@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class note : MonoBehaviour {
 
-    public float noteVelocity = 0.7f;
+   // public float noteVelocity = 1f;
     Rigidbody rb;
 
-    bool anyKeyPressedToStart = false;
+    //bool anyKeyPressedToStart = false;
 
     public bool isTheLowest = false;
 
@@ -27,7 +27,7 @@ public class note : MonoBehaviour {
 	void Start () {
 
     }
-
+    /*
     void Update() {
 
         if (Input.anyKeyDown)
@@ -41,5 +41,6 @@ public class note : MonoBehaviour {
         }
         
     }
+    */
     
 }

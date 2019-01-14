@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movingNotes : MonoBehaviour {
 
-    public float noteVelocity = 1;
+    public float noteVelocity = 1f;
     Rigidbody rb;
 
     bool startPlay = false;
