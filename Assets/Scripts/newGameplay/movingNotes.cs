@@ -9,6 +9,8 @@ public class movingNotes : MonoBehaviour {
 
     bool startPlay = false;
 
+
+
     // Use this for initialization
     void Start () {
 		
@@ -31,6 +33,7 @@ public class movingNotes : MonoBehaviour {
             if (startPlay == true)
             {
                 rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
+                //rb.transform.position += ((-Vector3.forward*100) * Time.deltaTime);
             }
 
 
