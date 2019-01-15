@@ -12,6 +12,7 @@ public class pressingNotes : MonoBehaviour
     public bool isHolding = false;
 
     public GameObject go;
+    //public GameObject goc;
 
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;

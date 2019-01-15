@@ -278,7 +278,7 @@ Prefab:
     - target: {fileID: 54012465821688522, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_LocalScale.y
@@ -517,7 +517,7 @@ Prefab:
     - target: {fileID: 54369766981338590, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_LocalScale.y
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c90f0652e9f8a4db66f7020ff455ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteVelocity: 3.5
+  noteVelocity: 1.75
 --- !u!54 &366673079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2367,7 +2367,7 @@ Prefab:
     - target: {fileID: 54011688867872108, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_LocalScale.y
@@ -3194,7 +3194,7 @@ Prefab:
     - target: {fileID: 54339036249868122, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_LocalScale.y
@@ -3622,7 +3622,7 @@ Prefab:
     - target: {fileID: 54655441248949508, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_LocalScale.y
@@ -3811,7 +3811,7 @@ Prefab:
     - target: {fileID: 54013270413565430, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_LocalScale.y
