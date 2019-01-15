@@ -157,6 +157,26 @@ FULL BEAT: 12.09
         string[] textContentSplit6 = textContent6.Split(new char[] { ' ', ',', '.', '\n' });
         string[] textContentSplit7 = textContent7.Split(new char[] { ' ', ',', '.', '\n', '\t' });
 
+        for (int i = 0; i < textContentSplit1.Length-1; i++)
+        {
+            if (textContentSplit1[i].Trim() != "")
+            {
+                int.TryParse(textContentSplit1[i], out tempValueRow1);
+                GameObject newNote = Instantiate(note, new Vector3
+                    (row1X, rowY, (offset + (tempValueRow1 * oneMidiLengthPerBpm))),
+                    noteQuaternion);
+                newNote.transform.SetParent(noteHolder.transform);
+
+                if(i<9)
+                {
+                newNote.name = "row1_note0" + (i+1);
+                }
+                else{
+                    newNote.name = "row1_note" + (i+1);
+                }
+            }
+        }
+        /*
         foreach (string s in textContentSplit1)
         {
             if (s.Trim() != "")
@@ -166,67 +186,132 @@ FULL BEAT: 12.09
                     (row1X, rowY, (offset + (tempValueRow1 * oneMidiLengthPerBpm))),
                     noteQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
-                //newNote.transform.parent = noteContainer.transform;
             }
         }
-        foreach (string s in textContentSplit2)
+        */
+        for (int i = 0; i < textContentSplit2.Length - 1; i++)
         {
-            if (s.Trim() != "")
+            if (textContentSplit2[i].Trim() != "")
             {
-                int.TryParse(s, out tempValueRow2);
-                GameObject newNote = Instantiate(note, new Vector3(row2X, rowY, (offset + (tempValueRow2 * oneMidiLengthPerBpm))), noteQuaternion);
-                //newNote.transform.parent = noteContainer.transform;
+                int.TryParse(textContentSplit2[i], out tempValueRow2);
+                GameObject newNote = Instantiate(note, new Vector3
+                    (row2X, rowY, (offset + (tempValueRow2 * oneMidiLengthPerBpm))),
+                    noteQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
+
+                if (i < 9)
+                {
+                    newNote.name = "row2_note0" + (i + 1);
+                }
+                else
+                {
+                    newNote.name = "row2_note" + (i + 1);
+                }
             }
         }
-        foreach (string s in textContentSplit3)
+
+        for (int i = 0; i < textContentSplit3.Length - 1; i++)
         {
-            if (s.Trim() != "")
+            if (textContentSplit3[i].Trim() != "")
             {
-                int.TryParse(s, out tempValueRow3);
-                GameObject newNote = Instantiate(note, new Vector3(row3X, rowY, (offset + (tempValueRow3 * oneMidiLengthPerBpm))), noteQuaternion);
+                int.TryParse(textContentSplit3[i], out tempValueRow3);
+                GameObject newNote = Instantiate(note, new Vector3
+                    (row3X, rowY, (offset + (tempValueRow3 * oneMidiLengthPerBpm))),
+                    noteQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
+
+                if (i < 9)
+                {
+                    newNote.name = "row3_note0" + (i + 1);
+                }
+                else
+                {
+                    newNote.name = "row3_note" + (i + 1);
+                }
             }
         }
-        foreach (string s in textContentSplit4)
+
+        for (int i = 0; i < textContentSplit4.Length - 1; i++)
         {
-            if (s.Trim() != "")
+            if (textContentSplit4[i].Trim() != "")
             {
-                int.TryParse(s, out tempValueRow4);
-                //Debug.Log(tempValueRow4);
-                GameObject newNote = Instantiate(note, new Vector3(row4X, rowY, (offset + (tempValueRow4 * oneMidiLengthPerBpm))), noteQuaternion);
+                int.TryParse(textContentSplit4[i], out tempValueRow4);
+                GameObject newNote = Instantiate(note, new Vector3
+                    (row4X, rowY, (offset + (tempValueRow4 * oneMidiLengthPerBpm))),
+                    noteQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
+
+                if (i < 9)
+                {
+                    newNote.name = "row4_note0" + (i + 1);
+                }
+                else
+                {
+                    newNote.name = "row4_note" + (i + 1);
+                }
             }
         }
-        foreach (string s in textContentSplit5)
+
+        for (int i = 0; i < textContentSplit5.Length - 1; i++)
         {
-            if (s.Trim() != "")
+            if (textContentSplit5[i].Trim() != "")
             {
-                int.TryParse(s, out tempValueRow5);
-                //Debug.Log(tempValueRow5);
-                GameObject newNote = Instantiate(note, new Vector3(row5X, rowY, (offset + (tempValueRow5 * oneMidiLengthPerBpm))), noteQuaternion);
+                int.TryParse(textContentSplit5[i], out tempValueRow5);
+                GameObject newNote = Instantiate(note, new Vector3
+                    (row5X, rowY, (offset + (tempValueRow5 * oneMidiLengthPerBpm))),
+                    noteQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
+
+                if (i < 9)
+                {
+                    newNote.name = "row5_note0" + (i + 1);
+                }
+                else
+                {
+                    newNote.name = "row5_note" + (i + 1);
+                }
             }
         }
-        foreach (string s in textContentSplit6)
+
+        for (int i = 0; i < textContentSplit6.Length - 1; i++)
         {
-            if (s.Trim() != "")
+            if (textContentSplit6[i].Trim() != "")
             {
-                int.TryParse(s, out tempValueRow6);
-                //Debug.Log(tempValueRow6);
-                GameObject newNote = Instantiate(note, new Vector3(row6X, rowY, (offset + (tempValueRow6 * oneMidiLengthPerBpm))), noteQuaternion);
+                int.TryParse(textContentSplit6[i], out tempValueRow6);
+                GameObject newNote = Instantiate(note, new Vector3
+                    (row6X, rowY, (offset + (tempValueRow6 * oneMidiLengthPerBpm))),
+                    noteQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
+
+                if (i < 9)
+                {
+                    newNote.name = "row6_note0" + (i + 1);
+                }
+                else
+                {
+                    newNote.name = "row6_note" + (i + 1);
+                }
             }
         }
-        foreach (string s in textContentSplit7)
+
+        for (int i = 0; i < textContentSplit7.Length - 1; i++)
         {
-            if (s.Trim() != "")
+            if (textContentSplit7[i].Trim() != "")
             {
-                int.TryParse(s, out tempValueRow7);
+                int.TryParse(textContentSplit7[i], out tempValueRow7);
                 GameObject newNote = Instantiate(bar, new Vector3
                     (row7X, rowY, (offset + (tempValueRow7 * oneMidiLengthPerBpm))),
                     barQuaternion);
                 newNote.transform.SetParent(noteHolder.transform);
+
+                if (i < 9)
+                {
+                    newNote.name = "bar_note0" + (i + 1);
+                }
+                else
+                {
+                    newNote.name = "bar_note" + (i + 1);
+                }
             }
         }
 

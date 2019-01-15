@@ -1223,9 +1223,10 @@ GameObject:
   - component: {fileID: 366673077}
   - component: {fileID: 366673079}
   - component: {fileID: 366673078}
+  - component: {fileID: 366673080}
   m_Layer: 0
   m_Name: Note Holder
-  m_TagString: Untagged
+  m_TagString: noteHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1270,6 +1271,17 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 54
   m_CollisionDetection: 2
+--- !u!114 &366673080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366673076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a926a873c5e4924c95c7414407af2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &368045740
 Prefab:
   m_ObjectHideFlags: 0
