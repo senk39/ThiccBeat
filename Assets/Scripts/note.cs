@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class note : MonoBehaviour {
 
-   // public float noteVelocity = 1f;
+    public float noteVelocity = 1.75f;
     Rigidbody rb;
 
-    //bool anyKeyPressedToStart = false;
+    bool anyKeyPressedToStart = false;
 
     public bool isTheLowest = false;
 
@@ -17,17 +17,12 @@ public class note : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         
-        if(rb.gameObject.tag=="NoteBar")
-        {
-            isTheLowest = true;
-        }
-        
     }
 
 	void Start () {
 
     }
-    /*
+    
     void Update() {
 
         if (Input.anyKeyDown)
@@ -39,8 +34,13 @@ public class note : MonoBehaviour {
         {
             rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
         }
+
+        if(gameObject.transform.position.z < -21f)
+        {
+            Destroy(gameObject);
+        }
         
     }
-    */
+    
     
 }

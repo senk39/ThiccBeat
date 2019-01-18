@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23346668570628048}
   - component: {fileID: 54340533278035450}
   - component: {fileID: 114178844954183544}
+  - component: {fileID: 114883474455189564}
   m_Layer: 0
   m_Name: note
   m_TagString: Note
@@ -124,4 +125,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noteVelocity: 1.75
   isTheLowest: 0
+--- !u!114 &114883474455189564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596655131194664}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b88225b5cc637a4fb8dcf6ecbb37f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

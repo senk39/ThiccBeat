@@ -78,16 +78,6 @@ public class NoteBehaviour : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "TooLateIndicator")
-        {
-            Destroy(tf.gameObject);
-            GetComponent<activator>().notesQueue.Dequeue();
-        }
-    }
-
-
 
     void OnTriggerExit(Collider col)
     {

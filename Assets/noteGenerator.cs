@@ -12,6 +12,15 @@ public class noteGenerator : MonoBehaviour
     AudioSource audioSongSource;
     AudioClip audioSong;
 
+    public GameObject active1;
+    public GameObject active2;
+    public GameObject active3;
+    public GameObject active4;
+    public GameObject active5;
+    public GameObject active6;
+    public GameObject active7;
+
+
     public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
 
 
@@ -51,11 +60,18 @@ FULL BEAT: 12.09
     private string textContent7;
 
     public string[] textContentSplit1;
+    public string[] textContentSplit2;
+    public string[] textContentSplit3;
+    public string[] textContentSplit4;
+    public string[] textContentSplit5;
+    public string[] textContentSplit6;
+    public string[] textContentSplit7;
+
 
     //SYNC
 
     const float offset = 315f;
-    const float oneMidiLength = 65.93f;
+    const float oneMidiLength = 65.92f;
 
 
     public bool notesGenerator = false;
@@ -95,6 +111,7 @@ FULL BEAT: 12.09
     private const float row6X = 5.1f;
     private const float row7X = 2.67f;
     private const float rowY = 0.35f;
+
 
     public float oneMidiLengthPerBpm;
 
@@ -165,15 +182,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(note, new Vector3
                     (row1X, rowY, (offset + (tempValueRow1 * oneMidiLengthPerBpm))),
                     noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if(i<9)
-                {
-                newNote.name = "row1_note0" + (i+1);
-                }
-                else{
+
                     newNote.name = "row1_note" + (i+1);
-                }
+                
             }
         }
         /*
@@ -197,16 +210,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(note, new Vector3
                     (row2X, rowY, (offset + (tempValueRow2 * oneMidiLengthPerBpm))),
                     noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if (i < 9)
-                {
-                    newNote.name = "row2_note0" + (i + 1);
-                }
-                else
-                {
+               
                     newNote.name = "row2_note" + (i + 1);
-                }
+                
             }
         }
 
@@ -218,16 +226,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(note, new Vector3
                     (row3X, rowY, (offset + (tempValueRow3 * oneMidiLengthPerBpm))),
                     noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if (i < 9)
-                {
-                    newNote.name = "row3_note0" + (i + 1);
-                }
-                else
-                {
+               
                     newNote.name = "row3_note" + (i + 1);
-                }
+                
             }
         }
 
@@ -239,16 +242,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(note, new Vector3
                     (row4X, rowY, (offset + (tempValueRow4 * oneMidiLengthPerBpm))),
                     noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if (i < 9)
-                {
-                    newNote.name = "row4_note0" + (i + 1);
-                }
-                else
-                {
+               
                     newNote.name = "row4_note" + (i + 1);
-                }
+                
             }
         }
 
@@ -260,16 +258,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(note, new Vector3
                     (row5X, rowY, (offset + (tempValueRow5 * oneMidiLengthPerBpm))),
                     noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if (i < 9)
-                {
-                    newNote.name = "row5_note0" + (i + 1);
-                }
-                else
-                {
+             
                     newNote.name = "row5_note" + (i + 1);
-                }
+                
             }
         }
 
@@ -281,16 +274,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(note, new Vector3
                     (row6X, rowY, (offset + (tempValueRow6 * oneMidiLengthPerBpm))),
                     noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if (i < 9)
-                {
-                    newNote.name = "row6_note0" + (i + 1);
-                }
-                else
-                {
+               
                     newNote.name = "row6_note" + (i + 1);
-                }
+                
             }
         }
 
@@ -302,16 +290,11 @@ FULL BEAT: 12.09
                 GameObject newNote = Instantiate(bar, new Vector3
                     (row7X, rowY, (offset + (tempValueRow7 * oneMidiLengthPerBpm))),
                     barQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
+                //newNote.transform.SetParent(noteHolder.transform);
 
-                if (i < 9)
-                {
-                    newNote.name = "bar_note0" + (i + 1);
-                }
-                else
-                {
+                
                     newNote.name = "bar_note" + (i + 1);
-                }
+                
             }
         }
 
@@ -321,11 +304,11 @@ FULL BEAT: 12.09
 
     void Update()
     {
+        labelTheLowestAsActive();
     }
 
     void checkTheLastestNote()
     {
-        //int[] lastestNotes = { tempValueRow1, tempValueRow2, tempValueRow3, tempValueRow4, tempValueRow5, tempValueRow6, tempValueRow7 };
         List<int> lastestNotes = new List<int>();
         lastestNotes.Add(tempValueRow1);
         lastestNotes.Add(tempValueRow2);
@@ -343,6 +326,87 @@ FULL BEAT: 12.09
         Instantiate(endTrack, new Vector3
         (0, 0.38f, (offset + (biggestRow * oneMidiLengthPerBpm) + 100f)),
         noteQuaternion);
+    }
+
+    void labelTheLowestAsActive()
+    {
+
+
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            string foo = "row1_note" + (i + 1);
+            //Debug.Log(foo);
+            active1 = GameObject.Find("row1_note" + (i + 1));
+
+            if (active1 != null)
+            {
+                GameObject.Find(foo).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
+
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            active2 = GameObject.Find("row2_note" + (i + 1));
+            if (active2 != null)
+            {
+                GameObject.Find("row2_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            active3 = GameObject.Find("row3_note" + (i + 1));
+            if (active3 != null)
+            {
+                GameObject.Find("row3_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            active4 = GameObject.Find("row4_note" + (i + 1));
+            if (active4 != null)
+            {
+                GameObject.Find("row4_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
+
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            active5 = GameObject.Find("row5_note" + (i + 1));
+            if (active5 != null)
+            {
+                //GameObject.Find("button 5").GetComponent<pressingNotes>().go = active5;
+                GameObject.Find("row5_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            active6 = GameObject.Find("row6_note" + (i + 1));
+            if (active6 != null)
+            {
+                //GameObject.Find("button 6").GetComponent<pressingNotes>().go = active6;
+                GameObject.Find("row6_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
+        /*
+        for (int i = 0; i < textContentSplit7.Length - 1; i++)
+        {
+            active7 = GameObject.Find("bar_note" + (i + 1));
+            if (active7 != null)
+            {
+                GameObject.Find("button 7").GetComponent<pressingNotes>().go = active7;
+            }
+            else
+            {
+                break;
+            }
+        }
+        */
     }
 }
 
