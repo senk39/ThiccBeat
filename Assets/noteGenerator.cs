@@ -337,6 +337,7 @@ FULL BEAT: 12.09
             string foo = "row1_note" + (i + 1);
             //Debug.Log(foo);
             active1 = GameObject.Find("row1_note" + (i + 1));
+            //GameObject.Find("button 1").GetComponent<pressingNotes>().go = active1;
 
             if (active1 != null)
             {
@@ -348,6 +349,8 @@ FULL BEAT: 12.09
         for (int i = 0; i < 500 - 1; i++)
         {
             active2 = GameObject.Find("row2_note" + (i + 1));
+            //GameObject.Find("button 2").GetComponent<pressingNotes>().go = active2;
+
             if (active2 != null)
             {
                 GameObject.Find("row2_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
@@ -357,6 +360,8 @@ FULL BEAT: 12.09
         for (int i = 0; i < 500 - 1; i++)
         {
             active3 = GameObject.Find("row3_note" + (i + 1));
+            //GameObject.Find("button 3").GetComponent<pressingNotes>().go = active3;
+
             if (active3 != null)
             {
                 GameObject.Find("row3_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
@@ -366,6 +371,8 @@ FULL BEAT: 12.09
         for (int i = 0; i < 500 - 1; i++)
         {
             active4 = GameObject.Find("row4_note" + (i + 1));
+            //GameObject.Find("button 4").GetComponent<pressingNotes>().go = active4;
+
             if (active4 != null)
             {
                 GameObject.Find("row4_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
@@ -376,9 +383,10 @@ FULL BEAT: 12.09
         for (int i = 0; i < 500 - 1; i++)
         {
             active5 = GameObject.Find("row5_note" + (i + 1));
+            //GameObject.Find("button 5").GetComponent<pressingNotes>().go = active5;
+
             if (active5 != null)
             {
-                //GameObject.Find("button 5").GetComponent<pressingNotes>().go = active5;
                 GameObject.Find("row5_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
                 break;
             }
@@ -386,9 +394,10 @@ FULL BEAT: 12.09
         for (int i = 0; i < 500 - 1; i++)
         {
             active6 = GameObject.Find("row6_note" + (i + 1));
+           // GameObject.Find("button 6").GetComponent<pressingNotes>().go = active6;
+
             if (active6 != null)
             {
-                //GameObject.Find("button 6").GetComponent<pressingNotes>().go = active6;
                 GameObject.Find("row6_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
                 break;
             }
