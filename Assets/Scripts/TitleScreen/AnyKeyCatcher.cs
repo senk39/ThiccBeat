@@ -6,17 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class AnyKeyCatcher : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    AudioSource pressingButtonSound;
+
+    public GameObject thiccBeatLogo;
+    public GameObject anyKeyText;
+    public Animator anim;
+
+
+    void Start ()
+    {
+        pressingButtonSound = GetComponent<AudioSource>();
+        anim = GameObject.Find("ThiccBeatLogo").GetComponent<Animator>();
+        
+
+    }
+
+    // Update is called once per frame
+    void Update() {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene(1);
-        }
+            anim.Play("ThiccBeatLogoFadeOut");
+            pressingButtonSound.Play();
+            anyKeyText.GetComponent<fadingText>().newTransparency--;
 
+
+            Invoke("loadMainMenu", 1.5f);
+        }
+    }
+
+    void loadMainMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }

@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370160199}
   - component: {fileID: 370160198}
+  - component: {fileID: 370160200}
   m_Layer: 0
   m_Name: AnyKeyCatcher
   m_TagString: Untagged
@@ -140,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9790e2c40716926449d30852175ae5bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thiccBeatLogo: {fileID: 482655681}
+  anyKeyText: {fileID: 1028036626}
+  anim: {fileID: 0}
 --- !u!4 &370160199
 Transform:
   m_ObjectHideFlags: 0
@@ -153,6 +157,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &370160200
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370160197}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 74b5ea55e6c38234aafcc47942fc0fb3,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8463b429f3877374494740bcbeb9b039, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &377694642
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +345,7 @@ GameObject:
   - component: {fileID: 482655684}
   - component: {fileID: 482655683}
   - component: {fileID: 482655685}
+  - component: {fileID: 482655686}
   m_Layer: 5
   m_Name: ThiccBeatLogo
   m_TagString: Untagged
@@ -316,6 +417,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trans: {fileID: 482655682}
+--- !u!95 &482655686
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482655681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df550f0df4243254f86ecd9fb56a3d1d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519253194
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trans: {fileID: 1028036627}
   obb: {fileID: 1028036626}
+  newTransparency: 0
 --- !u!225 &1028036631
 CanvasGroup:
   m_ObjectHideFlags: 0
