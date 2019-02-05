@@ -138,10 +138,12 @@ public class buttonSelector : MonoBehaviour
             if (muteToggle.GetComponent<Toggle>().isOn == true)
             {
                 muteToggle.GetComponent<Toggle>().isOn = false;
+                PlayerPrefs.SetInt("areButtonsMute", 0);
             }
             else
             {
                 muteToggle.GetComponent<Toggle>().isOn = true;
+                PlayerPrefs.SetInt("areButtonsMute", 1);
             }
         }
     }

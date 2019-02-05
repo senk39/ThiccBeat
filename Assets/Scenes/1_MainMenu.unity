@@ -255,6 +255,21 @@ Prefab:
       propertyPath: m_AnimationTriggers.m_NormalTrigger
       value: Disabled
       objectReference: {fileID: 0}
+    - target: {fileID: 95113500859545860, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95561598826936012, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95705033204909418, guid: c550cd8ceb33d204e9d4fae17c23a937,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c550cd8ceb33d204e9d4fae17c23a937, type: 2}
   m_IsPrefabAsset: 0

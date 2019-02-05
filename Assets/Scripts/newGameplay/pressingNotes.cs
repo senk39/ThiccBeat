@@ -65,8 +65,12 @@ public class pressingNotes : MonoBehaviour
 
             notesList.Remove(go);
             Destroy(go);
+            GameObject.Find("BUTTONS").GetComponent<AudioSource>().Play();
+            if (notesList.Count == 0)
+            {
                 isActive = false;
             }
+        }
 
             if (Input.GetKeyUp(key) && isActive && go.GetComponent<note>().isTheLowest)
             {

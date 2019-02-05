@@ -1642,6 +1642,7 @@ GameObject:
   - component: {fileID: 415758748}
   - component: {fileID: 415758749}
   - component: {fileID: 415758750}
+  - component: {fileID: 415758751}
   m_Layer: 0
   m_Name: BUTTONS
   m_TagString: Untagged
@@ -1706,7 +1707,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 01d1cbb29301bc34ab55b7c467bb3448, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1790,6 +1791,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &415758751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415758747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e156cf0cd2c9dd4893298ac3e942077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &419947562
 Prefab:
   m_ObjectHideFlags: 0
