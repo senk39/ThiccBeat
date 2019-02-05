@@ -12,11 +12,16 @@ public class note : MonoBehaviour {
 
     public bool isTheLowest = false;
 
+    public bool isActive = false;
+    private float ZPosToActive;
+    private float ZPosToDestroy;
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        
+        ZPosToActive = -8f;
+        ZPosToDestroy = -21f;
     }
 
 	void Start () {
@@ -35,9 +40,15 @@ public class note : MonoBehaviour {
             rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
         }
 
-        if(gameObject.transform.position.z < -21f)
+        if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
         {
-            Destroy(gameObject);
+            isActive = true;
+        }
+
+        if (gameObject.transform.position.z < ZPosToDestroy)
+        {
+            isActive = false;
+            //Destroy(gameObject);
         }
         
     }

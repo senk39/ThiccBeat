@@ -99,9 +99,9 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 2
+  m_Interpolate: 0
   m_Constraints: 54
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!65 &65181892343287328
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0
 --- !u!114 &114883474455189564
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -73,12 +73,9 @@ FULL BEAT: 12.09
     const float offset = 315f;
     const float oneMidiLength = 65.92f;
 
-
     public bool notesGenerator = false;
     public GameObject note;
     public GameObject bar;
-
-    GameObject noteContainer;
 
     public GameObject endTrack;
 
@@ -119,7 +116,6 @@ FULL BEAT: 12.09
     {
         noteHolder = GameObject.Find("Note Holder");
         isHard = !(SongListV2.isCurrentDifficultyIsEasy);
-        noteContainer = GameObject.Find("NOTES");
         selectedSong = SongListV2.selectedSongByUser;
 
         bpm = SongListV2.allSongs[selectedSong].BPM;
