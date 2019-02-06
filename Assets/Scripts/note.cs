@@ -20,8 +20,8 @@ public class note : MonoBehaviour {
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        ZPosToActive = -6f;
-        ZPosToDestroy = -21f;
+        ZPosToActive = 0f;
+        ZPosToDestroy = -24f;
     }
 
 	void Start () {
