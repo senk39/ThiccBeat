@@ -398,6 +398,17 @@ FULL BEAT: 12.09
                 break;
             }
         }
+        for (int i = 0; i < 500 - 1; i++)
+        {
+            active7 = GameObject.Find("bar_note" + (i + 1));
+            // GameObject.Find("button 6").GetComponent<pressingNotes>().go = active6;
+
+            if (active7 != null)
+            {
+                GameObject.Find("bar_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
+                break;
+            }
+        }
         /*
         for (int i = 0; i < textContentSplit7.Length - 1; i++)
         {
