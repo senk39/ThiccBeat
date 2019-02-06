@@ -41,6 +41,7 @@ public class pressingNotesBar : MonoBehaviour
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
                 playerComboContainer.GetComponent<playerCombo>().currentCombo++;
 
+                GameObject.Find("BUTTONS").GetComponent<AudioSource>().Play();
                 Destroy(go);
                 isActive = false;
             }
