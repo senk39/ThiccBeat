@@ -605,9 +605,17 @@ Prefab:
     - target: {fileID: 114619136598986998, guid: 31923a6dd5643934381bafc2fd3aff78,
         type: 2}
       propertyPath: m_Text
-      value: 'version 2018/10/17 pre-alpha
-
-        NOT PLAYABLE'
+      value: version 2019/01/13 alpha
+      objectReference: {fileID: 0}
+    - target: {fileID: 224009390146397632, guid: 31923a6dd5643934381bafc2fd3aff78,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -48
+      objectReference: {fileID: 0}
+    - target: {fileID: 224009390146397632, guid: 31923a6dd5643934381bafc2fd3aff78,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31923a6dd5643934381bafc2fd3aff78, type: 2}

@@ -2,11 +2,12 @@
 
 public class frameLimiter : MonoBehaviour
 {
-    public int targetFrameRate = 60;
+    public int targetFrameRate = 90;
 
-    private void Start()
+    private void Awake()
+
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = targetFrameRate;
+        //QualitySettings.vSyncCount = 0;
+       // Application.targetFrameRate = targetFrameRate;
     }
 }

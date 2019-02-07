@@ -73,6 +73,7 @@ FULL BEAT: 12.09
     const float offset = 315f;
     const float oneMidiLength = 65.92f;
 
+
     public bool notesGenerator = false;
     public GameObject note;
     public GameObject bar;
@@ -108,7 +109,6 @@ FULL BEAT: 12.09
     private const float row6X = 5.1f;
     private const float row7X = 2.67f;
     private const float rowY = 0.35f;
-
 
     public float oneMidiLengthPerBpm;
 
