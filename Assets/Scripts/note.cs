@@ -1,33 +1,33 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class note : MonoBehaviour {
 
-    public float noteVelocity = 1f;
+    public float noteVelocity = 1.75f;
     Rigidbody rb;
 
     bool anyKeyPressedToStart = false;
 
     public bool isTheLowest = false;
 
+    public bool isActive = false;
+    private float ZPosToActive;
+    private float ZPosToDestroy;
+
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        
-        if(rb.gameObject.tag=="NoteBar")
-        {
-            isTheLowest = true;
-        }
-        
+        ZPosToActive = 0f;
+        ZPosToDestroy = -24f;
     }
 
 	void Start () {
 
     }
-
+    
     void Update() {
 
         if (Input.anyKeyDown)
@@ -39,7 +39,19 @@ public class note : MonoBehaviour {
         {
             rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
         }
+
+        if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
+        {
+            isActive = true;
+        }
+
+        if (gameObject.transform.position.z < ZPosToDestroy)
+        {
+            isActive = false;
+            //Destroy(gameObject);
+        }
         
     }
+    
     
 }

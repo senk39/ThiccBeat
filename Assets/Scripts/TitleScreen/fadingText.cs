@@ -14,10 +14,13 @@ public class fadingText : MonoBehaviour {
 
     private float newScale;
 
-    private float newTransparency;
+    public float newTransparency;
+
+    private bool keyPressed;
 
     void Start()
     {
+        keyPressed = false;
         newScale = 1.0f;
         newTransparency = 0;
         trans.localScale = new UnityEngine.Vector3(newScale, newScale, 1.0f);
@@ -34,8 +37,29 @@ public class fadingText : MonoBehaviour {
             trans.localScale = new Vector3(newScale, newScale, 1.0f);
 
             //PRZEZROCZYSTOŚĆ
-            newTransparency = 1f + cosinus;
-            obb.GetComponent<CanvasGroup>().alpha = newTransparency;
+            if (Input.anyKeyDown)
+            {
+                keyPressed = true;
+            }
+
+            if(keyPressed == true)
+            {
+                newTransparency = 1f + cosinus;
+                obb.GetComponent<CanvasGroup>().alpha = newTransparency;
+                for (int i = 0; i < 222; i++)
+                {
+                    obb.GetComponent<CanvasGroup>().alpha = obb.GetComponent<CanvasGroup>().alpha - 0.01f;
+
+                }
+            }
+         
+            
+            else
+            {
+                newTransparency = 1f + cosinus;
+                obb.GetComponent<CanvasGroup>().alpha = newTransparency;
+            }
+               
         }
 
     }

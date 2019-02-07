@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class movingNotes : MonoBehaviour {
 
-    public float noteVelocity = 1;
+    public float noteVelocity = 1f;
     Rigidbody rb;
 
     bool startPlay = false;
+
+
 
     // Use this for initialization
     void Start () {
@@ -31,6 +33,7 @@ public class movingNotes : MonoBehaviour {
             if (startPlay == true)
             {
                 rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
+                //rb.transform.position += ((-Vector3.forward*100) * Time.deltaTime);
             }
 
 

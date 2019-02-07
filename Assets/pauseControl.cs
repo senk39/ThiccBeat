@@ -16,12 +16,14 @@ public class pauseControl : MonoBehaviour
 
     public void clickRestartBtn()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(5);
         pause.isGamePaused = false;
     }
 
     public void clickQuitBtn()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(2);
     }
 }
