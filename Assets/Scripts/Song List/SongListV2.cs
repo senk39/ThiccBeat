@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 
 
@@ -34,7 +35,7 @@ public class SongListV2 : MonoBehaviour
     public TextMeshProUGUI selGenreLabel;
 
     public GameObject selCoverObj;
-    
+
     public static int selectedSongByUser;
 
     //List<GameObject> allStars = new List<GameObject>();
@@ -71,6 +72,7 @@ public class SongListV2 : MonoBehaviour
         public AudioClip audioFile;
 
         public bool isSelectedInMenu;
+
 
 
         public Song()  // KONSTRUKTOR
@@ -196,6 +198,9 @@ public class SongListV2 : MonoBehaviour
 
         //TITLE FIELD
         selTitleLabel.text = allSongs[selectedSongByUser].title;
+
+        //COVER FIELD
+        selCoverObj.GetComponent<Image>().sprite = Resources.Load<Sprite>("Maps/" + allSongs[selectedSongByUser].index + "/cover");
 
         //GENRE FIELD
         if (allSongs[selectedSongByUser].genre2 == null)
