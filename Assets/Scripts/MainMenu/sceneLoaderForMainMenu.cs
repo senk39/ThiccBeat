@@ -31,7 +31,6 @@ public class sceneLoaderForMainMenu : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(index);
         if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && index < 3)
         {
             index++;

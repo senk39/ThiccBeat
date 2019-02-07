@@ -9,6 +9,17 @@ using UnityEngine.Audio;
 
 public class buttonSelector : MonoBehaviour
 {
+    short index;
+
+    AudioSource acChangeOption;
+    AudioSource acChangeDiff;
+    AudioSource acBack;
+    AudioSource acEnter;
+
+    public GameObject acConChangeOption;
+    public GameObject acConChangeDiff;
+    public GameObject acConBack;
+    public GameObject acConEnter;
 
     public GameObject btn_overall;
     public GameObject btn_music;
@@ -34,6 +45,13 @@ public class buttonSelector : MonoBehaviour
 
     void Awake()
     {
+        index = 1;
+
+        acChangeOption = acConChangeOption.GetComponent<AudioSource>();
+        acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
+        acBack = acConBack.GetComponent<AudioSource>();
+        acEnter = acConEnter.GetComponent<AudioSource>();
+
         btn_overall = GameObject.Find("btn_overall");
         btn_music = GameObject.Find("btn_music");
         btn_sfx = GameObject.Find("btn_sfx");
@@ -74,6 +92,17 @@ public class buttonSelector : MonoBehaviour
 
     void Update()
     {
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && index < 6)
+        {
+            index++;
+            acChangeOption.Play();
+        }
+
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && index > 1)
+        {
+            index--;
+            acChangeOption.Play();
+        }
 
         if (EventSystem.current.currentSelectedGameObject == btn_overall)
         {
@@ -155,11 +184,13 @@ public class buttonSelector : MonoBehaviour
         {
             if (muteToggle.GetComponent<Toggle>().isOn == true)
             {
+                acChangeDiff.Play();
                 muteToggle.GetComponent<Toggle>().isOn = false;
                 PlayerPrefs.SetInt("areButtonsMute", 0);
             }
             else
             {
+                acChangeDiff.Play();
                 muteToggle.GetComponent<Toggle>().isOn = true;
                 PlayerPrefs.SetInt("areButtonsMute", 1);
             }
@@ -184,12 +215,17 @@ public class buttonSelector : MonoBehaviour
         {
             if (fullscreenToggle.GetComponent<Toggle>().isOn == true)
             {
+                acChangeDiff.Play();
                 fullscreenToggle.GetComponent<Toggle>().isOn = false;
             }
             else
             {
+                acChangeDiff.Play();
                 fullscreenToggle.GetComponent<Toggle>().isOn = true;
             }
         }
+        //if (Input.GetKeyDown(KeyCode.Escape)){
+         //   acBack.Play();
+        //}
     }
 }

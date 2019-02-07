@@ -717,6 +717,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 82571701174625414, guid: a638a1be94186f349acd8caad1e12b9d,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83,
+        type: 2}
+    - target: {fileID: 82797076074485978, guid: a638a1be94186f349acd8caad1e12b9d,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83,
+        type: 2}
+    - target: {fileID: 82613955869922492, guid: a638a1be94186f349acd8caad1e12b9d,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83,
+        type: 2}
+    - target: {fileID: 82276399627750982, guid: a638a1be94186f349acd8caad1e12b9d,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a638a1be94186f349acd8caad1e12b9d, type: 2}
   m_IsPrefabAsset: 0
