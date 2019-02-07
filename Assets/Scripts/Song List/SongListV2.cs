@@ -38,12 +38,19 @@ public class SongListV2 : MonoBehaviour
 
     public static int selectedSongByUser;
 
-    //List<GameObject> allStars = new List<GameObject>();
+    AudioSource clickAudio;
 
     static public bool isCurrentDifficultyIsEasy = false;
 
-    //static public int songEntered;
+    AudioSource acChangeSong;
+    AudioSource acChangeDiff;
+    AudioSource acBack;
+    AudioSource acEnter;
 
+    public GameObject acConChangeSong;
+    public GameObject acConChangeDiff;
+    public GameObject acConBack;
+    public GameObject acConEnter;
 
 
 
@@ -69,7 +76,6 @@ public class SongListV2 : MonoBehaviour
         public byte difficultyHard;
 
         public Sprite cover;
-        public AudioClip audioFile;
 
         public bool isSelectedInMenu;
 
@@ -143,6 +149,12 @@ public class SongListV2 : MonoBehaviour
         selDiffLabel = selDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
         selDiffAltLabel = selDiffAltObj.GetComponent<TMPro.TextMeshProUGUI>();
 
+        acChangeSong = acConChangeSong.GetComponent<AudioSource>();
+        acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
+        acBack = acConBack.GetComponent<AudioSource>();
+        acEnter = acConEnter.GetComponent<AudioSource>();
+
+
         addingSongsToList();
 
         allSongs[0].isSelectedInMenu = true;
@@ -175,6 +187,7 @@ public class SongListV2 : MonoBehaviour
         {
             if (selectedSongByUser < Song.totalAmount - 1)
             {
+                acChangeSong.Play();
                 selectedSongByUser++;
                 fillingDataInSelectedSong();
                 movingOtherSongsUp();
@@ -184,6 +197,7 @@ public class SongListV2 : MonoBehaviour
         {
             if (selectedSongByUser > 0)
             {
+                acChangeSong.Play();
                 selectedSongByUser--;
                 fillingDataInSelectedSong();
                 movingOtherSongsDown();
@@ -314,12 +328,14 @@ public class SongListV2 : MonoBehaviour
         {
             if (isCurrentDifficultyIsEasy == false)
             {
+                acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = true;
                 starGenerator();
             }
 
             else
             {
+                acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = false;
                 starGenerator();
             }
@@ -332,16 +348,25 @@ public class SongListV2 : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            acEnter.Play();
             SceneManager.LoadScene(4);
         }
     }
+
+
 
 
     public void backToMainMenu()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(1);
+            acBack.Play();
+            Invoke("loadMainMenu", 1.3f);
         }
+    }
+
+    void loadMainMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }

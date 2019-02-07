@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneLoader : MonoBehaviour {
+public class sceneLoader : MonoBehaviour
+{
 
     public void clickPlayBtn()
     {
@@ -21,4 +22,3 @@ public class sceneLoader : MonoBehaviour {
     }
 
 }
-
