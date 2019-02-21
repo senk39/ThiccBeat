@@ -31,7 +31,7 @@ public class sceneLoaderForMainMenu : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && index < 3)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && index < 4)
         {
             index++;
             acChangeOption.Play();
@@ -53,6 +53,11 @@ public class sceneLoaderForMainMenu : MonoBehaviour
     public void clickOptionsBtn()
     {
         SceneManager.LoadScene(3);
+    }
+
+    public void clickAboutByn()
+    {
+        SceneManager.LoadScene(7);
     }
 
     public void clickQuitBtn()

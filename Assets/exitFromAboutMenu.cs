@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class exitFromOptionsMenu : MonoBehaviour
+public class exitFromAboutMenu : MonoBehaviour
 {
 
     public Animator animator1;
@@ -28,12 +28,12 @@ public class exitFromOptionsMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameObject.Find("Button Controller").GetComponent<buttonSelector>().acConBack.GetComponent<AudioSource>().Play();
+            GameObject.Find("Button Controller").GetComponent<audioControllerForAboutScene>().acConBack.GetComponent<AudioSource>().Play();
             animator1.Play("unhiddingButtonsInOptions");
             //isMenuReturnedCompletely = true;
             Invoke("loadMainMenuAgain", 0.7f);
         }
-        
+
         /*
         
         if (posXOfButtons > 793 && isMenuReturnedCompletely == true)
