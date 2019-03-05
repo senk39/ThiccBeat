@@ -48,7 +48,7 @@ public class currentSong : SongListV2
     int combo;
     int score;
 
-    int sIndex;
+    uint sIndex;
 
     int goldScore;
     int silverScore;
@@ -102,7 +102,7 @@ public class currentSong : SongListV2
     private void displaySongInfo()
     {
         titleLabel.text = playedSong.title;
-        artistLabel.text = playedSong.artist;
+        artistLabel.text = playedSong.composer;
 
         string starSymbol = @"<sprite name=""star full""> ";
         int multiplierEasy = allSongs[selectedSongByUser].difficultyEasy;
@@ -181,7 +181,7 @@ public class currentSong : SongListV2
 
     public void backtoSongSelectMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.G))
         {
             SceneManager.LoadScene(2);
         }

@@ -59,10 +59,11 @@ public class SongListV2 : MonoBehaviour
     {
         public static uint totalAmount = 0;
 
-        public int index;
+        public uint index;
 
         public string title { get; set; }
-        public string artist;
+        public string composer;
+        public string vocalist;
         public string illustrator;
         public string lyricist;
         public string genre1;
@@ -70,7 +71,8 @@ public class SongListV2 : MonoBehaviour
         public ushort BPM;
 
         public string audioLength;
-        public uint notes;
+        public uint notesEasy;
+        public uint notesHard;
 
         public byte difficultyEasy;
         public byte difficultyHard;
@@ -85,7 +87,8 @@ public class SongListV2 : MonoBehaviour
         {
             index = 0;
             title = "Unknown title";
-            artist = "Unknown artist";
+            composer = "Unknown artist";
+            vocalist = "Unknown vocalist";
             illustrator = "Unknown illustrator";
             lyricist = "Unknown lyricist";
             genre1 = "Unknown Genre";
@@ -96,13 +99,14 @@ public class SongListV2 : MonoBehaviour
             totalAmount++;
         }
 
-        public Song(int _index, string _title, string _artist, string _illustrator,
+        public Song(uint _index, string _title, string _composer, string _vocalist, string _illustrator,
                     string _lyricist, string _genre1, string _genre2, ushort _BPM,
-                    string _audioLength, uint _notes, byte _difficultyEasy, byte _difficultyHard)  // KONSTRUKTOR
+                    string _audioLength, uint _notesEasy, uint _notesHard, byte _difficultyEasy, byte _difficultyHard)  // KONSTRUKTOR
         {
             index = _index;
             title = _title;
-            artist = _artist;
+            composer = _composer;
+            vocalist = _vocalist;
             illustrator = _illustrator;
             lyricist = _lyricist;
             genre1 = _genre1;
@@ -110,7 +114,8 @@ public class SongListV2 : MonoBehaviour
             BPM = _BPM;
 
             audioLength = _audioLength;
-            notes = _notes;
+            notesEasy = _notesEasy;
+            notesHard = _notesHard;
 
             difficultyEasy = _difficultyEasy;
             difficultyHard = _difficultyHard;
@@ -118,12 +123,13 @@ public class SongListV2 : MonoBehaviour
             totalAmount++;
         }
 
-        public void showInfo()
+        public void showInfoForDebugging()
         {
             Debug.Log(title);
             Debug.Log("index: " + index);
             Debug.Log("title: " + title);
-            Debug.Log("artist: " + artist);
+            Debug.Log("composer: " + composer);
+            Debug.Log("vocalist: " + vocalist);
             Debug.Log("illustrator: " + illustrator);
             Debug.Log("lyricist: " + lyricist);
             Debug.Log("genre1: " + genre1);
@@ -132,12 +138,12 @@ public class SongListV2 : MonoBehaviour
         }
     }
 
-    // START TWORZENIA PIOSENKÓW
+    // START TWORZENIA UTWORÓW
     static Song stalemate = new Song(
-        0, "Stalemate", "P. Dawidziak", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 999, 3, 7);
+        0, "Stalemate", "P. Dawidziak", "Yuzuki Yukari", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 322, 1011, 3, 7);
 
     static Song comfyplace = new Song(
-        1, "Comfy Place", "P. Dawidziak", null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 999, 4, 9);
+        1, "Comfy Place", "P. Dawidziak", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 4, 9);
 
 
 
@@ -183,7 +189,7 @@ public class SongListV2 : MonoBehaviour
 
     void changeSong()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.O))
         {
             if (selectedSongByUser < Song.totalAmount - 1)
             {
@@ -193,7 +199,7 @@ public class SongListV2 : MonoBehaviour
                 movingOtherSongsUp();
             }
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             if (selectedSongByUser > 0)
             {
@@ -208,7 +214,7 @@ public class SongListV2 : MonoBehaviour
     void fillingDataInSelectedSong()
     {
         //ARTIST FIELD
-        selArtistLabel.text = allSongs[selectedSongByUser].artist;
+        selArtistLabel.text = allSongs[selectedSongByUser].composer;
 
         //TITLE FIELD
         selTitleLabel.text = allSongs[selectedSongByUser].title;
@@ -324,7 +330,7 @@ public class SongListV2 : MonoBehaviour
     void changeDifficulty()
     {
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J))
         {
             if (isCurrentDifficultyIsEasy == false)
             {
@@ -346,7 +352,7 @@ public class SongListV2 : MonoBehaviour
     public void chooseSongAndMoveToGame()
     {
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.G)))
         {
             acEnter.Play();
             SceneManager.LoadScene(4);
@@ -358,7 +364,7 @@ public class SongListV2 : MonoBehaviour
 
     public void backToMainMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || (Input.GetKeyDown(KeyCode.A)))
         {
             acBack.Play();
             Invoke("loadMainMenu", 1.3f);

@@ -49,7 +49,7 @@ public class pause : MonoBehaviour {
             Time.timeScale = 1f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) || pauseControl.isResumeClicked == true)
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.O) || pauseControl.isResumeClicked == true)
         {
             if(isGamePaused == true)
             {

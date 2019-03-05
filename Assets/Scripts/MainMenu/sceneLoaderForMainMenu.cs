@@ -31,13 +31,13 @@ public class sceneLoaderForMainMenu : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && index < 4)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Q)) && index < 4)
         {
             index++;
             acChangeOption.Play();
         }
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && index > 1)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.O)) && index > 1)
         {
             index--;
             acChangeOption.Play();

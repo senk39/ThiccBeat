@@ -128,7 +128,7 @@ public class holdContainerForNotebarMid : MonoBehaviour {
 
         playerScoreContainer = GameObject.Find("Score");
 
-        keyMid = KeyCode.Space;
+        keyMid = KeyCode.G;
 
         if (transform.parent.name == "pivot")
         {

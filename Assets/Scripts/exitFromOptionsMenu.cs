@@ -26,7 +26,7 @@ public class exitFromOptionsMenu : MonoBehaviour
     {
         //Debug.Log(buttons.transform.position.x);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.A))
         {
             GameObject.Find("Button Controller").GetComponent<buttonSelector>().acConBack.GetComponent<AudioSource>().Play();
             animator1.Play("unhiddingButtonsInOptions");

@@ -92,13 +92,13 @@ public class buttonSelector : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && index < 6)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.O)) && index < 6)
         {
             index++;
             acChangeOption.Play();
         }
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && index > 1)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Q)) && index > 1)
         {
             index--;
             acChangeOption.Play();
@@ -144,11 +144,11 @@ public class buttonSelector : MonoBehaviour
 
     void OverallVolumeSelected()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey(KeyCode.D))
         {
             overallVolumeSlider.GetComponent<Slider>().value -= 1;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey(KeyCode.J))
         {
             overallVolumeSlider.GetComponent<Slider>().value += 1;
         }
@@ -156,11 +156,11 @@ public class buttonSelector : MonoBehaviour
 
     void MusicVolumeSelected()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey(KeyCode.D))
         {
             musicVolumeSlider.GetComponent<Slider>().value -= 1;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey(KeyCode.J))
         {
             musicVolumeSlider.GetComponent<Slider>().value += 1;
         }
@@ -168,11 +168,11 @@ public class buttonSelector : MonoBehaviour
 
     void SFXVolumeSelected()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || Input.GetKey(KeyCode.D))
         {
             SFXVolumeSlider.GetComponent<Slider>().value -= 1;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || Input.GetKey(KeyCode.J))
         {
             SFXVolumeSlider.GetComponent<Slider>().value += 1;
         }
@@ -180,7 +180,7 @@ public class buttonSelector : MonoBehaviour
 
     void MuteSelected()
     {
-        if (Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
         {
             if (muteToggle.GetComponent<Toggle>().isOn == true)
             {
@@ -199,7 +199,7 @@ public class buttonSelector : MonoBehaviour
 
     void ResolutionSelected()
     {
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown("space") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
         {
             resolutionDropdown.GetComponent<Dropdown>().Show();
         }
@@ -211,7 +211,7 @@ public class buttonSelector : MonoBehaviour
     void FullscreenSelected()
     {
 
-        if (Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
         {
             if (fullscreenToggle.GetComponent<Toggle>().isOn == true)
             {
