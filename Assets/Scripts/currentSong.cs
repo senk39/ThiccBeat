@@ -62,7 +62,11 @@ public class currentSong : SongListV2
 
     void Awake ()
     {
+        
+
         playedSong = allSongs[selectedSongByUser];
+
+        highScore();
 
         titleLabel = titleElement.GetComponent<TMPro.TextMeshProUGUI>();
         artistLabel = artistElement.GetComponent<TMPro.TextMeshProUGUI>();
@@ -82,10 +86,7 @@ public class currentSong : SongListV2
         combo = PlayerPrefs.GetInt("lastGameMaxCombo");
         score = PlayerPrefs.GetInt("lastGameScore");
         displaySongInfo();
-        highScore();
         displayTop3Info();
-        
-
         displayScoreInfo();
     }
 
@@ -147,8 +148,10 @@ public class currentSong : SongListV2
         silverCombo = PlayerPrefs.GetInt(sIndex + "SilverCombo" + currentDiff);
         bronzeCombo = PlayerPrefs.GetInt(sIndex + "BronzeCombo" + currentDiff);
 
-        if (goldScore<score)
+        if (goldScore < score)
         {
+            GameObject.Find("New High Score!").SetActive(true);
+
             PlayerPrefs.SetInt(sIndex + "GoldScore" + currentDiff, score);
             PlayerPrefs.SetInt(sIndex + "GoldCombo" + currentDiff, combo);
             goldScore = score;
