@@ -45,24 +45,22 @@ public class pressingNotes : MonoBehaviour
 
 
 
-        //if (go != null)
-        //{
+        if (go != null)
+        {
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest && go.GetComponent<note>().isActive /*&& antiMasherConnector == false*/)
             {
-
+             /*
                 if (go.tag == "h_note_start")
                 {
-                    //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
                     go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().noteStartIsClicked = true;
-                    // Debug.Log("to sie zdarzylo");
-
                 }
+             */
 
 
+            playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+            playerComboContainer.GetComponent<playerCombo>().currentCombo++;
 
-                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
-                playerComboContainer.GetComponent<playerCombo>().currentCombo++;
-
+            
             notesList.Remove(go);
             Destroy(go);
             GameObject.Find("BUTTONS").GetComponent<AudioSource>().Play();
@@ -72,15 +70,9 @@ public class pressingNotes : MonoBehaviour
             }
         }
 
-            if (Input.GetKeyUp(key) && isActive && go.GetComponent<note>().isTheLowest)
-            {
-                if (go.tag == "h_note_start")
-                {
-                    //go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().counterForBlockMultipleClicks++;
-                }
-            }
 
-        //}
+
+        }
 
         //antiMasher();
     }

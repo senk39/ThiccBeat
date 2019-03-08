@@ -63,7 +63,7 @@ public class sceneLoaderForMainMenu : MonoBehaviour
     public void clickQuitBtn()
     {
         acBack.Play();
-        Invoke("loadQuit", 1f);
+        Invoke("loadQuit", 0.3f);
 
     }
 
@@ -82,8 +82,7 @@ public class sceneLoaderForMainMenu : MonoBehaviour
     */
     void loadQuit()
     {
-        Application.Quit();
-
+        SceneManager.LoadScene(8);
     }
 
 

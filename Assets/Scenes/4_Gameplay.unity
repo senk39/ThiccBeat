@@ -2036,8 +2036,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.19063357}
   m_AnchorMax: {x: 0.55, y: 0.3165291}
-  m_AnchoredPosition: {x: -157.73706, y: -36.057274}
-  m_SizeDelta: {x: -181.00494, y: -18.141922}
+  m_AnchoredPosition: {x: -157.6, y: -36}
+  m_SizeDelta: {x: -181.2, y: -18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &507873535
 Animator:
@@ -2972,8 +2972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.45}
   m_AnchorMax: {x: 0.55, y: 0.5987355}
-  m_AnchoredPosition: {x: -157.73701, y: -71.92755}
-  m_SizeDelta: {x: -181.00494, y: -29.251831}
+  m_AnchoredPosition: {x: -157.6, y: -71.75}
+  m_SizeDelta: {x: -181.19998, y: -29.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &978160598
 Animator:
@@ -4331,6 +4331,7 @@ MonoBehaviour:
   button5: {fileID: 45781416}
   button6: {fileID: 1253703857}
   buttonBar: {fileID: 2043204784}
+  firstButton: {fileID: 978160599}
 --- !u!4 &1648026313
 Transform:
   m_ObjectHideFlags: 0
@@ -4930,8 +4931,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.3165291}
   m_AnchorMax: {x: 0.55, y: 0.45900002}
-  m_AnchoredPosition: {x: -157.73706, y: -53.327667}
-  m_SizeDelta: {x: -181.00494, y: -26.39885}
+  m_AnchoredPosition: {x: -157.6, y: -53.25}
+  m_SizeDelta: {x: -181.2, y: -26.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2028548497
 Animator:

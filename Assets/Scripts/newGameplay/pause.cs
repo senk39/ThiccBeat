@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class pause : MonoBehaviour {
 
@@ -25,6 +26,8 @@ public class pause : MonoBehaviour {
     private KeyCode tempKey6;
     private KeyCode tempKeySpecial;
 
+    public Button firstButton;
+
     void Start () {
         pauseMenuUI.SetActive(false);
 
@@ -39,7 +42,7 @@ public class pause : MonoBehaviour {
 
     void Awake()
     {
-        pause.isGamePaused = false;
+        isGamePaused = false;
     }
 
     void Update () {
@@ -47,33 +50,41 @@ public class pause : MonoBehaviour {
         if(isGamePaused == false)
         {
             Time.timeScale = 1f;
+            pauseMenuUI.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.O) || pauseControl.isResumeClicked == true)
+        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.O)) && isGamePaused == false)
         {
-            if(isGamePaused == true)
-            {
-                exitPause();
-            }
+            enterPause();
+        }
 
-            else
-            {
-                enterPause();
-            }
-        }	
+        if(pauseControl.isResumeClicked == true && isGamePaused == true)
+        {
+            exitPause();
+        }
 	}
 
 
     void enterPause()
     {
+        //firstButton = GameObject.Find("btn_RESUME").GetComponent<Button>();
+
+        firstButton.Select();
+
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0.001f;
         isGamePaused = true;
         GameObject.Find("SongPlayer").GetComponent<AudioSource>().Pause();
         disablingIndicators();
+        Time.timeScale = 0.001f;
+
+
+
+
+
+
     }
 
-    void exitPause()
+    public void exitPause()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
