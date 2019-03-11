@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65113046806360896}
   - component: {fileID: 23181410104143304}
   m_Layer: 0
-  m_Name: separator
+  m_Name: SEPARATOR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
