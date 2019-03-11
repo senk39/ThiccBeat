@@ -42,7 +42,6 @@ public class buttonSelector : MonoBehaviour
     public AudioMixerGroup Music;
     public AudioMixerGroup SFX;
 
-
     void Awake()
     {
         index = 1;
@@ -68,9 +67,6 @@ public class buttonSelector : MonoBehaviour
         resolutionDropdown = GameObject.Find("Dropdown");
 
         fullscreenToggle = GameObject.Find("Fullscreen");
-
-
-
 }
 
     void Start()
@@ -224,8 +220,5 @@ public class buttonSelector : MonoBehaviour
                 fullscreenToggle.GetComponent<Toggle>().isOn = true;
             }
         }
-        //if (Input.GetKeyDown(KeyCode.Escape)){
-         //   acBack.Play();
-        //}
     }
 }
