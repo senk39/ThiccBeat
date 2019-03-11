@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class sceneLoaderForMainMenu : MonoBehaviour
 {
-
     short index;
 
     AudioSource acChangeOption;
@@ -21,7 +18,6 @@ public class sceneLoaderForMainMenu : MonoBehaviour
     void Awake()
     {
         index = 1;
-
 
         acChangeOption = acConChangeOption.GetComponent<AudioSource>();
         acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
@@ -55,7 +51,7 @@ public class sceneLoaderForMainMenu : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
-    public void clickAboutByn()
+    public void clickAboutBtn()
     {
         SceneManager.LoadScene(7);
     }
@@ -67,24 +63,15 @@ public class sceneLoaderForMainMenu : MonoBehaviour
 
     }
 
-
     void loadSongList()
     {
         SceneManager.LoadScene(2);
 
     }
-    /*
-    void loadOptions()
-    {
-        SceneManager.LoadScene(3);
 
-    }
-    */
     void loadQuit()
     {
         SceneManager.LoadScene(8);
     }
-
-
 }
 
