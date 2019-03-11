@@ -9,48 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1731374682761808}
+  m_RootGameObject: {fileID: 1791448796625090}
   m_IsPrefabAsset: 1
---- !u!1 &1731374682761808
+--- !u!1 &1791448796625090
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4969761648187488}
-  - component: {fileID: 33973995415949166}
-  - component: {fileID: 65074760051832194}
-  - component: {fileID: 23472276521077106}
-  - component: {fileID: 54098304854908758}
-  - component: {fileID: 114282456496058844}
+  - component: {fileID: 4280413442515826}
+  - component: {fileID: 33776519924101532}
+  - component: {fileID: 65089273408241288}
+  - component: {fileID: 23124152032885188}
+  - component: {fileID: 54837587678889268}
+  - component: {fileID: 114776677096344342}
+  - component: {fileID: 114583895632422544}
   m_Layer: 0
-  m_Name: note
-  m_TagString: Note
+  m_Name: EndTrack
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4969761648187488
+--- !u!4 &4280413442515826
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731374682761808}
+  m_GameObject: {fileID: 1791448796625090}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.1, y: 0.38, z: 18.39}
-  m_LocalScale: {x: 1.96, y: 0.16, z: 1}
+  m_LocalPosition: {x: 0, y: 0.38, z: 35.71}
+  m_LocalScale: {x: 12.137727, y: 0.16, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23472276521077106
+--- !u!23 &23124152032885188
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731374682761808}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1791448796625090}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -79,19 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33973995415949166
+--- !u!33 &33776519924101532
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731374682761808}
+  m_GameObject: {fileID: 1791448796625090}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54098304854908758
+--- !u!54 &54837587678889268
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731374682761808}
+  m_GameObject: {fileID: 1791448796625090}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -101,28 +102,40 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 54
   m_CollisionDetection: 2
---- !u!65 &65074760051832194
+--- !u!65 &65089273408241288
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731374682761808}
+  m_GameObject: {fileID: 1791448796625090}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114282456496058844
+--- !u!114 &114583895632422544
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1731374682761808}
+  m_GameObject: {fileID: 1791448796625090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4e35cf24e56d743b0ddcefb026b62e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114776677096344342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1791448796625090}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 1
+  noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0

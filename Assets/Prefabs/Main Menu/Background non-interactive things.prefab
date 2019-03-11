@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4427923881772222
 Transform:
   m_ObjectHideFlags: 1
@@ -228,9 +228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'version 2018/09/10 pre-alpha
-
-    NOT PLAYABLE'
+  m_Text: v 1.0
 --- !u!114 &114700867743248180
 MonoBehaviour:
   m_ObjectHideFlags: 1

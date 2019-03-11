@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class pressingNotes : MonoBehaviour
 {
-
     public KeyCode key;
-
 
     public bool isActive = false;
     public bool isHolding = false;
@@ -18,6 +16,7 @@ public class pressingNotes : MonoBehaviour
     public GameObject playerComboContainer;
 
     public bool antiMasherConnector = false;
+
     // GENERATOR
     public bool notesGenerator = true;
     public GameObject gnote;
@@ -27,13 +26,11 @@ public class pressingNotes : MonoBehaviour
     //BPM
     public int bpm = 195;
 
-    // Use this for initialization
     void Awake()
     {
         antiMasherConnector = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (notesGenerator)
@@ -41,39 +38,23 @@ public class pressingNotes : MonoBehaviour
             InvokeRepeating("noteInstantiateForGenerator", 3.0f, 3f);
         }
 
-        
-
-
-
         if (go != null)
         {
             if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest && go.GetComponent<note>().isActive /*&& antiMasherConnector == false*/)
             {
-             /*
-                if (go.tag == "h_note_start")
-                {
-                    go.transform.parent.Find("pivot").Find("noteMid").GetComponent<holdContainterForNoteMid>().noteStartIsClicked = true;
-                }
-             */
-
-
             playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
-
             
             notesList.Remove(go);
             Destroy(go);
             GameObject.Find("BUTTONS").GetComponent<AudioSource>().Play();
-            if (notesList.Count == 0)
-            {
-                isActive = false;
+
+                if (notesList.Count == 0)
+                {
+                    isActive = false;
+                }
             }
         }
-
-
-
-        }
-
         //antiMasher();
     }
 
@@ -91,29 +72,29 @@ public class pressingNotes : MonoBehaviour
             notesList.AddLast(col.gameObject);
             isActive = true;
         }
-
     }
 
     private void OnTriggerExit(Collider col)
     {
         if (col.tag == "Note")
         {
-            notesList.Remove(col.gameObject);
-            
+            notesList.Remove(col.gameObject); 
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
             Destroy(col.gameObject);
             antiMasherConnector = false;
+
             if (notesList.Count > 0)
             {
                 go = notesList.First.Value.gameObject;
             }
+
             else
             {
                 go = null;
                 isActive = false;
             }
-           
         }
+
         if ((col.tag == "h_note_start" || col.tag == "h_note_end") && notesGenerator == false)
         {
             notesList.Remove(col.gameObject);
@@ -123,6 +104,7 @@ public class pressingNotes : MonoBehaviour
             antiMasherConnector = false;
             go = notesList.First.Value.gameObject;
         }
+
         if (col.tag == "h_note_mid" && notesGenerator == false)
         {
             notesList.Remove(col.gameObject);
@@ -131,14 +113,10 @@ public class pressingNotes : MonoBehaviour
             Destroy(col.gameObject);
             go = notesList.First.Value.gameObject;
         }
-
-
     }
 
     void noteInstantiateForGenerator()
     {
         Instantiate(gnote, gnotevector, gnoteq);
     }
-
-
 }
