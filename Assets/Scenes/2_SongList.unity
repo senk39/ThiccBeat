@@ -2409,27 +2409,27 @@ Prefab:
     - target: {fileID: 114865015032465842, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114865015032465842, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114503780041002422, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114503780041002422, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114564076131913644, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114564076131913644, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
@@ -2439,12 +2439,12 @@ Prefab:
     - target: {fileID: 114156125646606682, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114156125646606682, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114564076131913644, guid: c487fa59491ed24478647c03ea12e6c2,
         type: 2}
@@ -2489,6 +2489,16 @@ Prefab:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 25088ba1cb4b0224e8220600dcadb136,
+        type: 3}
+    - target: {fileID: 1552856713609442, guid: c487fa59491ed24478647c03ea12e6c2, type: 2}
+      propertyPath: m_Name
+      value: 00S
+      objectReference: {fileID: 0}
+    - target: {fileID: 114620848386277648, guid: c487fa59491ed24478647c03ea12e6c2,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1faaa3914bc4814bbdb96e63a52b38f,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c487fa59491ed24478647c03ea12e6c2, type: 2}

@@ -4,9 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Linq;
-
-
 
 public class SongListV2 : MonoBehaviour
 {
@@ -28,7 +25,6 @@ public class SongListV2 : MonoBehaviour
     public TextMeshProUGUI selDiffAltLabel;
 
     public GameObject starEmpty;
-
     public GameObject starFilled;
 
     public GameObject selGenreObj;
@@ -51,9 +47,6 @@ public class SongListV2 : MonoBehaviour
     public GameObject acConChangeDiff;
     public GameObject acConBack;
     public GameObject acConEnter;
-
-
-
 
     public class Song
     {
@@ -145,8 +138,6 @@ public class SongListV2 : MonoBehaviour
     static Song comfyplace = new Song(
         1, "Comfy Place", "P. Dawidziak", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 4, 9);
 
-
-
     void Awake()
     {
         selArtistLabel = selArtistObj.GetComponent<TMPro.TextMeshProUGUI>();
@@ -160,11 +151,8 @@ public class SongListV2 : MonoBehaviour
         acBack = acConBack.GetComponent<AudioSource>();
         acEnter = acConEnter.GetComponent<AudioSource>();
 
-
         addingSongsToList();
-
         allSongs[0].isSelectedInMenu = true;
-
         creatingSelectedSongEntryInUI(selectedSongByUser = 0);
     }
 
@@ -286,7 +274,6 @@ public class SongListV2 : MonoBehaviour
             {
                 posy.y -= 90f;
             }
-
             foo.GetComponent<Transform>().position = posy;
         }
 
@@ -309,8 +296,6 @@ public class SongListV2 : MonoBehaviour
             selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
         }
         alternativeDifficultyTextGenerator();
-
-
     }
 
     void alternativeDifficultyTextGenerator()
@@ -324,12 +309,10 @@ public class SongListV2 : MonoBehaviour
         {
             selDiffAltLabel.text = allSongs[selectedSongByUser].difficultyEasy.ToString();
         }
-
     }
 
     void changeDifficulty()
     {
-
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J))
         {
             if (isCurrentDifficultyIsEasy == false)
@@ -346,21 +329,16 @@ public class SongListV2 : MonoBehaviour
                 starGenerator();
             }
         }
-
     }
 
     public void chooseSongAndMoveToGame()
     {
-
         if (Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.G)))
         {
             acEnter.Play();
             SceneManager.LoadScene(4);
         }
     }
-
-
-
 
     public void backToMainMenu()
     {

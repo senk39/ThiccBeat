@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class note : MonoBehaviour {
 
@@ -16,16 +13,11 @@ public class note : MonoBehaviour {
     private float ZPosToActive;
     private float ZPosToDestroy;
 
-
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         ZPosToActive = 0f;
         ZPosToDestroy = -24f;
-    }
-
-	void Start () {
-
     }
     
     void Update() {
@@ -48,10 +40,6 @@ public class note : MonoBehaviour {
         if (gameObject.transform.position.z < ZPosToDestroy)
         {
             isActive = false;
-            //Destroy(gameObject);
         }
-        
     }
-    
-    
 }

@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class quitController : MonoBehaviour {
-
 
     bool isYesSelected;
 
@@ -17,7 +14,6 @@ public class quitController : MonoBehaviour {
     public GameObject acConBack;
     public GameObject acConEnter;
 
-
     void Awake()
     {
         isYesSelected = true;
@@ -28,37 +24,35 @@ public class quitController : MonoBehaviour {
         acEnter = acConEnter.GetComponent<AudioSource>();
     }
 
-    void Update () {
-
-        
-            if (Input.GetKeyDown(KeyCode.DownArrow) ||
+    void Update ()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow) ||
             Input.GetKeyDown(KeyCode.Q) ||
             (Input.GetKeyDown(KeyCode.UpArrow) ||
             Input.GetKeyDown(KeyCode.O)))
+        {
+            if (isYesSelected == true)
             {
-            if(isYesSelected == true)
-                {
-                    isYesSelected = false;
-                    acChangeOption.Play();
-
+                isYesSelected = false;
+                acChangeOption.Play();
             }
+
             else
-                {
-                    isYesSelected = true;
-                    acChangeOption.Play();
-                }
+            {
+                isYesSelected = true;
+                acChangeOption.Play();
             }
         }
+    }
     public void quitTheGame()
     {
         acBack.Play();
         Invoke("quitTheGame2", 0.4f);
-
     }
+
     public void quitTheGame2()
     {
         Debug.Log("Quit");
         Application.Quit();
-    }
-    
+    }   
 }

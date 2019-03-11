@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class lastNoteBehaviour : MonoBehaviour {
 
@@ -10,13 +8,6 @@ public class lastNoteBehaviour : MonoBehaviour {
     {
         lastNoteDone = false;
     }
-    void Start (){
-        
-    }
-	
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter(Collider col)
     {
