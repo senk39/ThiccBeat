@@ -3130,6 +3130,66 @@ Prefab:
       propertyPath: acConEnter
       value: 
       objectReference: {fileID: 1103976896}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: titleElement
+      value: 
+      objectReference: {fileID: 890118075}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: artistElement
+      value: 
+      objectReference: {fileID: 619179385}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: diffStarsElement
+      value: 
+      objectReference: {fileID: 1247507567}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: diffElement
+      value: 
+      objectReference: {fileID: 874632194}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: scoreElement
+      value: 
+      objectReference: {fileID: 685251883}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: comboElement
+      value: 
+      objectReference: {fileID: 129832969}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: goldScoreElement
+      value: 
+      objectReference: {fileID: 719147551}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: goldComboElement
+      value: 
+      objectReference: {fileID: 1517014300}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: silverScoreElement
+      value: 
+      objectReference: {fileID: 979977654}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: silverComboElement
+      value: 
+      objectReference: {fileID: 1254129613}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: bronzeScoreElement
+      value: 
+      objectReference: {fileID: 172320826}
+    - target: {fileID: 114537546850105958, guid: 4eb33a80320331b44a81053336cbf20f,
+        type: 2}
+      propertyPath: bronzeComboElement
+      value: 
+      objectReference: {fileID: 284382408}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eb33a80320331b44a81053336cbf20f, type: 2}
   m_IsPrefabAsset: 0

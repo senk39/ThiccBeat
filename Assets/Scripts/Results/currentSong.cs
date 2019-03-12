@@ -62,11 +62,9 @@ public class currentSong : SongListV2
 
     void Awake ()
     {
-        
+        GameObject.Find("New High Score!").SetActive(false);
 
         playedSong = allSongs[selectedSongByUser];
-
-        highScore();
 
         titleLabel = titleElement.GetComponent<TMPro.TextMeshProUGUI>();
         artistLabel = artistElement.GetComponent<TMPro.TextMeshProUGUI>();
@@ -82,12 +80,13 @@ public class currentSong : SongListV2
         bronzeScoreLabel = bronzeScoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         bronzeComboLabel = bronzeComboElement.GetComponent<TMPro.TextMeshProUGUI>();
 
-
         combo = PlayerPrefs.GetInt("lastGameMaxCombo");
         score = PlayerPrefs.GetInt("lastGameScore");
         displaySongInfo();
-        displayTop3Info();
+        highScore();
         displayScoreInfo();
+        displayTop3Info();
+        deletePlayerPrefsKeys();
     }
 
     private void displayTop3Info()
@@ -121,7 +120,6 @@ public class currentSong : SongListV2
             currentDiff = "hard";
             diffStarsLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
         }
-
     }
 
     private void displayScoreInfo()
@@ -140,6 +138,8 @@ public class currentSong : SongListV2
     {
         sIndex = playedSong.index;
 
+        Debug.Log("song Index: " + playedSong.index + "currDiff: " + currentDiff);
+
         goldScore = PlayerPrefs.GetInt(sIndex + "GoldScore" + currentDiff);
         silverScore = PlayerPrefs.GetInt(sIndex + "SilverScore" + currentDiff);
         bronzeScore = PlayerPrefs.GetInt(sIndex + "BronzeScore" + currentDiff);
@@ -148,7 +148,7 @@ public class currentSong : SongListV2
         silverCombo = PlayerPrefs.GetInt(sIndex + "SilverCombo" + currentDiff);
         bronzeCombo = PlayerPrefs.GetInt(sIndex + "BronzeCombo" + currentDiff);
 
-        if (goldScore < score)
+        if (goldScore < score || goldScore < 1)
         {
             GameObject.Find("New High Score!").SetActive(true);
 
@@ -173,9 +173,6 @@ public class currentSong : SongListV2
             bronzeScore = score;
             bronzeCombo = combo;
         }
-
-        Debug.Log(PlayerPrefs.GetInt(sIndex + "BronzeScore" + currentDiff));  //0
-        Debug.Log(sIndex + "GoldScore"); //4Gold
     }
 
     void Update () {
@@ -189,9 +186,4 @@ public class currentSong : SongListV2
             SceneManager.LoadScene(2);
         }
     }
-
-
-
-    
-
 }
