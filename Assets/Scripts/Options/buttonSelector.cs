@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-
-
 
 public class buttonSelector : MonoBehaviour
 {
@@ -83,7 +79,6 @@ public class buttonSelector : MonoBehaviour
         overallVolumeSlider.GetComponent<Slider>().value = tempMasterVolume;
         musicVolumeSlider.GetComponent<Slider>().value = tempMusicVolume;
         SFXVolumeSlider.GetComponent<Slider>().value = tempSFXVolume;
-
     }
 
     void Update()

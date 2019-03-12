@@ -23,11 +23,5 @@ public class audioControllerForAboutScene : MonoBehaviour
 
         animator1 = GetComponent<Animator>();
     }
-
-    void Update()
-    {
-
-    }
-
 }
 

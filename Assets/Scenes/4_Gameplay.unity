@@ -574,7 +574,7 @@ MonoBehaviour:
   playerComboContainer: {fileID: 1160227621}
   antiMasherConnector: 0
   notesGenerator: 0
-  gnote: {fileID: 1384075469651322, guid: 56fd2f33ac058864a884b667b07a02f5, type: 2}
+  gnote: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
   bpm: 195
 --- !u!1001 &134318664
 Prefab:
@@ -1541,7 +1541,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415758748}
-  - component: {fileID: 415758749}
   - component: {fileID: 415758750}
   - component: {fileID: 415758751}
   m_Layer: 0
@@ -1571,31 +1570,6 @@ Transform:
   m_Father: {fileID: 1950748611}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &415758749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 415758747}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0be22e1fc7860f469e466830a3f9398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScoreContainer: {fileID: 0}
-  playerComboContainer: {fileID: 0}
-  button1: {fileID: 0}
-  b1pressed: 0
-  button2: {fileID: 0}
-  b2pressed: 0
-  button3: {fileID: 0}
-  b3pressed: 0
-  button4: {fileID: 0}
-  b4pressed: 0
-  button5: {fileID: 0}
-  b5pressed: 0
-  button6: {fileID: 0}
-  b6pressed: 0
 --- !u!82 &415758750
 AudioSource:
   m_ObjectHideFlags: 0

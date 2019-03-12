@@ -123,7 +123,7 @@ FULL BEAT: 12.09
 
         audioSongSource = GetComponent<AudioSource>();
         audioSong = Resources.Load<AudioClip>("Maps/" + selectedSong + "/audio");
-        GameObject.Find("SongPlayer").GetComponent<AudioSource>().clip = audioSong;
+        GameObject.Find("Song Player").GetComponent<AudioSource>().clip = audioSong;
 
         if(isHard == true)
         {

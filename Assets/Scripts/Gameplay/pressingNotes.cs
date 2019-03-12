@@ -15,39 +15,18 @@ public class pressingNotes : MonoBehaviour
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
-    public bool antiMasherConnector = false;
-
-    // GENERATOR
-    public bool notesGenerator = true;
-    public GameObject gnote;
-    Vector3 gnotevector = new Vector3(0f, 0.35f, -14.19f);
-    Quaternion gnoteq = new Quaternion(0f, 0f, 0f, 0f);
-
-    //BPM
-    public int bpm = 195;
-
-    void Awake()
-    {
-        antiMasherConnector = false;
-    }
-
     void Update()
     {
-        if (notesGenerator)
-        {
-            InvokeRepeating("noteInstantiateForGenerator", 3.0f, 3f);
-        }
-
         if (go != null)
         {
-            if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest && go.GetComponent<note>().isActive /*&& antiMasherConnector == false*/)
+            if (Input.GetKeyDown(key) && isActive && go.GetComponent<note>().isTheLowest && go.GetComponent<note>().isActive)
             {
             playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             
             notesList.Remove(go);
             Destroy(go);
-            GameObject.Find("BUTTONS").GetComponent<AudioSource>().Play();
+            GameObject.Find("buttons").GetComponent<AudioSource>().Play();
 
                 if (notesList.Count == 0)
                 {
@@ -55,7 +34,6 @@ public class pressingNotes : MonoBehaviour
                 }
             }
         }
-        //antiMasher();
     }
 
     private void OnTriggerEnter(Collider col)
@@ -66,12 +44,6 @@ public class pressingNotes : MonoBehaviour
             isActive = true;
             go = notesList.First.Value.gameObject;
         }
-
-        else if (col.tag == "h_note_start")
-        {
-            notesList.AddLast(col.gameObject);
-            isActive = true;
-        }
     }
 
     private void OnTriggerExit(Collider col)
@@ -81,7 +53,6 @@ public class pressingNotes : MonoBehaviour
             notesList.Remove(col.gameObject); 
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
             Destroy(col.gameObject);
-            antiMasherConnector = false;
 
             if (notesList.Count > 0)
             {
@@ -94,29 +65,5 @@ public class pressingNotes : MonoBehaviour
                 isActive = false;
             }
         }
-
-        if ((col.tag == "h_note_start" || col.tag == "h_note_end") && notesGenerator == false)
-        {
-            notesList.Remove(col.gameObject);
-            isActive = false;
-            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            Destroy(col.gameObject);
-            antiMasherConnector = false;
-            go = notesList.First.Value.gameObject;
-        }
-
-        if (col.tag == "h_note_mid" && notesGenerator == false)
-        {
-            notesList.Remove(col.gameObject);
-            isActive = false;
-            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            Destroy(col.gameObject);
-            go = notesList.First.Value.gameObject;
-        }
-    }
-
-    void noteInstantiateForGenerator()
-    {
-        Instantiate(gnote, gnotevector, gnoteq);
     }
 }

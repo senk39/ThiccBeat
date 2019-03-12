@@ -73,7 +73,7 @@ public class pause : MonoBehaviour {
 
         pauseMenuUI.SetActive(true);
         isGamePaused = true;
-        GameObject.Find("SongPlayer").GetComponent<AudioSource>().Pause();
+        GameObject.Find("Song Player").GetComponent<AudioSource>().Pause();
         disablingIndicators();
         Time.timeScale = 0.001f;
 
@@ -89,7 +89,7 @@ public class pause : MonoBehaviour {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isGamePaused = false;
-        GameObject.Find("SongPlayer").GetComponent<AudioSource>().Play();
+        GameObject.Find("Song Player").GetComponent<AudioSource>().Play();
         enablingIndicators();
         pauseControl.isResumeClicked = false;
     }

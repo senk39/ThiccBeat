@@ -5,13 +5,9 @@ using UnityEngine;
 public class pressingNotesBar : MonoBehaviour
 {
     public KeyCode key;
-
     public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
-
     public bool isActive = false;
-
     public GameObject go;
-
     public GameObject playerScoreContainer;
     public GameObject playerComboContainer;
 
@@ -25,7 +21,7 @@ public class pressingNotesBar : MonoBehaviour
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
                 playerComboContainer.GetComponent<playerCombo>().currentCombo++;
 
-                GameObject.Find("BUTTONS").GetComponent<AudioSource>().Play();
+                GameObject.Find("buttons").GetComponent<AudioSource>().Play();
                 Destroy(go);
                 isActive = false;
             }
@@ -38,20 +34,11 @@ public class pressingNotesBar : MonoBehaviour
         {
             notesList.AddLast(col.gameObject);
         }
-        else if (col.tag == "h_notebar_start")
-        {
-            notesList.AddLast(col.gameObject);
-        }
     }
+
     private void OnTriggerStay(Collider col)
     {
         if (col.tag == "NoteBar")
-        {
-            isActive = true;
-            go = notesList.First.Value.gameObject;
-        }
-
-        else if (col.tag == "h_notebar_start")
         {
             isActive = true;
             go = notesList.First.Value.gameObject;
@@ -61,22 +48,6 @@ public class pressingNotesBar : MonoBehaviour
     private void OnTriggerExit(Collider col)
     {
         if (col.tag == "NoteBar")
-        {
-            isActive = false;
-            notesList.Remove(col.gameObject);
-            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            Destroy(col.gameObject);
-        }
-
-        if (col.tag == "h_notebar_start" || col.tag == "h_notebar_end")
-        {
-            isActive = false;
-            notesList.Remove(col.gameObject);
-            playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            Destroy(col.gameObject);
-        }
-
-        if (col.tag == "h_notebar_mid")
         {
             isActive = false;
             notesList.Remove(col.gameObject);
