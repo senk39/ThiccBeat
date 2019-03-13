@@ -50,6 +50,8 @@ public class currentSong : SongListV2
     public GameObject bronzeComboElement;
     public TextMeshProUGUI bronzeComboLabel;
 
+    public GameObject newHighScoreText;
+
 
     int combo;
     int score;
@@ -66,12 +68,12 @@ public class currentSong : SongListV2
 
     string currentDiff;
 
-    void Awake ()
+    void Awake()
     {
         combo = PlayerPrefs.GetInt("lastGameMaxCombo");
         score = PlayerPrefs.GetInt("lastGameScore");
 
-        GameObject.Find("New High Score!").SetActive(false);
+        newHighScoreText.SetActive(false);
 
         playedSong = allSongs[selectedSongByUser];
 
@@ -148,9 +150,9 @@ public class currentSong : SongListV2
         silverCombo = PlayerPrefs.GetInt(sIndex + "SilverCombo" + currentDiff);
         bronzeCombo = PlayerPrefs.GetInt(sIndex + "BronzeCombo" + currentDiff);
 
-        if (goldScore < score || goldScore < 1)
+        if (goldScore < score)
         {
-            GameObject.Find("New High Score!").SetActive(true);
+            newHighScoreText.SetActive(true);
 
             PlayerPrefs.SetInt(sIndex + "GoldScore" + currentDiff, score);
             PlayerPrefs.SetInt(sIndex + "GoldCombo" + currentDiff, combo);
