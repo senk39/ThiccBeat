@@ -42,7 +42,6 @@ FULL BEAT: 12.09
      */
 
     // GENERATOR
-
     public TextAsset row1;
     public TextAsset row2;
     public TextAsset row3;
@@ -69,7 +68,6 @@ FULL BEAT: 12.09
 
 
     //SYNC
-
     const float offset = 315f;
     const float oneMidiLength = 65.915f;
 
@@ -125,7 +123,19 @@ FULL BEAT: 12.09
         audioSong = Resources.Load<AudioClip>("Maps/" + selectedSong + "/audio");
         GameObject.Find("Song Player").GetComponent<AudioSource>().clip = audioSong;
 
-        if(isHard == true)
+        /*  //TEST WYBRANEGO UTWORU
+        Debug.Log("selectedSong: " + selectedSong);
+        if (isHard)
+        {
+            Debug.Log("selectedDiff: Hard");
+        }
+        else
+        {
+            Debug.Log("selectedDiff: Easy");
+        }
+        */
+
+        if (isHard == true)
         {
             row1 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/1");
             row2 = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard/2");
@@ -180,24 +190,10 @@ FULL BEAT: 12.09
                     noteQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
 
+                    newNote.name = "row1_note" + (i+1);      
+            }
+        }
 
-                    newNote.name = "row1_note" + (i+1);
-                
-            }
-        }
-        /*
-        foreach (string s in textContentSplit1)
-        {
-            if (s.Trim() != "")
-            {
-                int.TryParse(s, out tempValueRow1);
-                GameObject newNote = Instantiate(note, new Vector3
-                    (row1X, rowY, (offset + (tempValueRow1 * oneMidiLengthPerBpm))),
-                    noteQuaternion);
-                newNote.transform.SetParent(noteHolder.transform);
-            }
-        }
-        */
         for (int i = 0; i < textContentSplit2.Length - 1; i++)
         {
             if (textContentSplit2[i].Trim() != "")
@@ -207,10 +203,8 @@ FULL BEAT: 12.09
                     (row2X, rowY, (offset + (tempValueRow2 * oneMidiLengthPerBpm))),
                     noteQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
-
-               
-                    newNote.name = "row2_note" + (i + 1);
-                
+              
+                    newNote.name = "row2_note" + (i + 1);  
             }
         }
 
@@ -223,10 +217,8 @@ FULL BEAT: 12.09
                     (row3X, rowY, (offset + (tempValueRow3 * oneMidiLengthPerBpm))),
                     noteQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
-
-               
-                    newNote.name = "row3_note" + (i + 1);
-                
+           
+                    newNote.name = "row3_note" + (i + 1);  
             }
         }
 
@@ -239,10 +231,8 @@ FULL BEAT: 12.09
                     (row4X, rowY, (offset + (tempValueRow4 * oneMidiLengthPerBpm))),
                     noteQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
-
-               
-                    newNote.name = "row4_note" + (i + 1);
-                
+              
+                    newNote.name = "row4_note" + (i + 1);               
             }
         }
 
@@ -256,9 +246,7 @@ FULL BEAT: 12.09
                     noteQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
 
-             
-                    newNote.name = "row5_note" + (i + 1);
-                
+                    newNote.name = "row5_note" + (i + 1);               
             }
         }
 
@@ -271,10 +259,8 @@ FULL BEAT: 12.09
                     (row6X, rowY, (offset + (tempValueRow6 * oneMidiLengthPerBpm))),
                     noteQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
-
-               
-                    newNote.name = "row6_note" + (i + 1);
-                
+ 
+                    newNote.name = "row6_note" + (i + 1);  
             }
         }
 
@@ -288,9 +274,7 @@ FULL BEAT: 12.09
                     barQuaternion);
                 //newNote.transform.SetParent(noteHolder.transform);
 
-                
-                    newNote.name = "bar_note" + (i + 1);
-                
+                    newNote.name = "bar_note" + (i + 1); 
             }
         }
 
@@ -326,8 +310,6 @@ FULL BEAT: 12.09
 
     void labelTheLowestAsActive()
     {
-
-
         for (int i = 0; i < 500 - 1; i++)
         {
             string foo = "row1_note" + (i + 1);

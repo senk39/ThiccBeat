@@ -287,6 +287,26 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114326901288575822, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: acConChangeOption
+      value: 
+      objectReference: {fileID: 1364104057}
+    - target: {fileID: 114326901288575822, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: acConChangeDiff
+      value: 
+      objectReference: {fileID: 331508283}
+    - target: {fileID: 114326901288575822, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: acConBack
+      value: 
+      objectReference: {fileID: 254357072}
+    - target: {fileID: 114326901288575822, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: acConEnter
+      value: 
+      objectReference: {fileID: 1488668107}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b35a56e29c23ba4aae5761aef58a671, type: 2}
   m_IsPrefabAsset: 0

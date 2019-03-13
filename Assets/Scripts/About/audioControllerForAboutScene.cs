@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class audioControllerForAboutScene : MonoBehaviour
 {
@@ -22,6 +23,30 @@ public class audioControllerForAboutScene : MonoBehaviour
         acEnter = acConEnter.GetComponent<AudioSource>();
 
         animator1 = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.A) ||
+            Input.GetKeyDown(KeyCode.G) ||
+            (Input.GetKeyDown(KeyCode.Q) ||
+            Input.GetKeyDown(KeyCode.O)))
+        {
+            quitAbout();
+        }
+    }
+
+    public void quitAbout()
+    {
+        acBack.Play();
+        //animator1.Play("unhiddingButtonsInOptions");
+        Invoke("quitAbout2", 0.4f);
+    }
+
+    public void quitAbout2()
+    {
+        SceneManager.LoadScene(1);
     }
 }
 

@@ -6,12 +6,10 @@ public class sceneLoaderForMainMenu : MonoBehaviour
     short index;
 
     AudioSource acChangeOption;
-    AudioSource acChangeDiff;
     AudioSource acBack;
     AudioSource acEnter;
 
     public GameObject acConChangeOption;
-    public GameObject acConChangeDiff;
     public GameObject acConBack;
     public GameObject acConEnter;
 
@@ -20,23 +18,22 @@ public class sceneLoaderForMainMenu : MonoBehaviour
         index = 1;
 
         acChangeOption = acConChangeOption.GetComponent<AudioSource>();
-        acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
         acBack = acConBack.GetComponent<AudioSource>();
         acEnter = acConEnter.GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Q)) && index < 4)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Q)) && index > 1)
         {
-            index++;
             acChangeOption.Play();
+            index--;  
         }
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.O)) && index > 1)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.O)) && index < 4 )
         {
-            index--;
             acChangeOption.Play();
+            index++;
         }
     }
 

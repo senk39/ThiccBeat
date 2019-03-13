@@ -1,12 +1,8 @@
-﻿
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class playerScore : MonoBehaviour
 {
-
     public int playerCurrentScore;
     public Text playerScoreAsText;
 
@@ -15,7 +11,6 @@ public class playerScore : MonoBehaviour
         playerCurrentScore = 0;
     }
 
-    // Update is called once per frame
     public void Update()
     {
         playerScoreAsText.text = playerCurrentScore.ToString();
@@ -25,6 +20,5 @@ public class playerScore : MonoBehaviour
             PlayerPrefs.SetInt("lastGameScore", playerCurrentScore);
         }
     }
-
 }
 

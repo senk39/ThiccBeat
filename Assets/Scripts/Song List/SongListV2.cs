@@ -154,6 +154,8 @@ public class SongListV2 : MonoBehaviour
         addingSongsToList();
         allSongs[0].isSelectedInMenu = true;
         creatingSelectedSongEntryInUI(selectedSongByUser = 0);
+
+        deletePlayerPrefsKeys();
     }
 
     void Update()
@@ -352,5 +354,11 @@ public class SongListV2 : MonoBehaviour
     void loadMainMenu()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private static void deletePlayerPrefsKeys()
+    {
+        PlayerPrefs.DeleteKey("lastGameScore");
+        PlayerPrefs.DeleteKey("lastGameMaxCombo");
     }
 }

@@ -26,17 +26,23 @@ public class currentSong : SongListV2
     public GameObject comboElement;
     public TextMeshProUGUI comboLabel;
 
+
+
     public GameObject goldScoreElement;
     public TextMeshProUGUI goldScoreLabel;
 
     public GameObject goldComboElement;
     public TextMeshProUGUI goldComboLabel;
 
+
+
     public GameObject silverScoreElement;
     public TextMeshProUGUI silverScoreLabel;
 
     public GameObject silverComboElement;
     public TextMeshProUGUI silverComboLabel;
+
+
 
     public GameObject bronzeScoreElement;
     public TextMeshProUGUI bronzeScoreLabel;
@@ -62,6 +68,9 @@ public class currentSong : SongListV2
 
     void Awake ()
     {
+        combo = PlayerPrefs.GetInt("lastGameMaxCombo");
+        score = PlayerPrefs.GetInt("lastGameScore");
+
         GameObject.Find("New High Score!").SetActive(false);
 
         playedSong = allSongs[selectedSongByUser];
@@ -80,13 +89,10 @@ public class currentSong : SongListV2
         bronzeScoreLabel = bronzeScoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         bronzeComboLabel = bronzeComboElement.GetComponent<TMPro.TextMeshProUGUI>();
 
-        combo = PlayerPrefs.GetInt("lastGameMaxCombo");
-        score = PlayerPrefs.GetInt("lastGameScore");
         displaySongInfo();
         highScore();
         displayScoreInfo();
         displayTop3Info();
-        deletePlayerPrefsKeys();
     }
 
     private void displayTop3Info()
@@ -126,12 +132,6 @@ public class currentSong : SongListV2
     {
         scoreLabel.text = score.ToString();
         comboLabel.text = combo.ToString();
-    }
-
-    private static void deletePlayerPrefsKeys()
-    {
-        PlayerPrefs.DeleteKey("lastGameScore");
-        PlayerPrefs.DeleteKey("lastGameMaxCombo");
     }
 
     public void highScore()

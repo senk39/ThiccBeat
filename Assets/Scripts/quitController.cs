@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class quitController : MonoBehaviour {
 
@@ -16,7 +17,7 @@ public class quitController : MonoBehaviour {
 
     void Awake()
     {
-        isYesSelected = true;
+        isYesSelected = false;
 
         acChangeOption = acConChangeOption.GetComponent<AudioSource>();
         acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
@@ -31,15 +32,15 @@ public class quitController : MonoBehaviour {
             (Input.GetKeyDown(KeyCode.UpArrow) ||
             Input.GetKeyDown(KeyCode.O)))
         {
-            if (isYesSelected == true)
+            if (isYesSelected == false)
             {
-                isYesSelected = false;
+                isYesSelected = true;
                 acChangeOption.Play();
             }
 
             else
             {
-                isYesSelected = true;
+                isYesSelected = false;
                 acChangeOption.Play();
             }
         }
@@ -47,12 +48,23 @@ public class quitController : MonoBehaviour {
     public void quitTheGame()
     {
         acBack.Play();
-        Invoke("quitTheGame2", 0.4f);
+        Invoke("quitTheGame2", 0.7f);
     }
 
     public void quitTheGame2()
     {
         Debug.Log("Quit");
         Application.Quit();
-    }   
+    }
+
+    public void loadMainMenuAgain()
+    {
+        acBack.Play();
+        Invoke("loadMainMenuAgain2", 0.7f);
+    }
+
+    public void loadMainMenuAgain2()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

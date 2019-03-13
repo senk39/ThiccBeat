@@ -22,7 +22,7 @@ public class buttonSelector : MonoBehaviour
     public GameObject btn_sfx;
     public GameObject btn_mute;
     public GameObject btn_resolution;
-    public GameObject btn_fullscreen;
+    public GameObject btn_reset;
 
     public  GameObject overallVolumeSlider;
     public  GameObject musicVolumeSlider;
@@ -32,14 +32,19 @@ public class buttonSelector : MonoBehaviour
 
     public GameObject resolutionDropdown;
 
-    public static GameObject fullscreenToggle;
+    public static GameObject resetToggle;
 
     public AudioMixer Master;
     public AudioMixerGroup Music;
     public AudioMixerGroup SFX;
 
+    public GameObject resetConfirm;
+
     void Awake()
-    {
+    {        
+        resetConfirm = GameObject.Find("window_confirm");
+        resetConfirm.SetActive(false);
+
         index = 1;
 
         acChangeOption = acConChangeOption.GetComponent<AudioSource>();
@@ -52,7 +57,7 @@ public class buttonSelector : MonoBehaviour
         btn_sfx = GameObject.Find("btn_sfx");
         btn_mute = GameObject.Find("btn_mute");
         btn_resolution = GameObject.Find("btn_resolution");
-        btn_fullscreen = GameObject.Find("btn_fullscreen");
+        btn_reset = GameObject.Find("btn_reset");
 
         overallVolumeSlider = GameObject.Find("Overall volume");
         musicVolumeSlider = GameObject.Find("Music volume");
@@ -62,7 +67,7 @@ public class buttonSelector : MonoBehaviour
 
         resolutionDropdown = GameObject.Find("Dropdown");
 
-        fullscreenToggle = GameObject.Find("Fullscreen");
+        resetToggle = GameObject.Find("Reset high scores");
 }
 
     void Start()
@@ -83,16 +88,32 @@ public class buttonSelector : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.O)) && index < 6)
+        if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.O)))
         {
-            index++;
-            acChangeOption.Play();
+            if (!resetConfirm.activeInHierarchy && index < 6)
+            {
+                index++;
+                acChangeOption.Play();
+            }
+
+            else if (resetConfirm.activeInHierarchy)
+            {
+                acChangeOption.Play();
+            }
         }
 
-        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Q)) && index > 1)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Q)))
         {
-            index--;
-            acChangeOption.Play();
+            if (!resetConfirm.activeInHierarchy && index > 1)
+            {
+                index--;
+                acChangeOption.Play();
+            }
+
+            else if (resetConfirm.activeInHierarchy)
+            {
+                acChangeOption.Play();
+            }
         }
 
         if (EventSystem.current.currentSelectedGameObject == btn_overall)
@@ -115,13 +136,13 @@ public class buttonSelector : MonoBehaviour
         {
             ResolutionSelected();
         }
-        else if (EventSystem.current.currentSelectedGameObject == btn_fullscreen)
+        else if (EventSystem.current.currentSelectedGameObject == btn_reset)
         {
-            FullscreenSelected();
+            resetHighScoreSelected();
         }
         else
         {
-            Debug.Log("Error: There's no option selected in options menu.");
+            //Debug.Log("Błąd: nic nie zostało zaznaczone!");
             //btn_overall = EventSystem.current.currentSelectedGameObject;
             //EventSystem.Equals(btn_overall);
 
@@ -171,7 +192,7 @@ public class buttonSelector : MonoBehaviour
 
     void MuteSelected()
     {
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right") || Input.GetKeyDown(KeyCode.G))
         {
             if (muteToggle.GetComponent<Toggle>().isOn == true)
             {
@@ -199,21 +220,60 @@ public class buttonSelector : MonoBehaviour
 
     }
 
-    void FullscreenSelected()
+    void resetHighScoreSelected()
     {
 
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown("return") || Input.GetKeyDown("left") || Input.GetKeyDown("right"))
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            if (fullscreenToggle.GetComponent<Toggle>().isOn == true)
+            resetConfirm.SetActive(true);
+            GameObject.Find("NO").GetComponent<Button>().Select();
+            /*
+            if (Input.GetKey("left") || Input.GetKey(KeyCode.D))
             {
-                acChangeDiff.Play();
-                fullscreenToggle.GetComponent<Toggle>().isOn = false;
+                SFXVolumeSlider.GetComponent<Slider>().value -= 1;
             }
-            else
+            if (Input.GetKey("right") || Input.GetKey(KeyCode.J))
             {
-                acChangeDiff.Play();
-                fullscreenToggle.GetComponent<Toggle>().isOn = true;
-            }
+                SFXVolumeSlider.GetComponent<Slider>().value += 1;
+            }*/
+
+
         }
+
+    }
+
+    public void deleteHighScores()
+    {
+        acEnter.Play();
+        for (int sIndex = 0; sIndex < 1; sIndex++)
+        {
+            PlayerPrefs.SetInt(sIndex + "GoldScoreeasy", 0);
+            PlayerPrefs.SetInt(sIndex + "SilverScoreeasy", 0);
+            PlayerPrefs.SetInt(sIndex + "BronzeScoreeasy", 0);
+
+            PlayerPrefs.SetInt(sIndex + "GoldComboeasy", 0);
+            PlayerPrefs.SetInt(sIndex + "SilverComboeasy", 0);
+            PlayerPrefs.SetInt(sIndex + "BronzeComboeasy", 0);
+
+            PlayerPrefs.SetInt(sIndex + "GoldScorehard", 0);
+            PlayerPrefs.SetInt(sIndex + "SilverScorehard", 0);
+            PlayerPrefs.SetInt(sIndex + "BronzeScorehard", 0);
+
+            PlayerPrefs.SetInt(sIndex + "GoldCombohard", 0);
+            PlayerPrefs.SetInt(sIndex + "SilverCombohard", 0);
+            PlayerPrefs.SetInt(sIndex + "BronzeCombohard", 0);
+        }
+    }
+
+    public void cancelReset()
+    {
+        acBack.Play();
+        Invoke("cancelReset2", 0.4f);
+    }
+
+    public void cancelReset2()
+    {
+        resetConfirm.SetActive(false);
+        btn_reset.GetComponent<Button>().Select();
     }
 }
