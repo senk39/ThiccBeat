@@ -23,6 +23,13 @@ public class noteGenerator2 : MonoBehaviour
 
     public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
 
+    public GameObject noteShort;
+    public GameObject noteHoldStart;
+    public GameObject noteHoldMiddle;
+    public GameObject noteHoldEnd;
+    public GameObject noteEndTrack;
+    public GameObject noteContainer;
+
 
     /*
      
@@ -45,10 +52,10 @@ FULL BEAT: 12.09
     public TextAsset fullMap;
 
     private string textContent;
- 
 
-    public string[] textContentSplit1;
-   
+
+    public string[] textContentSplit;
+
 
 
     //SYNC
@@ -57,10 +64,6 @@ FULL BEAT: 12.09
 
 
     public bool notesGenerator = false;
-    public GameObject note;
-    public GameObject bar;
-
-    public GameObject endTrack;
 
     Quaternion noteQuaternion = new Quaternion(0f, 0f, 0f, 0f);
     Quaternion barQuaternion = new Quaternion(180f, 0f, 0f, 0f);
@@ -102,18 +105,6 @@ FULL BEAT: 12.09
         audioSong = Resources.Load<AudioClip>("Maps/" + selectedSong + "/audio");
         GameObject.Find("Song Player").GetComponent<AudioSource>().clip = audioSong;
 
-        /*  //TEST WYBRANEGO UTWORU
-        Debug.Log("selectedSong: " + selectedSong);
-        if (isHard)
-        {
-            Debug.Log("selectedDiff: Hard");
-        }
-        else
-        {
-            Debug.Log("selectedDiff: Easy");
-        }
-        */
-
         if (isHard == true)
         {
             fullMap = Resources.Load<TextAsset>("Maps/" + selectedSong + "/hard");
@@ -125,152 +116,32 @@ FULL BEAT: 12.09
         }
 
 
-        distBetweenNotes = (60 / bpm);
-
-        if (notesGenerator)
-        {
-            InvokeRepeating("noteInstantiateForGenerator", 3f, distBetweenNotes);
-        }
-
         textContent = fullMap.text;
 
-        string[] textContentSplit1 = textContent.Split(new char[] { 'x' });
+        string[] textContentSplit = textContent.Split(new char[] { 'x' });
 
-        for (int i = 0; i < textContentSplit1.Length-1; i++)
+        for (int i = 0; i < textContentSplit.Length - 1; i++)
         {
-            if (textContentSplit1[i].Trim() != "")
-            {
-                int.TryParse(textContentSplit1[i], out tempValueRow);
-                GameObject newNote = Instantiate(note, new Vector3
-                    (row1X, rowY, (offset + (tempValueRow * oneMidiLengthPerBpm))),
-                    noteQuaternion);
-                //newNote.transform.SetParent(noteHolder.transform);
+            //Debug.Log(textContentSplit[i+1]);  //GENERUJE NUTKI OK MORDO
+            List<string> eachNoteSplit = textContentSplit[i + 1].Split(new char[] { ' ', '\n' }).ToList<string>();
+            //120 On n=5
+            //132 Off n=5
+       
+            eachNoteSplit.RemoveAt(0);
+            eachNoteSplit.RemoveAt(1);
+            eachNoteSplit.RemoveAt(3);
+            eachNoteSplit.RemoveAt(1);
 
-                    newNote.name = "row1_note" + (i+1);      
-            }
+            // teraz wygląda następująco: 120 | 132 | n=5
+
+            //stwórz pusty obiekt który będzie zawierał w sobie podobiekt nutki - albo krótkiej, albo holda.
+            //ten pusty obiekt będzie posiadał właściwości na temat długości nutki
+
+            GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, 0), noteQuaternion);
+            
+
         }
 
-        checkTheLastestNote();
-        generateTheLastestNote();
     }
 
-    void Update()
-    {
-        labelTheLowestAsActive();
-    }
-
-    void checkTheLastestNote()
-    {
-        List<int> lastestNotes = new List<int>();
-        lastestNotes.Add(tempValueRow);
-
-        biggestRow = lastestNotes.Max();
-    }
-
-    void generateTheLastestNote()
-    {
-        Instantiate(endTrack, new Vector3
-        (0, 0.38f, (offset + (biggestRow * oneMidiLengthPerBpm) + 100f)),
-        noteQuaternion);
-    }
-
-    void labelTheLowestAsActive()
-    {
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            string foo = "row1_note" + (i + 1);
-            //Debug.Log(foo);
-            active1 = GameObject.Find("row1_note" + (i + 1));
-            //GameObject.Find("button 1").GetComponent<pressingNotes>().go = active1;
-
-            if (active1 != null)
-            {
-                GameObject.Find(foo).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            active2 = GameObject.Find("row2_note" + (i + 1));
-            //GameObject.Find("button 2").GetComponent<pressingNotes>().go = active2;
-
-            if (active2 != null)
-            {
-                GameObject.Find("row2_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            active3 = GameObject.Find("row3_note" + (i + 1));
-            //GameObject.Find("button 3").GetComponent<pressingNotes>().go = active3;
-
-            if (active3 != null)
-            {
-                GameObject.Find("row3_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            active4 = GameObject.Find("row4_note" + (i + 1));
-            //GameObject.Find("button 4").GetComponent<pressingNotes>().go = active4;
-
-            if (active4 != null)
-            {
-                GameObject.Find("row4_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            active5 = GameObject.Find("row5_note" + (i + 1));
-            //GameObject.Find("button 5").GetComponent<pressingNotes>().go = active5;
-
-            if (active5 != null)
-            {
-                GameObject.Find("row5_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            active6 = GameObject.Find("row6_note" + (i + 1));
-           // GameObject.Find("button 6").GetComponent<pressingNotes>().go = active6;
-
-            if (active6 != null)
-            {
-                GameObject.Find("row6_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-        for (int i = 0; i < 500 - 1; i++)
-        {
-            active7 = GameObject.Find("bar_note" + (i + 1));
-            // GameObject.Find("button 6").GetComponent<pressingNotes>().go = active6;
-
-            if (active7 != null)
-            {
-                GameObject.Find("bar_note" + (i + 1)).GetComponent<note>().isTheLowest = true;
-                break;
-            }
-        }
-        /*
-        for (int i = 0; i < textContentSplit7.Length - 1; i++)
-        {
-            active7 = GameObject.Find("bar_note" + (i + 1));
-            if (active7 != null)
-            {
-                GameObject.Find("button 7").GetComponent<pressingNotes>().go = active7;
-            }
-            else
-            {
-                break;
-            }
-        }
-        */
-    }
 }
-

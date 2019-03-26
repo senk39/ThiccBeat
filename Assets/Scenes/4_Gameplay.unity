@@ -1087,7 +1087,6 @@ GameObject:
   m_Component:
   - component: {fileID: 322840695}
   - component: {fileID: 322840694}
-  - component: {fileID: 322840696}
   m_Layer: 0
   m_Name: Note Generator
   m_TagString: Untagged
@@ -1096,66 +1095,6 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &322840694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 322840693}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a5e6255419faf4e939100f1cd121e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  active1: {fileID: 0}
-  active2: {fileID: 0}
-  active3: {fileID: 0}
-  active4: {fileID: 0}
-  active5: {fileID: 0}
-  active6: {fileID: 0}
-  active7: {fileID: 0}
-  row1: {fileID: 4900000, guid: 54fce7b0d7d5a86459d02f6e38544ef3, type: 3}
-  row2: {fileID: 4900000, guid: 70d64b5dc62794845a5a07a7773206fa, type: 3}
-  row3: {fileID: 4900000, guid: 8f87bd2e7e9f8fb45a0bf9ce7bfc7ae6, type: 3}
-  row4: {fileID: 4900000, guid: 72bb1e6236d222f4ca4dff24424d19ee, type: 3}
-  row5: {fileID: 4900000, guid: 726b4f5cbae20994e84c30eea0c636f8, type: 3}
-  row6: {fileID: 4900000, guid: d5ebafc836f1bcf4497e31a3dae2a3cc, type: 3}
-  row7: {fileID: 4900000, guid: 6dacbe54454e41b43bb4d6351a5e0ac5, type: 3}
-  textContentSplit1: []
-  textContentSplit2: []
-  textContentSplit3: []
-  textContentSplit4: []
-  textContentSplit5: []
-  textContentSplit6: []
-  textContentSplit7: []
-  notesGenerator: 0
-  note: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
-  bar: {fileID: 1380097115952382, guid: f4152c4597b1efc4eb5e2d5bf61022fd, type: 2}
-  endTrack: {fileID: 1791448796625090, guid: 2bcd067bbf2f67a4dbd3dec6ec603406, type: 2}
-  bpm: 195
-  distBetweenNotes: 0
-  tempValueRow1: 0
-  tempValueRow2: 0
-  tempValueRow3: 0
-  tempValueRow4: 0
-  tempValueRow5: 0
-  tempValueRow6: 0
-  tempValueRow7: 0
-  biggestRow: 0
-  oneMidiLengthPerBpm: 0
---- !u!4 &322840695
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 322840693}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &322840696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1173,17 +1112,38 @@ MonoBehaviour:
   active5: {fileID: 0}
   active6: {fileID: 0}
   active7: {fileID: 0}
+  noteShort: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
+  noteHoldStart: {fileID: 1343849180908470, guid: 4f0fcfa432bb9ed4cb8c8310e7a4cb80,
+    type: 2}
+  noteHoldMiddle: {fileID: 1593633239099444, guid: 4f0fcfa432bb9ed4cb8c8310e7a4cb80,
+    type: 2}
+  noteHoldEnd: {fileID: 1400208867758294, guid: 4f0fcfa432bb9ed4cb8c8310e7a4cb80,
+    type: 2}
+  noteEndTrack: {fileID: 1791448796625090, guid: 2bcd067bbf2f67a4dbd3dec6ec603406,
+    type: 2}
+  noteContainer: {fileID: 1283976239738046, guid: c9358a76a9cdf5949aa939322714dd0c,
+    type: 2}
   fullMap: {fileID: 0}
-  textContentSplit1: []
+  textContentSplit: []
   notesGenerator: 0
-  note: {fileID: 0}
-  bar: {fileID: 0}
-  endTrack: {fileID: 0}
   bpm: 0
   distBetweenNotes: 0
   tempValueRow: 0
   biggestRow: 0
   oneMidiLengthPerBpm: 0
+--- !u!4 &322840695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322840693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &368045740
 Prefab:
   m_ObjectHideFlags: 0
