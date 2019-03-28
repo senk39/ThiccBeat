@@ -25,7 +25,8 @@ public class pressingNotes : MonoBehaviour
             playerComboContainer.GetComponent<playerCombo>().currentCombo++;
             
             notesList.Remove(go);
-            Destroy(go);
+            Destroy(go.transform.parent.gameObject);
+
             GameObject.Find("buttons").GetComponent<AudioSource>().Play();
 
                 if (notesList.Count == 0)
@@ -52,7 +53,7 @@ public class pressingNotes : MonoBehaviour
         {
             notesList.Remove(col.gameObject); 
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            Destroy(col.gameObject);
+            Destroy(col.gameObject.transform.parent.gameObject);
 
             if (notesList.Count > 0)
             {

@@ -22,7 +22,7 @@ public class pressingNotesBar : MonoBehaviour
                 playerComboContainer.GetComponent<playerCombo>().currentCombo++;
 
                 GameObject.Find("buttons").GetComponent<AudioSource>().Play();
-                Destroy(go);
+                Destroy(go.transform.parent.gameObject);
                 isActive = false;
             }
         }
@@ -52,7 +52,7 @@ public class pressingNotesBar : MonoBehaviour
             isActive = false;
             notesList.Remove(col.gameObject);
             playerComboContainer.GetComponent<playerCombo>().currentCombo = 0;
-            Destroy(col.gameObject);
+            Destroy(col.gameObject.transform.parent.gameObject);
         }
     }
 }

@@ -136,9 +136,14 @@ FULL BEAT: 12.09
 
             //stwórz pusty obiekt który będzie zawierał w sobie podobiekt nutki - albo krótkiej, albo holda.
             //ten pusty obiekt będzie posiadał właściwości na temat długości nutki
-
-            GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, 0), noteQuaternion);
             
+            GameObject newNoteContainer = Instantiate(noteContainer, new Vector3(0, 0, 0), noteQuaternion);
+            GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, 0), noteQuaternion);
+            newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+            
+            //ustal nazwę obiektu
+
+
 
         }
 
