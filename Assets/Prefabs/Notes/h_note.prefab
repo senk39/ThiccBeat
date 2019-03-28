@@ -24,8 +24,6 @@ GameObject:
   - component: {fileID: 23570538471471022}
   - component: {fileID: 54842647501106026}
   - component: {fileID: 114185856302904314}
-  - component: {fileID: 114162557774434598}
-  - component: {fileID: 114511865350783468}
   m_Layer: 0
   m_Name: noteStart
   m_TagString: h_note_start
@@ -46,8 +44,6 @@ GameObject:
   - component: {fileID: 23062671443348970}
   - component: {fileID: 54925217045876992}
   - component: {fileID: 114990370082874840}
-  - component: {fileID: 114028650379283436}
-  - component: {fileID: 114933318340067358}
   m_Layer: 0
   m_Name: noteEnd
   m_TagString: h_note_end
@@ -417,19 +413,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114028650379283436
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1400208867758294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notesVelocity: 39
-  isTheLowest: 0
 --- !u!114 &114107848230217916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,21 +424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 11
+  noteVelocity: 1.75
   isTheLowest: 0
---- !u!114 &114162557774434598
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1343849180908470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notesVelocity: 39
-  isTheLowest: 0
+  isActive: 0
 --- !u!114 &114185856302904314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,8 +438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0
 --- !u!114 &114260269692001224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,21 +452,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
---- !u!114 &114511865350783468
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1343849180908470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0958ae971b9624e9932d3c35e9a989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdMid: {fileID: 0}
-  holdEnd: {fileID: 0}
+  isActive: 0
 --- !u!114 &114522156576793294
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -522,21 +482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
---- !u!114 &114933318340067358
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1400208867758294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b23451d187f8346836209376faf289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdMid: {fileID: 0}
-  holdStart: {fileID: 0}
+  isActive: 0
 --- !u!114 &114990370082874840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -548,5 +496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0
