@@ -138,9 +138,46 @@ FULL BEAT: 12.09
             //ten pusty obiekt będzie posiadał właściwości na temat długości nutki
             
             GameObject newNoteContainer = Instantiate(noteContainer, new Vector3(0, 0, 0), noteQuaternion);
-            GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, 0), noteQuaternion);
-            newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-            
+            if (eachNoteSplit[2].Contains("6"))
+            {
+                GameObject newNote = Instantiate(noteShort, new Vector3(row6X, rowY, 0), noteQuaternion);
+                newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+            }
+            else if (eachNoteSplit[2].Contains("5"))
+            {
+                GameObject newNote = Instantiate(noteShort, new Vector3(row5X, rowY, 0), noteQuaternion);
+                newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
+            }
+            else if(eachNoteSplit[2].Contains("4"))
+            {
+                GameObject newNote = Instantiate(noteShort, new Vector3(row4X, rowY, 0), noteQuaternion);
+                newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
+            }
+            else if(eachNoteSplit[2].Contains("3"))
+            {
+                GameObject newNote = Instantiate(noteShort, new Vector3(row3X, rowY, 0), noteQuaternion);
+                newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
+            }
+            else if(eachNoteSplit[2].Contains("2"))
+            {
+                GameObject newNote = Instantiate(noteShort, new Vector3(row2X, rowY, 0), noteQuaternion);
+                newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
+            }
+            else if(eachNoteSplit[2].Contains("1"))
+            {
+                GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, 0), noteQuaternion);
+                newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
+            }
+            else
+            {
+                //GENEROWANIE BARA
+            }
+
             //ustal nazwę obiektu
 
 
