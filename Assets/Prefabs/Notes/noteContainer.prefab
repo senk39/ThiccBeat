@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4709479512811616}
   - component: {fileID: 114068415969917038}
+  - component: {fileID: 114153264523073630}
   m_Layer: 0
   m_Name: noteContainer
   m_TagString: Untagged
@@ -56,3 +57,17 @@ MonoBehaviour:
   keyNumber: 0
   isShort: 0
   isHold: 0
+--- !u!114 &114153264523073630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283976239738046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteVelocity: 1.75
+  isTheLowest: 0
+  isActive: 0

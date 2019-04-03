@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using System.IO;
 using System.Linq;
+using System;
 
 public class noteGenerator2 : MonoBehaviour
 {
@@ -24,10 +25,19 @@ public class noteGenerator2 : MonoBehaviour
     public LinkedList<GameObject> notesList = new LinkedList<GameObject>();
 
     public GameObject noteShort;
+
+    public GameObject noteBar;
+
     public GameObject noteHoldStart;
     public GameObject noteHoldMiddle;
     public GameObject noteHoldEnd;
+
+    public GameObject noteBarStart;
+    public GameObject noteBarMiddle;
+    public GameObject noteBarEnd;
+
     public GameObject noteEndTrack;
+
     public GameObject noteContainer;
 
 
@@ -88,7 +98,10 @@ FULL BEAT: 12.09
     private const float row5X = 3.1f;
     private const float row6X = 5.1f;
     private const float row7X = 2.67f;
+
     private const float rowY = 0.35f;
+
+    private const float rowZ = 124f;
 
     public float oneMidiLengthPerBpm;
 
@@ -138,45 +151,83 @@ FULL BEAT: 12.09
             //ten pusty obiekt będzie posiadał właściwości na temat długości nutki
             
             GameObject newNoteContainer = Instantiate(noteContainer, new Vector3(0, 0, 0), noteQuaternion);
+
             if (eachNoteSplit[2].Contains("6"))
             {
-                GameObject newNote = Instantiate(noteShort, new Vector3(row6X, rowY, 0), noteQuaternion);
+                GameObject newNote = Instantiate(noteShort, new Vector3(row6X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 6;
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
             }
             else if (eachNoteSplit[2].Contains("5"))
             {
-                GameObject newNote = Instantiate(noteShort, new Vector3(row5X, rowY, 0), noteQuaternion);
+                GameObject newNote = Instantiate(noteShort, new Vector3(row5X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 5;
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
 
             }
             else if(eachNoteSplit[2].Contains("4"))
             {
-                GameObject newNote = Instantiate(noteShort, new Vector3(row4X, rowY, 0), noteQuaternion);
+                GameObject newNote = Instantiate(noteShort, new Vector3(row4X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 4;
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
 
             }
             else if(eachNoteSplit[2].Contains("3"))
             {
-                GameObject newNote = Instantiate(noteShort, new Vector3(row3X, rowY, 0), noteQuaternion);
+                GameObject newNote = Instantiate(noteShort, new Vector3(row3X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 3;
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
 
             }
             else if(eachNoteSplit[2].Contains("2"))
             {
-                GameObject newNote = Instantiate(noteShort, new Vector3(row2X, rowY, 0), noteQuaternion);
+                GameObject newNote = Instantiate(noteShort, new Vector3(row2X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 2;
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
 
             }
             else if(eachNoteSplit[2].Contains("1"))
             {
-                GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, 0), noteQuaternion);
+                GameObject newNote = Instantiate(noteShort, new Vector3(row1X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 1;
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-
             }
             else
             {
                 //GENEROWANIE BARA
+                GameObject newBarNote = Instantiate(noteBar, new Vector3(row7X, rowY, rowZ), barQuaternion);
+                newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
+                newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
+                newNoteContainer.GetComponent<noteClass>().keyNumber = 7;
+                newBarNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newBarNote
             }
+
+            if (i < 9)
+            {
+                newNoteContainer.transform.name = "note00" + (i + 1);
+            }
+            else if (i < 99)
+            {
+                newNoteContainer.transform.name = "note0" + (i + 1);
+            }
+            else
+            {
+                newNoteContainer.transform.name = "note" + (i + 1);
+            }
+
 
             //ustal nazwę obiektu
 

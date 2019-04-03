@@ -13,6 +13,8 @@ public class note : MonoBehaviour {
     private float ZPosToActive;
     private float ZPosToDestroy;
 
+    bool move = false;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();

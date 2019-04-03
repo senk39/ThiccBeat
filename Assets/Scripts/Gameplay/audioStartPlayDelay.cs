@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class audioStartPlayDelay : MonoBehaviour {
 
-    AudioSource songAudio;
+    public AudioSource songAudio;
 
     public bool anyKeyPressedToStart = false;
 
@@ -29,6 +29,8 @@ public class audioStartPlayDelay : MonoBehaviour {
 
             }
         }
+
+        //Debug.Log("songaudio.timeSamples: " + songAudio.timeSamples);
 
     }
 }

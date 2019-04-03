@@ -1113,12 +1113,18 @@ MonoBehaviour:
   active6: {fileID: 0}
   active7: {fileID: 0}
   noteShort: {fileID: 1596655131194664, guid: e1a5b01a23c538e43b2c230cef8a2fcb, type: 2}
+  noteBar: {fileID: 1380097115952382, guid: f4152c4597b1efc4eb5e2d5bf61022fd, type: 2}
   noteHoldStart: {fileID: 1343849180908470, guid: 4f0fcfa432bb9ed4cb8c8310e7a4cb80,
     type: 2}
   noteHoldMiddle: {fileID: 1593633239099444, guid: 4f0fcfa432bb9ed4cb8c8310e7a4cb80,
     type: 2}
   noteHoldEnd: {fileID: 1400208867758294, guid: 4f0fcfa432bb9ed4cb8c8310e7a4cb80,
     type: 2}
+  noteBarStart: {fileID: 1556078288119290, guid: cc909dd019d95f445a60c405ae62cd06,
+    type: 2}
+  noteBarMiddle: {fileID: 1104110264374320, guid: cc909dd019d95f445a60c405ae62cd06,
+    type: 2}
+  noteBarEnd: {fileID: 1991269336607674, guid: cc909dd019d95f445a60c405ae62cd06, type: 2}
   noteEndTrack: {fileID: 1791448796625090, guid: 2bcd067bbf2f67a4dbd3dec6ec603406,
     type: 2}
   noteContainer: {fileID: 1283976239738046, guid: c9358a76a9cdf5949aa939322714dd0c,

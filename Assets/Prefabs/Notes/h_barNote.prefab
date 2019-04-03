@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 65958417234468010}
   - component: {fileID: 114782935668134464}
   - component: {fileID: 114657896111043924}
-  - component: {fileID: 114371597188533856}
   m_Layer: 0
   m_Name: notebarStart
   m_TagString: h_notebar_start
@@ -105,7 +104,6 @@ GameObject:
   - component: {fileID: 65781097981958688}
   - component: {fileID: 114981502948053582}
   - component: {fileID: 114136368523133676}
-  - component: {fileID: 114214749136048276}
   m_Layer: 0
   m_Name: notebarEnd
   m_TagString: h_notebar_end
@@ -489,65 +487,42 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991269336607674}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
---- !u!114 &114214749136048276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1991269336607674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a21933bfee2dc247aa5bf4d5b90c3bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdMid: {fileID: 0}
-  holdStart: {fileID: 0}
---- !u!114 &114371597188533856
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1556078288119290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8293e7ee6a9eb8b4da8bef092f48c43b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdMid: {fileID: 0}
-  holdEnd: {fileID: 0}
+  isActive: 0
 --- !u!114 &114552065784209014
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104110264374320}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 11
+  noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0
 --- !u!114 &114657896111043924
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1556078288119290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0
 --- !u!114 &114700372188396542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -590,8 +565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968561615015b6d4eb689071c0289187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notesVelocity: 39
+  noteVelocity: 1.75
   isTheLowest: 0
+  isActive: 0
 --- !u!114 &114981502948053582
 MonoBehaviour:
   m_ObjectHideFlags: 1
