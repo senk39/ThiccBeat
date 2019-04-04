@@ -2668,6 +2668,8 @@ MonoBehaviour:
   startPoint: 0
   endPoint: 0
   keyNumber: 0
+  isShort: 0
+  isHold: 0
 --- !u!4 &986704800
 Transform:
   m_ObjectHideFlags: 0

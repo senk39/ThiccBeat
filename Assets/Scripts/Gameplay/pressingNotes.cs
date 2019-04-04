@@ -39,7 +39,15 @@ public class pressingNotes : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "Note")
+        if(col.tag == "noteContainer")
+        {
+            notesList.AddLast(col.transform.FindChild("note(clone)").gameObject);
+            isActive = true;
+            go = notesList.First.Value.gameObject;
+
+        }
+
+        else if (col.tag == "Note")
         {
             notesList.AddLast(col.gameObject);
             isActive = true;

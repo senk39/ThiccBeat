@@ -15,11 +15,17 @@ public class note : MonoBehaviour {
 
     bool move = false;
 
+    public AudioSource songAudio;
+
+
+    //GetComponent<AudioSource>()
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         ZPosToActive = 0f;
         ZPosToDestroy = -24f;
+       songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
     }
     
     void Update() {
@@ -31,7 +37,10 @@ public class note : MonoBehaviour {
         
         if (pause.isGamePaused == false && anyKeyPressedToStart == true)
         {
-            rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
+            if(songAudio.timeSamples/100 > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+            {
+                rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
+            }
         }
 
         if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
