@@ -80,7 +80,6 @@ GameObject:
   - component: {fileID: 65446263486416112}
   - component: {fileID: 54788312198142892}
   - component: {fileID: 114941108337816302}
-  - component: {fileID: 114700372188396542}
   m_Layer: 0
   m_Name: notebarMid
   m_TagString: h_notebar_mid
@@ -495,6 +494,7 @@ MonoBehaviour:
   noteVelocity: 1.75
   isTheLowest: 0
   isActive: 0
+  songAudio: {fileID: 0}
 --- !u!114 &114552065784209014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,6 +509,7 @@ MonoBehaviour:
   noteVelocity: 1.75
   isTheLowest: 0
   isActive: 0
+  songAudio: {fileID: 0}
 --- !u!114 &114657896111043924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -523,22 +524,7 @@ MonoBehaviour:
   noteVelocity: 1.75
   isTheLowest: 0
   isActive: 0
---- !u!114 &114700372188396542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1961814772494132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 866beae3e307be847aaf04e79048959b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerComboContainer: {fileID: 0}
-  isActivated: 0
-  noteStartIsClicked: 0
-  toleranceForTooEarlyUnclick: 3.5
-  counterForBlockMultipleClicks: 0
+  songAudio: {fileID: 0}
 --- !u!114 &114782935668134464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,6 +554,7 @@ MonoBehaviour:
   noteVelocity: 1.75
   isTheLowest: 0
   isActive: 0
+  songAudio: {fileID: 0}
 --- !u!114 &114981502948053582
 MonoBehaviour:
   m_ObjectHideFlags: 1
