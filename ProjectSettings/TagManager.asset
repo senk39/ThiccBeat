@@ -23,6 +23,7 @@ TagManager:
   - h_notebar_end
   - h_notebar
   - noteContainer
+  - noteContainerBar
   layers:
   - Default
   - TransparentFX

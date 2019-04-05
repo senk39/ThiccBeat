@@ -167,7 +167,7 @@ FULL BEAT: 12.09
             {
                 GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row6X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row5X, rowY, rowZ), noteQuaternion);
                 newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 5;
@@ -178,7 +178,7 @@ FULL BEAT: 12.09
             {
                 GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row6X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row4X, rowY, rowZ), noteQuaternion);
                 newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 4;
@@ -188,7 +188,7 @@ FULL BEAT: 12.09
             {
                 GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row6X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row3X, rowY, rowZ), noteQuaternion);
                 newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 3;
@@ -198,7 +198,7 @@ FULL BEAT: 12.09
             {
                 GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row6X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row2X, rowY, rowZ), noteQuaternion);
                 newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 2;
@@ -208,7 +208,7 @@ FULL BEAT: 12.09
             {
                 GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                 newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row6X, rowY, rowZ), noteQuaternion);
+                newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row1X, rowY, rowZ), noteQuaternion);
                 newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 1;

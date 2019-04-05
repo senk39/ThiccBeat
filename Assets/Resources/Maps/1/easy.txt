@@ -5,6 +5,8 @@ x
 204 Off n=5x
 288 On n=2
 300 Off n=2x
+324 On n=2
+336 Off n=2x
 384 On n=2
 396 Off n=2x
 480 On n=4

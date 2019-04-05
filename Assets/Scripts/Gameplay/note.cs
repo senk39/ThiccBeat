@@ -16,6 +16,7 @@ public class note : MonoBehaviour {
     bool move = false;
 
     public AudioSource songAudio;
+    public int actualTimeSamples;
 
 
     //GetComponent<AudioSource>()
@@ -37,9 +38,10 @@ public class note : MonoBehaviour {
         
         if (pause.isGamePaused == false && anyKeyPressedToStart == true)
         {
-            if(songAudio.timeSamples/100 > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+            if(songAudio.timeSamples/200 > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
             {
                 rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
+                actualTimeSamples = songAudio.timeSamples;
             }
         }
 
