@@ -58,6 +58,8 @@ public class pressingNotes : MonoBehaviour
     {
         if(col.tag == "noteContainer")
         {
+            noteContainer = col.gameObject;
+
             isActive = true;
 
            
@@ -101,9 +103,10 @@ public class pressingNotes : MonoBehaviour
 
             if(col != null)
             {
-                RemoveFromQueue();
                 noteItself = null;
                 noteContainer = null;
+                RemoveFromQueue();
+                
             }
 
 
@@ -280,13 +283,11 @@ public class pressingNotes : MonoBehaviour
         if(notesQueue1.Count > 0)
         {
             notesQueue1.Peek().GetComponent<note>().isTheLowest = true;
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
         }
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+            
             
         }
         if (notesQueue2.Count > 0)
@@ -296,8 +297,7 @@ public class pressingNotes : MonoBehaviour
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+            
         }
         if (notesQueue3.Count > 0)
         {
@@ -306,8 +306,7 @@ public class pressingNotes : MonoBehaviour
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+            
         }
         if (notesQueue4.Count > 0)
         {
@@ -316,8 +315,7 @@ public class pressingNotes : MonoBehaviour
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+            
         }
         if (notesQueue5.Count > 0)
         {
@@ -326,8 +324,7 @@ public class pressingNotes : MonoBehaviour
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+            
         }
         if (notesQueue6.Count > 0)
         {
@@ -336,8 +333,7 @@ public class pressingNotes : MonoBehaviour
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+           
         }
         if (notesQueue7.Count > 0)
         {
@@ -346,48 +342,44 @@ public class pressingNotes : MonoBehaviour
         else
         {
             isActive = false;
-            noteItself = null;
-            noteContainer = null;
+            
         }
     }
 
     void updatingNoteContainerandNoteItself()
     {
-        if(transform.position.x == row1X && notesQueue1.Count > 1)
+        if(transform.position.x == row1X && notesQueue1.Count > 0)
         {
-            noteContainer = notesQueue1.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
 
         }
-        if (transform.position.x == row2X && notesQueue2.Count > 1)
+        else if (transform.position.x == row2X && notesQueue2.Count > 0)
         {
-            noteContainer = notesQueue2.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
         }
-        if (transform.position.x == row3X && notesQueue3.Count > 1)
+        else if (transform.position.x == row3X && notesQueue3.Count > 0)
         {
-            noteContainer = notesQueue3.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
         }
-        if (transform.position.x == row4X && notesQueue4.Count > 1)
+        else if(transform.position.x == row4X && notesQueue4.Count > 0)
         {
-            noteContainer = notesQueue4.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
         }
-        if (transform.position.x == row5X && notesQueue5.Count > 1)
+        else if(transform.position.x == row5X && notesQueue5.Count > 0)
         {
-            noteContainer = notesQueue5.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
         }
-        if (transform.position.x == row6X && notesQueue6.Count > 1)
+        else if(transform.position.x == row6X && notesQueue6.Count > 0)
         {
-            noteContainer = notesQueue6.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
         }
-        if (transform.position.x == row7X && notesQueue7.Count > 1)
+        else if(transform.position.x == row7X && notesQueue7.Count > 0)
         {
-            noteContainer = notesQueue7.Peek().gameObject;
             noteItself = noteContainer.transform.GetChild(0).gameObject;
+        }
+        else
+        {
+            noteItself = null;
         }
         
     }
