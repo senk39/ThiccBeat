@@ -51,6 +51,7 @@ public class pressingNotes : MonoBehaviour
         checkTheLowest();
 
         updatingNoteContainerandNoteItself();
+        setNoteContainerAsTheLowestNoteContainer();
 
     }
 
@@ -58,6 +59,7 @@ public class pressingNotes : MonoBehaviour
     {
         if(col.tag == "noteContainer")
         {
+
             noteContainer = col.gameObject;
 
             isActive = true;
@@ -65,9 +67,9 @@ public class pressingNotes : MonoBehaviour
            
             
             addToQueue();
-            
-            
-            
+
+            //setNoteContainerAsTheLowestNoteContainer();
+
 
         }
 
@@ -103,10 +105,7 @@ public class pressingNotes : MonoBehaviour
 
             if(col != null)
             {
-                noteItself = null;
-                noteContainer = null;
                 RemoveFromQueue();
-                
             }
 
 
@@ -350,38 +349,81 @@ public class pressingNotes : MonoBehaviour
     {
         if(transform.position.x == row1X && notesQueue1.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue1.Peek().gameObject.transform.GetChild(0).gameObject;
 
         }
         else if (transform.position.x == row2X && notesQueue2.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue2.Peek().gameObject.transform.GetChild(0).gameObject;
         }
         else if (transform.position.x == row3X && notesQueue3.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue3.Peek().gameObject.transform.GetChild(0).gameObject;
         }
         else if(transform.position.x == row4X && notesQueue4.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue4.Peek().gameObject.transform.GetChild(0).gameObject;
         }
         else if(transform.position.x == row5X && notesQueue5.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue5.Peek().gameObject.transform.GetChild(0).gameObject;
         }
         else if(transform.position.x == row6X && notesQueue6.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue6.Peek().gameObject.transform.GetChild(0).gameObject;
         }
         else if(transform.position.x == row7X && notesQueue7.Count > 0)
         {
-            noteItself = noteContainer.transform.GetChild(0).gameObject;
+            //noteItself = noteContainer.transform.GetChild(0).gameObject;
+            noteItself = notesQueue7.Peek().gameObject.transform.GetChild(0).gameObject;
         }
         else
         {
             noteItself = null;
         }
         
+    }
+
+    void setNoteContainerAsTheLowestNoteContainer()
+    {
+        if (transform.position.x == row1X && notesQueue1.Count > 0)
+        {
+            noteContainer = notesQueue1.Peek().gameObject;
+        }
+        else if (transform.position.x == row2X && notesQueue2.Count > 0)
+        {
+            noteContainer = notesQueue2.Peek().gameObject;
+        }
+        else if (transform.position.x == row3X && notesQueue3.Count > 0)
+        {
+            noteContainer = notesQueue3.Peek().gameObject;
+        }
+        else if (transform.position.x == row4X && notesQueue4.Count > 0)
+        {
+            noteContainer = notesQueue4.Peek().gameObject;
+        }
+        else if (transform.position.x == row5X && notesQueue5.Count > 0)
+        {
+            noteContainer = notesQueue5.Peek().gameObject;
+        }
+        else if (transform.position.x == row6X && notesQueue6.Count > 0)
+        {
+            noteContainer = notesQueue6.Peek().gameObject;
+        }
+        //else if (transform.position.x == row7X && notesQueue7.Count > 0)
+        //{
+
+        //}
+        else
+        {
+            noteContainer = null;
+        }
     }
 }
 
