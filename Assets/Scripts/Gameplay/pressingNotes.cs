@@ -80,21 +80,7 @@ public class pressingNotes : MonoBehaviour
             //noteContainer = noteItself.transform.parent.gameObject;
             //addToQueue();   //uaktywnij gdy będziesz się zabierał za bara. 2 powyższe linijki także zrób na wzór normalnych nutek
         }
-        /*
-        else if (col.tag == "Note")
-        {
-            Debug.Log("onTriggerEnter: note");
-            notesList.AddLast(col.gameObject);
-            isActive = true;
-            noteItself = notesList.First.Value.gameObject;
-            noteContainer = noteItself.transform.parent.gameObject;
-            addToQueue();
-        }
-        */
-        else
-        {
-            Debug.Log("onTriggerEnter: else");
-        }
+
     }
 
     private void OnTriggerExit(Collider col)
@@ -194,7 +180,7 @@ public class pressingNotes : MonoBehaviour
             }
             else
             {
-                isActive = false;
+                //isActive = false;
                
             }
 
@@ -208,7 +194,7 @@ public class pressingNotes : MonoBehaviour
             }
             else
             {
-                isActive = false;
+                //isActive = false;
                 
             }
         }
@@ -221,7 +207,7 @@ public class pressingNotes : MonoBehaviour
             }
             else
             {
-                isActive = false;
+                //isActive = false;
 
             }
         }
@@ -234,7 +220,7 @@ public class pressingNotes : MonoBehaviour
             }
             else
             {
-                isActive = false;
+                //isActive = false;
 
             }
         }
@@ -247,7 +233,7 @@ public class pressingNotes : MonoBehaviour
             }
             else
             {
-                isActive = false;
+               // isActive = false;
 
             }
         }
@@ -260,7 +246,7 @@ public class pressingNotes : MonoBehaviour
             }
             else
             {
-                isActive = false;
+                //isActive = false;
             }
         }
         else if (noteContainer.GetComponent<noteClass>().keyNumber == 7)
@@ -282,65 +268,94 @@ public class pressingNotes : MonoBehaviour
         if(notesQueue1.Count > 0)
         {
             notesQueue1.Peek().GetComponent<note>().isTheLowest = true;
+            if(gameObject.transform.position.x == row1X)
+            {
+                isActive = true;
+            }
+            
         }
         else
         {
-            isActive = false;
+            //isActive = false;
             
             
         }
         if (notesQueue2.Count > 0)
         {
             notesQueue2.Peek().GetComponent<note>().isTheLowest = true;
+            if (gameObject.transform.position.x == row2X)
+            {
+                isActive = true;
+            }
         }
         else
         {
-            isActive = false;
+            //isActive = false;
             
         }
         if (notesQueue3.Count > 0)
         {
             notesQueue3.Peek().GetComponent<note>().isTheLowest = true;
+            if (gameObject.transform.position.x == row3X)
+            {
+                isActive = true;
+            }
         }
         else
         {
-            isActive = false;
+            //isActive = false;
             
         }
         if (notesQueue4.Count > 0)
         {
             notesQueue4.Peek().GetComponent<note>().isTheLowest = true;
+            if (gameObject.transform.position.x == row4X)
+            {
+                isActive = true;
+            }
         }
         else
         {
-            isActive = false;
+            //isActive = false;
             
         }
         if (notesQueue5.Count > 0)
         {
             notesQueue5.Peek().GetComponent<note>().isTheLowest = true;
+            if (gameObject.transform.position.x == row5X)
+            {
+                isActive = true;
+            }
         }
         else
         {
-            isActive = false;
+            //isActive = false;
             
         }
         if (notesQueue6.Count > 0)
         {
             notesQueue6.Peek().GetComponent<note>().isTheLowest = true;
+            if (gameObject.transform.position.x == row6X)
+            {
+                isActive = true;
+            }
         }
         else
         {
-            isActive = false;
+            //isActive = false;
            
         }
         if (notesQueue7.Count > 0)
         {
             notesQueue7.Peek().GetComponent<note>().isTheLowest = true;
+            if (gameObject.transform.position.x == row7X)
+            {
+                isActive = true;
+            }
         }
         else
         {
-            isActive = false;
+            //isActive = false;
             
         }
     }
