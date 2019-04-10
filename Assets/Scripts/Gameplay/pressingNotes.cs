@@ -99,12 +99,14 @@ public class pressingNotes : MonoBehaviour
     }
     void addToQueue()
     {
+
         
+
             if (noteContainer.GetComponent<noteClass>().keyNumber == 1)
             {
                 notesQueue1.Enqueue(noteContainer);
             Debug.Log("added to notesQueue1");
-            noteContainer
+            
                 //noteItself = noteContainer.transform.GetChild(0).gameObject;
             }
             else if (noteContainer.GetComponent<noteClass>().keyNumber == 2)
@@ -486,6 +488,44 @@ public class pressingNotes : MonoBehaviour
     void destroyNote()
     {
         
+    }
+
+    void createQueues()
+    {
+        GameObject[] allNotes = GameObject.FindGameObjectsWithTag("noteContainer");
+        foreach (var nutkowyKontener in allNotes)
+        {
+            if(nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 1)
+            {
+                 notesQueue1.Enqueue(nutkowyKontener);
+            }
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 2)
+            {
+                notesQueue2.Enqueue(nutkowyKontener);
+            }
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 3)
+            {
+                notesQueue3.Enqueue(nutkowyKontener);
+            }
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 4)
+            {
+                notesQueue4.Enqueue(nutkowyKontener);
+            }
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 5)
+            {
+                notesQueue5.Enqueue(nutkowyKontener);
+            }
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 6)
+            {
+                notesQueue6.Enqueue(nutkowyKontener);
+            }
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 7)
+            {
+                //notesQueue7.Enqueue(nutkowyKontener);
+            }
+        }
+
+        //(noteContainer.GetComponent<noteClass>().keyNumber == 5)
     }
 }
 
