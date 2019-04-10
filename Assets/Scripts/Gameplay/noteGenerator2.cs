@@ -215,7 +215,7 @@ FULL BEAT: 12.09
             }
             else
             {
-                newNoteContainer.tag = "noteContainerBar";
+                newNoteContainer.tag = "noteContainer";
 
                 GameObject newBarNote = Instantiate(noteBar, new Vector3(0, 0, 0), barQuaternion);
                 newBarNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newBarNote

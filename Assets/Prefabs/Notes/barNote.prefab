@@ -177,3 +177,5 @@ MonoBehaviour:
   noteVelocity: 1.75
   isTheLowest: 0
   isActive: 0
+  songAudio: {fileID: 0}
+  actualTimeSamples: 0
