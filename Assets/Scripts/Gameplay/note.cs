@@ -24,8 +24,8 @@ public class note : MonoBehaviour {
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        ZPosToActive = 0f;
-        ZPosToDestroy = -24f;
+        ZPosToActive = -8f;
+        ZPosToDestroy = -28f;
        songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
     }
     
@@ -53,6 +53,46 @@ public class note : MonoBehaviour {
         if (gameObject.transform.position.z < ZPosToDestroy)
         {
             isActive = false;
+
+            if(gameObject.GetComponent<noteClass>().keyNumber == 1)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
+                Destroy(gameObject);
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
+                Destroy(gameObject);
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
+                Destroy(gameObject);
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
+                Destroy(gameObject);
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
+                Destroy(gameObject);
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
+                Destroy(gameObject);
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
+            {
+                //GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.LogError("Error: nutka nie mo¿e zostaæ usuniêta, gdy¿ jej atrybut keyNumber nie mieœci siê w przedziale 1-7");
+            }
         }
     }
 }
