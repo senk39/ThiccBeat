@@ -329,7 +329,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 105
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -564,7 +563,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 97
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -1179,10 +1177,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d8386b6f965d149bd7f20bf746c5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteItself:
-  - {fileID: 0}
-  noteContainer:
-  - {fileID: 0}
+  n1: {fileID: 0}
+  n2: {fileID: 0}
+  n3: {fileID: 0}
+  n4: {fileID: 0}
+  n5: {fileID: 0}
+  n6: {fileID: 0}
+  n7: {fileID: 0}
+  nc1: {fileID: 0}
+  nc2: {fileID: 0}
+  nc3: {fileID: 0}
+  nc4: {fileID: 0}
+  nc5: {fileID: 0}
+  nc6: {fileID: 0}
+  nc7: {fileID: 0}
   keyElement1: {fileID: 72484507}
   keyElement2: {fileID: 639709409}
   keyElement3: {fileID: 1006956682}
@@ -2273,7 +2281,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 119
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3145,7 +3152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 100
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3569,7 +3575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 108
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3754,7 +3759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 106
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -4869,13 +4873,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043204784}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 333312584884a68429d4215bdd2c703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   key: 103
-  isActive: 0
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}

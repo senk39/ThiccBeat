@@ -22,7 +22,7 @@ public class pressingNotes : MonoBehaviour
     private const float row4X = 1.1f;
     private const float row5X = 3.1f;
     private const float row6X = 5.1f;
-    //private const float row7X = 2.67f;
+    private const float row7X = 2.67f;
 
     const float ActiveStart = -8f;
     const float ActiveEnd = -30f;
@@ -33,6 +33,7 @@ public class pressingNotes : MonoBehaviour
     GameObject note4;
     GameObject note5;
     GameObject note6;
+    GameObject note7;
 
 
     void Awake()
@@ -101,52 +102,95 @@ public class pressingNotes : MonoBehaviour
             note6 = null;
         }
 
+        if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Count > 0)
+        {
+            note7 = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Peek();
+        }
+        else
+        {
+            note7 = null;
+        }
+
         setNoteContainer();
         setNote();
 
 
         if (Input.GetKeyDown(key) && note1.GetComponent<note>().isActive)
         {
-            doWhenKeyPressedAndNoteIsInPressablePlace();
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
-            Destroy(note1);
+            if(key == KeyCode.A && transform.position.x == row1X)
+            {
+                Debug.Log("A");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
+                Destroy(note1);
+            }
         }
 
         if (Input.GetKeyDown(key) && note2.GetComponent<note>().isActive)
         {
-            doWhenKeyPressedAndNoteIsInPressablePlace();
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
-            Destroy(note2);
+            if (key == KeyCode.W && transform.position.x == row2X)
+            {
+                Debug.Log("W");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
+                Destroy(note2);
+            }
         }
 
         if (Input.GetKeyDown(key) && note3.GetComponent<note>().isActive)
         {
-            doWhenKeyPressedAndNoteIsInPressablePlace();
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
-            Destroy(note3);
+            if (key == KeyCode.D && transform.position.x == row3X)
+            {
+                Debug.Log("D");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
+                Destroy(note3);
+            }
         }
 
         if (Input.GetKeyDown(key) && note4.GetComponent<note>().isActive)
         {
-            doWhenKeyPressedAndNoteIsInPressablePlace();
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
-            Destroy(note4);
+            if (key == KeyCode.J && transform.position.x == row4X)
+            {
+                Debug.Log("j");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
+                Destroy(note4);
+            }
         }
 
         if (Input.GetKeyDown(key) && note5.GetComponent<note>().isActive)
         {
-            doWhenKeyPressedAndNoteIsInPressablePlace();
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
-            Destroy(note5);
+            if (key == KeyCode.I && transform.position.x == row5X)
+            {
+                Debug.Log("i");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
+                Destroy(note5);
+            }
         }
 
         if (Input.GetKeyDown(key) && note6.GetComponent<note>().isActive)
         {
-            doWhenKeyPressedAndNoteIsInPressablePlace();
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
-            Destroy(note6);
+            if (key == KeyCode.L && transform.position.x == row6X)
+            {
+                Debug.Log("L");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
+                Destroy(note6);
+            }
         }
 
+        if (Input.GetKeyDown(key) && note7.GetComponent<note>().isActive)
+        {
+            if (key == KeyCode.G && transform.position.x == row7X)
+            {
+                Debug.Log("G");
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
+                Destroy(note7);
+            }
+        }
 
 
 
@@ -194,9 +238,9 @@ public class pressingNotes : MonoBehaviour
             }
         else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
             {
-            //GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
             //Destroy(gameObject); ma być destroy nutka
-            }
+        }
         else
             {
                 Debug.LogError("Error: nutka nie może zostać usunięta, gdyż jej atrybut keyNumber nie mieści się w przedziale 1-7");
@@ -233,6 +277,11 @@ public class pressingNotes : MonoBehaviour
         else if (transform.position.x == row6X && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Count > 0)
         {
             noteItself = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Peek().transform.GetChild(0).gameObject;
+
+        }
+        else if (transform.position.x == row7X && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Count > 0)
+        {
+            noteItself = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Peek().transform.GetChild(0).gameObject;
 
         }
         else
@@ -272,6 +321,11 @@ public class pressingNotes : MonoBehaviour
             noteContainer = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Peek();
 
         }
+        else if (transform.position.x == row7X && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Count > 0)
+        {
+            noteContainer = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Peek();
+
+        }
         else
         {
             noteContainer = null;
@@ -280,7 +334,6 @@ public class pressingNotes : MonoBehaviour
 
     void doWhenKeyPressedAndNoteIsInPressablePlace()
     {
-        Debug.Log("beep");
         incrementCombo();
 
         //RemoveFromQueue();

@@ -86,7 +86,7 @@ public class note : MonoBehaviour {
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
             {
-                //GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
                 Destroy(gameObject);
             }
             else
