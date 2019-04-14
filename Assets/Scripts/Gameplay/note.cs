@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class note : MonoBehaviour {
 
-    public float noteVelocity = 1.75f;
+    public float noteVelocity;
     Rigidbody rb;
 
     bool anyKeyPressedToStart = false;
@@ -18,15 +18,30 @@ public class note : MonoBehaviour {
     public AudioSource songAudio;
     public int actualTimeSamples;
 
+    public float offset;
+    public float speed;
+    public float bpm;
+    int selectedSong;
 
     //GetComponent<AudioSource>()
 
     void Awake()
     {
+        selectedSong = SongListV2.selectedSongByUser;
+
+
         rb = GetComponent<Rigidbody>();
         ZPosToActive = -8f;
         ZPosToDestroy = -28f;
-       songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
+        songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
+
+        noteVelocity = 1.8f;  // faktyczna prêdkoœæ poruszania siê nut, odwrotnie proporcjonalna do speed
+        speed = 29500; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
+
+        offset = 550f;
+        bpm = SongListV2.allSongs[selectedSong].BPM;
+
+        //LICZNIK KTÓRY ODMIERZA RUCH NUT NIE MO¯E BAZOWAÆ NA SONGAUDIO.TIMESAMPLES BO NUTY MUSZ¥ MÓC SIÊ PORUSZAÆ ZANIM ODGRYWANA JEST MUZYKA!
     }
     
     void Update() {
@@ -38,7 +53,7 @@ public class note : MonoBehaviour {
         
         if (pause.isGamePaused == false && anyKeyPressedToStart == true)
         {
-            if(songAudio.timeSamples/200 > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+            if((songAudio.timeSamples*((1/speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
             {
                 rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
                 actualTimeSamples = songAudio.timeSamples;
@@ -58,7 +73,7 @@ public class note : MonoBehaviour {
             dequeue();
 
             Destroy(gameObject);
-
+            
         }
     }
 

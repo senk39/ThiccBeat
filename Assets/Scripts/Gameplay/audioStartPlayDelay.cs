@@ -25,7 +25,7 @@ public class audioStartPlayDelay : MonoBehaviour {
             if (Input.anyKeyDown)
             {
                 anyKeyPressedToStart = true;
-                songAudio.PlayDelayed(3);
+                songAudio.Play();
 
             }
         }

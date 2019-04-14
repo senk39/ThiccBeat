@@ -103,7 +103,6 @@ FULL BEAT: 12.09
 
     private const float rowZ = 124f;
 
-    public float oneMidiLengthPerBpm;
 
     void Awake()
     {
@@ -112,7 +111,6 @@ FULL BEAT: 12.09
         selectedSong = SongListV2.selectedSongByUser;
 
         bpm = SongListV2.allSongs[selectedSong].BPM;
-        oneMidiLengthPerBpm = oneMidiLength / bpm;
 
         audioSongSource = GetComponent<AudioSource>();
         audioSong = Resources.Load<AudioClip>("Maps/" + selectedSong + "/audio");
