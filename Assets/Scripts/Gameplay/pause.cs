@@ -16,7 +16,7 @@ public class pause : MonoBehaviour {
     public GameObject button4;
     public GameObject button5;
     public GameObject button6;
-    public GameObject buttonBar;
+    public GameObject button7;
 
     private KeyCode tempKey1;
     private KeyCode tempKey2;
@@ -24,7 +24,7 @@ public class pause : MonoBehaviour {
     private KeyCode tempKey4;
     private KeyCode tempKey5;
     private KeyCode tempKey6;
-    private KeyCode tempKeySpecial;
+    private KeyCode tempKey7;
 
     public Button firstButton;
 
@@ -37,7 +37,7 @@ public class pause : MonoBehaviour {
          tempKey4 = button4.GetComponent<pressingNotes>().key;
          tempKey5 = button5.GetComponent<pressingNotes>().key;
          tempKey6 = button6.GetComponent<pressingNotes>().key;
-         tempKeySpecial = buttonBar.GetComponent<pressingNotesBar>().key;
+         tempKey7 = button7.GetComponent<pressingNotes>().key;
     }
 
     void Awake()
@@ -102,7 +102,7 @@ public class pause : MonoBehaviour {
         button4.GetComponent<pressingNotes>().key = KeyCode.None;
         button5.GetComponent<pressingNotes>().key = KeyCode.None;
         button6.GetComponent<pressingNotes>().key = KeyCode.None;
-        buttonBar.GetComponent<pressingNotesBar>().key = KeyCode.None;
+        button7.GetComponent<pressingNotes>().key = KeyCode.None;
 
         button1.GetComponent<pressedKeyColor>().enabled = false;
         button2.GetComponent<pressedKeyColor>().enabled = false;
@@ -110,7 +110,7 @@ public class pause : MonoBehaviour {
         button4.GetComponent<pressedKeyColor>().enabled = false;
         button5.GetComponent<pressedKeyColor>().enabled = false;
         button6.GetComponent<pressedKeyColor>().enabled = false;
-        buttonBar.GetComponent<pressedKeyColor>().enabled = false;
+        button7.GetComponent<pressedKeyColor>().enabled = false;
     }
 
     void enablingIndicators()
@@ -121,7 +121,7 @@ public class pause : MonoBehaviour {
         button4.GetComponent<pressingNotes>().key = tempKey4;
         button5.GetComponent<pressingNotes>().key = tempKey5;
         button6.GetComponent<pressingNotes>().key = tempKey6;
-        buttonBar.GetComponent<pressingNotesBar>().key = tempKeySpecial;
+        button7.GetComponent<pressingNotes>().key = tempKey7;
 
         button1.GetComponent<pressedKeyColor>().enabled = true;
         button2.GetComponent<pressedKeyColor>().enabled = true;
@@ -129,7 +129,7 @@ public class pause : MonoBehaviour {
         button4.GetComponent<pressedKeyColor>().enabled = true;
         button5.GetComponent<pressedKeyColor>().enabled = true;
         button6.GetComponent<pressedKeyColor>().enabled = true;
-        buttonBar.GetComponent<pressedKeyColor>().enabled = true;
+        button7.GetComponent<pressedKeyColor>().enabled = true;
     }
 
 

@@ -105,7 +105,7 @@ FULL BEAT: 12.09
     private const float row4X = 1.1f;
     private const float row5X = 3.1f;
     private const float row6X = 5.1f;
-    private const float row7X = 2.67f;
+    private const float row7X = 2.8f;
     private const float rowY = 0.35f;
 
     public float oneMidiLengthPerBpm;

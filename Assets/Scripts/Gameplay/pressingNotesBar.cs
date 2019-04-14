@@ -17,7 +17,7 @@ public class pressingNotesBar : MonoBehaviour
 
     public Queue<GameObject> notesQueue7 = new Queue<GameObject>();
 
-    private const float row7X = 2.67f;
+    private const float row7X = 2.8f;
 
 
     void Update()
@@ -45,7 +45,7 @@ public class pressingNotesBar : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "noteContainer" && col.transform.position.x == 2.67f)
+        if (col.tag == "noteContainer" && col.transform.position.x == 2.8f)
         {
 
             noteContainer = col.gameObject;

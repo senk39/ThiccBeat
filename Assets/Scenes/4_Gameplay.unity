@@ -4041,7 +4041,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: cef0fe8563e43d84195e25a73de13476, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8157825
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef0fe8563e43d84195e25a73de13476, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4148,7 +4148,7 @@ MonoBehaviour:
   button4: {fileID: 1309997167}
   button5: {fileID: 45781416}
   button6: {fileID: 1253703857}
-  buttonBar: {fileID: 2043204784}
+  button7: {fileID: 2043204784}
   firstButton: {fileID: 978160599}
 --- !u!4 &1648026313
 Transform:
@@ -4916,24 +4916,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.4577048, y: 0.34634566, z: 3.4}
   m_Center: {x: -0.33045614, y: 0.025, z: 0.009657644}
---- !u!114 &2043204792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2043204784}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8702797a8d27414abc133a8a4a27975, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 103
-  isActive: 0
-  isHolding: 0
-  playerScoreContainer: {fileID: 427617157}
-  playerComboContainer: {fileID: 1160227621}
-  noteItself: {fileID: 0}
-  noteContainer: {fileID: 0}
 --- !u!1 &2103855487
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class lastNote : MonoBehaviour
     private const float row4X = 1.1f;
     private const float row5X = 3.1f;
     private const float row6X = 5.1f;
-    private const float row7X = 2.67f;
+    private const float row7X = 2.8f;
 
    // const float ActiveStart = -8f;
    // const float ActiveEnd = -30f;
