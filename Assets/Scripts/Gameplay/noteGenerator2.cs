@@ -128,16 +128,18 @@ FULL BEAT: 12.09
 
 
         textContent = fullMap.text;
-
         string[] textContentSplit = textContent.Split(new char[] { 'x' });
+
+
 
         for (int i = 0; i < textContentSplit.Length - 1; i++)
         {
-            //Debug.Log(textContentSplit[i+1]);  //GENERUJE NUTKI OK MORDO
+
+            Debug.Log(textContentSplit[i+1]);  //GENERUJE NUTKI OK MORDO
             List<string> eachNoteSplit = textContentSplit[i + 1].Split(new char[] { ' ', '\n' }).ToList<string>();
             //120 On n=5
             //132 Off n=5
-       
+               
             eachNoteSplit.RemoveAt(0);
             eachNoteSplit.RemoveAt(1);
             eachNoteSplit.RemoveAt(3);
