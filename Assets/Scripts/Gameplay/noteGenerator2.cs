@@ -132,18 +132,33 @@ FULL BEAT: 12.09
 
 
 
-        for (int i = 0; i < textContentSplit.Length - 1; i++)
+        for (int i = 0; i < textContentSplit.Length - 2; i++)
         {
 
-            Debug.Log(textContentSplit[i+1]);  //GENERUJE NUTKI OK MORDO
+            //Debug.Log(textContentSplit[i+1]);  //GENERUJE NUTKI OK MORDO
             List<string> eachNoteSplit = textContentSplit[i + 1].Split(new char[] { ' ', '\n' }).ToList<string>();
             //120 On n=5
             //132 Off n=5
-               
-            eachNoteSplit.RemoveAt(0);
-            eachNoteSplit.RemoveAt(1);
-            eachNoteSplit.RemoveAt(3);
-            eachNoteSplit.RemoveAt(1);
+            try
+            {
+
+                eachNoteSplit.RemoveAt(0);
+               // Debug.Log(eachNoteSplit[1]);
+                eachNoteSplit.RemoveAt(1);
+               // Debug.Log(eachNoteSplit[3]);
+                eachNoteSplit.RemoveAt(3);
+                //Debug.Log(eachNoteSplit[1]);
+                eachNoteSplit.RemoveAt(1);
+                //Debug.Log("[0]: " + eachNoteSplit[0]);  //GENERUJE NUTKI OK MORDO
+                //Debug.Log("[1]: " + eachNoteSplit[1]);  //GENERUJE NUTKI OK MORDO
+                //Debug.Log("[2]: " + eachNoteSplit[2]);  //GENERUJE NUTKI OK MORDO
+            }
+            catch (Exception)
+            {
+                Debug.LogError("nie udalo sie zmapowac.");
+                throw;
+            }
+            
 
             // teraz wygląda następująco: 120 | 132 | n=5
 
