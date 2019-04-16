@@ -28,20 +28,23 @@ public class pause : MonoBehaviour {
 
     public Button firstButton;
 
+    public AudioSource songAudio;
+
     void Start () {
         pauseMenuUI.SetActive(false);
 
-         tempKey1 = button1.GetComponent<pressingNotes>().key;
-         tempKey2 = button2.GetComponent<pressingNotes>().key;
-         tempKey3 = button3.GetComponent<pressingNotes>().key;
-         tempKey4 = button4.GetComponent<pressingNotes>().key;
-         tempKey5 = button5.GetComponent<pressingNotes>().key;
-         tempKey6 = button6.GetComponent<pressingNotes>().key;
-         tempKey7 = button7.GetComponent<pressingNotes>().key;
+         tempKey1 = button1.GetComponent<pressingNotes1>().key;
+         tempKey2 = button2.GetComponent<pressingNotes2>().key;
+         tempKey3 = button3.GetComponent<pressingNotes3>().key;
+         tempKey4 = button4.GetComponent<pressingNotes4>().key;
+         tempKey5 = button5.GetComponent<pressingNotes5>().key;
+         tempKey6 = button6.GetComponent<pressingNotes6>().key;
+         tempKey7 = button7.GetComponent<pressingNotes7>().key;
     }
 
     void Awake()
     {
+        songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
         isGamePaused = false;
     }
 
@@ -53,7 +56,7 @@ public class pause : MonoBehaviour {
             pauseMenuUI.SetActive(false);
         }
 
-        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.O)) && isGamePaused == false)
+        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.O)) && isGamePaused == false && songAudio.timeSamples > 0)
         {
             enterPause();
         }
@@ -67,8 +70,6 @@ public class pause : MonoBehaviour {
 
     void enterPause()
     {
-        //firstButton = GameObject.Find("btn_RESUME").GetComponent<Button>();
-
         firstButton.Select();
 
         pauseMenuUI.SetActive(true);
@@ -76,12 +77,6 @@ public class pause : MonoBehaviour {
         GameObject.Find("Song Player").GetComponent<AudioSource>().Pause();
         disablingIndicators();
         Time.timeScale = 0.001f;
-
-
-
-
-
-
     }
 
     public void exitPause()
@@ -96,13 +91,13 @@ public class pause : MonoBehaviour {
 
     void disablingIndicators()
     {
-        button1.GetComponent<pressingNotes>().key = KeyCode.None;
-        button2.GetComponent<pressingNotes>().key = KeyCode.None;
-        button3.GetComponent<pressingNotes>().key = KeyCode.None;
-        button4.GetComponent<pressingNotes>().key = KeyCode.None;
-        button5.GetComponent<pressingNotes>().key = KeyCode.None;
-        button6.GetComponent<pressingNotes>().key = KeyCode.None;
-        button7.GetComponent<pressingNotes>().key = KeyCode.None;
+        button1.GetComponent<pressingNotes1>().key = KeyCode.None;
+        button2.GetComponent<pressingNotes2>().key = KeyCode.None;
+        button3.GetComponent<pressingNotes3>().key = KeyCode.None;
+        button4.GetComponent<pressingNotes4>().key = KeyCode.None;
+        button5.GetComponent<pressingNotes5>().key = KeyCode.None;
+        button6.GetComponent<pressingNotes6>().key = KeyCode.None;
+        button7.GetComponent<pressingNotes7>().key = KeyCode.None;
 
         button1.GetComponent<pressedKeyColor>().enabled = false;
         button2.GetComponent<pressedKeyColor>().enabled = false;

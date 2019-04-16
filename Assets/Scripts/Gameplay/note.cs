@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class note : MonoBehaviour {
@@ -16,10 +18,13 @@ public class note : MonoBehaviour {
     bool move = false;
 
     public AudioSource songAudio;
-    public int actualTimeSamples;
+    //public int actualTimeSamples;
+
+    private float zPos;
 
     public float offset;
     public float speed;
+    public float speed2;
     public float bpm;
     int selectedSong;
 
@@ -29,19 +34,25 @@ public class note : MonoBehaviour {
     {
         selectedSong = SongListV2.selectedSongByUser;
 
-
         rb = GetComponent<Rigidbody>();
         ZPosToActive = -8f;
         ZPosToDestroy = -28f;
         songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
 
-        noteVelocity = 1.8f;  // faktyczna prêdkoœæ poruszania siê nut, odwrotnie proporcjonalna do speed
+        //noteVelocity = 1.8f;  // faktyczna prêdkoœæ poruszania siê nut, odwrotnie proporcjonalna do speed
         speed = 29500; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
 
-        offset = 550f;
+        offset = 840f;
         bpm = SongListV2.allSongs[selectedSong].BPM;
 
+
+        noteVelocity = 14f;
         //LICZNIK KTÓRY ODMIERZA RUCH NUT NIE MO¯E BAZOWAÆ NA SONGAUDIO.TIMESAMPLES BO NUTY MUSZ¥ MÓC SIÊ PORUSZAÆ ZANIM ODGRYWANA JEST MUZYKA!
+    }
+
+    void Start()
+    {
+        zPos = rb.position.z;
     }
     
     void Update() {
@@ -50,30 +61,41 @@ public class note : MonoBehaviour {
         {
             anyKeyPressedToStart = true;
         }
-        
-        if (pause.isGamePaused == false && anyKeyPressedToStart == true)
-        {
-            if((songAudio.timeSamples*((1/speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
-            {
-                rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
-                actualTimeSamples = songAudio.timeSamples;
-            }
-        }
+       
 
         if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
         {
             isActive = true;
         }
-
-        if (gameObject.transform.position.z < ZPosToDestroy)
+        else if (gameObject.transform.position.z < ZPosToDestroy)
         {
             isActive = false;
             resetCombo();
-
+            isTheLowest = false;
             dequeue();
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
             
+        }
+    }
+
+    void FixedUpdate()
+    {
+        //Debug.Log(Time.deltaTime); - 0,011111
+        if (pause.isGamePaused == false && anyKeyPressedToStart == true)
+        {
+            if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+            {
+                //rb.position.z  noteVelocity;
+
+                //rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
+                //Vector3 movement = new Vector3(0, 0, (-noteVelocity * Time.deltaTime));
+                Vector3 movement = new Vector3(0, 0, 0);
+                rb.MovePosition(transform.position - transform.forward / 9 * noteVelocity);
+                // actualTimeSamples = songAudio.timeSamples;
+                //transform.position + transform.forward * Time.deltaTime
+            }
         }
     }
 
@@ -118,4 +140,5 @@ public class note : MonoBehaviour {
             Debug.LogError("Error: nutka nie mo¿e zostaæ usuniêta, gdy¿ jej atrybut keyNumber nie mieœci siê w przedziale 1-7");
         }
     }
+    
 }

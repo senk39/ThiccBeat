@@ -28,6 +28,7 @@ public class pressAnyNoteKeyToStartFadeAway : MonoBehaviour {
 
     void destroyTextObject()
     {
+        //GameObject.Find("PRESS ANY NOTE KEY TO START").SetActive(false);
         Destroy(GameObject.Find("PRESS ANY NOTE KEY TO START"));
     }
     void playFadeInAnim()

@@ -124,7 +124,9 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
-                    Destroy(note1);
+                    
+                    note1.SetActive(false);
+                    //Destroy(note1);
                 }
             }
         }
@@ -138,7 +140,8 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
-                    Destroy(note2);
+                    note2.SetActive(false);
+                    //Destroy(note2);
                 }
             }
         }
@@ -153,7 +156,8 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
-                    Destroy(note3);
+                    note3.SetActive(false);
+                    //Destroy(note3);
                 }
             }
         }
@@ -168,7 +172,8 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
-                    Destroy(note4);
+                    note4.SetActive(false);
+                    //Destroy(note4);
                 }
             }
         }
@@ -184,7 +189,8 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
-                    Destroy(note5);
+                    note5.SetActive(false);
+                    //Destroy(note5);
                 }
             }
         }
@@ -199,7 +205,8 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
-                    Destroy(note6);
+                    note6.SetActive(false);
+                    //Destroy(note6);
                 }
             }
         }
@@ -214,7 +221,8 @@ public class pressingNotes : MonoBehaviour
                     doWhenKeyPressedAndNoteIsInPressablePlace();
 
                     GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
-                    Destroy(note7);
+                    note7.SetActive(false);
+                    //Destroy(note7);
                 }
             }
         }
