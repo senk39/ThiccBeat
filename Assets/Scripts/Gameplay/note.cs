@@ -39,14 +39,13 @@ public class note : MonoBehaviour {
         ZPosToDestroy = -28f;
         songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
 
-        //noteVelocity = 1.8f;  // faktyczna prêdkoœæ poruszania siê nut, odwrotnie proporcjonalna do speed
-        speed = 29500; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
+        noteVelocity = 12f; //prêdkoœæ przemieszczania siê nut - im wiêksza, tym szybciej
+        speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
 
-        offset = 840f;
+        offset = 893f;
         bpm = SongListV2.allSongs[selectedSong].BPM;
 
 
-        noteVelocity = 14f;
         //LICZNIK KTÓRY ODMIERZA RUCH NUT NIE MO¯E BAZOWAÆ NA SONGAUDIO.TIMESAMPLES BO NUTY MUSZ¥ MÓC SIÊ PORUSZAÆ ZANIM ODGRYWANA JEST MUZYKA!
     }
 
@@ -60,6 +59,9 @@ public class note : MonoBehaviour {
         if (Input.anyKeyDown)
         {
             anyKeyPressedToStart = true;
+
+            //Invoke("pauses", 4f);
+            
         }
        
 
@@ -103,6 +105,11 @@ public class note : MonoBehaviour {
     {
         //GameObject.Find("Score").GetComponent<playerScore>().playerCurrentScore += 200;
         GameObject.Find("Combo").GetComponent<playerCombo>().currentCombo = 0;
+    }
+
+    void pauses()
+    {
+        Debug.Break();
     }
 
     void dequeue()
