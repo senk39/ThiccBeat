@@ -131,12 +131,40 @@ public class SongListV2 : MonoBehaviour
         }
     }
 
+
+
     // START TWORZENIA UTWORÓW
     static Song stalemate = new Song(
         0, "Stalemate", "P. Dawidziak", "Yuzuki Yukari", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 322, 1011, 3, 7);
 
     static Song comfyplace = new Song(
-        1, "Comfy Place", "P. Dawidziak", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 4, 9);
+        1, "Comfy Place", "P. Dawidziak", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 3, 6);
+
+    static Song aiaiai = new Song(
+        2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "Electropop", "Virtual Youtuber", 128, "3:13", 301, 672, 2, 10);
+
+    static Song test60 = new Song(
+        3, "TEST60", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 60, "3:13", 301, 672, 2, 10);
+
+    static Song test80 = new Song(
+        4, "TEST80", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 80, "3:13", 301, 672, 2, 10);
+
+    static Song test120 = new Song(
+        5, "TEST120", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 120, "3:13", 301, 672, 2, 10);
+
+    static Song test150 = new Song(
+        6, "TEST150", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 150, "3:13", 301, 672, 2, 10);
+
+    static Song test180 = new Song(
+        7, "TEST180", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 180, "3:13", 301, 672, 2, 10);
+
+    static Song test205 = new Song(
+        8, "TEST205", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 205, "3:13", 301, 672, 2, 10);
+
+    static Song test230 = new Song(
+        9, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+
+
 
     void Awake()
     {
@@ -163,13 +191,22 @@ public class SongListV2 : MonoBehaviour
         changeSong();
         changeDifficulty();
         backToMainMenu();
-        chooseSongAndMoveToGame();
+        chooseSongAndMoveToGame();  
     }
 
     void addingSongsToList()
     {
         allSongs.Add(stalemate);
         allSongs.Add(comfyplace);
+        allSongs.Add(aiaiai);
+        allSongs.Add(test60);
+        allSongs.Add(test80);
+        allSongs.Add(test120);
+        allSongs.Add(test150);
+        allSongs.Add(test180);
+        allSongs.Add(test205);
+        allSongs.Add(test230);
+     
     }
 
     void creatingSelectedSongEntryInUI(int selectedSongByUser)

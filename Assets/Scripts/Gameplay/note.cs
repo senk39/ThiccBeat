@@ -42,11 +42,25 @@ public class note : MonoBehaviour {
         noteVelocity = 12f; //prêdkoœæ przemieszczania siê nut - im wiêksza, tym szybciej
         speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
 
-        offset = 907f;
+        offset = 600f;
         bpm = SongListV2.allSongs[selectedSong].BPM;
 
 
-        //LICZNIK KTÓRY ODMIERZA RUCH NUT NIE MO¯E BAZOWAÆ NA SONGAUDIO.TIMESAMPLES BO NUTY MUSZ¥ MÓC SIÊ PORUSZAÆ ZANIM ODGRYWANA JEST MUZYKA!
+        //PARAMETRY PASUJ¥CE DO 180-187 BPM IDEALNIE:
+        //noteVelocity = 12f;
+        //speed = 27560;
+        //offset = 907f;
+
+        //907f/187*bpm; - taki offsset nie dzia³a
+
+        //offset 60 BPM: 295f
+        //offset 80 BPM: 
+        //offset 120 BPM: 600f
+        //offset 150 BPM: 
+        //offset 180 = 907f;
+        //offset 205 = 
+        //offset 230 = 
+
     }
 
     void Start()
@@ -89,14 +103,9 @@ public class note : MonoBehaviour {
         {
             if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
             {
-                //rb.position.z  noteVelocity;
 
-                //rb.velocity = new Vector3(0, 0, (-noteVelocity / Time.deltaTime));
-                //Vector3 movement = new Vector3(0, 0, (-noteVelocity * Time.deltaTime));
                 Vector3 movement = new Vector3(0, 0, 0);
                 rb.MovePosition(transform.position - transform.forward / 9/187*195 * noteVelocity);
-                // actualTimeSamples = songAudio.timeSamples;
-                //transform.position + transform.forward * Time.deltaTime
             }
         }
     }
