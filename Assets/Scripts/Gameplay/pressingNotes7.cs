@@ -66,9 +66,12 @@ public class pressingNotes7 : MonoBehaviour
         
         if (noteContainer.GetComponent<noteClass>().keyNumber == 7 && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Count > 0)
         {
+          //  noteContainer.GetComponent<note>().isMoving = false;
+            noteContainer.GetComponent<note>().enabled = false;
+            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30));
             GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
             //Destroy(gameObject); ma być destroy nutka
-            noteContainer.SetActive(false);
+            //noteContainer.SetActive(false);
         }
         else
         {

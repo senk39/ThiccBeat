@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class SongListV2 : MonoBehaviour
 {
     static public List<Song> allSongs = new List<Song>();
@@ -73,9 +72,6 @@ public class SongListV2 : MonoBehaviour
         public Sprite cover;
 
         public bool isSelectedInMenu;
-
-
-
         public Song()  // KONSTRUKTOR
         {
             index = 0;

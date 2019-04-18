@@ -7,8 +7,6 @@ public class note : MonoBehaviour {
     public float noteVelocity;
     Rigidbody rb;
 
-    bool anyKeyPressedToStart = false;
-
     public bool isTheLowest = false;
 
     public bool isActive = false;
@@ -28,6 +26,10 @@ public class note : MonoBehaviour {
     public float bpm;
     int selectedSong;
 
+    bool dequeueIfTrue = true;
+    public bool isMoving = false;
+
+
     //GetComponent<AudioSource>()
 
     void Awake()
@@ -44,6 +46,7 @@ public class note : MonoBehaviour {
 
         offset = 600f;
         bpm = SongListV2.allSongs[selectedSong].BPM;
+
 
 
         //PARAMETRY PASUJ¥CE DO 180-187 BPM IDEALNIE:
@@ -72,7 +75,7 @@ public class note : MonoBehaviour {
 
         if (Input.anyKeyDown)
         {
-            anyKeyPressedToStart = true;
+            isMoving = true;
 
             //Invoke("pauses", 4f);
             
@@ -90,7 +93,12 @@ public class note : MonoBehaviour {
             isTheLowest = false;
             dequeue();
 
-            gameObject.SetActive(false);
+            isMoving = false;
+            this.enabled = false;
+            //rb.position.Set(200, 0, 0);
+            //PRZENIEÆ
+
+            //gameObject.SetActive(false);
             //Destroy(gameObject);
             
         }
@@ -99,7 +107,7 @@ public class note : MonoBehaviour {
     void FixedUpdate()
     {
         //Debug.Log("bpm: " + bpm);
-        if (pause.isGamePaused == false && anyKeyPressedToStart == true)
+        if (pause.isGamePaused == false && isMoving == true)
         {
             if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
             {
@@ -123,37 +131,41 @@ public class note : MonoBehaviour {
 
     void dequeue()
     {
-        if (gameObject.GetComponent<noteClass>().keyNumber == 1)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
-        {
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
-        }
-        else
-        {
-            Debug.LogError("Error: nutka nie mo¿e zostaæ usuniêta, gdy¿ jej atrybut keyNumber nie mieœci siê w przedziale 1-7");
+        if (dequeueIfTrue == true)
+        {        
+            if (gameObject.GetComponent<noteClass>().keyNumber == 1)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();              
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
+            }
+            else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
+            {
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
+            }
+            else
+            {
+                Debug.LogError("Error: nutka nie mo¿e zostaæ usuniêta, gdy¿ jej atrybut keyNumber nie mieœci siê w przedziale 1-7");
+            }
+            dequeueIfTrue = false;
         }
     }
     
