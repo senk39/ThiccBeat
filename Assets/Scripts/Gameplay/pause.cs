@@ -110,13 +110,13 @@ public class pause : MonoBehaviour {
 
     void enablingIndicators()
     {
-        button1.GetComponent<pressingNotes>().key = tempKey1;
-        button2.GetComponent<pressingNotes>().key = tempKey2;
-        button3.GetComponent<pressingNotes>().key = tempKey3;
-        button4.GetComponent<pressingNotes>().key = tempKey4;
-        button5.GetComponent<pressingNotes>().key = tempKey5;
-        button6.GetComponent<pressingNotes>().key = tempKey6;
-        button7.GetComponent<pressingNotes>().key = tempKey7;
+        button1.GetComponent<pressingNotes1>().key = tempKey1;
+        button2.GetComponent<pressingNotes2>().key = tempKey2;
+        button3.GetComponent<pressingNotes3>().key = tempKey3;
+        button4.GetComponent<pressingNotes4>().key = tempKey4;
+        button5.GetComponent<pressingNotes5>().key = tempKey5;
+        button6.GetComponent<pressingNotes6>().key = tempKey6;
+        button7.GetComponent<pressingNotes7>().key = tempKey7;
 
         button1.GetComponent<pressedKeyColor>().enabled = true;
         button2.GetComponent<pressedKeyColor>().enabled = true;

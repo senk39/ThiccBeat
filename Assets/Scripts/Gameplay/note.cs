@@ -44,7 +44,7 @@ public class note : MonoBehaviour {
         noteVelocity = 12f; //prêdkoœæ przemieszczania siê nut - im wiêksza, tym szybciej
         speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
 
-        offset = 600f;
+        offset = 1153f;
         bpm = SongListV2.allSongs[selectedSong].BPM;
 
 
