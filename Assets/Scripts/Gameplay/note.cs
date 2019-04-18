@@ -41,12 +41,15 @@ public class note : MonoBehaviour {
         ZPosToDestroy = -28f;
         songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
 
-        noteVelocity = 12f; //prêdkoœæ przemieszczania siê nut - im wiêksza, tym szybciej
-        speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej
-
-        offset = 1153f;
         bpm = SongListV2.allSongs[selectedSong].BPM;
+        noteVelocity = 12f; //prêdkoœæ przemieszczania siê nut - im wiêksza, tym szybciej
+        speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej        
+        offset = bpm * 5.01f;
 
+        if(SongListV2.allSongs[selectedSong].index == 2)
+        {
+            offset =  580f;
+        }
 
 
         //PARAMETRY PASUJ¥CE DO 180-187 BPM IDEALNIE:
@@ -58,11 +61,11 @@ public class note : MonoBehaviour {
 
         //offset 60 BPM: 295f
         //offset 80 BPM: 
-        //offset 120 BPM: 600f
+        //offset 120 BPM: 600f   600/120 = 5
         //offset 150 BPM: 
-        //offset 180 = 907f;
+        //offset 180 = 907f;   907/180 = 5.039
         //offset 205 = 
-        //offset 230 = 
+        //offset 230 = 1153f 1153/230 = 5,013
 
     }
 
