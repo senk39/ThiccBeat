@@ -307,6 +307,42 @@ Prefab:
       propertyPath: acConEnter
       value: 
       objectReference: {fileID: 1488668107}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_text
+      value: "ThiccBeat v.2.1.3.7 beta, kwiecien 2019\nAutor: Senk\n\nJesli widzisz
+        ten tekst, to jestes na Pyrkonie. \nBaw sie dobrze uwu."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 121
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_textInfo.materialCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b35a56e29c23ba4aae5761aef58a671, type: 2}
   m_IsPrefabAsset: 0

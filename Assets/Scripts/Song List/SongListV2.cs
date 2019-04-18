@@ -139,8 +139,8 @@ public class SongListV2 : MonoBehaviour
     static Song aiaiai = new Song(
         2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "Electropop", "Virtual Youtuber", 128, "3:13", 301, 672, 2, 10);
 
-    static Song test60 = new Song(
-        3, "TEST60", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 60, "3:13", 301, 672, 2, 10);
+    static Song sixtrillion = new Song(
+        3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "Synth-rock", "Vocaloid", 186, "1:42", 301, 672, 4, 10);
 
     static Song test80 = new Song(
         4, "TEST80", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 80, "3:13", 301, 672, 2, 10);
@@ -195,7 +195,7 @@ public class SongListV2 : MonoBehaviour
         allSongs.Add(stalemate);
         allSongs.Add(comfyplace);
         allSongs.Add(aiaiai);
-        allSongs.Add(test60);
+        allSongs.Add(sixtrillion);
         allSongs.Add(test80);
         allSongs.Add(test120);
         allSongs.Add(test150);
@@ -237,7 +237,15 @@ public class SongListV2 : MonoBehaviour
     void fillingDataInSelectedSong()
     {
         //ARTIST FIELD
-        selArtistLabel.text = allSongs[selectedSongByUser].composer;
+        if(allSongs[selectedSongByUser].vocalist != null)
+        {
+            selArtistLabel.text = allSongs[selectedSongByUser].composer + " feat. " + allSongs[selectedSongByUser].vocalist;
+
+        }
+        else
+        {
+            selArtistLabel.text = allSongs[selectedSongByUser].composer;
+        }
 
         //TITLE FIELD
         selTitleLabel.text = allSongs[selectedSongByUser].title;
