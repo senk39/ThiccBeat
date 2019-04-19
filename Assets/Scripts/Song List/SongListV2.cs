@@ -29,6 +29,15 @@ public class SongListV2 : MonoBehaviour
     public GameObject selGenreObj;
     public TextMeshProUGUI selGenreLabel;
 
+    public TextMeshProUGUI selHighScore1;
+    public TextMeshProUGUI selHighScore1Label;
+
+    public TextMeshProUGUI selHighScore2;
+    public TextMeshProUGUI selHighScore2Label;
+
+    public TextMeshProUGUI selHighScore3;
+    public TextMeshProUGUI selHighScore3Label;
+
     public GameObject selCoverObj;
 
     public static int selectedSongByUser;
@@ -36,6 +45,12 @@ public class SongListV2 : MonoBehaviour
     AudioSource clickAudio;
 
     static public bool isCurrentDifficultyIsEasy = false;
+
+
+    int goldScoreLabel;
+    int silverScoreLabel;
+    int bronzeScoreLabel;
+
 
     AudioSource acChangeSong;
     AudioSource acChangeDiff;
@@ -170,6 +185,10 @@ public class SongListV2 : MonoBehaviour
         selDiffLabel = selDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
         selDiffAltLabel = selDiffAltObj.GetComponent<TMPro.TextMeshProUGUI>();
 
+        selHighScore1Label = selHighScore1.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore2Label = selHighScore2.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore3Label = selHighScore3.GetComponent<TMPro.TextMeshProUGUI>();
+
         acChangeSong = acConChangeSong.GetComponent<AudioSource>();
         acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
         acBack = acConBack.GetComponent<AudioSource>();
@@ -265,6 +284,9 @@ public class SongListV2 : MonoBehaviour
 
         //DIFF FIELD
         starGenerator();
+
+        //HIGH SCORE FIELD
+        highScores();
     }
 
     void movingOtherSongsUp()
@@ -339,6 +361,71 @@ public class SongListV2 : MonoBehaviour
             selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
         }
         alternativeDifficultyTextGenerator();
+    }
+
+    void highScores()
+    {
+        if (isCurrentDifficultyIsEasy)
+        {
+            if(PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
+            {
+                selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy").ToString();
+            }
+            else
+            {
+                selHighScore1Label.text = "1. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy") > 1)
+            {
+                selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy").ToString();
+            }
+            else
+            {
+                selHighScore2Label.text = "2. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy") > 1)
+            {
+                selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy").ToString();
+            }
+            else
+            {
+                selHighScore3Label.text = "3. ---";
+            }
+
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard") > 1)
+            {
+                selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard").ToString();
+            }
+            else
+            {
+                selHighScore1Label.text = "1. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard") > 1)
+            {
+                selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard").ToString();
+            }
+            else
+            {
+                selHighScore2Label.text = "2. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1 )
+            {
+                selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard").ToString();
+            }
+            else
+            {
+                selHighScore3Label.text = "3. ---";
+            }
+        }
+
+
     }
 
     void alternativeDifficultyTextGenerator()

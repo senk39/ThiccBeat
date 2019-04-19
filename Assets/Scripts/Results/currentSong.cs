@@ -140,7 +140,7 @@ public class currentSong : SongListV2
     {
         sIndex = playedSong.index;
 
-        Debug.Log("song Index: " + playedSong.index + "currDiff: " + currentDiff);
+        //Debug.Log("song Index: " + playedSong.index + "currDiff: " + currentDiff);
 
         goldScore = PlayerPrefs.GetInt(sIndex + "GoldScore" + currentDiff);
         silverScore = PlayerPrefs.GetInt(sIndex + "SilverScore" + currentDiff);
