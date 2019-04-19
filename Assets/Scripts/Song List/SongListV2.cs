@@ -157,8 +157,8 @@ public class SongListV2 : MonoBehaviour
     static Song sixtrillion = new Song(
         3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "Synth-rock", "Vocaloid", 186, "1:42", 301, 672, 4, 10);
 
-    static Song test80 = new Song(
-        4, "TEST80", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 80, "3:13", 301, 672, 2, 10);
+    static Song hitorigoto = new Song(
+        4, "Hitorigoto", "ClariS", null, null, null, "J-Pop", "Anime", 165, "3:13", 301, 672, 5, 7);
 
     static Song test120 = new Song(
         5, "TEST120", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 120, "3:13", 301, 672, 2, 10);
@@ -199,6 +199,8 @@ public class SongListV2 : MonoBehaviour
         creatingSelectedSongEntryInUI(selectedSongByUser = 0);
 
         deletePlayerPrefsKeys();
+
+        GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
     }
 
     void Update()
@@ -210,12 +212,12 @@ public class SongListV2 : MonoBehaviour
     }
 
     void addingSongsToList()
-    {
+    {     
         allSongs.Add(stalemate);
         allSongs.Add(comfyplace);
         allSongs.Add(aiaiai);
         allSongs.Add(sixtrillion);
-        allSongs.Add(test80);
+        allSongs.Add(hitorigoto);
         allSongs.Add(test120);
         allSongs.Add(test150);
         allSongs.Add(test180);
@@ -236,9 +238,18 @@ public class SongListV2 : MonoBehaviour
             if (selectedSongByUser < Song.totalAmount - 1)
             {
                 acChangeSong.Play();
+                if(GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Stop();
+                }
                 selectedSongByUser++;
                 fillingDataInSelectedSong();
                 movingOtherSongsUp();
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
+                }
+               
             }
         }
         else if (Input.GetKeyDown(KeyCode.Q))
@@ -246,9 +257,17 @@ public class SongListV2 : MonoBehaviour
             if (selectedSongByUser > 0)
             {
                 acChangeSong.Play();
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Stop();
+                }
                 selectedSongByUser--;
                 fillingDataInSelectedSong();
                 movingOtherSongsDown();
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
+                }
             }
         }
     }
@@ -365,7 +384,7 @@ public class SongListV2 : MonoBehaviour
 
     void highScores()
     {
-        if (isCurrentDifficultyIsEasy)
+        if (isCurrentDifficultyIsEasy == true)
         {
             if(PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
             {
@@ -450,6 +469,7 @@ public class SongListV2 : MonoBehaviour
                 acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = true;
                 starGenerator();
+                highScores();
             }
 
             else
@@ -457,6 +477,7 @@ public class SongListV2 : MonoBehaviour
                 acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = false;
                 starGenerator();
+                highScores();
             }
         }
     }

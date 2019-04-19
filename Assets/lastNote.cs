@@ -27,7 +27,6 @@ public class lastNote : MonoBehaviour
     public Queue<GameObject> notesQueue5 = new Queue<GameObject>();
     public Queue<GameObject> notesQueue6 = new Queue<GameObject>();
     public Queue<GameObject> notesQueue7 = new Queue<GameObject>();
-    //public Queue<GameObject> notesQueue7 = new Queue<GameObject>();
 
     public GameObject keyElement1;
     public GameObject keyElement2;
@@ -45,8 +44,10 @@ public class lastNote : MonoBehaviour
     private const float row6X = 5.1f;
     private const float row7X = 2.8f;
 
-   // const float ActiveStart = -8f;
-   // const float ActiveEnd = -30f;
+    // const float ActiveStart = -8f;
+    // const float ActiveEnd = -30f;
+
+    public bool isSongFinished = false;
 
     GameObject[] allNotes;
 
@@ -229,6 +230,7 @@ public class lastNote : MonoBehaviour
             notesQueue7.Count == 0)
         {
             Debug.Log("song is finished!");
+            isSongFinished = true;
         }
     }
 }

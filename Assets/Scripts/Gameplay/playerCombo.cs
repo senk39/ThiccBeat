@@ -22,7 +22,7 @@ public class playerCombo : MonoBehaviour {
             maxCombo = currentCombo;
         }
 
-        if (lastNoteBehaviour.lastNoteDone == true)
+        if (GameObject.Find("Last Note").GetComponent<lastNote>().isSongFinished == true)
         {
             PlayerPrefs.SetInt("lastGameMaxCombo", maxCombo);
         }

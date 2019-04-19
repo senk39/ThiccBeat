@@ -15,8 +15,8 @@ public class playerScore : MonoBehaviour
     {
         playerScoreAsText.text = playerCurrentScore.ToString();
 
-        if (lastNoteBehaviour.lastNoteDone == true)
-        {
+        if (GameObject.Find("Last Note").GetComponent<lastNote>().isSongFinished == true)
+        {          
             PlayerPrefs.SetInt("lastGameScore", playerCurrentScore);
         }
     }

@@ -14,7 +14,7 @@ public class TrackCompletedAnimationPlay : MonoBehaviour {
 	
 	void Update () {
 
-        if (lastNoteBehaviour.lastNoteDone == true)
+        if (GameObject.Find("Last Note").GetComponent<lastNote>().isSongFinished == true)
         {
             anim.Play("TrackCompleted");
             Invoke("goToHighScoreScreen", 5f);
