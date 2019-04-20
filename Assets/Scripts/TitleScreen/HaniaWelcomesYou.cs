@@ -31,11 +31,15 @@ public class HaniaWelcomesYou : MonoBehaviour {
         //  GetComponent<AudioSource>().Play();
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
-            InvokeRepeating("sayAgain", 1f, 10f);
+            InvokeRepeating("sayAgain", 1f, 20f);
         }
         else if (SceneManager.GetActiveScene().buildIndex == 1)
         {
-            InvokeRepeating("sayAgain", 1f, 2f);
+            InvokeRepeating("sayAgain", 1f, 15f);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 8) //QUIT MENU
+        {
+            Invoke("sayAgain", 0.39f);
         }
     }
 	
