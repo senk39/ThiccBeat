@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class SongListV2 : MonoBehaviour
 {
     static public List<Song> allSongs = new List<Song>();
@@ -30,6 +29,15 @@ public class SongListV2 : MonoBehaviour
     public GameObject selGenreObj;
     public TextMeshProUGUI selGenreLabel;
 
+    public TextMeshProUGUI selHighScore1;
+    public TextMeshProUGUI selHighScore1Label;
+
+    public TextMeshProUGUI selHighScore2;
+    public TextMeshProUGUI selHighScore2Label;
+
+    public TextMeshProUGUI selHighScore3;
+    public TextMeshProUGUI selHighScore3Label;
+
     public GameObject selCoverObj;
 
     public static int selectedSongByUser;
@@ -37,6 +45,12 @@ public class SongListV2 : MonoBehaviour
     AudioSource clickAudio;
 
     static public bool isCurrentDifficultyIsEasy = false;
+
+
+    int goldScoreLabel;
+    int silverScoreLabel;
+    int bronzeScoreLabel;
+
 
     AudioSource acChangeSong;
     AudioSource acChangeDiff;
@@ -73,9 +87,6 @@ public class SongListV2 : MonoBehaviour
         public Sprite cover;
 
         public bool isSelectedInMenu;
-
-
-
         public Song()  // KONSTRUKTOR
         {
             index = 0;
@@ -131,12 +142,46 @@ public class SongListV2 : MonoBehaviour
         }
     }
 
+
+
     // START TWORZENIA UTWORÓW
     static Song stalemate = new Song(
-        0, "Stalemate", "P. Dawidziak", "Yuzuki Yukari", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 322, 1011, 3, 7);
+        0, "Stalemate", "Senk", "Yuzuki Yukari", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 322, 1011, 3, 7);
 
     static Song comfyplace = new Song(
-        1, "Comfy Place", "P. Dawidziak", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 4, 9);
+        1, "Comfy Place", "Senk", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 3, 6);
+
+    static Song aiaiai = new Song(
+        2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "Electropop", "Virtual Youtuber", 128, "3:13", 301, 672, 2, 10);
+
+    static Song sixtrillion = new Song(
+        3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "Synth-rock", "Vocaloid", 186, "1:42", 301, 672, 4, 10);
+
+    static Song hitorigoto = new Song(
+        4, "Hitorigoto", "ClariS", null, null, null, "J-pop", "Anime", 165, "3:13", 301, 672, 5, 7);
+
+    static Song killthislove = new Song(
+        5, "Kill This Love", "BLACKPINK", null, null, null, "K-pop", null, 132, "3:13", 301, 672, 1, 5);
+
+    static Song badapple = new Song(
+        6, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "EDM", "Touhou", 138, "3:13", 301, 672, 3, 6);
+
+    static Song japaripark = new Song(
+        7, "Welcome to Japari Park", "Doubutsu Biscuits", null, null, null, "J-pop", "Anime", 170, "3:13", 301, 672, 4, 8);
+
+    static Song test205 = new Song(
+        8, "TEST205", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 205, "3:13", 301, 672, 2, 10);
+
+    static Song test230 = new Song(
+        9, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+
+    static Song test260 = new Song(
+        10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+
+    static Song uwu = new Song(
+        11, "TURBOOOF", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+
+
 
     void Awake()
     {
@@ -146,6 +191,10 @@ public class SongListV2 : MonoBehaviour
         selDiffLabel = selDiffObj.GetComponent<TMPro.TextMeshProUGUI>();
         selDiffAltLabel = selDiffAltObj.GetComponent<TMPro.TextMeshProUGUI>();
 
+        selHighScore1Label = selHighScore1.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore2Label = selHighScore2.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore3Label = selHighScore3.GetComponent<TMPro.TextMeshProUGUI>();
+
         acChangeSong = acConChangeSong.GetComponent<AudioSource>();
         acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
         acBack = acConBack.GetComponent<AudioSource>();
@@ -154,6 +203,10 @@ public class SongListV2 : MonoBehaviour
         addingSongsToList();
         allSongs[0].isSelectedInMenu = true;
         creatingSelectedSongEntryInUI(selectedSongByUser = 0);
+
+        deletePlayerPrefsKeys();
+
+        GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
     }
 
     void Update()
@@ -165,9 +218,20 @@ public class SongListV2 : MonoBehaviour
     }
 
     void addingSongsToList()
-    {
+    {     
         allSongs.Add(stalemate);
         allSongs.Add(comfyplace);
+        allSongs.Add(aiaiai);
+        allSongs.Add(sixtrillion);
+        allSongs.Add(hitorigoto);
+        allSongs.Add(killthislove);
+        allSongs.Add(badapple);
+        allSongs.Add(japaripark);
+        allSongs.Add(test205);
+        allSongs.Add(test230);
+        allSongs.Add(test260);
+        allSongs.Add(uwu);
+     
     }
 
     void creatingSelectedSongEntryInUI(int selectedSongByUser)
@@ -176,15 +240,24 @@ public class SongListV2 : MonoBehaviour
     }
 
     void changeSong()
-    {
+    { 
         if (Input.GetKeyDown(KeyCode.O))
         {
             if (selectedSongByUser < Song.totalAmount - 1)
             {
                 acChangeSong.Play();
+                if(GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Stop();
+                }
                 selectedSongByUser++;
                 fillingDataInSelectedSong();
                 movingOtherSongsUp();
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
+                }
+               
             }
         }
         else if (Input.GetKeyDown(KeyCode.Q))
@@ -192,9 +265,17 @@ public class SongListV2 : MonoBehaviour
             if (selectedSongByUser > 0)
             {
                 acChangeSong.Play();
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Stop();
+                }
                 selectedSongByUser--;
                 fillingDataInSelectedSong();
                 movingOtherSongsDown();
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
+                {
+                    GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
+                }
             }
         }
     }
@@ -202,7 +283,15 @@ public class SongListV2 : MonoBehaviour
     void fillingDataInSelectedSong()
     {
         //ARTIST FIELD
-        selArtistLabel.text = allSongs[selectedSongByUser].composer;
+        if(allSongs[selectedSongByUser].vocalist != null)
+        {
+            selArtistLabel.text = allSongs[selectedSongByUser].composer + " feat. " + allSongs[selectedSongByUser].vocalist;
+
+        }
+        else
+        {
+            selArtistLabel.text = allSongs[selectedSongByUser].composer;
+        }
 
         //TITLE FIELD
         selTitleLabel.text = allSongs[selectedSongByUser].title;
@@ -222,6 +311,9 @@ public class SongListV2 : MonoBehaviour
 
         //DIFF FIELD
         starGenerator();
+
+        //HIGH SCORE FIELD
+        highScores();
     }
 
     void movingOtherSongsUp()
@@ -298,6 +390,71 @@ public class SongListV2 : MonoBehaviour
         alternativeDifficultyTextGenerator();
     }
 
+    void highScores()
+    {
+        if (isCurrentDifficultyIsEasy == true)
+        {
+            if(PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
+            {
+                selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy").ToString();
+            }
+            else
+            {
+                selHighScore1Label.text = "1. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy") > 1)
+            {
+                selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy").ToString();
+            }
+            else
+            {
+                selHighScore2Label.text = "2. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy") > 1)
+            {
+                selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy").ToString();
+            }
+            else
+            {
+                selHighScore3Label.text = "3. ---";
+            }
+
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard") > 1)
+            {
+                selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard").ToString();
+            }
+            else
+            {
+                selHighScore1Label.text = "1. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard") > 1)
+            {
+                selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard").ToString();
+            }
+            else
+            {
+                selHighScore2Label.text = "2. ---";
+            }
+
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1 )
+            {
+                selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard").ToString();
+            }
+            else
+            {
+                selHighScore3Label.text = "3. ---";
+            }
+        }
+
+
+    }
+
     void alternativeDifficultyTextGenerator()
     {
         if (isCurrentDifficultyIsEasy)
@@ -320,6 +477,7 @@ public class SongListV2 : MonoBehaviour
                 acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = true;
                 starGenerator();
+                highScores();
             }
 
             else
@@ -327,6 +485,7 @@ public class SongListV2 : MonoBehaviour
                 acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = false;
                 starGenerator();
+                highScores();
             }
         }
     }
@@ -352,5 +511,11 @@ public class SongListV2 : MonoBehaviour
     void loadMainMenu()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private static void deletePlayerPrefsKeys()
+    {
+        PlayerPrefs.DeleteKey("lastGameScore");
+        PlayerPrefs.DeleteKey("lastGameMaxCombo");
     }
 }

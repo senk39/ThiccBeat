@@ -165,17 +165,17 @@ AudioSource:
   m_GameObject: {fileID: 370160197}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 74b5ea55e6c38234aafcc47942fc0fb3,
+  OutputAudioMixerGroup: {fileID: 243348796315043438, guid: 01c309fe759143f4d8dd15bc461d1f83,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8463b429f3877374494740bcbeb9b039, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 15
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -253,6 +253,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &373092843
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1160.0986
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 552.5885
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -397.66113
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &377694642
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5824816}
   m_AnchorMax: {x: 0.5, y: 0.5824816}
-  m_AnchoredPosition: {x: 0, y: 95}
-  m_SizeDelta: {x: 759.5, y: 496}
+  m_AnchoredPosition: {x: 0, y: 111}
+  m_SizeDelta: {x: 863, y: 608}
   m_Pivot: {x: 0.5, y: 0.6960157}
 --- !u!114 &482655683
 MonoBehaviour:
@@ -1045,7 +1087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.65931255, y: 0.86011124}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -27.1, y: -35.4}
+  m_AnchoredPosition: {x: -27.099976, y: -35.399994}
   m_SizeDelta: {x: -54.1, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338189999
@@ -1080,7 +1122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: version 1.0
+  m_Text: version 0.2137 Prykon Beta
 --- !u!222 &1338190000
 CanvasRenderer:
   m_ObjectHideFlags: 0
