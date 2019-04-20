@@ -58,18 +58,12 @@ public class lastNote : MonoBehaviour
 
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         setAsTheLowest();
         addTheLowestNotesToGameObjects();
         checkEndOfSong();
     }
-
     void createQueues()
     {
 
@@ -218,7 +212,6 @@ public class lastNote : MonoBehaviour
         }
     }
 
-
     void checkEndOfSong()
     {
         if (notesQueue1.Count == 0 && 
@@ -228,8 +221,7 @@ public class lastNote : MonoBehaviour
             notesQueue5.Count == 0 &&
             notesQueue6.Count == 0 &&
             notesQueue7.Count == 0)
-        {
-            Debug.Log("song is finished!");
+        {           
             isSongFinished = true;
         }
     }

@@ -7,36 +7,36 @@ using UnityEngine.SceneManagement;
 public class SongListV2 : MonoBehaviour
 {
     static public List<Song> allSongs = new List<Song>();
-    public Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
-    public GameObject parentObjForSelected;
+     Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
+     GameObject parentObjForSelected;
 
     // ZMIENNE DLA ZAZNACZONEGO UTWORU
     public GameObject selArtistObj;
-    public TextMeshProUGUI selArtistLabel;
+     TextMeshProUGUI selArtistLabel;
 
     public GameObject selTitleObj;
-    public TextMeshProUGUI selTitleLabel;
+     TextMeshProUGUI selTitleLabel;
 
     public GameObject selDiffObj;
-    public TextMeshProUGUI selDiffLabel;
+     TextMeshProUGUI selDiffLabel;
 
     public GameObject selDiffAltObj;
-    public TextMeshProUGUI selDiffAltLabel;
+     TextMeshProUGUI selDiffAltLabel;
 
     public GameObject starEmpty;
-    public GameObject starFilled;
+     GameObject starFilled;
 
     public GameObject selGenreObj;
-    public TextMeshProUGUI selGenreLabel;
+     TextMeshProUGUI selGenreLabel;
 
     public TextMeshProUGUI selHighScore1;
-    public TextMeshProUGUI selHighScore1Label;
+     TextMeshProUGUI selHighScore1Label;
 
     public TextMeshProUGUI selHighScore2;
-    public TextMeshProUGUI selHighScore2Label;
+     TextMeshProUGUI selHighScore2Label;
 
     public TextMeshProUGUI selHighScore3;
-    public TextMeshProUGUI selHighScore3Label;
+     TextMeshProUGUI selHighScore3Label;
 
     public GameObject selCoverObj;
 
@@ -45,6 +45,9 @@ public class SongListV2 : MonoBehaviour
     AudioSource clickAudio;
 
     static public bool isCurrentDifficultyIsEasy = false;
+
+    public Sprite hardBorder;
+    public Sprite easyBorder;
 
 
     int goldScoreLabel;
@@ -158,7 +161,7 @@ public class SongListV2 : MonoBehaviour
         3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "Synth-rock", "Vocaloid", 186, "1:42", 301, 672, 4, 10);
 
     static Song hitorigoto = new Song(
-        4, "Hitorigoto", "ClariS", null, null, null, "J-pop", "Anime", 165, "3:13", 301, 672, 5, 7);
+        4, "Hitorigoto", "ClariS", null, null, null, "J-pop", "Anime", 165, "3:13", 301, 672, 2, 7);
 
     static Song killthislove = new Song(
         5, "Kill This Love", "BLACKPINK", null, null, null, "K-pop", null, 132, "3:13", 301, 672, 1, 5);
@@ -215,6 +218,7 @@ public class SongListV2 : MonoBehaviour
         changeDifficulty();
         backToMainMenu();
         chooseSongAndMoveToGame();
+        borderColorGenerator(isCurrentDifficultyIsEasy);
     }
 
     void addingSongsToList()
@@ -311,7 +315,6 @@ public class SongListV2 : MonoBehaviour
 
         //DIFF FIELD
         starGenerator();
-
         //HIGH SCORE FIELD
         highScores();
     }
@@ -388,6 +391,19 @@ public class SongListV2 : MonoBehaviour
             selDiffLabel.text = string.Join(starSymbol, new string[multiplierHard + 1]);
         }
         alternativeDifficultyTextGenerator();
+    }
+
+    void borderColorGenerator(bool isCurrentDifficultyIsEasy) 
+    {
+        if(isCurrentDifficultyIsEasy == true)
+        {
+            GameObject.Find("Selected Song").GetComponent<Image>().sprite = easyBorder;
+
+        }
+        else
+        {
+            GameObject.Find("Selected Song").GetComponent<Image>().sprite = hardBorder;
+        }
     }
 
     void highScores()

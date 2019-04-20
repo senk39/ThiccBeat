@@ -520,7 +520,6 @@ GameObject:
   - component: {fileID: 224978045410292136}
   - component: {fileID: 222283997891074476}
   - component: {fileID: 114700267308186134}
-  - component: {fileID: 114931757999620318}
   m_Layer: 0
   m_Name: songEntryBox
   m_TagString: Untagged
@@ -878,7 +877,6 @@ GameObject:
   - component: {fileID: 224518118006494582}
   - component: {fileID: 222516322223656776}
   - component: {fileID: 114314951186255196}
-  - component: {fileID: 114963704708950148}
   m_Layer: 0
   m_Name: songEntryBox
   m_TagString: Untagged
@@ -3698,28 +3696,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114931757999620318
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377300086875248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dffe33a84da014e438c68b864a73eb07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114963704708950148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1758221768260642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dffe33a84da014e438c68b864a73eb07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114967374657265218
 MonoBehaviour:
   m_ObjectHideFlags: 1
