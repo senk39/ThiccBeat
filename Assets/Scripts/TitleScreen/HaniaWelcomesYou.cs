@@ -1,43 +1,61 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class HaniaWelcomesYou : MonoBehaviour {
 
     AudioClip[] HaniaWelcome = new AudioClip[13];
     public List<AudioClip> HaniaList = new List<AudioClip>();
-    public GameObject[] HaniaObjArray = new GameObject[13];
+    public GameObject[] HaniaObjArray;
+    int HaniaCounter;
+
+    int randomNumber2 = 500;
 
 
-    // Use this for initialization
     void Awake () {
 
+        HaniaCounter = GameObject.FindGameObjectsWithTag("Hania").Length;
+        HaniaObjArray = new GameObject[HaniaCounter];
+        
         HaniaObjArray = GameObject.FindGameObjectsWithTag("Hania");
+
 
         for (int i = 0; i < HaniaObjArray.Length; i++)
         {
             HaniaList.Add(HaniaObjArray[i].gameObject.GetComponent<AudioSource>().clip);
         }
 
-       // GetComponent<AudioSource>().clip = HaniaList[Random.Range(0,13)];
-        //GetComponent<AudioSource>().Play();
-        InvokeRepeating("sayAgain", 1f, 20f);
+        //  GetComponent<AudioSource>().clip = HaniaList[Random.Range(0,13)];
+        //  GetComponent<AudioSource>().Play();
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            InvokeRepeating("sayAgain", 1f, 10f);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            InvokeRepeating("sayAgain", 1f, 2f);
+        }
     }
 	
-	// Update is called once per frame
-	void Update () {
-
-        
-
-        
-
-    }
-
     void sayAgain()
     {
-        GetComponent<AudioSource>().clip = HaniaList[Random.Range(0, 13)];
+        
+        int randomNumber = Random.Range(0, HaniaObjArray.Length);
+        if(randomNumber2 != randomNumber)
+        {
+            GetComponent<AudioSource>().clip = HaniaList[randomNumber];
+            GetComponent<AudioSource>().Play();
+            Debug.Log("Wylosowano: " +HaniaList[randomNumber]);
+            randomNumber2 = randomNumber;
+        }
+        else
+        {
+            Debug.Log("byly takie same!!!");
+            sayAgain();
+        }
+        
 
-        GetComponent<AudioSource>().Play();
     }
 }
