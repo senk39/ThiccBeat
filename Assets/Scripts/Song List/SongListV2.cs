@@ -7,36 +7,36 @@ using UnityEngine.SceneManagement;
 public class SongListV2 : MonoBehaviour
 {
     static public List<Song> allSongs = new List<Song>();
-     Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
-     GameObject parentObjForSelected;
+    Vector3 firstSongBoxPosition = new Vector3(459.5f, 291f);
+    GameObject parentObjForSelected;
 
     // ZMIENNE DLA ZAZNACZONEGO UTWORU
     public GameObject selArtistObj;
-     TextMeshProUGUI selArtistLabel;
+    TextMeshProUGUI selArtistLabel;
 
     public GameObject selTitleObj;
-     TextMeshProUGUI selTitleLabel;
+    TextMeshProUGUI selTitleLabel;
 
     public GameObject selDiffObj;
-     TextMeshProUGUI selDiffLabel;
+    TextMeshProUGUI selDiffLabel;
 
     public GameObject selDiffAltObj;
-     TextMeshProUGUI selDiffAltLabel;
+    TextMeshProUGUI selDiffAltLabel;
 
     public GameObject starEmpty;
-     GameObject starFilled;
+    GameObject starFilled;
 
     public GameObject selGenreObj;
-     TextMeshProUGUI selGenreLabel;
+    TextMeshProUGUI selGenreLabel;
 
     public TextMeshProUGUI selHighScore1;
-     TextMeshProUGUI selHighScore1Label;
+    TextMeshProUGUI selHighScore1Label;
 
     public TextMeshProUGUI selHighScore2;
-     TextMeshProUGUI selHighScore2Label;
+    TextMeshProUGUI selHighScore2Label;
 
     public TextMeshProUGUI selHighScore3;
-     TextMeshProUGUI selHighScore3Label;
+    TextMeshProUGUI selHighScore3Label;
 
     public GameObject selCoverObj;
 
@@ -48,6 +48,11 @@ public class SongListV2 : MonoBehaviour
 
     public Sprite hardBorder;
     public Sprite easyBorder;
+
+    public Sprite hardTab;
+    public Sprite easyTab;
+
+
 
 
     int goldScoreLabel;
@@ -222,7 +227,7 @@ public class SongListV2 : MonoBehaviour
     }
 
     void addingSongsToList()
-    {     
+    {
         allSongs.Add(stalemate);
         allSongs.Add(comfyplace);
         allSongs.Add(aiaiai);
@@ -235,7 +240,7 @@ public class SongListV2 : MonoBehaviour
         allSongs.Add(test230);
         allSongs.Add(test260);
         allSongs.Add(uwu);
-     
+
     }
 
     void creatingSelectedSongEntryInUI(int selectedSongByUser)
@@ -244,13 +249,13 @@ public class SongListV2 : MonoBehaviour
     }
 
     void changeSong()
-    { 
+    {
         if (Input.GetKeyDown(KeyCode.O))
         {
             if (selectedSongByUser < Song.totalAmount - 1)
             {
                 acChangeSong.Play();
-                if(GameObject.Find("preview" + selectedSongByUser) != null)
+                if (GameObject.Find("preview" + selectedSongByUser) != null)
                 {
                     GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Stop();
                 }
@@ -261,7 +266,7 @@ public class SongListV2 : MonoBehaviour
                 {
                     GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
                 }
-               
+
             }
         }
         else if (Input.GetKeyDown(KeyCode.Q))
@@ -287,7 +292,7 @@ public class SongListV2 : MonoBehaviour
     void fillingDataInSelectedSong()
     {
         //ARTIST FIELD
-        if(allSongs[selectedSongByUser].vocalist != null)
+        if (allSongs[selectedSongByUser].vocalist != null)
         {
             selArtistLabel.text = allSongs[selectedSongByUser].composer + " feat. " + allSongs[selectedSongByUser].vocalist;
 
@@ -393,16 +398,18 @@ public class SongListV2 : MonoBehaviour
         alternativeDifficultyTextGenerator();
     }
 
-    void borderColorGenerator(bool isCurrentDifficultyIsEasy) 
+    void borderColorGenerator(bool isCurrentDifficultyIsEasy)
     {
-        if(isCurrentDifficultyIsEasy == true)
+        if (isCurrentDifficultyIsEasy == true)
         {
             GameObject.Find("Selected Song").GetComponent<Image>().sprite = easyBorder;
+            GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = easyTab;
 
         }
         else
         {
             GameObject.Find("Selected Song").GetComponent<Image>().sprite = hardBorder;
+            GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = hardTab;
         }
     }
 
@@ -410,7 +417,7 @@ public class SongListV2 : MonoBehaviour
     {
         if (isCurrentDifficultyIsEasy == true)
         {
-            if(PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
             {
                 selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy").ToString();
             }
@@ -458,7 +465,7 @@ public class SongListV2 : MonoBehaviour
                 selHighScore2Label.text = "2. ---";
             }
 
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1 )
+            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1)
             {
                 selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard").ToString();
             }
