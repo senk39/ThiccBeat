@@ -49,6 +49,11 @@ public class SongListV2 : MonoBehaviour
     public Sprite hardBorder;
     public Sprite easyBorder;
 
+    public Sprite hardTab;
+    public Sprite easyTab;
+
+
+
 
     int goldScoreLabel;
     int silverScoreLabel;
@@ -398,11 +403,13 @@ public class SongListV2 : MonoBehaviour
         if(isCurrentDifficultyIsEasy == true)
         {
             GameObject.Find("Selected Song").GetComponent<Image>().sprite = easyBorder;
+            GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = easyTab;
 
         }
         else
         {
             GameObject.Find("Selected Song").GetComponent<Image>().sprite = hardBorder;
+            GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = hardTab;
         }
     }
 
