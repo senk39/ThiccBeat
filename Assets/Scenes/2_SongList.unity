@@ -1178,18 +1178,6 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: cf3468f60fb8a8a41b9c7d8278ea1396,
         type: 3}
-    - target: {fileID: 114509852352986888, guid: 1b1a4f8d6312fa5448708597fff7c3f5,
-        type: 2}
-      propertyPath: hardTab
-      value: 
-      objectReference: {fileID: 21300000, guid: 0700cd659c0ef2241b423844f01369df,
-        type: 3}
-    - target: {fileID: 114509852352986888, guid: 1b1a4f8d6312fa5448708597fff7c3f5,
-        type: 2}
-      propertyPath: easyTab
-      value: 
-      objectReference: {fileID: 21300000, guid: f7cf0e0766518564d96ad2dee1a4c658,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b1a4f8d6312fa5448708597fff7c3f5, type: 2}
   m_IsPrefabAsset: 0
@@ -16157,7 +16145,7 @@ GameObject:
   - component: {fileID: 2006584466}
   - component: {fileID: 2006584465}
   m_Layer: 0
-  m_Name: Difficulty Tab
+  m_Name: Difficulty Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16178,8 +16166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -555, y: 189.5}
-  m_SizeDelta: {x: 158, y: 21}
+  m_AnchoredPosition: {x: -722.4, y: 6}
+  m_SizeDelta: {x: 388, y: 388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2006584465
 MonoBehaviour:
@@ -16200,7 +16188,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f7cf0e0766518564d96ad2dee1a4c658, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 664f59d10999897419063fac8aa866db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
