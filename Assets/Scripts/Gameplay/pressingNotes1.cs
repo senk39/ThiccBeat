@@ -55,7 +55,7 @@ public class pressingNotes1 : MonoBehaviour
             }
         }
     }
-    
+
 
     void incrementCombo()
     {
@@ -65,31 +65,31 @@ public class pressingNotes1 : MonoBehaviour
 
     void dequeueAndDestroy()
     {
-        
+
         if (noteContainer.GetComponent<noteClass>().keyNumber == 1 && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Count > 0)
         {
-           // noteContainer.GetComponent<note>().isMoving = false;
+            // noteContainer.GetComponent<note>().isMoving = false;
             noteContainer.GetComponent<note>().enabled = false;
-            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0,0,-30));
+            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30));
             GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
             //Destroy(gameObject); ma być destroy nutka
             //noteContainer.SetActive(false);
-            
+
         }
-       
+
         else
         {
             //Debug.LogError("Error: nutka nie może zostać usunięta, gdyż jej atrybut keyNumber nie mieści się w przedziale 1-7");
         }
-        
+
     }
 
     void setNote()
     {
-        if(GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Count > 0)
+        if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Count > 0)
         {
             noteItself = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Peek().transform.GetChild(0).gameObject;
-        }       
+        }
         else
         {
             noteItself = null;
@@ -101,7 +101,7 @@ public class pressingNotes1 : MonoBehaviour
         if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Count > 0)
         {
             noteContainer = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Peek();
-        }       
+        }
         else
         {
             noteContainer = null;
@@ -118,5 +118,13 @@ public class pressingNotes1 : MonoBehaviour
 
     }
 
+
+    private void OnTriggerEnter(Collider col)
+    {
+        //if (col.tag == "noteContainer")
+        //{
+        //    GameObject.Find("MashRemover").GetComponent<notMash>().is1Active = true;
+        //}
+    }
 }
 

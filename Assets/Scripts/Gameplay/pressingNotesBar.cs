@@ -47,21 +47,13 @@ public class pressingNotesBar : MonoBehaviour
     {
         if (col.tag == "noteContainer" && col.transform.position.x == 2.8f)
         {
-
             noteContainer = col.gameObject;
             Debug.Log("dupło");
 
             isActive = true;
 
-
-
             addToQueue();
-
-            //setNoteContainerAsTheLowestNoteContainer();
-
-
         }
-
     }
 
     private void OnTriggerExit(Collider col)
