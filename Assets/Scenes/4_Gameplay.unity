@@ -243,7 +243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4164590945903116, guid: 8149643d9f907c54b9e79d99569fd89e, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114774717195426196, guid: 8149643d9f907c54b9e79d99569fd89e,
         type: 2}
@@ -314,7 +314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 105
-  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -458,7 +457,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4140527292050898, guid: ab2248232938acb4f9d926cfb284fe54, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23639996822787576, guid: ab2248232938acb4f9d926cfb284fe54,
         type: 2}
@@ -569,7 +568,6 @@ MonoBehaviour:
   playerComboContainer: {fileID: 1160227621}
   noteItself: {fileID: 0}
   noteContainer: {fileID: 0}
-  notMash: {fileID: 1757551523}
 --- !u!1001 &134318664
 Prefab:
   m_ObjectHideFlags: 0
@@ -1680,7 +1678,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1757551524}
   - {fileID: 2043204789}
   - {fileID: 72484506}
   - {fileID: 639709408}
@@ -2262,7 +2259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805933732335410, guid: b668de7d2dcd2f24993b2606568ca0a0, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 23244426400641072, guid: b668de7d2dcd2f24993b2606568ca0a0,
         type: 2}
@@ -2343,7 +2340,6 @@ MonoBehaviour:
   playerComboContainer: {fileID: 1160227621}
   noteItself: {fileID: 0}
   noteContainer: {fileID: 0}
-  notMash: {fileID: 1757551523}
 --- !u!114 &639709412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3136,7 +3132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4889009090731238, guid: 6de51c86ffccc12449833ae2912623ed, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 23053527999894434, guid: 6de51c86ffccc12449833ae2912623ed,
         type: 2}
@@ -3212,7 +3208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 100
-  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3565,7 +3560,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4472910032135752, guid: 748b5dd792e63d544ac8a6848f4df38b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114446505066800162, guid: 748b5dd792e63d544ac8a6848f4df38b,
         type: 2}
@@ -3636,7 +3631,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 108
-  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3750,7 +3744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151704791753826, guid: 6170aaba75ad548429b9f078e484bcb9, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114420584027497764, guid: 6170aaba75ad548429b9f078e484bcb9,
         type: 2}
@@ -3821,7 +3815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 106
-  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -4216,7 +4209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef0fe8563e43d84195e25a73de13476, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cef0fe8563e43d84195e25a73de13476, type: 3}
       propertyPath: m_LocalScale.x
@@ -4473,61 +4466,6 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 727bf6a555579364d8847cabda77384b, type: 2}
   - {fileID: 2100000, guid: e7a5eb25fc01c8f498649a87cb7a2eec, type: 2}
---- !u!1 &1757551523
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1757551524}
-  - component: {fileID: 1757551525}
-  m_Layer: 0
-  m_Name: MashRemover
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1757551524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1757551523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 415758748}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1757551525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1757551523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 093b45c5cdfee1a49b98bd9f9017d084, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is1Active: 0
-  is2Active: 0
-  is3Active: 0
-  is4Active: 0
-  is5Active: 0
-  is6Active: 0
-  is7Active: 0
-  isAnyActive: 0
-  key1: 97
-  key2: 119
-  key3: 100
-  key4: 106
-  key5: 105
-  key6: 108
-  key7: 103
 --- !u!1 &1767029967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,7 +5020,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 103
-  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}

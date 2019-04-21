@@ -37,7 +37,7 @@ public class note : MonoBehaviour {
         selectedSong = SongListV2.selectedSongByUser;
 
         rb = GetComponent<Rigidbody>();
-        ZPosToActive = -7.3f;
+        ZPosToActive = -7f;
         ZPosToDestroy = -28f;
         songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
 
@@ -88,14 +88,12 @@ public class note : MonoBehaviour {
         if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
         {
             isActive = true;
-            setMasher();
         }
         else if (gameObject.transform.position.z < ZPosToDestroy)
         {
             isActive = false;
             resetCombo();
             isTheLowest = false;
-            unsetMasher();
             dequeue();
 
             isMoving = false;
@@ -172,70 +170,6 @@ public class note : MonoBehaviour {
             }
             dequeueIfTrue = false;
         }
-
-
     }
-    void setMasher()
-    {
-        if (gameObject.GetComponent<noteClass>().keyNumber == 1)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is1Active = true;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is2Active = true;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is3Active = true;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is4Active = true;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is5Active = true;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is6Active = true;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is7Active = true;
-        }
-    }
-
-    void unsetMasher()
-    {
-        if (gameObject.GetComponent<noteClass>().keyNumber == 1)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is1Active = false;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is2Active = false;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is3Active = false;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is4Active = false;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is5Active = false;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is6Active = false;
-        }
-        else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
-        {
-            GameObject.Find("MashRemover").GetComponent<notMash>().is7Active = false;
-        }
-    }
+    
 }
