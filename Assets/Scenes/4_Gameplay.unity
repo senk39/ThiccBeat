@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 105
+  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -568,6 +569,7 @@ MonoBehaviour:
   playerComboContainer: {fileID: 1160227621}
   noteItself: {fileID: 0}
   noteContainer: {fileID: 0}
+  notMash: {fileID: 1757551523}
 --- !u!1001 &134318664
 Prefab:
   m_ObjectHideFlags: 0
@@ -2341,6 +2343,7 @@ MonoBehaviour:
   playerComboContainer: {fileID: 1160227621}
   noteItself: {fileID: 0}
   noteContainer: {fileID: 0}
+  notMash: {fileID: 1757551523}
 --- !u!114 &639709412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3209,6 +3212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 100
+  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3632,6 +3636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 108
+  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -3816,6 +3821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 106
+  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}
@@ -4514,6 +4520,14 @@ MonoBehaviour:
   is5Active: 0
   is6Active: 0
   is7Active: 0
+  isAnyActive: 0
+  key1: 97
+  key2: 119
+  key3: 100
+  key4: 106
+  key5: 105
+  key6: 108
+  key7: 103
 --- !u!1 &1767029967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,6 +5082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 103
+  notMash: {fileID: 1757551523}
   isHolding: 0
   playerScoreContainer: {fileID: 427617157}
   playerComboContainer: {fileID: 1160227621}

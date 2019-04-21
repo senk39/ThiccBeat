@@ -37,7 +37,7 @@ public class note : MonoBehaviour {
         selectedSong = SongListV2.selectedSongByUser;
 
         rb = GetComponent<Rigidbody>();
-        ZPosToActive = -3.3f;
+        ZPosToActive = -7.3f;
         ZPosToDestroy = -28f;
         songAudio = GameObject.Find("Song Player").GetComponent<AudioSource>();
 

@@ -6,6 +6,14 @@ public class pressingNotes1 : MonoBehaviour
 {
     public KeyCode key;
 
+     KeyCode key1 = KeyCode.A;
+     KeyCode key2 = KeyCode.W;
+     KeyCode key3 = KeyCode.D;
+     KeyCode key4 = KeyCode.J;
+     KeyCode key5 = KeyCode.I;
+     KeyCode key6 = KeyCode.L;
+     KeyCode key7 = KeyCode.G;
+
     public bool isHolding = false;
 
     public GameObject playerScoreContainer;
@@ -14,10 +22,9 @@ public class pressingNotes1 : MonoBehaviour
     public GameObject noteItself;
     public GameObject noteContainer;
 
-    //public Queue<GameObject> notesQueue7 = new Queue<GameObject>();
+    public GameObject notMash;
 
     private const float row1X = -5.1f;
-
 
     const float ActiveStart = -8f;
     const float ActiveEnd = -30f;
@@ -44,23 +51,29 @@ public class pressingNotes1 : MonoBehaviour
             {
                 if (key == KeyCode.A && transform.position.x == row1X)
                 {
-                    Debug.Log("A");
+                    //Debug.Log("A");
                     doWhenKeyPressedAndNoteIsInPressablePlace();
-
                     dequeueAndDestroy();
-                    //note1.SetActive(false);
-                    //Destroy(note1);
-
                 }
             }
         }
     }
 
-
     void incrementCombo()
     {
-        playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
-        playerComboContainer.GetComponent<playerCombo>().currentCombo++;
+        if (notMash.GetComponent<notMash>().is1Active == true)
+        {
+            if ((Input.GetKey(key2) == false && notMash.GetComponent<notMash>().is2Active == false) ||
+                (Input.GetKey(key3) == false && notMash.GetComponent<notMash>().is3Active == false) ||
+                (Input.GetKey(key4) == false && notMash.GetComponent<notMash>().is4Active == false) ||
+                (Input.GetKey(key5) == false && notMash.GetComponent<notMash>().is5Active == false) ||
+                (Input.GetKey(key6) == false && notMash.GetComponent<notMash>().is6Active == false) ||
+                (Input.GetKey(key7) == false && notMash.GetComponent<notMash>().is7Active == false))
+            {
+                playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+                playerComboContainer.GetComponent<playerCombo>().currentCombo++;
+            }
+        }       
     }
 
     void dequeueAndDestroy()
@@ -68,13 +81,10 @@ public class pressingNotes1 : MonoBehaviour
 
         if (noteContainer.GetComponent<noteClass>().keyNumber == 1 && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Count > 0)
         {
-            // noteContainer.GetComponent<note>().isMoving = false;
+            GameObject.Find("MashRemover").GetComponent<notMash>().is1Active = false;
             noteContainer.GetComponent<note>().enabled = false;
-            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30));
+            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30)); // TERAZ NIE USUWAMY A PRZENOSIMY!
             GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();
-            //Destroy(gameObject); ma być destroy nutka
-            //noteContainer.SetActive(false);
-
         }
 
         else
