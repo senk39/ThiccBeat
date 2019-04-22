@@ -154,34 +154,34 @@ public class SongListV2 : MonoBehaviour
 
     // START TWORZENIA UTWORÓW
     static Song stalemate = new Song(
-        0, "Stalemate", "Senk", "Yuzuki Yukari", null, null, "Synth-rock", "Vocaloid", 195, "4:17", 322, 1011, 3, 7);
+        0, "Stalemate", "Senk", "Yuzuki Yukari", null, null, "synth-rock", "vocaloid", 195, "4:17", 322, 1011, 3, 7);
 
     static Song comfyplace = new Song(
-        1, "Comfy Place", "Senk", null, null, "P. Dawidziak", "Future bass", "Instrumental", 187, "1:33", 301, 672, 3, 6);
+        1, "Comfy Place", "Senk", null, null, "P. Dawidziak", "future bass", "instrumental", 187, "1:33", 301, 672, 3, 6);
 
     static Song aiaiai = new Song(
-        2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "Electropop", "Virtual Youtuber", 128, "3:13", 301, 672, 2, 10);
+        2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "electropop", "virtual youtuber", 128, "3:13", 301, 672, 2, 10);
 
     static Song sixtrillion = new Song(
-        3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "Synth-rock", "Vocaloid", 186, "1:42", 301, 672, 4, 10);
+        3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "synth-rock", "vocaloid", 186, "1:42", 301, 672, 4, 10);
 
     static Song hitorigoto = new Song(
-        4, "Hitorigoto", "ClariS", null, null, null, "J-pop", "Anime", 165, "3:13", 301, 672, 2, 7);
+        4, "Hitorigoto", "ClariS", null, null, null, "j-pop", "anime", 165, "3:13", 301, 672, 2, 7);
 
     static Song killthislove = new Song(
-        5, "Kill This Love", "BLACKPINK", null, null, null, "K-pop", null, 132, "3:13", 301, 672, 1, 5);
+        5, "Kill This Love", "BLACKPINK", null, null, null, "k-pop", null, 132, "3:13", 301, 672, 1, 5);
 
     static Song badapple = new Song(
-        6, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "EDM", "Touhou", 138, "3:13", 301, 672, 3, 6);
+        6, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "edm", "touhou", 138, "3:13", 301, 672, 3, 6);
 
     static Song japaripark = new Song(
-        7, "Welcome to Japari Park", "Doubutsu Biscuits", null, null, null, "J-pop", "Anime", 170, "3:13", 301, 672, 4, 8);
+        7, "Youkoso Japari Park e", "Doubutsu Biscuits × PPP", null, null, null, "j-pop", "anime", 170, "3:13", 301, 672, 4, 8);
 
-    static Song test205 = new Song(
-        8, "TEST205", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 205, "3:13", 301, 672, 2, 10);
+    static Song dejavu = new Song(
+        8, "Deja Vu", "Dave Rodgers", null, null, null, "eurobeat", "anime", 154, "1:32", 301, 672, 4, 7);
 
-    static Song test230 = new Song(
-        9, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+    static Song miraclewave = new Song(
+        9, "MIRACLE WAVE", "Aqours", null, null, null, "j-pop", "Love Live!", 183, "1:34", 301, 672, 5, 7);
 
     static Song test260 = new Song(
         10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
@@ -236,8 +236,8 @@ public class SongListV2 : MonoBehaviour
         allSongs.Add(killthislove);
         allSongs.Add(badapple);
         allSongs.Add(japaripark);
-        allSongs.Add(test205);
-        allSongs.Add(test230);
+        allSongs.Add(dejavu);
+        allSongs.Add(miraclewave);
         allSongs.Add(test260);
         allSongs.Add(uwu);
 
