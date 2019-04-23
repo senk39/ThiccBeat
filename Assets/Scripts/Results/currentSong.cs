@@ -112,12 +112,12 @@ public class currentSong : SongListV2
 
     private void displayTop3Info()
     {
-        goldScoreLabel.text = goldScore.ToString();
-        goldComboLabel.text = goldCombo.ToString();
-        silverScoreLabel.text = silverScore.ToString();
-        silverComboLabel.text = silverCombo.ToString();
-        bronzeScoreLabel.text = bronzeScore.ToString();
-        bronzeComboLabel.text = bronzeCombo.ToString();
+        goldScoreLabel.text = PlayerPrefs.GetInt(sIndex + "GoldScore" + currentDiff).ToString();
+        goldComboLabel.text = PlayerPrefs.GetInt(sIndex + "GoldCombo" + currentDiff).ToString();
+        silverScoreLabel.text = PlayerPrefs.GetInt(sIndex + "SilverScore" + currentDiff).ToString();
+        silverComboLabel.text = PlayerPrefs.GetInt(sIndex + "SilverCombo" + currentDiff).ToString();
+        bronzeScoreLabel.text = PlayerPrefs.GetInt(sIndex + "BronzeScore" + currentDiff).ToString();
+        bronzeComboLabel.text = PlayerPrefs.GetInt(sIndex + "BronzeCombo" + currentDiff).ToString();
     }
 
     private void displaySongInfo()
@@ -173,6 +173,24 @@ public class currentSong : SongListV2
         if (goldScore < score)
         {
             newHighScoreText.SetActive(true);
+            if(goldScore > 0)
+            {
+                PlayerPrefs.SetInt(sIndex + "SilverScore" + currentDiff, goldScore);
+                PlayerPrefs.SetInt(sIndex + "SilverCombo" + currentDiff, goldCombo);
+                PlayerPrefs.SetString(sIndex + "SilverAccuracy" + currentDiff, goldAccuracy);
+                bronzeScore = silverScore;
+                bronzeCombo = silverCombo;
+                bronzeAccuracy = silverAccuracy;
+            }
+            if (silverScore > 0)
+            {
+                PlayerPrefs.SetInt(sIndex + "BronzeScore" + currentDiff, silverScore);
+                PlayerPrefs.SetInt(sIndex + "BronzeCombo" + currentDiff, silverCombo);
+                PlayerPrefs.SetString(sIndex + "BronzeAccuracy" + currentDiff, silverAccuracy);
+                bronzeScore = silverScore;
+                bronzeCombo = silverCombo;
+                bronzeAccuracy = silverAccuracy;
+            }
 
             PlayerPrefs.SetInt(sIndex + "GoldScore" + currentDiff, score);
             PlayerPrefs.SetInt(sIndex + "GoldCombo" + currentDiff, combo);
@@ -183,6 +201,16 @@ public class currentSong : SongListV2
         }
         else if (silverScore < score)
         {
+            if (silverScore > 0)
+            {
+                PlayerPrefs.SetInt(sIndex + "BronzeScore" + currentDiff, silverScore);
+                PlayerPrefs.SetInt(sIndex + "BronzeCombo" + currentDiff, silverCombo);
+                PlayerPrefs.SetString(sIndex + "BronzeAccuracy" + currentDiff, silverAccuracy);
+                bronzeScore = silverScore;
+                bronzeCombo = silverCombo;
+                bronzeAccuracy = silverAccuracy;
+            }
+
             PlayerPrefs.SetInt(sIndex + "SilverScore" + currentDiff, score);
             PlayerPrefs.SetInt(sIndex + "SilverCombo" + currentDiff, combo);
             PlayerPrefs.SetString(sIndex + "SilverAccuracy" + currentDiff, accuracyLabel.text);

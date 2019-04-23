@@ -498,6 +498,7 @@ public class SongListV2 : MonoBehaviour
                 }
                 else
                 {
+                    //selHighScore1Label.text = "1. ---";
                     selHighScore1LabelAcc.text = " ";
                 }
             }
@@ -516,6 +517,7 @@ public class SongListV2 : MonoBehaviour
                 }
                 else
                 {
+                    //selHighScore2Label.text = "2. ---";
                     selHighScore2LabelAcc.text = " ";
                 }
             }
@@ -534,13 +536,14 @@ public class SongListV2 : MonoBehaviour
                 }
                 else
                 {
+                    //selHighScore3Label.text = "3. ---";
                     selHighScore3LabelAcc.text = " ";
                 }
             }
             else
             {
                 selHighScore3Label.text = "3. ---";
-                selHighScore2LabelAcc.text = " ";
+                selHighScore3LabelAcc.text = " ";
             }
         }
 
