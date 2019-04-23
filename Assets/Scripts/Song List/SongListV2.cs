@@ -47,6 +47,15 @@ public class SongListV2 : MonoBehaviour
     public TextMeshProUGUI selHighScore3Acc;
     TextMeshProUGUI selHighScore3LabelAcc;
 
+    public TextMeshProUGUI selHighScore1Combo;
+    TextMeshProUGUI selHighScore1LabelCombo;
+
+    public TextMeshProUGUI selHighScore2Combo;
+    TextMeshProUGUI selHighScore2LabelCombo;
+
+    public TextMeshProUGUI selHighScore3Combo;
+    TextMeshProUGUI selHighScore3LabelCombo;
+
     public GameObject selCoverObj;
 
     public static int selectedSongByUser;
@@ -215,6 +224,10 @@ public class SongListV2 : MonoBehaviour
         selHighScore1LabelAcc = selHighScore1Acc.GetComponent<TMPro.TextMeshProUGUI>();
         selHighScore2LabelAcc = selHighScore2Acc.GetComponent<TMPro.TextMeshProUGUI>();
         selHighScore3LabelAcc = selHighScore3Acc.GetComponent<TMPro.TextMeshProUGUI>();
+
+        selHighScore1LabelCombo = selHighScore1Combo.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore2LabelCombo = selHighScore2Combo.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore3LabelCombo = selHighScore3Combo.GetComponent<TMPro.TextMeshProUGUI>();
 
         acChangeSong = acConChangeSong.GetComponent<AudioSource>();
         acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
@@ -437,10 +450,13 @@ public class SongListV2 : MonoBehaviour
                 if(selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
                 {
                     selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyeasy");
+                    selHighScore1LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldComboeasy").ToString();
+
                 }
                 else
                 {
                     selHighScore1LabelAcc.text = " ";
+                    selHighScore1LabelCombo.text = " ";
                 }
 
             }
@@ -448,6 +464,7 @@ public class SongListV2 : MonoBehaviour
             {
                 selHighScore1Label.text = "1. ---";
                 selHighScore1LabelAcc.text = " ";
+                selHighScore1LabelCombo.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy") > 1)
@@ -456,16 +473,21 @@ public class SongListV2 : MonoBehaviour
                 if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
                 {
                     selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyeasy");
+                    selHighScore2LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverComboeasy").ToString();
+
                 }
                 else
                 {
                     selHighScore2LabelAcc.text = " ";
+                    selHighScore2LabelCombo.text = " ";
                 }
             }
             else
             {
                 selHighScore2Label.text = "2. ---";
                 selHighScore2LabelAcc.text = " ";
+                selHighScore2LabelCombo.text = " ";
+
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy") > 1)
@@ -474,16 +496,20 @@ public class SongListV2 : MonoBehaviour
                 if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
                 {
                     selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyeasy");
+                    selHighScore3LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeComboeasy").ToString();
+
                 }
                 else
                 {
                     selHighScore3LabelAcc.text = " ";
+                    selHighScore3LabelCombo.text = " ";
                 }
             }
             else
             {
                 selHighScore3Label.text = "3. ---";
                 selHighScore3LabelAcc.text = " ";
+                selHighScore3LabelCombo.text = " ";
             }
 
         }
@@ -495,17 +521,21 @@ public class SongListV2 : MonoBehaviour
                 if (selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
                 {
                     selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyhard");
+                    selHighScore1LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldCombohard").ToString();
+
                 }
                 else
                 {
                     //selHighScore1Label.text = "1. ---";
                     selHighScore1LabelAcc.text = " ";
+                    selHighScore1LabelCombo.text = " ";
                 }
             }
             else
             {
                 selHighScore1Label.text = "1. ---";
                 selHighScore1LabelAcc.text = " ";
+                selHighScore1LabelCombo.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard") > 1)
@@ -514,17 +544,21 @@ public class SongListV2 : MonoBehaviour
                 if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
                 {
                     selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyhard");
+                    selHighScore2LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverCombohard").ToString();
+
                 }
                 else
                 {
                     //selHighScore2Label.text = "2. ---";
                     selHighScore2LabelAcc.text = " ";
+                    selHighScore2LabelCombo.text = " ";
                 }
             }
             else
             {
                 selHighScore2Label.text = "2. ---";
                 selHighScore2LabelAcc.text = " ";
+                selHighScore2LabelCombo.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1)
@@ -533,17 +567,21 @@ public class SongListV2 : MonoBehaviour
                 if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
                 {
                     selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyhard");
+                    selHighScore3LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeCombohard").ToString();
+
                 }
                 else
                 {
                     //selHighScore3Label.text = "3. ---";
                     selHighScore3LabelAcc.text = " ";
+                    selHighScore3LabelCombo.text = " ";
                 }
             }
             else
             {
                 selHighScore3Label.text = "3. ---";
                 selHighScore3LabelAcc.text = " ";
+                selHighScore3LabelCombo.text = " ";
             }
         }
 
@@ -612,5 +650,6 @@ public class SongListV2 : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("lastGameScore");
         PlayerPrefs.DeleteKey("lastGameMaxCombo");
+        PlayerPrefs.DeleteKey("lastGameCorrectNotes");      
     }
 }
