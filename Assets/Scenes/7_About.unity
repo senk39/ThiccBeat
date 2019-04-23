@@ -131,7 +131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4937786539689636, guid: be8d250df97eed444b36659d66323df3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 452
+      value: 243
       objectReference: {fileID: 0}
     - target: {fileID: 4937786539689636, guid: be8d250df97eed444b36659d66323df3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -156,6 +156,10 @@ Prefab:
     - target: {fileID: 4937786539689636, guid: be8d250df97eed444b36659d66323df3, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162049096091072, guid: be8d250df97eed444b36659d66323df3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8d250df97eed444b36659d66323df3, type: 2}
@@ -310,23 +314,24 @@ Prefab:
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_text
-      value: "ThiccBeat v.2.1.3.7 beta, kwiecien 2019\nAutor: Senk\n\nJesli widzisz
-        ten tekst, to jestes na Pyrkonie. \nBaw sie dobrze uwu."
+      value: "ThiccBeat v. 0.2137 beta, kwiecien 2019\n\nAutor gry: Senk\nNagrania
+        glosu: Paternya\n\nJesli widzisz ten tekst, to jestes na Pyrkonie. \nBaw sie
+        dobrze uwu.\n\nProsimy nie klepac graczy po tylku.\nUwU"
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 121
+      value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 20
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 23
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
@@ -336,7 +341,7 @@ Prefab:
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.lineCount
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}

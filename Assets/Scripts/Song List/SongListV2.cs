@@ -169,43 +169,35 @@ public class SongListV2 : MonoBehaviour
     }
 
 
-
-    // START TWORZENIA UTWORÓW
-    static Song stalemate = new Song(
-        0, "Stalemate", "Senk", "Yuzuki Yukari", null, null, "synth-rock", "vocaloid", 195, "4:17", 1, 310, 3, 7);
-
-    static Song comfyplace = new Song(
-        1, "Comfy Place", "Senk", null, null, "P. Dawidziak", "future bass", "instrumental", 187, "1:33", 158, 427, 3, 6);
-
     static Song aiaiai = new Song(
-        2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "electropop", "virtual youtuber", 128, "3:13", 324, 667, 2, 10);
+        0, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "electropop", "virtual youtuber", 128, "3:13", 324, 667, 2, 10);
 
     static Song sixtrillion = new Song(
-        3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "synth-rock", "vocaloid", 186, "1:42", 272, 522, 4, 10);
+        1, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "synth-rock", "vocaloid", 186, "1:42", 272, 522, 4, 10);
 
     static Song hitorigoto = new Song(
-        4, "Hitorigoto", "ClariS", null, null, null, "j-pop", "anime", 165, "3:13", 203, 367, 2, 7);
+        2, "Hitorigoto", "ClariS", null, null, null, "j-pop", "anime", 165, "3:13", 203, 367, 2, 7);
 
     static Song killthislove = new Song(
-        5, "Kill This Love", "BLACKPINK", null, null, null, "k-pop", null, 132, "3:13", 1, 485, 1, 5);
+        3, "Kill This Love", "BLACKPINK", null, null, null, "k-pop", null, 132, "3:13", 1, 485, 1, 5);
 
     static Song badapple = new Song(
-        6, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "edm", "touhou", 138, "3:13", 247, 451, 3, 6);
+        4, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "edm", "touhou", 138, "3:13", 247, 451, 3, 6);
 
     static Song japaripark = new Song(
-        7, "Youkoso Japari Park e", "Doubutsu Biscuits × PPP", null, null, null, "j-pop", "anime", 170, "3:13", 122, 344, 4, 8);
+        5, "Youkoso Japari Park e", "Doubutsu Biscuits × PPP", null, null, null, "j-pop", "anime", 170, "3:13", 122, 344, 4, 8);
 
     static Song dejavu = new Song(
-        8, "Deja Vu", "Dave Rodgers", null, null, null, "eurobeat", "anime", 154, "1:32", 171, 350, 4, 7);
+        6, "Deja Vu", "Dave Rodgers", null, null, null, "eurobeat", "anime", 154, "1:32", 171, 350, 4, 7);
 
     static Song miraclewave = new Song(
-        9, "MIRACLE WAVE", "Aqours", null, null, null, "j-pop", "Love Live!", 183, "1:34", 283, 422, 5, 7);
+        7, "MIRACLE WAVE", "Aqours", null, null, null, "j-pop", "Love Live!", 183, "1:34", 283, 422, 5, 7);
 
-    static Song test260 = new Song(
-        10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+    //static Song test260 = new Song(
+    //    10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
 
-    static Song uwu = new Song(
-        11, "TURBOOOF", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+    //static Song uwu = new Song(
+    //    11, "TURBOOOF", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
 
 
 
@@ -255,8 +247,8 @@ public class SongListV2 : MonoBehaviour
 
     void addingSongsToList()
     {
-        allSongs.Add(stalemate);
-        allSongs.Add(comfyplace);
+        //allSongs.Add(stalemate);
+        //allSongs.Add(comfyplace);
         allSongs.Add(aiaiai);
         allSongs.Add(sixtrillion);
         allSongs.Add(hitorigoto);
@@ -265,8 +257,8 @@ public class SongListV2 : MonoBehaviour
         allSongs.Add(japaripark);
         allSongs.Add(dejavu);
         allSongs.Add(miraclewave);
-        allSongs.Add(test260);
-        allSongs.Add(uwu);
+        //allSongs.Add(test260);
+        //allSongs.Add(uwu);
 
     }
 
@@ -628,7 +620,7 @@ public class SongListV2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) || (Input.GetKeyDown(KeyCode.G)))
         {
             acEnter.Play();
-            SceneManager.LoadScene(4);
+            Invoke("loadGameplay", 1.8f);
         }
     }
 
@@ -644,6 +636,11 @@ public class SongListV2 : MonoBehaviour
     void loadMainMenu()
     {
         SceneManager.LoadScene(1);
+    }
+
+    void loadGameplay()
+    {
+        SceneManager.LoadScene(4);
     }
 
     private static void deletePlayerPrefsKeys()

@@ -46,7 +46,7 @@ public class note : MonoBehaviour {
         speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej        
         offset = bpm * 5.01f;
 
-        if(SongListV2.allSongs[selectedSong].index == 2)
+        if(SongListV2.allSongs[selectedSong].index == 0)
         {
             offset =  580f;
         }
