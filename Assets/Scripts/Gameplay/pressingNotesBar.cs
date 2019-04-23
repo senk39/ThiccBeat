@@ -27,6 +27,7 @@ public class pressingNotesBar : MonoBehaviour
             if (Input.GetKeyDown(key) && isActive && noteContainer.GetComponent<note>().isTheLowest && noteContainer.GetComponent<note>().isActive)
             {
                 playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+                playerScoreContainer.GetComponent<playerScore>().playerCorrectNotes += 1;
                 playerComboContainer.GetComponent<playerCombo>().currentCombo++;
 
                 RemoveFromQueue();

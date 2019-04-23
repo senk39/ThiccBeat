@@ -38,6 +38,15 @@ public class SongListV2 : MonoBehaviour
     public TextMeshProUGUI selHighScore3;
     TextMeshProUGUI selHighScore3Label;
 
+    public TextMeshProUGUI selHighScore1Acc;
+    TextMeshProUGUI selHighScore1LabelAcc;
+
+    public TextMeshProUGUI selHighScore2Acc;
+    TextMeshProUGUI selHighScore2LabelAcc;
+
+    public TextMeshProUGUI selHighScore3Acc;
+    TextMeshProUGUI selHighScore3LabelAcc;
+
     public GameObject selCoverObj;
 
     public static int selectedSongByUser;
@@ -203,6 +212,10 @@ public class SongListV2 : MonoBehaviour
         selHighScore2Label = selHighScore2.GetComponent<TMPro.TextMeshProUGUI>();
         selHighScore3Label = selHighScore3.GetComponent<TMPro.TextMeshProUGUI>();
 
+        selHighScore1LabelAcc = selHighScore1Acc.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore2LabelAcc = selHighScore2Acc.GetComponent<TMPro.TextMeshProUGUI>();
+        selHighScore3LabelAcc = selHighScore3Acc.GetComponent<TMPro.TextMeshProUGUI>();
+
         acChangeSong = acConChangeSong.GetComponent<AudioSource>();
         acChangeDiff = acConChangeDiff.GetComponent<AudioSource>();
         acBack = acConBack.GetComponent<AudioSource>();
@@ -224,6 +237,7 @@ public class SongListV2 : MonoBehaviour
         backToMainMenu();
         chooseSongAndMoveToGame();
         borderColorGenerator(isCurrentDifficultyIsEasy);
+        //highScores();
     }
 
     void addingSongsToList()
@@ -420,28 +434,56 @@ public class SongListV2 : MonoBehaviour
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
             {
                 selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy").ToString();
+                if(selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
+                {
+                    selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyeasy");
+                }
+                else
+                {
+                    selHighScore1LabelAcc.text = " ";
+                }
+
             }
             else
             {
                 selHighScore1Label.text = "1. ---";
+                selHighScore1LabelAcc.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy") > 1)
             {
                 selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy").ToString();
+                if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
+                {
+                    selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyeasy");
+                }
+                else
+                {
+                    selHighScore2LabelAcc.text = " ";
+                }
             }
             else
             {
                 selHighScore2Label.text = "2. ---";
+                selHighScore2LabelAcc.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy") > 1)
             {
                 selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy").ToString();
+                if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
+                {
+                    selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyeasy");
+                }
+                else
+                {
+                    selHighScore3LabelAcc.text = " ";
+                }
             }
             else
             {
                 selHighScore3Label.text = "3. ---";
+                selHighScore3LabelAcc.text = " ";
             }
 
         }
@@ -450,28 +492,55 @@ public class SongListV2 : MonoBehaviour
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard") > 1)
             {
                 selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard").ToString();
+                if (selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
+                {
+                    selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyhard");
+                }
+                else
+                {
+                    selHighScore1LabelAcc.text = " ";
+                }
             }
             else
             {
                 selHighScore1Label.text = "1. ---";
+                selHighScore1LabelAcc.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard") > 1)
             {
                 selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard").ToString();
+                if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
+                {
+                    selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyhard");
+                }
+                else
+                {
+                    selHighScore2LabelAcc.text = " ";
+                }
             }
             else
             {
                 selHighScore2Label.text = "2. ---";
+                selHighScore2LabelAcc.text = " ";
             }
 
             if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1)
             {
                 selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard").ToString();
+                if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
+                {
+                    selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyhard");
+                }
+                else
+                {
+                    selHighScore3LabelAcc.text = " ";
+                }
             }
             else
             {
                 selHighScore3Label.text = "3. ---";
+                selHighScore2LabelAcc.text = " ";
             }
         }
 

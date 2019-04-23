@@ -41,7 +41,6 @@ public class pressingNotes5 : MonoBehaviour
             {
                 if (key == KeyCode.I && transform.position.x == row5X)
                 {
-                    Debug.Log("i");
                     doWhenKeyPressedAndNoteIsInPressablePlace();
                     dequeueAndDestroy();
                 }
@@ -52,6 +51,7 @@ public class pressingNotes5 : MonoBehaviour
     void incrementCombo()
     {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+        playerScoreContainer.GetComponent<playerScore>().playerCorrectNotes += 1;
         playerComboContainer.GetComponent<playerCombo>().currentCombo++;
     }
 

@@ -245,7 +245,7 @@ public class buttonSelector : MonoBehaviour
     public void deleteHighScores()
     {
         acEnter.Play();
-        for (int sIndex = 0; sIndex < 1; sIndex++)
+        for (int sIndex = 0; sIndex < 11; sIndex++)
         {
             PlayerPrefs.SetInt(sIndex + "GoldScoreeasy", 0);
             PlayerPrefs.SetInt(sIndex + "SilverScoreeasy", 0);

@@ -232,6 +232,7 @@ public class pressingNotes : MonoBehaviour
     void incrementCombo()
     {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+        playerScoreContainer.GetComponent<playerScore>().playerCorrectNotes += 1;
         playerComboContainer.GetComponent<playerCombo>().currentCombo++;
     }
 

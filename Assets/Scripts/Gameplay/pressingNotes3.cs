@@ -48,12 +48,8 @@ public class pressingNotes3 : MonoBehaviour
             {
                 if (key == KeyCode.D && transform.position.x == row3X)
                 {
-                    Debug.Log("D");
                     doWhenKeyPressedAndNoteIsInPressablePlace();
-
                     dequeueAndDestroy();
-                    //note3.SetActive(false);
-                    //Destroy(note3);
                 }
             }
         }
@@ -64,6 +60,7 @@ public class pressingNotes3 : MonoBehaviour
     void incrementCombo()
     {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+        playerScoreContainer.GetComponent<playerScore>().playerCorrectNotes += 1;
         playerComboContainer.GetComponent<playerCombo>().currentCombo++;
     }
 

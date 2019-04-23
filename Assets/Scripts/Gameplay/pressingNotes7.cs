@@ -14,8 +14,6 @@ public class pressingNotes7 : MonoBehaviour
     public GameObject noteItself;
     public GameObject noteContainer;
 
-    //public Queue<GameObject> notesQueue7 = new Queue<GameObject>();
-
     private const float row7X = 2.8f;
 
     const float ActiveStart = -8f;
@@ -43,12 +41,8 @@ public class pressingNotes7 : MonoBehaviour
             {
                 if (key == KeyCode.G && transform.position.x == row7X)
                 {
-                    Debug.Log("G");
                     doWhenKeyPressedAndNoteIsInPressablePlace();
-
                     dequeueAndDestroy();
-                    //note7.SetActive(false);
-                    //Destroy(note7);
                 }
             }
         }
@@ -58,6 +52,7 @@ public class pressingNotes7 : MonoBehaviour
     void incrementCombo()
     {
         playerScoreContainer.GetComponent<playerScore>().playerCurrentScore += 200;
+        playerScoreContainer.GetComponent<playerScore>().playerCorrectNotes += 1;
         playerComboContainer.GetComponent<playerCombo>().currentCombo++;
     }
 
