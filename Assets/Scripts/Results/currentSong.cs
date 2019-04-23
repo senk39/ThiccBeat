@@ -51,6 +51,16 @@ public class currentSong : SongListV2
 
     public GameObject bronzeComboElement;
     public TextMeshProUGUI bronzeComboLabel;
+    
+
+    public GameObject goldAccuracyElement;
+    public TextMeshProUGUI goldAccuracyLabel;
+
+    public GameObject silverAccuracyElement;
+    public TextMeshProUGUI silverAccuracyLabel;
+
+    public GameObject bronzeAccuracyElement;
+    public TextMeshProUGUI bronzeAccuracyLabel;
 
     public GameObject newHighScoreText;
 
@@ -90,18 +100,25 @@ public class currentSong : SongListV2
 
         titleLabel = titleElement.GetComponent<TMPro.TextMeshProUGUI>();
         artistLabel = artistElement.GetComponent<TMPro.TextMeshProUGUI>();
+
         diffLabel = diffElement.GetComponent<TMPro.TextMeshProUGUI>();
         diffStarsLabel = diffStarsElement.GetComponent<TMPro.TextMeshProUGUI>();
+
         scoreLabel = scoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         comboLabel = comboElement.GetComponent<TMPro.TextMeshProUGUI>();
         accuracyLabel = accuracyElement.GetComponent<TMPro.TextMeshProUGUI>();
 
         goldScoreLabel = goldScoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         goldComboLabel = goldComboElement.GetComponent<TMPro.TextMeshProUGUI>();
+        goldAccuracyLabel = goldAccuracyElement.GetComponent<TMPro.TextMeshProUGUI>();
+
         silverScoreLabel = silverScoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         silverComboLabel = silverComboElement.GetComponent<TMPro.TextMeshProUGUI>();
+        silverAccuracyLabel = silverAccuracyElement.GetComponent<TMPro.TextMeshProUGUI>();
+
         bronzeScoreLabel = bronzeScoreElement.GetComponent<TMPro.TextMeshProUGUI>();
         bronzeComboLabel = bronzeComboElement.GetComponent<TMPro.TextMeshProUGUI>();
+        bronzeAccuracyLabel = bronzeAccuracyElement.GetComponent<TMPro.TextMeshProUGUI>();
 
         displaySongInfo();
         displayAccuracy();
@@ -114,10 +131,15 @@ public class currentSong : SongListV2
     {
         goldScoreLabel.text = PlayerPrefs.GetInt(sIndex + "GoldScore" + currentDiff).ToString();
         goldComboLabel.text = PlayerPrefs.GetInt(sIndex + "GoldCombo" + currentDiff).ToString();
+        goldAccuracyLabel.text = PlayerPrefs.GetString(sIndex + "GoldAccuracy" + currentDiff).ToString();
+
         silverScoreLabel.text = PlayerPrefs.GetInt(sIndex + "SilverScore" + currentDiff).ToString();
         silverComboLabel.text = PlayerPrefs.GetInt(sIndex + "SilverCombo" + currentDiff).ToString();
+        silverAccuracyLabel.text = PlayerPrefs.GetString(sIndex + "SilverAccuracy" + currentDiff).ToString();
+
         bronzeScoreLabel.text = PlayerPrefs.GetInt(sIndex + "BronzeScore" + currentDiff).ToString();
         bronzeComboLabel.text = PlayerPrefs.GetInt(sIndex + "BronzeCombo" + currentDiff).ToString();
+        bronzeAccuracyLabel.text = PlayerPrefs.GetString(sIndex + "BronzeAccuracy" + currentDiff).ToString();
     }
 
     private void displaySongInfo()
@@ -178,9 +200,9 @@ public class currentSong : SongListV2
                 PlayerPrefs.SetInt(sIndex + "SilverScore" + currentDiff, goldScore);
                 PlayerPrefs.SetInt(sIndex + "SilverCombo" + currentDiff, goldCombo);
                 PlayerPrefs.SetString(sIndex + "SilverAccuracy" + currentDiff, goldAccuracy);
-                bronzeScore = silverScore;
-                bronzeCombo = silverCombo;
-                bronzeAccuracy = silverAccuracy;
+                silverScore = goldScore;
+                silverCombo = silverCombo;
+                silverAccuracy = silverAccuracy;
             }
             if (silverScore > 0)
             {
@@ -197,7 +219,8 @@ public class currentSong : SongListV2
             PlayerPrefs.SetString(sIndex + "GoldAccuracy" + currentDiff, accuracyLabel.text);
             goldScore = score;
             goldCombo = combo;
-            
+            goldAccuracy = accuracyLabel.text;
+
         }
         else if (silverScore < score)
         {
@@ -216,6 +239,7 @@ public class currentSong : SongListV2
             PlayerPrefs.SetString(sIndex + "SilverAccuracy" + currentDiff, accuracyLabel.text);
             silverScore = score;
             silverCombo = combo;
+            silverAccuracy = accuracyLabel.text;
 
         }
         else if (bronzeScore < score)
@@ -225,6 +249,7 @@ public class currentSong : SongListV2
             PlayerPrefs.SetString(sIndex + "BronzeAccuracy" + currentDiff, accuracyLabel.text);
             bronzeScore = score;
             bronzeCombo = combo;
+            bronzeAccuracy = accuracyLabel.text;
         }
     }
 
