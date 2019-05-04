@@ -177,16 +177,6 @@ FULL BEAT: 12.09
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 6;
 
-                if (newNoteContainer.GetComponent<noteClass>().endPoint - newNoteContainer.GetComponent<noteClass>().startPoint > 12)
-                {
-                    GameObject newNoteEnd = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
-                    newNoteEnd.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                    newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row6X, rowY, rowZ), noteQuaternion);
-                    newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
-                    newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
-                    newNoteContainer.GetComponent<noteClass>().keyNumber = 6;
-                }
-
             }
             else if (eachNoteSplit[2].Contains("5"))
             {
@@ -250,8 +240,6 @@ FULL BEAT: 12.09
                 newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                 newNoteContainer.GetComponent<noteClass>().keyNumber = 7;
             }
-
-            newNoteContainer.GetComponent<noteClass>().length = newNoteContainer.GetComponent<noteClass>().endPoint - newNoteContainer.GetComponent<noteClass>().startPoint;
 
             if (i < 9)
             {

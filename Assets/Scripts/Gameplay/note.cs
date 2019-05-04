@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class note : MonoBehaviour {
 
-     float noteVelocity;
+    public float noteVelocity;
     Rigidbody rb;
 
     public bool isTheLowest = false;
 
     public bool isActive = false;
-     float ZPosToActive;
-     float ZPosToDestroy;
+    private float ZPosToActive;
+    private float ZPosToDestroy;
 
     bool move = false;
 
@@ -20,10 +20,10 @@ public class note : MonoBehaviour {
 
     private float zPos;
 
-    float offset;
-    float speed;
-    float speed2;
-    float bpm;
+    public float offset;
+    public float speed;
+    public float speed2;
+    public float bpm;
     int selectedSong;
 
     bool dequeueIfTrue = true;
