@@ -1,8 +1,8 @@
 x
-96 On n=1
+360 On n=1
 372 Off n=1x
-396 On n=2
-436 Off n=2x
+408 On n=2
+420 Off n=2x
 456 On n=4
 468 Off n=4x
 552 On n=1
@@ -10,7 +10,7 @@ x
 600 On n=2
 612 Off n=2x
 648 On n=5
-722 Off n=5x
+660 Off n=5x
 744 On n=1
 756 Off n=1x
 792 On n=3

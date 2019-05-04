@@ -1,8 +1,8 @@
 x
-120 On n=1
+360 On n=1
 372 Off n=1x
 456 On n=2
-520 Off n=2x
+468 Off n=2x
 552 On n=1
 564 Off n=1x
 648 On n=3
