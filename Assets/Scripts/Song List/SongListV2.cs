@@ -194,13 +194,7 @@ public class SongListV2 : MonoBehaviour
         7, "MIRACLE WAVE", "Aqours", null, null, null, "j-pop", "love live!", 183, "1:34", 283, 422, 5, 7);
 
     static Song hibana = new Song(
-    7, "HIBANA", "DECO*27", "Hatsune Miku", null, null, "pop-rock", "vocaloid", 200, "1:15", 201, 389, 3, 8);
-
-    //static Song test260 = new Song(
-    //    10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
-
-    //static Song uwu = new Song(
-    //    11, "TURBOOOF", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+        8, "HIBANA", "DECO*27", "Hatsune Miku", null, null, "pop-rock", "vocaloid", 200, "1:15", 201, 389, 3, 8);
 
 
 
@@ -261,8 +255,6 @@ public class SongListV2 : MonoBehaviour
         allSongs.Add(dejavu);
         allSongs.Add(miraclewave);
         allSongs.Add(hibana);
-        //allSongs.Add(test260);
-        //allSongs.Add(uwu);
 
     }
 
