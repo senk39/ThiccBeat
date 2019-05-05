@@ -174,14 +174,75 @@ FULL BEAT: 12.09
 
             for (int i2 = 1; i2 < 8; i2++)
             {
+                noteClass currentNoteClass = newNoteContainer.GetComponent<noteClass>();
+
                 if (eachNoteSplit[2].Contains(i2.ToString()) && i2 < 7)
                 {
-                    GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
-                    newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-                    newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(rows[i2], rowY, rowZ), noteQuaternion);
-                    newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
-                    newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
-                    newNoteContainer.GetComponent<noteClass>().keyNumber = i2;
+                    currentNoteClass.startPoint = Int32.Parse(eachNoteSplit[0]);
+                    currentNoteClass.endPoint = Int32.Parse(eachNoteSplit[1]);
+                    currentNoteClass.keyNumber = i2;
+                    currentNoteClass.noteLength = currentNoteClass.endPoint - currentNoteClass.startPoint;
+
+
+                    if (currentNoteClass.noteLength <= 12)
+                    {
+                        GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
+                        newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+                        newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(rows[i2], rowY, rowZ), noteQuaternion);
+
+
+                        if (i < 9)
+                        {
+                            newNote.transform.name = "note00" + (i + 1);
+                        }
+                        else if (i < 99)
+                        {
+                            newNote.transform.name = "note0" + (i + 1);
+                        }
+                        else
+                        {
+                            newNote.transform.name = "note" + (i + 1);
+                        }
+                    }
+
+                    else
+                    {
+                        GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
+                        newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+
+
+                        if (i < 9)
+                        {
+                            newNote.transform.name = "startNote00" + (i + 1);
+                        }
+                        else if (i < 99)
+                        {
+                            newNote.transform.name = "startNote0" + (i + 1);
+                        }
+                        else
+                        {
+                            newNote.transform.name = "startNote" + (i + 1);
+                        }
+
+                        GameObject newNoteEnd = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
+                        newNoteEnd.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote                       
+                        newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(rows[i2], rowY, rowZ), noteQuaternion);
+
+                        if (i < 9)
+                        {
+                            newNoteEnd.transform.name = "endNote00" + (i + 1);
+                        }
+                        else if (i < 99)
+                        {
+                            newNoteEnd.transform.name = "endNote0" + (i + 1);
+                        }
+                        else
+                        {
+                            newNoteEnd.transform.name = "endNote" + (i + 1);
+                        }
+
+                        
+                    }                       
                     break;
                 }
                 else if (eachNoteSplit[2].Contains("7"))
@@ -192,18 +253,20 @@ FULL BEAT: 12.09
                     newBarNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newBarNote
                     newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(row7X, rowY, rowZ), noteQuaternion);
                     //GENEROWANIE BARA
-                    newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
-                    newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
-                    newNoteContainer.GetComponent<noteClass>().keyNumber = 7;
+                    currentNoteClass.startPoint = Int32.Parse(eachNoteSplit[0]);
+                    currentNoteClass.endPoint = Int32.Parse(eachNoteSplit[1]);
+                    currentNoteClass.keyNumber = 7;
+                    currentNoteClass.noteLength = currentNoteClass.endPoint - currentNoteClass.startPoint;
+                    if (currentNoteClass.noteLength > 12)
+                    {
+                        GameObject newBarNoteEnd = Instantiate(noteBar, new Vector3(0, 0, 0), barQuaternion);
+                        newBarNoteEnd.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
+                        newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(rows[i2], rowY, rowZ), noteQuaternion);
+                    }
                     break;
                 }
-            }
-
-            
+            }                      
            
-
-            
-
             if (i < 9)
             {
                 newNoteContainer.transform.name = "note00" + (i + 1);
