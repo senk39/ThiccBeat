@@ -80,34 +80,54 @@ public class note : MonoBehaviour {
         {
             isMoving = true;           
         }
-       
 
-        if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
+        if (GetComponent<noteClass>().isShort)
         {
-            isActive = true;
-        }
-        else if (gameObject.transform.position.z < ZPosToDestroy)
-        {
-            isActive = false;
-            resetCombo();
-            isTheLowest = false;
-            dequeue();
+            if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
+            {
+                isActive = true;
+            }
+            else if (gameObject.transform.position.z < ZPosToDestroy)
+            {
+                isActive = false;
+                resetCombo();
+                isTheLowest = false;
+                dequeue();
 
-            isMoving = false;
-            this.enabled = false;           
+                isMoving = false;
+                this.enabled = false;
+            }
         }
+        else if (GetComponent<noteClass>().isHold) // TU HOLDY
+        {
+            if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
+            {
+                isActive = true;
+            }
+            else if (transform.GetChild(1).transform.position.z < ZPosToDestroy)
+            {
+                isActive = false;
+                resetCombo();
+                isTheLowest = false;
+                dequeue();
+
+                isMoving = false;
+                this.enabled = false;
+            }
+        }
+
     }
 
     void FixedUpdate()
     {
         //Debug.Log("bpm: " + bpm);
         if (pause.isGamePaused == false && isMoving == true)
-        {
-            if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
-            {
-                Vector3 movement = new Vector3(0, 0, 0);
-                rb.MovePosition(transform.position - transform.forward / 9/187*195 * noteVelocity);
-            }
+        {           
+                if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+                {
+                    Vector3 movement = new Vector3(0, 0, 0);
+                    rb.MovePosition(transform.position - transform.forward / 9 / 187 * 195 * noteVelocity);
+                }           
         }
     }
 

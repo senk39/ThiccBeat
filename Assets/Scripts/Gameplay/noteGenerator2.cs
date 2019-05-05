@@ -226,7 +226,7 @@ FULL BEAT: 12.09
                             newNote.transform.name = "startNote" + (i + 1);
                         }
 
-                        GameObject newNoteEnd = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
+                        GameObject newNoteEnd = Instantiate(noteShort, new Vector3(0, 0, (0 + (0.56483941145f * currentNoteClass.noteLength))), noteQuaternion);
                         newNoteEnd.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote                       
                         newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(rows[i2], rowY, rowZ), noteQuaternion);
 
