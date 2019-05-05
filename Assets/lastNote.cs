@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class lastNote : MonoBehaviour
 {
-    public GameObject n1;
+
+
+
+
+
     public GameObject n2;
     public GameObject n3;
     public GameObject n4;
@@ -12,7 +16,6 @@ public class lastNote : MonoBehaviour
     public GameObject n6;
     public GameObject n7;
 
-    public GameObject nc1;
     public GameObject nc2;
     public GameObject nc3;
     public GameObject nc4;
@@ -20,7 +23,6 @@ public class lastNote : MonoBehaviour
     public GameObject nc6;
     public GameObject nc7;
 
-    public Queue<GameObject> notesQueue1 = new Queue<GameObject>();
     public Queue<GameObject> notesQueue2 = new Queue<GameObject>();
     public Queue<GameObject> notesQueue3 = new Queue<GameObject>();
     public Queue<GameObject> notesQueue4 = new Queue<GameObject>();
@@ -28,7 +30,6 @@ public class lastNote : MonoBehaviour
     public Queue<GameObject> notesQueue6 = new Queue<GameObject>();
     public Queue<GameObject> notesQueue7 = new Queue<GameObject>();
 
-    public GameObject keyElement1;
     public GameObject keyElement2;
     public GameObject keyElement3;
     public GameObject keyElement4;
@@ -36,7 +37,6 @@ public class lastNote : MonoBehaviour
     public GameObject keyElement6;
     public GameObject keyElement7;
 
-    private const float row1X = -5.1f;
     private const float row2X = -3.1f;
     private const float row3X = -1.1f;
     private const float row4X = 1.1f;
@@ -62,17 +62,14 @@ public class lastNote : MonoBehaviour
     {
         setAsTheLowest();
         addTheLowestNotesToGameObjects();
-        checkEndOfSong();
+        //checkEndOfSong();
     }
     void createQueues()
     {
 
         foreach (var nutkowyKontener in allNotes)
         {
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 1)
-            {
-                notesQueue1.Enqueue(nutkowyKontener);
-            }
+
             if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 2)
             {
                 notesQueue2.Enqueue(nutkowyKontener);
@@ -103,10 +100,6 @@ public class lastNote : MonoBehaviour
 
     void setAsTheLowest()
     {
-        if (notesQueue1.Count > 0)
-        {
-            notesQueue1.Peek().GetComponent<note>().isTheLowest = true;
-        }
         if (notesQueue2.Count > 0)
         {
             notesQueue2.Peek().GetComponent<note>().isTheLowest = true;
@@ -135,16 +128,7 @@ public class lastNote : MonoBehaviour
 
     void addTheLowestNotesToGameObjects()
     {
-        if(notesQueue1.Count > 0)
-        {
-            nc1 = notesQueue1.Peek();
-            n1 = notesQueue1.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc1 = null;
-            n1 = null;
-        }
+        
 
         if (notesQueue2.Count > 0)
         {
@@ -212,18 +196,18 @@ public class lastNote : MonoBehaviour
         }
     }
 
-    void checkEndOfSong()
-    {
-        if (notesQueue1.Count == 0 && 
-            notesQueue2.Count == 0 && 
-            notesQueue3.Count == 0 &&
-            notesQueue4.Count == 0 &&
-            notesQueue5.Count == 0 &&
-            notesQueue6.Count == 0 &&
-            notesQueue7.Count == 0)
-        {           
-            isSongFinished = true;
-        }
-    }
+    //void checkEndOfSong()
+    //{
+    //    if (notesQueue1.Count == 0 && 
+    //        notesQueue2.Count == 0 && 
+    //        notesQueue3.Count == 0 &&
+    //        notesQueue4.Count == 0 &&
+    //        notesQueue5.Count == 0 &&
+    //        notesQueue6.Count == 0 &&
+    //        notesQueue7.Count == 0)
+    //    {           
+    //        isSongFinished = true;
+    //    }
+    //}
 }
 

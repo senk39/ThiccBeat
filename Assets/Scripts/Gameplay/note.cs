@@ -126,7 +126,7 @@ public class note : MonoBehaviour {
                 if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
                 {
                     Vector3 movement = new Vector3(0, 0, 0);
-                    rb.MovePosition(transform.position - transform.forward / 9 / 187 * 195 * noteVelocity);
+                    rb.MovePosition(transform.position - transform.forward / 9.385f * noteVelocity);
                 }           
         }
     }
@@ -147,7 +147,7 @@ public class note : MonoBehaviour {
         {        
             if (gameObject.GetComponent<noteClass>().keyNumber == 1)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();              
+                GameObject.Find("button 1").GetComponent<pressingNotes1>().notesQueue1.Dequeue();              
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
             {
