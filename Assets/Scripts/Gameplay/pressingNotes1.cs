@@ -18,7 +18,7 @@ public class pressingNotes1 : MonoBehaviour
     const float ActiveStart = -8f;
     const float ActiveEnd = -30f;
 
-    GameObject note1;
+    //GameObject note1;
 
     public GameObject n1;
     public GameObject nc1;
@@ -26,7 +26,7 @@ public class pressingNotes1 : MonoBehaviour
     private const float row1X = -5.1f;
     GameObject[] allNotes;
 
-    void Awake()
+    void Start()
     {
         allNotes = GameObject.FindGameObjectsWithTag("noteContainer");
         createQueues();
@@ -36,20 +36,16 @@ public class pressingNotes1 : MonoBehaviour
     {
         
         setAsTheLowest();
-        addTheLowestNotesToGameObjects();      
-
+        addTheLowestNotesToGameObjects();
         //setNoteContainer();
         //setNote();
 
         if (notesQueue1.Count > 0)
         {
-            if (Input.GetKeyDown(key) && note1.GetComponent<note>().isActive)
+            if (Input.GetKeyDown(key) && nc1.GetComponent<note>().isActive)
             {
-                if (key == KeyCode.A && transform.position.x == row1X)
-                {
                     doWhenKeyPressedAndNoteIsInPressablePlace();
-                    dequeueAndDestroy();
-                }
+                    dequeueAndDestroy();              
             }
         }
     }
@@ -64,10 +60,10 @@ public class pressingNotes1 : MonoBehaviour
     void dequeueAndDestroy()
     {
 
-        if (noteContainer.GetComponent<noteClass>().keyNumber == 1 && notesQueue1.Count > 0)
+        if (nc1.GetComponent<noteClass>().keyNumber == 1 && notesQueue1.Count > 0)
         {
-            noteContainer.GetComponent<note>().enabled = false;
-            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30)); // TERAZ NIE USUWAMY A PRZENOSIMY!
+            nc1.GetComponent<note>().enabled = false;
+            nc1.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30)); // TERAZ NIE USUWAMY A PRZENOSIMY!
             notesQueue1.Dequeue();
         }
 

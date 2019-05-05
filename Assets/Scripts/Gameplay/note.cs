@@ -126,7 +126,7 @@ public class note : MonoBehaviour {
                 if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
                 {
                     Vector3 movement = new Vector3(0, 0, 0);
-                    rb.MovePosition(transform.position - transform.forward / 9.385f * noteVelocity);
+                    rb.MovePosition(transform.position - transform.forward / 9 / 187 * 195 * noteVelocity);
                 }           
         }
     }
@@ -151,27 +151,27 @@ public class note : MonoBehaviour {
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
+                GameObject.Find("button 2").GetComponent<pressingNotes2>().notesQueue2.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
+                GameObject.Find("button 3").GetComponent<pressingNotes3>().notesQueue3.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
+                GameObject.Find("button 4").GetComponent<pressingNotes4>().notesQueue4.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
+                GameObject.Find("button 5").GetComponent<pressingNotes5>().notesQueue5.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
+                GameObject.Find("button 6").GetComponent<pressingNotes6>().notesQueue6.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
             {
-                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
+                GameObject.Find("button 7").GetComponent<pressingNotes7>().notesQueue7.Dequeue();
             }
             else
             {

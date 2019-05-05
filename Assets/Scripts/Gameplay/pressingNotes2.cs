@@ -6,6 +6,7 @@ public class pressingNotes2 : MonoBehaviour
 {
     public KeyCode key;
 
+
     public bool isHolding = false;
 
     public GameObject playerScoreContainer;
@@ -14,37 +15,37 @@ public class pressingNotes2 : MonoBehaviour
     public GameObject noteItself;
     public GameObject noteContainer;
 
-    private const float row2X = -3.1f;
-
-
     const float ActiveStart = -8f;
     const float ActiveEnd = -30f;
 
-    GameObject note2;
+    //GameObject note1;
+
+    public GameObject n2;
+    public GameObject nc2;
+    public Queue<GameObject> notesQueue2 = new Queue<GameObject>();
+    private const float row1X = -3.1f;
+    GameObject[] allNotes2;
+
+    void Start()
+    {
+        allNotes2 = GameObject.FindGameObjectsWithTag("noteContainer");
+        createQueues();
+    }
 
     void Update()
     {
-        if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Count > 0)
-        {
-            note2 = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Peek();
-        }
-        else
-        {
-            note2 = null;
-        }
 
-        setNoteContainer();
-        setNote();
+        setAsTheLowest();
+        addTheLowestNotesToGameObjects();
+        //setNoteContainer();
+        //setNote();
 
-        if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Count > 0)
+        if (notesQueue2.Count > 0)
         {
-            if (Input.GetKeyDown(key) && note2.GetComponent<note>().isActive)
+            if (Input.GetKeyDown(key) && nc2.GetComponent<note>().isActive)
             {
-                if (key == KeyCode.W && transform.position.x == row2X)
-                {
-                    doWhenKeyPressedAndNoteIsInPressablePlace();
-                    dequeueAndDestroy();
-                }
+                doWhenKeyPressedAndNoteIsInPressablePlace();
+                dequeueAndDestroy();
             }
         }
     }
@@ -59,19 +60,25 @@ public class pressingNotes2 : MonoBehaviour
     void dequeueAndDestroy()
     {
 
-        if (noteContainer.GetComponent<noteClass>().keyNumber == 2 && GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Count > 0)
+        if (nc2.GetComponent<noteClass>().keyNumber == 2 && notesQueue2.Count > 0)
         {
-            noteContainer.GetComponent<note>().enabled = false;
-            noteContainer.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30));
-            GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
+            nc2.GetComponent<note>().enabled = false;
+            nc2.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30)); // TERAZ NIE USUWAMY A PRZENOSIMY!
+            notesQueue2.Dequeue();
         }
+
+        else
+        {
+            //Debug.LogError("Error: nutka nie może zostać usunięta, gdyż jej atrybut keyNumber nie mieści się w przedziale 1-7");
+        }
+
     }
 
     void setNote()
     {
-        if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Count > 0)
+        if (notesQueue2.Count > 0)
         {
-            noteItself = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Peek().transform.GetChild(0).gameObject;
+            noteItself = notesQueue2.Peek().transform.GetChild(0).gameObject;
         }
         else
         {
@@ -81,9 +88,9 @@ public class pressingNotes2 : MonoBehaviour
 
     void setNoteContainer()
     {
-        if (GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Count > 0)
+        if (notesQueue2.Count > 0)
         {
-            noteContainer = GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Peek();
+            noteContainer = notesQueue2.Peek();
         }
         else
         {
@@ -94,9 +101,43 @@ public class pressingNotes2 : MonoBehaviour
     void doWhenKeyPressedAndNoteIsInPressablePlace()
     {
         incrementCombo();
+
+        //RemoveFromQueue();
+
         GameObject.Find("buttons").GetComponent<AudioSource>().Play();
 
     }
+    void setAsTheLowest()
+    {
+        if (notesQueue2.Count > 0)
+        {
+            notesQueue2.Peek().GetComponent<note>().isTheLowest = true;
+        }
+    }
 
+    void addTheLowestNotesToGameObjects()
+    {
+        if (notesQueue2.Count > 0)
+        {
+            nc2 = notesQueue2.Peek();
+            n2 = notesQueue2.Peek().transform.GetChild(0).gameObject;
+        }
+        else
+        {
+            nc2 = null;
+            n2 = null;
+        }
+    }
+
+    void createQueues()
+    {
+        foreach (var nutkowyKontener in allNotes2)
+        {
+            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 2)
+            {
+                notesQueue2.Enqueue(nutkowyKontener);
+            }
+        }
+    }
 }
 

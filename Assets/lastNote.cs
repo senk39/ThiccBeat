@@ -49,152 +49,15 @@ public class lastNote : MonoBehaviour
 
     public bool isSongFinished = false;
 
-    GameObject[] allNotes;
 
-    void Awake()
-    {
-        allNotes = GameObject.FindGameObjectsWithTag("noteContainer");
-        createQueues();
 
-    }
 
-    void Update()
-    {
-        setAsTheLowest();
-        addTheLowestNotesToGameObjects();
-        //checkEndOfSong();
-    }
-    void createQueues()
-    {
+    //void Update()
+    //{
+    //    checkEndOfSong();
+    //}
 
-        foreach (var nutkowyKontener in allNotes)
-        {
 
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 2)
-            {
-                notesQueue2.Enqueue(nutkowyKontener);
-            }
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 3)
-            {
-                notesQueue3.Enqueue(nutkowyKontener);
-            }
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 4)
-            {
-                notesQueue4.Enqueue(nutkowyKontener);
-            }
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 5)
-            {
-                notesQueue5.Enqueue(nutkowyKontener);
-            }
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 6)
-            {
-                notesQueue6.Enqueue(nutkowyKontener);
-            }
-            if (nutkowyKontener.gameObject.GetComponent<noteClass>().keyNumber == 7)
-            {
-                notesQueue7.Enqueue(nutkowyKontener);
-            }
-
-        }
-    }
-
-    void setAsTheLowest()
-    {
-        if (notesQueue2.Count > 0)
-        {
-            notesQueue2.Peek().GetComponent<note>().isTheLowest = true;
-        }
-        if (notesQueue3.Count > 0)
-        {
-            notesQueue3.Peek().GetComponent<note>().isTheLowest = true;
-        }
-        if (notesQueue4.Count > 0)
-        {
-            notesQueue4.Peek().GetComponent<note>().isTheLowest = true;
-        }
-        if (notesQueue5.Count > 0)
-        {
-            notesQueue5.Peek().GetComponent<note>().isTheLowest = true;
-        }
-        if (notesQueue6.Count > 0)
-        {
-            notesQueue6.Peek().GetComponent<note>().isTheLowest = true;
-        }
-        if (notesQueue7.Count > 0)
-        {
-            notesQueue7.Peek().GetComponent<note>().isTheLowest = true;
-        }
-    }
-
-    void addTheLowestNotesToGameObjects()
-    {
-        
-
-        if (notesQueue2.Count > 0)
-        {
-            nc2 = notesQueue2.Peek();
-            n2 = notesQueue2.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc2 = null;
-            n2 = null;
-        }
-
-        if (notesQueue3.Count > 0)
-        {
-            nc3 = notesQueue3.Peek();
-            n3 = notesQueue3.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc3 = null;
-            n3 = null;
-        }
-
-        if (notesQueue4.Count > 0)
-        {
-            nc4 = notesQueue4.Peek();
-            n4 = notesQueue4.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc4 = null;
-            n4 = null;
-        }
-
-        if (notesQueue5.Count > 0)
-        {
-            nc5 = notesQueue5.Peek();
-            n5 = notesQueue5.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc5 = null;
-            n5 = null;
-        }
-
-        if (notesQueue6.Count > 0)
-        {
-            nc6 = notesQueue6.Peek();
-            n6 = notesQueue6.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc6 = null;
-            n6 = null;
-        }
-        if (notesQueue7.Count > 0)
-        {
-            nc7 = notesQueue7.Peek();
-            n7 = notesQueue7.Peek().transform.GetChild(0).gameObject;
-        }
-        else
-        {
-            nc7 = null;
-            n7 = null;
-        }
-    }
 
     //void checkEndOfSong()
     //{
