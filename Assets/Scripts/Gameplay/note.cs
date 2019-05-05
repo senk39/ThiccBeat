@@ -78,10 +78,7 @@ public class note : MonoBehaviour {
 
         if (Input.anyKeyDown)
         {
-            isMoving = true;
-
-            //Invoke("pauses", 4f);
-            
+            isMoving = true;           
         }
        
 
@@ -97,13 +94,7 @@ public class note : MonoBehaviour {
             dequeue();
 
             isMoving = false;
-            this.enabled = false;
-            //rb.position.Set(200, 0, 0);
-            //PRZENIEÆ
-
-            //gameObject.SetActive(false);
-            //Destroy(gameObject);
-            
+            this.enabled = false;           
         }
     }
 
@@ -114,7 +105,6 @@ public class note : MonoBehaviour {
         {
             if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
             {
-
                 Vector3 movement = new Vector3(0, 0, 0);
                 rb.MovePosition(transform.position - transform.forward / 9/187*195 * noteVelocity);
             }
@@ -123,7 +113,6 @@ public class note : MonoBehaviour {
 
     void resetCombo()
     {
-        //GameObject.Find("Score").GetComponent<playerScore>().playerCurrentScore += 200;
         GameObject.Find("Combo").GetComponent<playerCombo>().currentCombo = 0;
     }
 
@@ -171,5 +160,4 @@ public class note : MonoBehaviour {
             dequeueIfTrue = false;
         }
     }
-    
 }

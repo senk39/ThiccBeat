@@ -172,9 +172,9 @@ FULL BEAT: 12.09
             GameObject newNoteContainer = Instantiate(noteContainer, new Vector3(0, 0, 0), noteQuaternion);
             newNoteContainer.tag = "noteContainer";
 
-            for (int i2 = 1; i2 < 6; i2++)
+            for (int i2 = 1; i2 < 8; i2++)
             {
-                if (eachNoteSplit[2].Contains(i2.ToString()))
+                if (eachNoteSplit[2].Contains(i2.ToString()) && i2 < 7)
                 {
                     GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                     newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
@@ -182,10 +182,9 @@ FULL BEAT: 12.09
                     newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                     newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                     newNoteContainer.GetComponent<noteClass>().keyNumber = i2;
+                    break;
                 }
-
-
-                else
+                else if (eachNoteSplit[2].Contains("7"))
                 {
                     newNoteContainer.tag = "noteContainer";
 
@@ -196,8 +195,14 @@ FULL BEAT: 12.09
                     newNoteContainer.GetComponent<noteClass>().startPoint = Int32.Parse(eachNoteSplit[0]);
                     newNoteContainer.GetComponent<noteClass>().endPoint = Int32.Parse(eachNoteSplit[1]);
                     newNoteContainer.GetComponent<noteClass>().keyNumber = 7;
+                    break;
                 }
             }
+
+            
+           
+
+            
 
             if (i < 9)
             {
@@ -221,4 +226,9 @@ FULL BEAT: 12.09
 
     }
 
+
+    void generateBar()
+    {
+
+    }
 }
