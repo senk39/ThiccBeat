@@ -183,13 +183,13 @@ FULL BEAT: 12.09
                     currentNoteClass.keyNumber = i2;
                     currentNoteClass.noteLength = currentNoteClass.endPoint - currentNoteClass.startPoint;
 
-
                     if (currentNoteClass.noteLength <= 12)
                     {
+                        currentNoteClass.isHold = false;
+                        currentNoteClass.isShort = true;
                         GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                         newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
                         newNoteContainer.gameObject.transform.SetPositionAndRotation(new Vector3(rows[i2], rowY, rowZ), noteQuaternion);
-
 
                         if (i < 9)
                         {
@@ -207,9 +207,11 @@ FULL BEAT: 12.09
 
                     else
                     {
+                        currentNoteClass.isHold = true;
+                        currentNoteClass.isShort = false;
+
                         GameObject newNote = Instantiate(noteShort, new Vector3(0, 0, 0), noteQuaternion);
                         newNote.transform.parent = newNoteContainer.transform;            //osadź newNoteContainer jako rodzica obiektu newNote
-
 
                         if (i < 9)
                         {
@@ -239,9 +241,7 @@ FULL BEAT: 12.09
                         else
                         {
                             newNoteEnd.transform.name = "endNote" + (i + 1);
-                        }
-
-                        
+                        }                        
                     }                       
                     break;
                 }
