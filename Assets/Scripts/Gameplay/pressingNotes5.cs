@@ -63,7 +63,7 @@ public class pressingNotes5 : MonoBehaviour
         if (nc5.GetComponent<noteClass>().keyNumber == 5 && notesQueue5.Count > 0)
         {
             nc5.GetComponent<note>().enabled = false;
-            nc5.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -30)); // TERAZ NIE USUWAMY A PRZENOSIMY!
+            nc5.GetComponent<Rigidbody>().MovePosition(new Vector3(0, 0, -330)); // TERAZ NIE USUWAMY A PRZENOSIMY!
             notesQueue5.Dequeue();
         }
 

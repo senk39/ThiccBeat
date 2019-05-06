@@ -29,11 +29,32 @@ public class note : MonoBehaviour {
     bool dequeueIfTrue = true;
     public bool isMoving = false;
 
+    int startPoint;
+    bool isHoldNote;
+
+    GameObject butt1;
+    GameObject butt2;
+    GameObject butt3;
+    GameObject butt4;
+    GameObject butt5;
+    GameObject butt6;
+    GameObject butt7;
 
     //GetComponent<AudioSource>()
 
     void Awake()
     {
+        butt1 = GameObject.Find("button 1");
+        butt2 = GameObject.Find("button 2");
+        butt3 = GameObject.Find("button 3");
+        butt4 = GameObject.Find("button 4");
+        butt5 = GameObject.Find("button 5");
+        butt6 = GameObject.Find("button 6");
+        butt7 = GameObject.Find("bar");
+
+
+
+
         selectedSong = SongListV2.selectedSongByUser;
 
         rb = GetComponent<Rigidbody>();
@@ -72,6 +93,16 @@ public class note : MonoBehaviour {
     void Start()
     {
         zPos = rb.position.z;
+
+        startPoint = GetComponent<noteClass>().startPoint;
+        if (GetComponent<noteClass>().isHold == true)
+        {
+            isHoldNote = true;
+        }
+        else
+        {
+            isHoldNote = false;
+        }
     }
     
     void Update() {
@@ -81,13 +112,13 @@ public class note : MonoBehaviour {
             isMoving = true;           
         }
 
-        if (GetComponent<noteClass>().isShort)
+        if (isHoldNote == false)
         {
             if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
             {
                 isActive = true;
             }
-            else if (gameObject.transform.position.z < ZPosToDestroy)
+            else if (gameObject.transform.position.z < (ZPosToDestroy - 300))
             {
                 isActive = false;
                 resetCombo();
@@ -98,7 +129,7 @@ public class note : MonoBehaviour {
                 this.enabled = false;
             }
         }
-        else if (GetComponent<noteClass>().isHold) // TU HOLDY
+        else if (isHoldNote == true) // TU HOLDY
         {
             if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
             {
@@ -123,7 +154,7 @@ public class note : MonoBehaviour {
         //Debug.Log("bpm: " + bpm);
         if (pause.isGamePaused == false && isMoving == true)
         {           
-                if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+                if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
                 {
                     Vector3 movement = new Vector3(0, 0, 0);
                     rb.MovePosition(transform.position - transform.forward / 9 / 187 * 195 * noteVelocity);
@@ -147,31 +178,31 @@ public class note : MonoBehaviour {
         {        
             if (gameObject.GetComponent<noteClass>().keyNumber == 1)
             {
-                GameObject.Find("button 1").GetComponent<pressingNotes1>().notesQueue1.Dequeue();              
+                butt1.GetComponent<pressingNotes1>().notesQueue1.Dequeue();             
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
             {
-                GameObject.Find("button 2").GetComponent<pressingNotes2>().notesQueue2.Dequeue();
+                butt2.GetComponent<pressingNotes2>().notesQueue2.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
             {
-                GameObject.Find("button 3").GetComponent<pressingNotes3>().notesQueue3.Dequeue();
+                butt3.GetComponent<pressingNotes3>().notesQueue3.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
             {
-                GameObject.Find("button 4").GetComponent<pressingNotes4>().notesQueue4.Dequeue();
+                butt4.GetComponent<pressingNotes4>().notesQueue4.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
             {
-                GameObject.Find("button 5").GetComponent<pressingNotes5>().notesQueue5.Dequeue();
+                butt5.GetComponent<pressingNotes5>().notesQueue5.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
             {
-                GameObject.Find("button 6").GetComponent<pressingNotes6>().notesQueue6.Dequeue();
+                butt6.GetComponent<pressingNotes6>().notesQueue6.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
             {
-                GameObject.Find("button 7").GetComponent<pressingNotes7>().notesQueue7.Dequeue();
+                butt7.GetComponent<pressingNotes7>().notesQueue7.Dequeue();
             }
             else
             {
