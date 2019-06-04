@@ -253,48 +253,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &373092843
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1160.0986
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 552.5885
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -397.66113
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4024375194947430, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 65fa3a3e074835b4ca8c4997ff570341, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &377694642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,7 +1080,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: version 0.2137 Prykon Beta
+  m_Text: version 1.0
 --- !u!222 &1338190000
 CanvasRenderer:
   m_ObjectHideFlags: 0

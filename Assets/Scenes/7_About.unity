@@ -310,23 +310,25 @@ Prefab:
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_text
-      value: "ThiccBeat v.2.1.3.7 beta, kwiecien 2019\nAutor: Senk\n\nJesli widzisz
-        ten tekst, to jestes na Pyrkonie. \nBaw sie dobrze uwu."
+      value: "ThiccBeat v.1.0, 2019\nAutor: Pawel Dawidziak\n\nGra stworzona w ranach
+        pracy licencjackiej dla \nuczelni WWSIS Horyzont.\n\n\nThiccBeat v.1.0, 2019\nAuthor:
+        Pawel Dawidziak\n\nThe game was created as a part of the bachelor's thesis
+        for the WWSIS Horyzont."
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 121
+      value: 246
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 20
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 23
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
@@ -336,7 +338,7 @@ Prefab:
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}
       propertyPath: m_textInfo.lineCount
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 114956016382806436, guid: 2b35a56e29c23ba4aae5761aef58a671,
         type: 2}

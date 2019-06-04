@@ -172,40 +172,40 @@ public class SongListV2 : MonoBehaviour
 
     // START TWORZENIA UTWORÓW
     static Song stalemate = new Song(
-        0, "Stalemate", "Senk", "Yuzuki Yukari", null, null, "synth-rock", "vocaloid", 195, "4:17", 1, 310, 3, 7);
+        0, "Stalemate", "P. Dawidziak", "Yuzuki Yukari", null, null, "synth-rock", "vocaloid", 195, "4:17", 1, 310, 3, 7);
 
     static Song comfyplace = new Song(
-        1, "Comfy Place", "Senk", null, null, "P. Dawidziak", "future bass", "instrumental", 187, "1:33", 158, 427, 3, 6);
+        1, "Comfy Place", "P. Dawidziak", null, null, "P. Dawidziak", "future bass", "instrumental", 187, "1:33", 158, 427, 3, 6);
 
-    static Song aiaiai = new Song(
-        2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "electropop", "virtual youtuber", 128, "3:13", 324, 667, 2, 10);
+    //static Song aiaiai = new Song(
+    //    2, "AIAIAI", "Yasutaka Nakata", "Kizuna AI", null, null, "electropop", "virtual youtuber", 128, "3:13", 324, 667, 2, 10);
 
-    static Song sixtrillion = new Song(
-        3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "synth-rock", "vocaloid", 186, "1:42", 272, 522, 4, 10);
+    //static Song sixtrillion = new Song(
+    //    3, "A Tale of Six Trillion Years and a Night", "kemu", "IA", null, null, "synth-rock", "vocaloid", 186, "1:42", 272, 522, 4, 10);
 
-    static Song hitorigoto = new Song(
-        4, "Hitorigoto", "ClariS", null, null, null, "j-pop", "anime", 165, "3:13", 203, 367, 2, 7);
+    //static Song hitorigoto = new Song(
+    //    4, "Hitorigoto", "ClariS", null, null, null, "j-pop", "anime", 165, "3:13", 203, 367, 2, 7);
 
-    static Song killthislove = new Song(
-        5, "Kill This Love", "BLACKPINK", null, null, null, "k-pop", null, 132, "3:13", 1, 485, 1, 5);
+    //static Song killthislove = new Song(
+    //    5, "Kill This Love", "BLACKPINK", null, null, null, "k-pop", null, 132, "3:13", 1, 485, 1, 5);
 
-    static Song badapple = new Song(
-        6, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "edm", "touhou", 138, "3:13", 247, 451, 3, 6);
+    //static Song badapple = new Song(
+    //    6, "Bad Apple!!", "Alstroemeria Records", "nomico", null, null, "edm", "touhou", 138, "3:13", 247, 451, 3, 6);
 
-    static Song japaripark = new Song(
-        7, "Youkoso Japari Park e", "Doubutsu Biscuits × PPP", null, null, null, "j-pop", "anime", 170, "3:13", 122, 344, 4, 8);
+    //static Song japaripark = new Song(
+    //    7, "Youkoso Japari Park e", "Doubutsu Biscuits × PPP", null, null, null, "j-pop", "anime", 170, "3:13", 122, 344, 4, 8);
 
-    static Song dejavu = new Song(
-        8, "Deja Vu", "Dave Rodgers", null, null, null, "eurobeat", "anime", 154, "1:32", 171, 350, 4, 7);
+    //static Song dejavu = new Song(
+    //    8, "Deja Vu", "Dave Rodgers", null, null, null, "eurobeat", "anime", 154, "1:32", 171, 350, 4, 7);
 
-    static Song miraclewave = new Song(
-        9, "MIRACLE WAVE", "Aqours", null, null, null, "j-pop", "Love Live!", 183, "1:34", 283, 422, 5, 7);
+    //static Song miraclewave = new Song(
+    //    9, "MIRACLE WAVE", "Aqours", null, null, null, "j-pop", "Love Live!", 183, "1:34", 283, 422, 5, 7);
 
-    static Song test260 = new Song(
-        10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+    //static Song test260 = new Song(
+    //    10, "TEST230", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
 
-    static Song uwu = new Song(
-        11, "TURBOOOF", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
+    //static Song uwu = new Song(
+    //    11, "TURBOOOF", "TEST", "Kizuna AI", null, null, "TEST", "TEST", 230, "3:13", 301, 672, 2, 10);
 
 
 
@@ -240,7 +240,7 @@ public class SongListV2 : MonoBehaviour
 
         deletePlayerPrefsKeys();
 
-        GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
+        //GameObject.Find("preview" + selectedSongByUser).GetComponent<AudioSource>().Play();
     }
 
     void Update()
@@ -249,7 +249,7 @@ public class SongListV2 : MonoBehaviour
         changeDifficulty();
         backToMainMenu();
         chooseSongAndMoveToGame();
-        borderColorGenerator(isCurrentDifficultyIsEasy);
+        //borderColorGenerator(isCurrentDifficultyIsEasy);
         //highScores();
     }
 
@@ -257,16 +257,16 @@ public class SongListV2 : MonoBehaviour
     {
         allSongs.Add(stalemate);
         allSongs.Add(comfyplace);
-        allSongs.Add(aiaiai);
-        allSongs.Add(sixtrillion);
-        allSongs.Add(hitorigoto);
-        allSongs.Add(killthislove);
-        allSongs.Add(badapple);
-        allSongs.Add(japaripark);
-        allSongs.Add(dejavu);
-        allSongs.Add(miraclewave);
-        allSongs.Add(test260);
-        allSongs.Add(uwu);
+        //allSongs.Add(aiaiai);
+        //allSongs.Add(sixtrillion);
+        //allSongs.Add(hitorigoto);
+        //allSongs.Add(killthislove);
+        //allSongs.Add(badapple);
+        //allSongs.Add(japaripark);
+        //allSongs.Add(dejavu);
+        //allSongs.Add(miraclewave);
+        //allSongs.Add(test260);
+        //allSongs.Add(uwu);
 
     }
 
@@ -348,7 +348,7 @@ public class SongListV2 : MonoBehaviour
         //DIFF FIELD
         starGenerator();
         //HIGH SCORE FIELD
-        highScores();
+        //highScores();
     }
 
     void movingOtherSongsUp()
@@ -425,168 +425,168 @@ public class SongListV2 : MonoBehaviour
         alternativeDifficultyTextGenerator();
     }
 
-    void borderColorGenerator(bool isCurrentDifficultyIsEasy)
-    {
-        if (isCurrentDifficultyIsEasy == true)
-        {
-            GameObject.Find("Selected Song").GetComponent<Image>().sprite = easyBorder;
-            GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = easyTab;
+    //void borderColorGenerator(bool isCurrentDifficultyIsEasy)
+    //{
+    //    if (isCurrentDifficultyIsEasy == true)
+    //    {
+    //        GameObject.Find("Selected Song").GetComponent<Image>().sprite = easyBorder;
+    //        GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = easyTab;
 
-        }
-        else
-        {
-            GameObject.Find("Selected Song").GetComponent<Image>().sprite = hardBorder;
-            GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = hardTab;
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        GameObject.Find("Selected Song").GetComponent<Image>().sprite = hardBorder;
+    //        GameObject.Find("Difficulty Tab").GetComponent<Image>().sprite = hardTab;
+    //    }
+    //}
 
-    void highScores()
-    {
-        if (isCurrentDifficultyIsEasy == true)
-        {
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
-            {
-                selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy").ToString();
-                if(selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
-                {
-                    selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyeasy");
-                    selHighScore1LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldComboeasy").ToString();
+    //void highScores()
+    //{
+    //    if (isCurrentDifficultyIsEasy == true)
+    //    {
+    //        if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy") > 1)
+    //        {
+    //            selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScoreeasy").ToString();
+    //            if(selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
+    //            {
+    //                selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyeasy");
+    //                selHighScore1LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldComboeasy").ToString();
 
-                }
-                else
-                {
-                    selHighScore1LabelAcc.text = " ";
-                    selHighScore1LabelCombo.text = " ";
-                }
+    //            }
+    //            else
+    //            {
+    //                selHighScore1LabelAcc.text = " ";
+    //                selHighScore1LabelCombo.text = " ";
+    //            }
 
-            }
-            else
-            {
-                selHighScore1Label.text = "1. ---";
-                selHighScore1LabelAcc.text = " ";
-                selHighScore1LabelCombo.text = " ";
-            }
+    //        }
+    //        else
+    //        {
+    //            selHighScore1Label.text = "1. ---";
+    //            selHighScore1LabelAcc.text = " ";
+    //            selHighScore1LabelCombo.text = " ";
+    //        }
 
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy") > 1)
-            {
-                selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy").ToString();
-                if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
-                {
-                    selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyeasy");
-                    selHighScore2LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverComboeasy").ToString();
+    //        if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy") > 1)
+    //        {
+    //            selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScoreeasy").ToString();
+    //            if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
+    //            {
+    //                selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyeasy");
+    //                selHighScore2LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverComboeasy").ToString();
 
-                }
-                else
-                {
-                    selHighScore2LabelAcc.text = " ";
-                    selHighScore2LabelCombo.text = " ";
-                }
-            }
-            else
-            {
-                selHighScore2Label.text = "2. ---";
-                selHighScore2LabelAcc.text = " ";
-                selHighScore2LabelCombo.text = " ";
+    //            }
+    //            else
+    //            {
+    //                selHighScore2LabelAcc.text = " ";
+    //                selHighScore2LabelCombo.text = " ";
+    //            }
+    //        }
+    //        else
+    //        {
+    //            selHighScore2Label.text = "2. ---";
+    //            selHighScore2LabelAcc.text = " ";
+    //            selHighScore2LabelCombo.text = " ";
 
-            }
+    //        }
 
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy") > 1)
-            {
-                selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy").ToString();
-                if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
-                {
-                    selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyeasy");
-                    selHighScore3LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeComboeasy").ToString();
+    //        if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy") > 1)
+    //        {
+    //            selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScoreeasy").ToString();
+    //            if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
+    //            {
+    //                selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyeasy");
+    //                selHighScore3LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeComboeasy").ToString();
 
-                }
-                else
-                {
-                    selHighScore3LabelAcc.text = " ";
-                    selHighScore3LabelCombo.text = " ";
-                }
-            }
-            else
-            {
-                selHighScore3Label.text = "3. ---";
-                selHighScore3LabelAcc.text = " ";
-                selHighScore3LabelCombo.text = " ";
-            }
+    //            }
+    //            else
+    //            {
+    //                selHighScore3LabelAcc.text = " ";
+    //                selHighScore3LabelCombo.text = " ";
+    //            }
+    //        }
+    //        else
+    //        {
+    //            selHighScore3Label.text = "3. ---";
+    //            selHighScore3LabelAcc.text = " ";
+    //            selHighScore3LabelCombo.text = " ";
+    //        }
 
-        }
-        else
-        {
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard") > 1)
-            {
-                selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard").ToString();
-                if (selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
-                {
-                    selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyhard");
-                    selHighScore1LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldCombohard").ToString();
+    //    }
+    //    else
+    //    {
+    //        if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard") > 1)
+    //        {
+    //            selHighScore1Label.text = "1. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldScorehard").ToString();
+    //            if (selHighScore1LabelAcc.text != null && selHighScore1LabelAcc.text != "xD" && selHighScore1LabelAcc.text != "0")
+    //            {
+    //                selHighScore1LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "GoldAccuracyhard");
+    //                selHighScore1LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "GoldCombohard").ToString();
 
-                }
-                else
-                {
-                    //selHighScore1Label.text = "1. ---";
-                    selHighScore1LabelAcc.text = " ";
-                    selHighScore1LabelCombo.text = " ";
-                }
-            }
-            else
-            {
-                selHighScore1Label.text = "1. ---";
-                selHighScore1LabelAcc.text = " ";
-                selHighScore1LabelCombo.text = " ";
-            }
+    //            }
+    //            else
+    //            {
+    //                //selHighScore1Label.text = "1. ---";
+    //                selHighScore1LabelAcc.text = " ";
+    //                selHighScore1LabelCombo.text = " ";
+    //            }
+    //        }
+    //        else
+    //        {
+    //            selHighScore1Label.text = "1. ---";
+    //            selHighScore1LabelAcc.text = " ";
+    //            selHighScore1LabelCombo.text = " ";
+    //        }
 
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard") > 1)
-            {
-                selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard").ToString();
-                if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
-                {
-                    selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyhard");
-                    selHighScore2LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverCombohard").ToString();
+    //        if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard") > 1)
+    //        {
+    //            selHighScore2Label.text = "2. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverScorehard").ToString();
+    //            if (selHighScore2LabelAcc.text != null && selHighScore2LabelAcc.text != "xD" && selHighScore2LabelAcc.text != "0")
+    //            {
+    //                selHighScore2LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "SilverAccuracyhard");
+    //                selHighScore2LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "SilverCombohard").ToString();
 
-                }
-                else
-                {
-                    //selHighScore2Label.text = "2. ---";
-                    selHighScore2LabelAcc.text = " ";
-                    selHighScore2LabelCombo.text = " ";
-                }
-            }
-            else
-            {
-                selHighScore2Label.text = "2. ---";
-                selHighScore2LabelAcc.text = " ";
-                selHighScore2LabelCombo.text = " ";
-            }
+    //            }
+    //            else
+    //            {
+    //                //selHighScore2Label.text = "2. ---";
+    //                selHighScore2LabelAcc.text = " ";
+    //                selHighScore2LabelCombo.text = " ";
+    //            }
+    //        }
+    //        else
+    //        {
+    //            selHighScore2Label.text = "2. ---";
+    //            selHighScore2LabelAcc.text = " ";
+    //            selHighScore2LabelCombo.text = " ";
+    //        }
 
-            if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1)
-            {
-                selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard").ToString();
-                if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
-                {
-                    selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyhard");
-                    selHighScore3LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeCombohard").ToString();
+    //        if (PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard") > 1)
+    //        {
+    //            selHighScore3Label.text = "3. " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeScorehard").ToString();
+    //            if (selHighScore3LabelAcc.text != null && selHighScore3LabelAcc.text != "xD" && selHighScore3LabelAcc.text != "0")
+    //            {
+    //                selHighScore3LabelAcc.text = PlayerPrefs.GetString(allSongs[selectedSongByUser].index + "BronzeAccuracyhard");
+    //                selHighScore3LabelCombo.text = "combo: " + PlayerPrefs.GetInt(allSongs[selectedSongByUser].index + "BronzeCombohard").ToString();
 
-                }
-                else
-                {
-                    //selHighScore3Label.text = "3. ---";
-                    selHighScore3LabelAcc.text = " ";
-                    selHighScore3LabelCombo.text = " ";
-                }
-            }
-            else
-            {
-                selHighScore3Label.text = "3. ---";
-                selHighScore3LabelAcc.text = " ";
-                selHighScore3LabelCombo.text = " ";
-            }
-        }
+    //            }
+    //            else
+    //            {
+    //                //selHighScore3Label.text = "3. ---";
+    //                selHighScore3LabelAcc.text = " ";
+    //                selHighScore3LabelCombo.text = " ";
+    //            }
+    //        }
+    //        else
+    //        {
+    //            selHighScore3Label.text = "3. ---";
+    //            selHighScore3LabelAcc.text = " ";
+    //            selHighScore3LabelCombo.text = " ";
+    //        }
+    //    }
 
 
-    }
+    //}
 
     void alternativeDifficultyTextGenerator()
     {
@@ -610,7 +610,7 @@ public class SongListV2 : MonoBehaviour
                 acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = true;
                 starGenerator();
-                highScores();
+                //highScores();
             }
 
             else
@@ -618,7 +618,7 @@ public class SongListV2 : MonoBehaviour
                 acChangeDiff.Play();
                 isCurrentDifficultyIsEasy = false;
                 starGenerator();
-                highScores();
+                //highScores();
             }
         }
     }
