@@ -29,32 +29,11 @@ public class note : MonoBehaviour {
     bool dequeueIfTrue = true;
     public bool isMoving = false;
 
-    int startPoint;
-    bool isHoldNote;
-
-    GameObject butt1;
-    GameObject butt2;
-    GameObject butt3;
-    GameObject butt4;
-    GameObject butt5;
-    GameObject butt6;
-    GameObject butt7;
 
     //GetComponent<AudioSource>()
 
     void Awake()
     {
-        butt1 = GameObject.Find("button 1");
-        butt2 = GameObject.Find("button 2");
-        butt3 = GameObject.Find("button 3");
-        butt4 = GameObject.Find("button 4");
-        butt5 = GameObject.Find("button 5");
-        butt6 = GameObject.Find("button 6");
-        butt7 = GameObject.Find("bar");
-
-
-
-
         selectedSong = SongListV2.selectedSongByUser;
 
         rb = GetComponent<Rigidbody>();
@@ -67,7 +46,7 @@ public class note : MonoBehaviour {
         speed = 27560; // gêstoœæ roz³o¿enia nut, odwrotnie proporcjonalna do noteVelocity - im mniejsza, tym gêœciej        
         offset = bpm * 5.01f;
 
-        if(SongListV2.allSongs[selectedSong].index == 0)
+        if(SongListV2.allSongs[selectedSong].index == 2)
         {
             offset =  580f;
         }
@@ -93,77 +72,58 @@ public class note : MonoBehaviour {
     void Start()
     {
         zPos = rb.position.z;
-
-        startPoint = GetComponent<noteClass>().startPoint;
-        if (GetComponent<noteClass>().isHold == true)
-        {
-            isHoldNote = true;
-        }
-        else
-        {
-            isHoldNote = false;
-        }
     }
     
     void Update() {
 
         if (Input.anyKeyDown)
         {
-            isMoving = true;           
-        }
+            isMoving = true;
 
-        if (isHoldNote == false)
+            //Invoke("pauses", 4f);
+            
+        }
+       
+
+        if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
         {
-            if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
-            {
-                isActive = true;
-            }
-            else if (gameObject.transform.position.z < (ZPosToDestroy - 300))
-            {
-                isActive = false;
-                resetCombo();
-                isTheLowest = false;
-                dequeue();
-
-                isMoving = false;
-                this.enabled = false;
-            }
+            isActive = true;
         }
-        else if (isHoldNote == true) // TU HOLDY
+        else if (gameObject.transform.position.z < ZPosToDestroy)
         {
-            if (gameObject.transform.position.z < ZPosToActive && gameObject.transform.position.z > ZPosToDestroy)
-            {
-                isActive = true;
-            }
-            else if (transform.GetChild(1).transform.position.z < ZPosToDestroy)
-            {
-                isActive = false;
-                resetCombo();
-                isTheLowest = false;
-                dequeue();
+            isActive = false;
+            resetCombo();
+            isTheLowest = false;
+            dequeue();
 
-                isMoving = false;
-                this.enabled = false;
-            }
+            isMoving = false;
+            this.enabled = false;
+            //rb.position.Set(200, 0, 0);
+            //PRZENIEÆ
+
+            //gameObject.SetActive(false);
+            //Destroy(gameObject);
+            
         }
-
     }
 
     void FixedUpdate()
     {
         //Debug.Log("bpm: " + bpm);
         if (pause.isGamePaused == false && isMoving == true)
-        {           
-                if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
-                {
-                    Vector3 movement = new Vector3(0, 0, 0);
-                    rb.MovePosition(transform.position - transform.forward / 9 / 187 * 195 * noteVelocity);
-                }           
+        {
+            if ((songAudio.timeSamples * ((1 / speed) * bpm) - offset) > GetComponent<noteClass>().startPoint) //TEMPO RUCHU ZMIENISZ TUTAJ, POMYŒL TE¯ O BPM!!!
+            {
+
+                Vector3 movement = new Vector3(0, 0, 0);
+                rb.MovePosition(transform.position - transform.forward / 9/187*195 * noteVelocity);
+            }
         }
     }
 
     void resetCombo()
     {
+        //GameObject.Find("Score").GetComponent<playerScore>().playerCurrentScore += 200;
         GameObject.Find("Combo").GetComponent<playerCombo>().currentCombo = 0;
     }
 
@@ -178,31 +138,31 @@ public class note : MonoBehaviour {
         {        
             if (gameObject.GetComponent<noteClass>().keyNumber == 1)
             {
-                butt1.GetComponent<pressingNotes1>().notesQueue1.Dequeue();             
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue1.Dequeue();              
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 2)
             {
-                butt2.GetComponent<pressingNotes2>().notesQueue2.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue2.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 3)
             {
-                butt3.GetComponent<pressingNotes3>().notesQueue3.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue3.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 4)
             {
-                butt4.GetComponent<pressingNotes4>().notesQueue4.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue4.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 5)
             {
-                butt5.GetComponent<pressingNotes5>().notesQueue5.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue5.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 6)
             {
-                butt6.GetComponent<pressingNotes6>().notesQueue6.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue6.Dequeue();
             }
             else if (gameObject.GetComponent<noteClass>().keyNumber == 7)
             {
-                butt7.GetComponent<pressingNotes7>().notesQueue7.Dequeue();
+                GameObject.Find("Last Note").GetComponent<lastNote>().notesQueue7.Dequeue();
             }
             else
             {
@@ -211,4 +171,5 @@ public class note : MonoBehaviour {
             dequeueIfTrue = false;
         }
     }
+    
 }

@@ -42,8 +42,6 @@ public class HaniaWelcomesYou : MonoBehaviour {
             Invoke("sayAgain", 0.39f);
         }
     }
-
-    
 	
     void sayAgain()
     {
@@ -64,16 +62,4 @@ public class HaniaWelcomesYou : MonoBehaviour {
         
 
     }
-
-    void Update()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 2 && Input.GetKeyDown(KeyCode.G))
-        {
-            int randomNumber = Random.Range(0, HaniaObjArray.Length);
-            GetComponent<AudioSource>().clip = HaniaList[randomNumber];
-            GetComponent<AudioSource>().Play();
-        }
-    }
-
-
 }
